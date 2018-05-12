@@ -1,0 +1,5 @@
+<!--pages/schoolselect/schoolselect.wxml-->
+<view class='panel-between panel bottom-line' wx:for="{{schools}}" bindtap='cilckschool' data-index='{{index}}'>
+  <view>{{item.schoolName}}</view>
+  <view class='weui-cell__ft weui-cell__ft_in-access:after'></view>
+</view>

@@ -1,0 +1,26 @@
+.headerimg{
+   width:80px;
+  height: 80px;
+  border-radius: 40px;
+}
+.submitbtn{
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  bottom: 0;
+}
+.passcolor{
+  background: #3399FF;
+  color:#fff;
+}
+.cancelcolor{
+  background: red;
+  color:#fff;
+}
+.paycolor{
+  background: green;
+  color:#fff;
+}
+.right{
+  right:0px;
+}

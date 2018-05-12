@@ -1,0 +1,21 @@
+/* pages/grouplist/grouplist.wxss */
+.active{
+  color: #FF6633;
+  display:  unset;
+  border-radius: 5rpx;
+  border: 1px #FF6633 solid;
+  font-size: 28rpx;
+  padding: 7rpx;
+}
+.weui-navbar{
+  background: #fff;
+}
+.index{
+  color: #999999;
+}
+.headerimg{
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  border: 2px solid #3399FF;
+}

@@ -1,0 +1,43 @@
+<!--pages/shop/shop.wxml-->
+<swiper class='swiper' indicator-dots="false" autoplay="true" interval="5000" duration="500" circular="true">
+  <block wx:for="{{shop.image}}">
+    <swiper-item>
+      <image src="{{ip+item}}" data-index="{{index}}" bindtap='previewimage' class='img' />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='panel'>
+  <view class='bottom-line'>
+    <view class='text-center font-40'>{{shop.shopName}}</view>
+    <view class='text-center remark font-30'>{{shop.parentId.consumption}}元/人 | {{shop.distance}}</view>
+  </view>
+  <view class=' item-center'>
+    <view class='font-28 padding-top-md'>地址:{{shop.detail}}</view>
+    <view class='panel-end item-center'>
+      <image class='iconimg' src='/images/address.png'></image>
+      <text style='color:#aaa;font-size:38rpx;margin-top:30rpx;'>|</text>
+      <image class='iconimg' src='/images/callphone.png' bindtap='callphone'></image>
+    </view>
+  </view>
+</view>
+<view class='padding-md margin-sm text-center' style='background:#000;border-radius:10px;'>
+  <view class="weui-loadmore weui-loadmore_line">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">在诸暨黑卡优惠信息</view>
+    <view class='font-30' style='color:#FFFF00;border:1px #FFFF00 solid'>{{shop.parentId.discount}}</view>
+  </view>
+</view>
+<view class='margin-top-sm panel' wx:if="{{discountlist.length>0}}">
+  <view class='discountimg' data-id='{{item.sunwouId}}' wx:for="{{discountlist}}" data-outtime="{{item.image}}" data-discountinfo="{{item.remark}}" data-shopid="{{item.shopId}}" data-starttime="{{item.richtext}}" bindtap='buydiscount'>
+
+    <view class='discountremark'>{{item.remark}}</view>
+    <view class='panel-between item-down ' style='width:280px;margin:auto;position:absolute;top:120px;left:30px;'>
+      <view class='usertime'>{{item.usertime}}</view>
+      <view class='discountprice'>售价￥
+        <text style='font-size:80rpx;'>{{item.attribute[0].price}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='margin-top-sm panel'>
+  <rich-text nodes="{{shop.text}}"></rich-text>
+</view>

@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/schoolselect/schoolselect",
+    "pages/floorselect/floorselect",
+    "pages/bindphone/bindphone",
+    "pages/editorder/editorder",
+    "pages/orderscan/orderscan",
+    "pages/runvalidate/runvalidate",
+    "pages/mainorder/mainorder",
+    "pages/myorder/myorder",
+    "pages/myrunorder/myrunorder",
+    "pages/mycount/mycount"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "校生源跑腿",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#3399FF",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "跑腿",
+        "iconPath": "/images/index.png",
+        "selectedIconPath": "/images/index-select.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my-select.png"
+      }
+    ]
+  }
+}

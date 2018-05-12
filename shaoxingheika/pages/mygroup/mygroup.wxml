@@ -1,0 +1,47 @@
+<!--pages/mygroup/mygroup.wxml-->
+<view class="weui-tab">
+  <view class="weui-navbar">
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+        <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+  </view>
+  <view class="weui-tab__panel">
+    <view class="" hidden="{{activeIndex != 0}}">
+      <view class='margin-top-sm margin-left-sm margin-right-sm panel-between panel' style='border-radius:10px' wx:for="{{joinGroupList}}" bindtap='navtobegininggroup' data-id='{{item.fk_cg_id}}'>
+        <view class='panel-start' style='width:70%'>
+          <image src='{{ip+item.groupimg}}' mode='aspectFill' class='img margin-right-sm'></image>
+          <view class='panel-col-around' style='width:65%'>
+            <view class='font-36 textoverflowhidden'>{{item.groupName}}</view>
+            <view class='active textoverflowhidden'>{{item.couponinfo}}</view>
+            <view class='font-26'>{{item.groupdeadline}}</view>
+          </view>
+
+        </view>
+        <view class='panel-col-center'>
+          <view class='font-28'>需要人数</view>
+          <view class='font-30 text-center font-danger'>{{item.successNum}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="" hidden="{{activeIndex != 1}}">
+      <view class='margin-top-sm margin-left-sm margin-right-sm panel-between panel' style='border-radius:10px' wx:for="{{myGroupList}}" bindtap='navtobegininggroup' data-id='{{item.cg_id}}'>
+        <view class='panel-start' style='width:70%'>
+          <image src='{{ip+item.groupInfo.gr_imglist[0]}}' mode='aspectFill' class='img margin-right-sm'></image>
+          <view class='panel-col-around' style='width:65%'>
+            <view class='font-36 textoverflowhidden'>{{item.groupInfo.gr_name}}</view>
+            <view class='active textoverflowhidden'>{{item.groupInfo.cpon_info}}</view>
+            <view class='font-26'>{{item.groupInfo.gr_deadline}}</view>
+          </view>
+
+        </view>
+        <view class='panel-col-center'>
+          <view class='font-28'>本团人数</view>
+          <view class='font-30 text-center font-danger'>{{item.enjoy_num}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

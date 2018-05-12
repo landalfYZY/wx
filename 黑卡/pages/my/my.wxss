@@ -1,0 +1,92 @@
+/* pages/my/my.wxss */
+page{
+  background: #fff;
+}
+.backgroundImg{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+}
+
+.relative{
+  position: relative;
+  z-index: 2000;
+}
+
+.headerImg{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 80rpx;
+  background: #fff;
+}
+
+.buybtn{
+  width: 45%;
+  background: #ffff66;
+  color: #CC9900;
+  border-radius:30rpx; 
+  padding:10rpx 0rpx; 
+  margin-bottom: 30rpx;
+}
+
+.iconimg{
+  width: 40rpx;
+  height: 40rpx;
+  margin:0 20rpx;
+}
+.showBtn{
+  background: red;
+  color: #fff;
+  text-align: center;
+  border-radius: 30rpx;
+  padding: 8rpx 40rpx;
+  font-size:28rpx; 
+}
+.rightimg{
+  width: 40rpx;
+  height: 40rpx;
+}
+.towcode{
+  position:fixed;
+  margin:auto;
+  left:0; 
+  right:0; 
+  top:0; 
+  bottom:0;
+  width:200px; 
+  height:200px;
+  z-index: 4000;
+  background: #fff;
+  border-radius: 10px;
+}
+.contextbutton{
+  line-height:  unset;
+  position: unset;
+  padding: 30rpx;
+  border: unset;
+  border-bottom:1px solid #e1e1e1;
+  background: #fff;
+  border-radius:unset;
+}
+.contextbutton::after{
+  content:unset;
+}
+.successpage{
+   position:fixed;
+  margin:auto;
+  left:0; 
+  right:0; 
+  top:0; 
+  bottom:0;
+  width:300px; 
+  height:300px;
+  z-index: 4000;
+  background: #fff;
+  border-radius: 10px;
+}
+.discountInfo{
+  border: 1px #bf0000 solid;
+  color: #bf0000;
+  border-radius: 10px;
+}

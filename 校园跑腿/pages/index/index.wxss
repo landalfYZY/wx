@@ -1,0 +1,43 @@
+.img{
+   width: 100%;
+ height: 100%;
+}
+.swiper{
+  background: #fff;
+ height: 450rpx;
+}
+.head-img{
+  width:80px;
+  height: 80px;
+}
+.schoolmodel{
+  position: fixed;
+  top:20px;
+  left:20px;
+  border-radius: 10px;
+  height: 20px;
+  width: 80px;
+  background: rgba(51, 153, 255, 0.6);
+  color: #fff;
+  z-index: 5000;
+}
+.schoolimg{
+  width: 20px;
+  height: 20px;
+}
+.orderbtn{
+  position: fixed;
+  bottom:20px;
+  right:20px;
+  border-radius: 30px;
+  height: 55px;
+  width: 55px;
+  background: rgba(51, 153, 255, 0.6);
+  color: #fff;
+  z-index: 5000;
+}
+.orderimg{
+  width: 25px;
+  height: 25px;
+  margin: 0;
+}

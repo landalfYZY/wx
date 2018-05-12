@@ -1,0 +1,22 @@
+/* pages/contextus/contextus.wxss */
+.contextbutton{
+  line-height:  unset;
+  position: unset;
+  padding: 30rpx;
+  border: unset;
+  border-bottom:1px solid #e1e1e1;
+  background: #fff;
+  border-radius:unset;
+}
+.contextbutton::after{
+  content:unset;
+}
+.iconimg{
+  width: 40rpx;
+  height: 40rpx;
+  margin:0 20rpx;
+}
+.rightimg{
+  width: 40rpx;
+  height: 40rpx;
+}

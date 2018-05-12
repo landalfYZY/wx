@@ -1,0 +1,136 @@
+page{
+  background-color: #f3f3f3;
+}
+.bottom-bar{
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10
+}
+.smbtn{
+  background: #fff;
+  text-align: center;
+  border-right: 1px solid #e1e1e1;
+  border-top:1px solid #e1e1e1;
+  width: 15%;
+  position:  unset;
+  border-radius: 0px;
+  line-height:  unset;
+}
+.smbtn::after{
+  content: unset;
+  border:unset;
+}
+.incart{
+  width: 35%;
+  background: #ff9900;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff
+}
+.buybtn{
+  width: 35%;
+  background: #ff4040;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff
+}
+.panel {
+  background: #fff;
+  padding: 30rpx;
+}
+.sm{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
+.dm{
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1d2944;
+}
+.dh{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
+.panele{
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx
+}
+.dz{
+  font-size: 26rpx;
+  color: #aaa;
+  margin-top: 10rpx
+}
+.guige{
+  position: fixed;
+  background: #fff;
+  bottom: 0;
+  height:  60vh;
+  width: 100%;
+  z-index: 2000;
+}
+.typeImage{
+  float:  left;
+  height: 110px;
+  width: 110px;
+  margin: 0 20rpx;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  position: relative;
+  top: -30px;
+}
+.type{
+  background: #efefef;
+  color: #666666;
+  border-radius: 5px;
+  font-size: 28rpx;
+  padding: 20rpx;
+}
+.active{
+  background: #FF9933;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 28rpx;
+  padding: 20rpx;
+}
+
+.addShop{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: red;
+  color: #fff;
+}
+.numberBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000099;
+  color: #fff;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+}
+.numberInput{
+  text-align: center;
+  min-width: 20px;
+  width: 30px;
+  border:#aaa solid 1px;
+  margin: 0px 10px;
+  line-height: 10px;
+  min-height: unset;
+  height: 1.2rem;
+}

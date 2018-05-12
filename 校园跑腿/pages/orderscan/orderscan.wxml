@@ -1,0 +1,36 @@
+<!--pages/orderscan/orderscan.wxml-->
+<view class='margin-sm panel panel-between item-center' >
+  <image class='headerimg' src='{{order.userImage}}'></image>
+  <view class='font-28' style='width:70%;'>
+    
+    <view class='panel-between'>
+      <view>{{order.userName}}</view>
+      <view>{{order.createTime}}</view>
+    </view>
+    <view class='panel-between margin-top-md'>
+      <view>佣金{{order.total}}元</view>
+      <view>{{order.subType}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='panel margin-sm font-28'>
+  <view class='panel-start bottom-line padding-sm'>
+    <view class='margin-right-sm'>跑腿内容</view>
+    <view>{{order.remark}}</view>
+  </view>
+  <view class='panel-start bottom-line padding-sm'>
+    <view class='margin-right-sm'>送达地址</view>
+    <view>{{order.address.detail}}</view>
+  </view>
+  <view class='panel-start bottom-line padding-sm'>
+    <view class='margin-right-sm'>送达时间</view>
+    <view>{{order.reserveTime}}</view>
+  </view>
+  <view class='panel-start bottom-line padding-sm'>
+    <view class='margin-right-sm'>订单状态</view>
+    <view>{{order.status}}</view>
+  </view>
+</view>
+
+<view class='submitbtn panel-col-center item-center' bindtap='acceptorder' wx:if="{{order.status=='待接手'}}">接单</view>

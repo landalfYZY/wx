@@ -1,0 +1,32 @@
+/* pages/my/my.wxss */
+.bgimg{
+  position: absolute;
+  top:0;
+  z-index: 0;
+  width: 100%;
+  height: 150px;
+}
+.mypage{
+  position: relative;
+  top:0;
+  z-index: 100;
+  width: 100%;
+  height: 150px;
+}
+.mypage-item{
+  position: relative;
+}
+.headerimg{
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  border: 3px solid #fff;
+}
+.genderimg{
+  width: 15px;
+  height: 15px;
+}
+.itemicon{
+  width: 15px;
+  height: 15px;
+}

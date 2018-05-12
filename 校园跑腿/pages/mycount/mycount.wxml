@@ -1,0 +1,24 @@
+<!--pages/mycount/mycount.wxml-->
+<view class='bgimgmodel'>
+</view>
+
+<view class='content text-center'>
+  <image class='header' src='{{userInfo.avatarUrl}}'></image>
+  <view class='font-30'>{{userInfo.nickName}}</view>
+  <view class='info'>
+    <view class='panel panel-start item-center font-30 bottom-line'>
+      <image class='icon' src='/images/money.png'></image>
+      <view class='margin-left-sm margin-right-sm'>零钱:</view>
+      <view>{{sender.money}}元</view>
+    </view>
+    <view class='panel panel-between item-center font-30 bottom-line'>
+      <view class='panel-start'>
+        <image class='icon' src='/images/count.png'></image>
+        <view class='margin-left-sm margin-right-sm'>提现记录</view>
+      </view>
+      <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+    </view>
+  </view>
+
+  <view class='getmoneybtn panel-col-center item-center' bindtap='pickoutmoney'>提现</view>
+</view>

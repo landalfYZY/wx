@@ -1,0 +1,31 @@
+/**index.wxss**/
+.controls{
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  padding-bottom: 30rpx;
+  padding-top:30rpx; 
+}
+.botton-mini{
+  align-items: center;  
+  height: 40px;
+  width:40px;
+  border-radius: 40rpx;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.botton-big{
+  align-items: center;  
+  height:95px;
+  width:95px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 95rpx;
+}
+.position{
+  height: 35px;
+  width:35px;
+}
+.scan{
+  height:90px;
+  width:90px;
+}

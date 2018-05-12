@@ -1,0 +1,29 @@
+<!--pages/contextus/contextus.wxml-->
+
+<view class='panel margin-top-sm'>
+  <view class='panel panel-between item-center bottom-line' style='background:#fff;' bindtap='setClipboardData'>
+    <view class='panel-start item-center' style='width:35%'>
+      <image src='/images/wechat.png' class='iconimg'></image>
+      <view class='font-28'>管家微信</view>
+    </view>
+    <view class='font-28'>August2354</view>
+  </view>
+  <view class='panel panel-between item-center bottom-line' style='background:#fff;' bindtap='callphone'>
+    <view class='panel-start item-center' style='width:35%'>
+      <image src='/images/contextus.png' class='iconimg'></image>
+      <view class='font-28'>入驻联系</view>
+    </view>
+    <view class='font-28'>17858511197</view>
+  </view>
+  <button class='panel-between item-center contextbutton' open-type="contact">
+    <view class='panel-start item-center'>
+      <image src='/images/context.png' class='iconimg'></image>
+      <view class='font-28'>联系客服</view>
+    </view>
+    <image src='/images/right.png' class='rightimg'></image>
+  </button>
+</view>
+<!-- <view class='panel-center item-center margin-top-sm'>
+<image src='/images/sunwou.png' style='height:40px;width:40px;'></image>
+<view class='font-28'>双沃科技提供技术支持</view>
+</view> -->

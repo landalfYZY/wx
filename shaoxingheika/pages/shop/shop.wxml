@@ -1,0 +1,65 @@
+<!--pages/shop/shop.wxml-->
+<swiper class='swiper' indicator-dots="false" autoplay="true" interval="5000" duration="500" circular="true">
+  <block wx:for="{{shop.image}}">
+    <swiper-item>
+      <image src="{{ip+item}}" data-index="{{index}}" bindtap='previewimage' class='img' />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='panel'>
+  <view class='bottom-line'>
+    <view class='text-center font-40'>{{shop.shopName}}</view>
+    <view class='text-center remark font-30'>{{shop.parentId.consumption}}元/人 | {{shop.distance}}</view>
+  </view>
+  <view class='panel-between item-center'>
+    <view class='font-28 padding-top-md' bindtap='getmap'>地址:{{shop.detail}}</view>
+    <view class='panel-end item-center'>
+      <image class='iconimg' bindtap='getmap' src='/images/address.png'></image>
+      <text style='color:#aaa;font-size:38rpx;margin-top:30rpx;'>|</text>
+      <image class='iconimg' src='/images/callphone.png' bindtap='callphone'></image>
+    </view>
+  </view>
+</view>
+<view class='panel-center item-center margin-top-md' wx:if="{{grouplist.length>0}}">
+    <image src='/images/line.png' class='line'></image>
+    <view class='text1 margin-left-sm margin-right-sm'>团购活动</view>
+    <image src='/images/line.png' class='line'></image>
+  </view>
+<view class='margin-top-sm margin-left-sm margin-right-sm panel panel-between' style='border-radius:10px' data-id='{{item.gr_id}}' bindtap='navtogrooupbuy' wx:for="{{grouplist}}">
+
+  <view class='panel-start' style='width:70%'>
+    <image src='{{ip+item.gr_imglist[0]}}' class='groupimg margin-right-sm'></image>
+    <view class='panel-col-around' style='width:65%'>
+      <view class='font-36 textoverflowhidden'>{{item.gr_name}}</view>
+      <view class='active textoverflowhidden'>{{item.cpon_info}}</view>
+      <view class='font-26'>{{item.gr_deadline}}</view>
+    </view>
+
+  </view>
+  <view class='panel-col-center'>
+    <view class='font-28'>参团人数</view>
+    <view class='font-30 text-center font-danger'>{{item.gr_num}}</view>
+  </view>
+</view>
+<view class='margin-top-sm panel' wx:if="{{discountlist.length>0}}">
+  <view class='discountimg' data-id='{{item.sunwouId}}' wx:for="{{discountlist}}" data-outtime="{{item.image}}" data-discountinfo="{{item.remark}}" data-shopid="{{item.shopId}}" data-starttime="{{item.richtext}}" bindtap='buydiscount'>
+    <view class='discountprice'>售价￥
+      <text style='font-size:80rpx;'>{{item.attribute[0].price}}</text>
+    </view>
+    <view class='discountremark'>{{item.remark}}</view>
+    <view class='usertime'>{{item.usertime}}</view>
+  </view>
+</view>
+<view class='margin-top-sm panel'>
+  <rich-text nodes="{{shop.text}}"></rich-text>
+</view>
+<view class='margin-top-sm panel'>
+  <view class='text-center'>其他附近店铺</view>
+</view>
+<view class='panel panel-between item-center'>
+  <view class='text-center othershopmodel' wx:for="{{shoplist}}" bindtap='navtoshop' data-id='{{item.sunwouId}}'>
+    <image class='othershopimg' src='{{ip+item.image[0]}}'></image>
+    <view class='font-30 textoverflowhidden'>{{item.shopName}}</view>
+    <view class='font-30'>{{item.distance}}</view>
+  </view>
+</view>

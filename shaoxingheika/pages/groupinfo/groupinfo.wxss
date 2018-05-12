@@ -1,0 +1,32 @@
+/* pages/groupinfo/groupinfo.wxss */
+.img{
+   width: 100%;
+ height: 100%;
+}
+.swiper{
+  background: #fff;
+ height: 450rpx;
+}
+.line{
+  width: 100rpx;
+  height: 10rpx;
+}
+.fixed{
+  position: fixed;
+  bottom: 0px;
+  height: 100rpx;
+  width: 100%;
+  background: green;
+  color: #fff;
+}
+.initimg{
+  width:30px;
+  height: 30px;
+}
+.initview{
+  position: fixed;
+  top:20px;
+  right: 10px;
+  background: rgba(51, 153, 255, 0.6);
+  border-radius: 100px;
+}

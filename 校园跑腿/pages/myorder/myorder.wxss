@@ -1,0 +1,5 @@
+/* pages/myorder/myorder.wxss */
+.head-img{
+  width:80px;
+  height: 80px;
+}

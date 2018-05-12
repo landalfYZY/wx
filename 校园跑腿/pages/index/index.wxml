@@ -1,0 +1,56 @@
+<view class='schoolmodel panel-start padding-xs item-center' bindtap='navschoolselect'>
+  <image class='schoolimg' src='/images/school.png'></image>
+  <view class='font-28 textoverflowhidden' style='width:60px;'>{{school.schoolName}}</view>
+</view>
+
+<swiper class='swiper' indicator-dots="false" autoplay="true" interval="5000" duration="500" circular="true">
+  <block wx:for="{{swiperimg}}">
+    <swiper-item>
+      <image src="{{item.mediaUrl}}" data-index="{{index}}" bindtap='previewimage' class='img' />
+    </swiper-item>
+  </block>
+</swiper>
+<!--pages/mygroup/mygroup.wxml-->
+<view class="weui-tab margin-top-sm">
+  <view class="weui-navbar">
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+        <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+  </view>
+  <view class="weui-tab__panel">
+    <!-- <view class="" hidden="{{activeIndex != 0}}"> -->
+    <view class="">
+      <view class='panel panel-around iten-center margin-bottom-sm' wx:for="{{orderlist}}" data-id='{{item.sunwouId}}' bindtap='cilckorderitem'>
+        <image src="{{item.userImage}}" class='head-img'></image>
+        <view class='panel-col-center font-28' style='width:65%'>
+          <view class='panel-between margin-bottom-xs'>
+            <view>{{item.userName}}</view><view>{{item.subType}}</view>
+          </view>
+          <view class='morerowtextoverflowhidden margin-bottom-xs'>{{item.remark}}</view>
+          <view class='panel-around margin-top-xs'>
+            <view>{{item.status}}</view>
+            <view>{{item.total}}元</view>
+            <view>{{item.timediff}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="bg-white" hidden="{{activeIndex != 1}}">
+      请问
+    </view>
+    <view class="bg-white" hidden="{{activeIndex != 2}}">
+      请问违反
+    </view>
+    <view class="bg-white" hidden="{{activeIndex != 3}}">
+      请问324
+    </view> -->
+  </view>
+</view>
+
+<view class='orderbtn panel-col-center item-center' bindtap='naveditorder'>
+  <image src='/images/editorder.png' class='orderimg'></image>
+  <view class='font-26'>发单</view>
+</view>

@@ -1,0 +1,52 @@
+<!--pages/my/my.wxml-->
+<image class='bgimg bg-white' src='/images/world.jpg'></image>
+<view class='mypage panel-center item-center'>
+  <image class='headerimg' src='{{userInfo.avatarUrl}}'></image>
+  <view class='panel-col-center item-center margin-sm font-white'>
+    <view class='font-28 margin-bottom-sm'>{{userInfo.nickName}}</view>
+    <view class='panel-start item-center'>
+      <image class='genderimg' src='/images/male.png' wx:if="{{userInfo.gender=='男'}}"></image>
+      <image class='genderimg' src='/images/famale.png' wx:if="{{userInfo.gender=='女'}}"></image>
+      <image class='genderimg' src='/images/gender.png' wx:if="{{userInfo.gender=='未知'}}"></image>
+      <view class='font-28'>{{school.schoolName}}</view>
+    </view>
+  </view>
+</view>
+<view class='mypage-item margin-top-sm'>
+  <view class='panel panel-between bottom-line' bindtap='navmyrunorder'>
+    <view class='panel-start'>
+      <image class='itemicon margin-right-sm item-center' src='/images/myorder.png'></image>
+      <view class='font-28'>跑腿接单</view>
+    </view>
+    <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+  </view>
+  <view class='panel panel-between bottom-line' bindtap='navmyorder'>
+    <view class='panel-start'>
+      <image class='itemicon margin-right-sm item-center' src='/images/order.png'></image>
+      <view class='font-28'>我的订单</view>
+    </view>
+    <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+  </view>
+  <view class='panel panel-between bottom-line' bindtap='navrunvalidate'>
+    <view class='panel-start'>
+      <image class='itemicon margin-right-sm item-center' src='/images/validate.png'></image>
+      <view class='font-28'>跑腿认证</view>
+    </view>
+    <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+  </view>
+  <view class='panel panel-between bottom-line' bindtap='navbindphone'>
+    <view class='panel-start'>
+      <image class='itemicon margin-right-sm item-center' src='/images/phone.png'></image>
+      <view class='font-28'>绑定手机</view>
+    </view>
+    <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+  </view>
+  
+  <view class='panel margin-top-sm panel-between bottom-line' bindtap='navtomycount'>
+    <view class='panel-start'>
+      <image class='itemicon margin-right-sm item-center' src='/images/mycount.png'></image>
+      <view class='font-28'>我的账户</view>
+    </view>
+    <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+  </view>
+</view>

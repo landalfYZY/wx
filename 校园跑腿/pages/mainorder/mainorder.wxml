@@ -1,0 +1,73 @@
+<view class='margin-sm panel panel-between item-center' >
+  <image class='headerimg' src='{{order.userImage}}'></image>
+  <view class='font-28' style='width:70%;'>
+    
+    <view class='panel-between'>
+      <view>{{order.userName}}</view>
+      <view>{{order.createTime}}</view>
+    </view>
+    <view class='panel-between margin-top-md'>
+      <view>佣金{{order.total}}元</view>
+      <view>{{order.subType}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='panel margin-sm font-28'>
+  <view class='panel-start bottom-line padding-sm'>
+    <view class='margin-right-sm'>跑腿内容</view>
+    <view>{{order.remark}}</view>
+  </view>
+  <view class='panel-start bottom-line padding-sm'>
+    <view class='margin-right-sm'>保密内容</view>
+    <view>{{order.secret}}</view>
+  </view>
+  <view class='panel-start bottom-line padding-sm'>
+    <view class='margin-right-sm'>发单人姓名</view>
+    <view>{{order.address.concatName}}</view>
+  </view>
+  <view class='panel-start bottom-line padding-sm'>
+    <view class='margin-right-sm'>发单人电话</view>
+    <view>{{order.address.concatPhone}}</view>
+  </view>
+  <view class='panel-start bottom-line padding-sm'>
+    <view class='margin-right-sm'>跑腿内容</view>
+    <view>{{order.remark}}</view>
+  </view>
+  <view class='panel-start bottom-line padding-sm'>
+    <view class='margin-right-sm'>送达地址</view>
+    <view>{{order.address.detail}}</view>
+  </view>
+  <view class='panel-start bottom-line padding-sm'>
+    <view class='margin-right-sm'>送达时间</view>
+    <view>{{order.reserveTime}}</view>
+  </view>
+  <view class='panel-start bottom-line padding-sm'>
+    <view class='margin-right-sm'>订单状态</view>
+    <view>{{order.status}}</view>
+  </view>
+</view>
+
+  <view class='margin-sm panel' wx:if="{{order.senderId}}">
+  <view class='text-center bottom-line'>跑腿人员信息</view>
+<view class='panel-between item-center margin-top-sm' >
+  <image class='headerimg' src='{{order.senderImage}}'></image>
+  <view class='font-28' style='width:70%;'>
+    
+    <view class='panel-between'>
+      <view>姓名</view>
+      <view>{{order.senderName}}</view>
+    </view>
+    <view class='panel-between margin-top-md'>
+      <view>联系方式</view>
+      <view>{{order.senderPhone}}</view>
+    </view>
+  </view>
+</view>
+</view>
+<view style='clear:both;height:100px;'></view>
+<view class='submitbtn panel-col-center item-center passcolor right' bindtap='finshorder' wx:if="{{order.status=='配送员已接手'}}">跑腿完成结算</view>
+
+<view class='submitbtn panel-col-center item-center paycolor right' bindtap='payorder' wx:if="{{order.status=='待付款'}}">付款</view>
+
+<view class='submitbtn panel-col-center item-center cancelcolor' bindtap='cancelorder' wx:if="{{order.status=='待接手'}}" style='width:100%'>取消</view>

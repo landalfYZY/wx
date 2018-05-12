@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/blackcard/blackcard",
+    "pages/my/my",
+    "pages/shoplist/shoplist",
+    "pages/bindphone/bindphone",
+    "pages/imagetext/imagetext",
+    "pages/shop/shop",
+    "pages/joinactivity/joinactivity",
+    "pages/shopactivity/shopactivity",
+    "pages/mydiscount/mydiscount",
+    "pages/grouplist/grouplist",
+    "pages/groupinfo/groupinfo",
+    "pages/begininggroup/begininggroup",
+    "pages/mygroup/mygroup",
+    "pages/contextus/contextus"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#3399FF",
+    "navigationBarTitleText": "皇卡",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#3399FF",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/index.png",
+        "selectedIconPath": "/images/index-select.png"
+      },
+      {
+        "pagePath": "pages/grouplist/grouplist",
+        "text": "团购",
+        "iconPath": "/images/group.png",
+        "selectedIconPath": "/images/group-select.png"
+      },
+      {
+        "pagePath": "pages/blackcard/blackcard",
+        "text": "皇卡",
+        "iconPath": "/images/blackcard.png",
+        "selectedIconPath": "/images/blackcard-select.png"
+      },
+      {
+        "pagePath": "pages/shoplist/shoplist",
+        "text": "商家",
+        "iconPath": "/images/shop.png",
+        "selectedIconPath": "/images/shop-select.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my-select.png"
+      }
+    ]
+  }
+}

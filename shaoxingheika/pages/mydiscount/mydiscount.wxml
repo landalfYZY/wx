@@ -1,0 +1,67 @@
+<!--pages/mydiscount/mydiscount.wxml-->
+<view class="weui-tab">
+  <view class="weui-navbar">
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+        <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+  </view>
+  <view class="weui-tab__panel">
+    <view class="" hidden="{{activeIndex != 0}}">
+      <view class='panel' wx:if="{{grouplist.length>0}}">
+        <view class='discountbgimg margin-bottom-lg text-center' wx:for="{{grouplist}}" data-shopid='{{item.shopid}}' data-orderid='{{item.ucpon_id}}' bindtap='showgroupcodeimage'>
+
+
+          <view class='panel-center'>
+            <view class='discountinfo textoverflowhidden'>{{item.ucpon_info}}</view>
+          </view>
+          <view class='panel-center btngroup' data-shopid='{{item.shopid}}' catchtap='navtoshop'>
+            <view class='btn'>查看商户</view>
+          </view>
+          <view class='usetime'>{{item.ucpon_starttime+'至'+item.ucpon_deadline}}</view>
+        </view>
+      </view>
+
+      <view class="weui-loadmore" wx:if="{{loading}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+      <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot" wx:if="{{!loading}}">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+      </view>
+    </view>
+    <view class="" hidden="{{activeIndex != 1}}">
+      <view class='panel' wx:if="{{list.length>0}}">
+        <view class='discountbgimg margin-bottom-md text-center' wx:for="{{list}}" data-shopid='{{item.addressDetail}}' data-orderid='{{item.sunwouId}}' bindtap='showcodeimage'>
+
+          <view class='shopname textoverflowhidden'>{{item.addressCity}}</view>
+
+          <view class='panel-center'>
+            <view class='discountinfo textoverflowhidden'>{{item.addressProvince}}</view>
+          </view>
+          <view class='panel-center btngroup' data-shopid='{{item.addressDetail}}' catchtap='navtoshop'>
+            <view class='btn'>查看商户</view>
+          </view>
+          <view class='usetime'>{{item.addressArea+'至'+item.concatPeople}}</view>
+        </view>
+      </view>
+
+      <view class="weui-loadmore" wx:if="{{loading}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+      <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot" wx:if="{{!loading}}">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class='towcode' hidden='{{maskhidden}}'>
+
+  <image src='{{codeimage}}' style='height:200px;width:200px;border-radius: 10px;'></image>
+</view>
+<mask hidden="{{maskhidden}}" bindtap="hiddenmask" style="position:relative;z-index:3000;" />

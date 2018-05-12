@@ -1,0 +1,28 @@
+<!--pages/mydiscount/mydiscount.wxml-->
+<view class='text-center font-30 padding-sm' style='color:#666' wx:if="{{list.length==0}}">检测到您还没有购买任何优惠券</view>
+<view class='panel' wx:if="{{list.length>0}}">
+  <view class='discountbgimg margin-bottom-md text-center' wx:for="{{list}}" data-shopid='{{item.addressDetail}}' data-orderid='{{item.sunwouId}}' bindtap='showcodeimage'>
+   
+    <view class='shopname textoverflowhidden'>{{item.addressCity}}</view>
+   
+    <view class='panel-center'><view class='discountinfo textoverflowhidden'>{{item.addressProvince}}</view></view>
+    <view class='panel-center btngroup' data-shopid='{{item.addressDetail}}' catchtap='navtoshop'>
+      <view class='btn' >查看商户</view>
+    </view>
+    <view class='usetime'>{{item.addressArea+'至'+item.concatPeople}}</view>
+  </view>
+</view>
+
+<view class="weui-loadmore" wx:if="{{loading}}">
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips">正在加载</view>
+</view>
+<view class="weui-loadmore weui-loadmore_line weui-loadmore_dot" wx:if="{{!loading}}">
+  <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+</view>
+
+<view class='towcode' hidden='{{maskhidden}}'>
+
+  <image src='{{codeimage}}' style='height:200px;width:200px;border-radius: 10px;'></image>
+</view>
+<mask hidden="{{maskhidden}}" bindtap="hiddenmask" style="position:relative;z-index:3000;" />

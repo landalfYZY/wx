@@ -1,0 +1,13 @@
+<!--pages/bindphone/bindphone.wxml-->
+<view class='page panel-center item-center bg-white'>
+  <view class='phonemodle panel panel-col-center'>
+    <view class='margin-sm'><input class='phone' type='number' placeholder='手机号' bindinput='phoneinput'></input></view>
+    <view class='panel-between margin-sm'>
+      <input class='codeinput' placeholder='验证码' bindinput='codeinput'></input>
+      <button class='codebtn font-28' bindtap='getcode' type="primary" plain="true">获取验证码</button>
+    </view>
+    <view class='margin-sm'>
+      <button type="primary" bindtap='submit'>提交</button>
+    </view>
+  </view>
+</view>

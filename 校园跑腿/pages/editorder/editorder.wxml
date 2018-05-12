@@ -1,0 +1,71 @@
+<!--pages/editorder/editorder.wxml-->
+<view class='panel panel-center'>
+  <textarea placeholder="跑腿描述" cursor-spacing="0" class='textarea padding-sm font-30' bindinput='runtextinput' value='{{runorder.remark}}'></textarea>
+</view>
+<view class='panel-between padding-left-md padding-right-md padding-top-xs padding-bottom-xs item-center bg-white margin-top-sm bottom-line'>
+  <view class='font-28'>佣金￥</view>
+  <view class='panel-center'>
+    <view>
+      <button class='moneybtn' bindtap='reduceclick' disabled='{{reducebtnabled}}'>-</button>
+    </view>
+    <input class='moneyinput text-center' type='digit' value='{{money}}' bindinput='moneyinput' bindblur='moneyblur'></input>
+    <view>
+      <button class='moneybtn' bindtap='addclick'>+</button>
+    </view>
+  </view>
+</view>
+
+<view class='panel-col-center bg-white padding-left-md padding-right-md padding-top-xs padding-bottom-xs item-center bottom-line font-28'>
+  <view class='padding-top-xs padding-bottom-xs bottom-line margin-bottom-sm'>保密内容（选填）</view>
+  <textarea placeholder="仅对接单人可见" class='textarea padding-sm font-30' bindinput='secretinput'></textarea>
+</view>
+
+<view class='panel-between padding-left-md padding-right-md padding-top-xs padding-bottom-xs item-center bg-white margin-top-sm bottom-line font-28'>
+  <radio-group class="radio-group panel-between" bindchange="radioChange">
+    <label class="radio">
+      <radio value="普通" checked />普通
+    </label>
+    <label class="radio">
+      <radio value="外卖"  />外卖
+    </label>
+    <label class="radio">
+      <radio value="快递"  />快递
+    </label>
+  </radio-group>
+</view>
+<view class='panel-between padding-left-md padding-right-md padding-top-xs padding-bottom-xs item-center bg-white bottom-line font-28'>
+  <view>送达时间</view>
+  <picker mode="date" value="{{date}}" start="{{date}}" end="{{enddate}}" bindchange="bindDateChange">
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+  <picker mode="time" value="{{starttime}}" start="08:30" end="23:00" bindchange="bindStartTimeChange">
+    <view class="picker">
+      {{starttime}}
+    </view>
+  </picker>
+  <view>—</view>
+  <picker class='margin-right-lg' mode="time" value="{{endtime}}" start="08:30" end="23:00" bindchange="bindEndTimeChange">
+    <view class="picker">
+      {{endtime}}
+    </view>
+  </picker>
+
+</view>
+
+<view class='panel-between padding-left-md padding-right-md padding-top-xs padding-bottom-xs item-center bg-white bottom-line font-28'>
+  <view>联系人</view>
+  <input class='' style='width:75%;' placeholder='姓名，仅对接单人可见' bindinput='contactinput'></input>
+</view>
+<view class='panel-between padding-left-md padding-right-md padding-top-xs padding-bottom-xs item-center bg-white bottom-line font-28'>
+  <view>手机号</view>
+  <input class='' type='number' style='width:75%;' placeholder='手机号，仅对接单人可见' bindinput='phoneinput'></input>
+</view>
+<view class='panel-between padding-left-md padding-right-md padding-top-xs padding-bottom-xs item-center bg-white bottom-line font-28'>
+  <view>送达地址</view>
+  <input class='' type='text' style='width:75%;' placeholder='详细送达地址' bindinput='addressinput'></input>
+</view>
+
+<view style='height:100px;'></view>
+<view class='submitbtn panel-center item-center' bindtap='submit'>发布</view>

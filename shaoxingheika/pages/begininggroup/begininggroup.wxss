@@ -1,0 +1,58 @@
+/* pages/groupinfo/groupinfo.wxss */
+.img{
+   width: 100%;
+ height: 100%;
+}
+.swiper{
+  background: #fff;
+ height: 450rpx;
+}
+.line{
+  width: 100rpx;
+  height: 10rpx;
+}
+.fixed{
+  position: fixed;
+  bottom: 0px;
+  height: 100rpx;
+  color: #fff;
+  border-radius: 0;
+}
+.fixed::after{
+  border:unset;
+}
+.greenbc{
+  background: green;
+}
+.graybc{
+  background: gray;
+}
+.usericon{
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+.scroll{
+  white-space: nowrap;
+  display: flex;
+  overflow:  scroll;
+}
+.sharebtn{
+  position: fixed;
+  bottom: 0;
+  background: red;
+  color: #fff;
+  border-radius:0; 
+  height: 100rpx;
+}
+.initimg{
+  width:30px;
+  height: 30px;
+}
+.initview{
+  position: fixed;
+  top:20px;
+  right: 10px;
+  background: rgba(51, 153, 255, 0.6);
+  border-radius: 100px;
+}

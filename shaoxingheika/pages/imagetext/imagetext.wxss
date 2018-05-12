@@ -1,0 +1,16 @@
+/* pages/imagetext/imagetext.wxss */
+.time{
+  font-size: 34rpx;
+  color: #999999;
+  padding: 20px 0;
+  border-bottom: 1px #cccccc solid;
+  margin-bottom: 20px;
+}
+
+.inzhuji{
+  font-size: 26rpx;
+  padding: 5px;
+  margin-left:50px;
+  border: 1px #999999 solid;
+  border-radius: 15px;
+}

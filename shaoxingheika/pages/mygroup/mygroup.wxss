@@ -1,0 +1,13 @@
+/* pages/mygroup/mygroup.wxss */
+.img{
+  height: 70px;
+  width: 30%;
+}
+.active{
+  color: #FF6633;
+  display:  unset;
+  border-radius: 5rpx;
+  border: 1px #FF6633 solid;
+  font-size: 28rpx;
+  padding: 7rpx;
+}

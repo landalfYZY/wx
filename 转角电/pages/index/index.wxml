@@ -1,0 +1,19 @@
+<!--index.wxml-->
+
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location style="width: 100%; height: 100vh;">
+  <cover-view class="controls panel-around" >
+    <cover-view bindtap='moveToLocation' class='botton-mini panel-center'>
+      <cover-image class='position' src="/images/position.png">
+      </cover-image>
+    </cover-view> 
+    <cover-view bindtap='scanOfScan' class='botton-big panel-center'>
+      <cover-image class='scan' src="/images/scan.png">
+      </cover-image>
+    </cover-view>
+    <cover-view bindtap='myPage' class='botton-mini panel-center'>
+      <cover-image class='position' src="/images/my.png">
+      </cover-image>
+    </cover-view>
+  </cover-view>
+
+</map>

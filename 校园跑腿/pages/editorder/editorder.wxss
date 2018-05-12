@@ -1,0 +1,29 @@
+/* pages/editorder/editorder.wxss */
+.moneyinput{
+  width:35px;
+  height:40px;
+  background: rgba(255, 255, 102, 0.4);
+  margin: 0 5px;
+  border-radius: 5px;
+}
+.moneybtn{
+  width: 35px;
+  padding: 0px;
+  height: 40px;
+}
+.textarea{
+  height:80px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.submitbtn{
+  height: 60px;
+  background: #3399FF;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.radio-group{
+  width: 100%;
+}

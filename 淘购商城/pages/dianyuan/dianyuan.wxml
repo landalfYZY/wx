@@ -1,0 +1,13 @@
+<!--pages/dianyuan/dianyuan.wxml-->
+<view class='item-center' style='height:100vh;'>
+  <view class="panel panel-center">
+    <input class='name' type='text' placeholder="请输入姓名" bindinput='nameInput'/>
+  </view>
+  <view class='panel panel-center' bindtap='selectSex'>
+    性别：{{sex}}
+    
+  </view>
+  <view class='panel panel-cneter'>
+    <button type='primary' bindtap='submit'>提交</button>
+  </view>
+</view>

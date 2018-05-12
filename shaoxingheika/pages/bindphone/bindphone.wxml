@@ -1,0 +1,14 @@
+<!--pages/myphone/myphone.wxml-->
+<image src='/images/blackcard2-web.jpg' class='blackcard'></image>
+<view class='item-center' style='height:100vh;padding-top:230rpx;'>
+  <view class="padding-md panel-center">
+    <input class='phone' type='number' placeholder="请输入手机号" bindinput='phoneNumber'/>
+  </view>
+  <view class='padding-md panel-between item-center'>
+    <input class='code' type='number' placeholder="验证码"   bindinput='codeNumber'/>
+    <button class='codebtn' bindtap='getPhoneCode'>点击获取验证码</button>
+  </view>
+  <view class='padding-md panel-cneter'>
+    <button class='submit theme-bg' bindtap='submit'>提交</button>
+  </view>
+</view>

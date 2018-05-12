@@ -1,0 +1,16 @@
+<view class='bottom-line panel-start panel' wx:for="{{activitylist}}">
+  <image src='{{ip+item.shop.image[0]}}' class='img' mode='aspectFill'></image>
+   <view class='panel-col-around textoverflowhidden'>
+    <view style='font-size:32rpx;' class='panel-between'>
+      <view style='width:80%' class='textoverflowhidden'>{{item.shop.shopName}}</view>
+      <view wx:if="{{item.message}}" class='active'>优惠券</view>
+    </view>
+    <view>
+      <view class='active'>{{item.message?item.message:item.shop.parentId.discount}}</view>
+    </view>
+    <view class='time'>{{item.createTime}}</view>
+  </view>
+</view>
+<view class="weui-loadmore weui-loadmore_line" wx:if="{{activitylist<=0}}">
+  <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂未参加活动</view>
+</view>

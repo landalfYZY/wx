@@ -1,0 +1,60 @@
+<view class="panel panel-between item-center" bindtap="chooseAddress">
+  <image src='/images/l3.png' class='icon-xl'></image>
+  <view class='address'>
+    <view class='bold'>{{wxAddressInfo.userName?wxAddressInfo.userName:''}} {{wxAddressInfo.telNumber?wxAddressInfo.telNumber:''}}</view>
+    <view>{{wxAddressInfo.provinceName&&wxAddressInfo.cityName&&wxAddressInfo.countyName&&wxAddressInfo.detailInfo?wxAddressInfo.provinceName+wxAddressInfo.cityName+wxAddressInfo.countyName+wxAddressInfo.detailInfo:'请选择收货地址'}}</view>
+  </view>
+  <image src='/images/right.png' class='icon-md'></image>
+</view>
+<image class='imline' src='/images/line.png'></image>
+
+<view class='panel margin-top-sm bottom-line'>
+  <view class='bg-default panel-between bog' wx:for="{{commodityList}}">
+    <view class='panel-start'>
+      <image src="{{shopcarInfo.shopcar==0?item.attribute[shopcarInfo.attributeIndex].image:item.commodityImage}}" class='gimg' mode='aspectFill'></image>
+      <view class='margin-left-md bgsd'>
+        <view class='bold'>{{shopcarInfo.shopcar==0?item.name:item.commodityName}}</view>
+        <view class='margin-top-sm'>{{shopcarInfo.shopcar==0?item.remark.des:''}}</view>
+      </view>
+    </view>
+    <view style='text-align:right'>
+      <view class='font-danger bold'>￥{{shopcarInfo.shopcar==0?item.attribute[shopcarInfo.attributeIndex].price*item.discount:item.commodityPrice*item.commodityDiscount}}</view>
+      <view>x{{shopcarInfo.shopcar==0?shopcarInfo.number:item.number}}</view>
+    </view>
+  </view>
+</view>
+<view class='panel panel-between' style='padding-bottom:0'>
+  <view>商品数量</view>
+  <view>x{{shopcarInfo.shopcar==0?shopcarInfo.number:countNumber}}</view>
+</view>
+<view class='panel panel-between' style='padding-bottom:0'>
+  <view>商品合计</view>
+  <view>￥{{shopcarInfo.shopcar==0?commodityList[0].attribute[shopcarInfo.attributeIndex].price*commodityList[0].discount*shopcarInfo.number:countPrice}}</view>
+</view>
+<view class='panel panel-between'  style='padding-bottom:0'>
+  <view>运费</view>
+  <view>免运费</view>
+</view>
+<view class='panel panel-between bottom-line'>
+  <view>支付方式</view>
+  <view>微信支付</view>
+</view>
+<!-- <view class='panel bottom-line panel-between item-center' bindtap='showCompany'>
+  <view>快递方式</view>
+  <view class='panel-end item-center'>
+    <view class='font-default margin-right-sm'>{{companyShow}}</view>
+    <image src='/images/right.png' class='icon-md'></image>
+  </view>
+</view> -->
+<view class='panel panel-start item-center'>
+  <view>备注</view>
+  <input  class='margin-left-md' style='z-index:1;background:#f3f3f3;padding-left:20rpx;width:550rpx' bindinput='remarkInput' placeholder='选填，填写您的需求'></input>
+</view>
+
+
+<view style='height:100rpx;'></view>
+
+<view class='fixbottom panel-between item-center' style='z-index:100000'>
+  <view class='margin-left-md'>合计: <text class='font-danger bold'>￥{{shopcarInfo.shopcar==0?commodityList[0].attribute[shopcarInfo.attributeIndex].price*commodityList[0].discount*shopcarInfo.number:countPrice}}</text></view>
+  <view class='jfbtn' bindtap='payIt'>立即付款</view>
+</view>

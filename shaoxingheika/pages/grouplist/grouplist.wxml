@@ -1,0 +1,52 @@
+<!--pages/grouplist/grouplist.wxml-->
+<!-- <view class='margin-top-sm margin-left-sm margin-right-sm panel panel-between' style='border-radius:10px' data-id='{{item.gr_id}}' bindtap='navtogrooupbuy' wx:for="{{list}}">
+
+  <view class='panel-start'  style='width:70%'>
+    <image src='{{ip+item.gr_imglist[0]}}' class='img margin-right-sm'></image>
+    <view class='panel-col-around'  style='width:65%'>
+      <view class='font-36 textoverflowhidden'>{{item.gr_name}}</view>
+      <view class='active textoverflowhidden'>{{item.cpon_info}}</view>
+      <view class='font-26'>{{item.gr_deadline}}</view>
+    </view>
+
+  </view>
+  <view class='panel-col-center'>
+    <view class='font-28'>参团人数</view>
+    <view class='font-30 text-center font-danger'>{{item.gr_num}}</view>
+  </view>
+</view> -->
+
+<view class="weui-tab">
+  <view class="weui-navbar">
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+        <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+  </view>
+  <view class="weui-tab__panel">
+    <view class="" hidden="{{activeIndex != 0}}">
+      <view class='panel panel-between item-center' wx:for="{{lastweekranklist}}">
+        <view class='panel-start item-center'>
+          <view class='index text-center font-34'>{{index+1}}</view>
+          <image class='headerimg margin-left-sm margin-right-sm' src='{{item.icon}}'></image>
+          <view class='font-30'>{{item.nickname}}</view>
+        </view>
+        <view class='font-30'>上周开团{{item.countGroupLastWeek}}次</view>
+      </view>
+    </view>
+    <view class="" hidden="{{activeIndex != 1}}">
+      <view class='panel panel-between item-center' wx:for="{{allranklist}}">
+        <view class='panel-start item-center'>
+          <view class='index text-center font-34'>{{index+1}}</view>
+          <image class='headerimg margin-left-sm margin-right-sm' src='{{item.icon}}'></image>
+          <view class='font-30'>{{item.nickname}}</view>
+        </view>
+        <view class='font-30'>总开团{{item.countGroup}}次</view>
+      </view><!--  -->
+    </view>
+  </view>
+</view>
+
+<view class='overtheimg'></view>

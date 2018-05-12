@@ -1,0 +1,44 @@
+<!--pages/groupinfo/groupinfo.wxml-->
+<swiper class='swiper' indicator-dots="false" autoplay="true" interval="5000" duration="500" circular="true">
+  <block wx:for="{{groupInfo.gr_imglist}}">
+    <swiper-item>
+      <image src="{{ip+item}}" data-index="{{index}}" bindtap='previewimage' mode='aspectFill' class='img' />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='initview panel-around item-center' bindtap='navtoshop'>
+  <image src='/images/initshop.png' class='initimg padding-xs'></image>
+  <view class='font-28 margin-right-sm' style='color:#fff;'>进入店铺</view>
+</view>
+<view class='panel margin-top-sm'>
+  <view class='font-50 text-center'>{{groupInfo.gr_name}}</view>
+  <view class='panel-around'>
+    <view class='font-28 margin-top-sm' style='color:red'>￥<text class='font-38'>{{groupInfo.gr_cost}}</text>RMB</view>
+    <view class='font-28 margin-top-sm'>团购需要人数：<text style='color:red'>{{groupInfo.gr_limitnum}}</text>人</view>
+    <view class='font-28 margin-top-sm'>团购结束时间：<text style='color:red'>{{groupInfo.gr_deadline}}</text></view>
+  </view>
+</view>
+<view class='panel margin-top-sm'>
+  <view class='font-36 text-center'>团员优惠券：<text style='color:red'>{{groupInfo.cpon_info}}</text></view>
+  <view class='font-36 text-center'>团长优惠券：<text style='color:red'>{{groupInfo.cpon_head_info}}</text></view>
+  <view class='panel-around margin-top-sm'>
+    <view class='font-28'>{{groupInfo.cpon_start_time}}至{{groupInfo.cpon_deadline}}使用</view>
+  </view>
+</view>
+<view class='panel margin-top-sm'>
+  <view class='panel-around'>
+    <view class='font-28 margin-top-sm'>开团数：<text style='color:red'>{{groupInfo.gr_exits}}</text>团</view>
+    <view class='font-28 margin-top-sm'>成功：<text style='color:red'>{{groupInfo.gr_success}}</text>团</view>
+    <view class='font-28 margin-top-sm'>参与人数：<text style='color:red'>{{groupInfo.gr_num}}</text>人</view>
+  </view>
+</view>
+<view class='panel panel-center item-center margin-top-md'>
+  <image src='/images/line.png' class='line'></image>
+  <view class='text1 margin-left-sm margin-right-sm font-28'>团购规则</view>
+  <image src='/images/line.png' class='line'></image>
+</view>
+<view class='panel'>
+  <rich-text nodes="{{groupInfo.gr_rule}}"></rich-text>
+</view>
+<view style='height:110rpx;'></view>
+<view class='fixed text-center panel-col-center' bindtap='begingroup'>我要开团</view>

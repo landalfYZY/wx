@@ -1,0 +1,14 @@
+/* pages/orderscan/orderscan.wxss */
+.headerimg{
+   width:80px;
+  height: 80px;
+  border-radius: 40px;
+}
+.submitbtn{
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background: #3399FF;
+  color:#fff;
+  bottom: 0;
+}

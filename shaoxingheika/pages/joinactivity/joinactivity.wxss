@@ -1,0 +1,25 @@
+/* pages/joinactivity/joinactivity.wxss */
+.img{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+  margin-right:30rpx;
+}
+.active{
+  color: #FF6633;
+  display:  unset;
+  border-radius: 5rpx;
+  border: 1px #FF6633 solid;
+  font-size: 24rpx;
+  padding: 7rpx;
+}
+.panel-between {
+  display: flex;
+  justify-content:space-between;
+  flex-flow: nowrap;
+}
+.time{
+  margin-top:10rpx;
+  color: #666666;
+  font-size: 28rpx;
+}

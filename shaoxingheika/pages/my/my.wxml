@@ -1,0 +1,110 @@
+<!--pages/my/my.wxml-->
+<image src="/images/world.png" class='backgroundImg'></image>
+<view class='relative'>
+  <view class='margin-top-md margin-left-md font-26'>
+    <text class='font-30'>皇卡</text> HUANGKA</view>
+  <view class='margin-top-sm margin-left-md font-24' style='color:#666666'>手持皇卡 吃遍全国</view>
+  <view class='text-center  panel-col-center item-center'>
+    <image src="{{WXuserInfo==null?'/images/my.png':WXuserInfo.avatarUrl}}" mode='aspectFill' class='headerImg'></image>
+    <view class='font-24' style='margin:30rpx;' wx:if="{{!SWuserInfo.payLog}}">
+      还不是会员，无法领取优惠
+    </view>
+    <view class='font-34' style='margin:30rpx;' wx:if="{{SWuserInfo.payLog}}">
+      {{WXuserInfo.nickName}}
+    </view>
+    <view class='font-26 buybtn' bindtap='navtoblackcard' wx:if="{{!SWuserInfo.payLog}}">马上购买皇卡</view>
+  </view>
+  <!-- 黑卡消费码 -->
+  <view class='panel panel-between item-center bottom-line' style='background:#fff;' wx:if="{{SWuserInfo.payLog}}">
+    <view class='panel-start item-center' style='width:35%'>
+      <image src='/images/code.png' class='iconimg'></image>
+      <view class='font-28'>皇卡消费码</view>
+    </view>
+    <view class='showBtn' bindtap='showCard'>展示</view>
+  </view>
+  <!-- 扫一扫 -->
+  <view class='panel panel-between item-center bottom-line' style='background:#fff;' wx:if="{{shopId!=''}}" bindtap='scanofscan'>
+    <view class='panel-start item-center' style='width:35%'>
+      <image src='/images/scan.png' class='iconimg'></image>
+      <view class='font-28'>扫一扫</view>
+    </view>
+    <image src='/images/right.png' class='rightimg'></image>
+  </view>
+
+  <!-- 参与的活动 -->
+  <view style='height:20rpx;background:#f2f2f2;' wx:if="{{SWuserInfo.payLog}}"></view>
+  <view class='panel panel-between item-center bottom-line' style='background:#fff;' bindtap='mydiscount'>
+    <view class='panel-start item-center' style='width:35%'>
+      <image src='/images/discount.png' class='iconimg'></image>
+      <view class='font-28'>我的优惠券</view>
+    </view>
+    <image src='/images/right.png' class='rightimg'></image>
+  </view>
+  <!--我的团购-->
+  <view style='height:20rpx;background:#f2f2f2;'></view>
+  <view class='panel panel-between item-center bottom-line' style='background:#fff;' bindtap='navtomygroupbuy'>
+    <view class='panel-start item-center' style='width:35%'>
+      <image src='/images/group.png' class='iconimg'></image>
+      <view class='font-28'>我的团购</view>
+    </view>
+    <image src='/images/right.png' class='rightimg'></image>
+  </view>
+  <!-- 参与的活动 -->
+  <view class='panel panel-between item-center bottom-line' style='background:#fff;' bindtap='navtojoinactivity'>
+    <view class='panel-start item-center' style='width:35%'>
+      <image src='/images/join.png' class='iconimg'></image>
+      <view class='font-28'>参与的活动</view>
+    </view>
+    <image src='/images/right.png' class='rightimg'></image>
+  </view>
+
+  <view class='panel panel-between item-center bottom-line' style='background:#fff;' bindtap='navtoshopactivity' wx:if="{{shopId!=''}}">
+    <view class='panel-start item-center' style='width:35%'>
+      <image src='/images/my-shop.png' class='iconimg'></image>
+      <view class='font-28'>组织的活动</view>
+    </view>
+    <image src='/images/right.png' class='rightimg'></image>
+  </view>
+
+
+  <!-- 手机绑定 -->
+  <view class='panel panel-between item-center bottom-line' style='background:#fff;' bindtap='bindphone'>
+    <view class='panel-start item-center' style='width:35%'>
+      <image src='/images/phone.png' class='iconimg'></image>
+      <view class='font-28'>手机绑定</view>
+    </view>
+    <image src='/images/right.png' class='rightimg'></image>
+  </view>
+  <view class='panel panel-between item-center bottom-line' style='background:#fff;' bindtap='navtocontextus'>
+    <view class='panel-start item-center' style='width:35%'>
+      <image src='/images/contextus.png' class='iconimg'></image>
+      <view class='font-28'>联系我们</view>
+    </view>
+    <image src='/images/right.png' class='rightimg'></image>
+  </view>
+  <!-- 联系客服 -->
+  
+
+</view>
+
+<view class='successpage text-center panel' wx:if="{{showsuccesspage}}">
+  <icon type="success" size="93"></icon>
+  <view class='margin-sm'>优惠券已核销
+    <view class='discountInfo top-line'>
+      <text>优惠信息：{{scansuccessmsg}}</text>
+    </view>
+  </view>
+  <button type='primary' class='margin-top-sm' bindtap='hiddenmask'>确定</button>
+</view>
+<view class='successpage text-center panel' wx:if="{{showfailpage}}">
+  <icon type="warn" size="93"></icon>
+  <view class='margin-sm'>
+    <text>{{scanfailmsg}}</text>
+  </view>
+  <button type='primary' class='margin-top-sm' bindtap='rescan'>重新扫码</button>
+  <button type='defult' class='margin-top-sm' bindtap='hiddenmask'>关闭</button>
+</view>
+<view class='towcode' wx:if="{{showcodeimage}}">
+  <image src='{{codeimage}}' style='height:200px;width:200px;border-radius: 10px;'></image>
+</view>
+<mask hidden="{{maskhidden}}" bindtap="hiddenmask" style="position:relative;z-index:3000;" />

@@ -1,0 +1,57 @@
+<!--pages/blackcard/blackcard.wxml-->
+<image src="/images/world.png" class='backgroundImg' mode='aspectFill'></image>
+
+<view class='position padding-md'>
+  <view class='zhuji padding-top-sm'>皇卡 HUANGKA</view>
+  <view class='show margin-top-sm'>{{blackcard.title}}</view>
+  <image class='blackcard' src='{{ip+blackcard.image}}'></image>
+  <text wx:if="{{VIPnumber!=null&&VIPnumber!=''&&VIPnumber!=undefined&&SWuserInfo.payLog}}" style="position:absolute;color:{{jsoninfo.numberattribute.fontcolor}};top:{{jsoninfo.numberattribute.y*1+160}}rpx;left:{{jsoninfo.numberattribute.x*1+30}}rpx;font-size:{{jsoninfo.numberattribute.fontsize*1}}rpx;">NO.{{VIPnumber}}</text>
+  <text style="position:absolute;color:{{jsoninfo.sloganattribute.fontcolor}};top:{{jsoninfo.sloganattribute.y*1+160}}rpx;left:{{jsoninfo.sloganattribute.x*1+30}}rpx;font-size:{{jsoninfo.sloganattribute.fontsize*1}}rpx;">{{jsoninfo.sloganattribute.slogan}}</text>
+
+  <text wx:if="{{WXuserInfo!=null&&WXuserInfo!=''&&WXuserInfo!=undefined&&SWuserInfo.payLog}}" style="position:absolute;color:{{jsoninfo.nameattribute.fontcolor}};top:{{jsoninfo.nameattribute.y*1+160}}rpx;left:{{jsoninfo.nameattribute.x*1+30}}rpx;font-size:{{jsoninfo.nameattribute.fontsize*1}}rpx;">{{WXuserInfo.nickName}}</text>
+
+  <view class='panel-between item-center bottom-line' wx:if="{{!SWuserInfo.payLog}}">
+    <!-- 文本 -->
+    <view class='itemtext margin-bottom-sm'>
+      <view class='text1'>
+        付费购买
+        <text class='money'>￥{{blackcard.sort}}/张</text>
+      </view>
+      <view class='text2'>
+        点击购买即可领取使用
+      </view>
+    </view>
+    <!-- 按钮 -->
+    <view class='btn margin-bottom-sm' bindtap='buyCard'>购买</view>
+  </view>
+  <view class='panel-between item-center bottom-line' wx:if="{{SWuserInfo.payLog}}">
+    <!-- 文本 -->
+    <view class='itemtext margin-bottom-sm'>
+      <view class='text1'>
+        使用皇卡
+      </view>
+      <view class='text2'>
+        亮出皇卡 我们就是VIP
+      </view>
+    </view>
+    <!-- 按钮 -->
+    <view class='btn margin-bottom-sm' bindtap='showCard'>立即使用</view>
+    <!-- <view class='btn margin-bottom-sm' bindtap='getCard'>领取黑卡到卡包</view> -->
+  </view>
+  <view class='panel-center item-center margin-top-md'>
+    <image src='/images/line.png' class='line'></image>
+    <view class='text1 margin-left-sm margin-right-sm'>皇卡规则</view>
+    <image src='/images/line.png' class='line'></image>
+  </view>
+  <view class='textarea'>
+    <text>
+      {{blackcard.text}}
+    </text>
+  </view>
+
+</view>
+<view class='towcode' hidden='{{maskhidden}}'>
+
+  <image src='{{codeimage}}' style='height:200px;width:200px;border-radius: 10px;'></image>
+</view>
+<mask hidden="{{maskhidden}}" bindtap="hiddenmask" style="position:relative;z-index:3000;" />

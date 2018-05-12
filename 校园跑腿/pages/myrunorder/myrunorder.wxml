@@ -1,0 +1,17 @@
+<view class="">
+  <view class='panel panel-around iten-center margin-bottom-sm' wx:for="{{orderlist}}" data-id='{{item.sunwouId}}' bindtap='cilckorderitem'>
+    <image src="{{item.userImage}}" class='head-img'></image>
+    <view class='panel-col-center font-28' style='width:65%'>
+      <view class='panel-between margin-bottom-xs'>
+        <view>{{item.userName}}</view>
+        <view>{{item.subType}}</view>
+      </view>
+      <view class='morerowtextoverflowhidden margin-bottom-xs'>{{item.remark}}</view>
+      <view class='panel-around margin-top-xs'>
+        <view>{{item.status}}</view>
+        <view>{{item.total}}元</view>
+        <view>{{item.timediff}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+<!--pages/imagetext/imagetext.wxml-->
+<view class='panel'>
+<view class='font-60'>{{imagetext.title}}</view>
+<view class='time'>{{imagetext.createTime}}<text class="inzhuji">校生源</text></view>
+  <rich-text nodes="{{imagetext.text}}"></rich-text>
+</view>

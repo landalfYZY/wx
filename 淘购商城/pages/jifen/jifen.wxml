@@ -1,0 +1,44 @@
+<!--pages/jifen/jifen.wxml-->
+<view class="panel biaoti" style="background-color: rgba(255, 255, 255, 0.2);margin:30rpx;border-radius:10px;box-shadow:2px 2px 2px #0e313e">
+  
+  <view class="h1" style="margin-top:5rpx">
+    --自营店消费送积分--
+  </view>
+  <view style="display:flex;flex-direction:row;justify-content:space-between;">
+    <view class="p1">
+      *凡是在自营店铺消费的，消费多少送多少积分哟！
+    </view>
+  </view> 
+  <view class="h1" style="margin-top:30rpx">
+    --本地商户消费送积分--
+  </view>
+    <view class="p1">
+      *在本地商户里面下单消费的统一获得10积分。
+    </view>
+  <view class="h1" style="margin-top:30rpx">
+    --签到送积分--
+  </view> 
+    <view class="p1">
+      *每日签到送2积分，每连续签到10次系统额外赠送28积分
+    </view>     
+</view>
+<view class="panel biaoti" style="background-color: rgba(255, 255, 255, 0.2);margin:30rpx;border-radius:10px;box-shadow:2px 2px 2px #0e313e">
+  <view class="h1 fenli" style="color:#ffd0cc">
+    --积分兑换--<text class='fenl'>（请勿自行选择兑换）</text>
+  </view>
+  <view style="display:flex;flex-direction:row;justify-content:flex-start;" wx:for="{{jifen}}" data-index="{{index}}"  bindtap="chooseIt" >
+    <view class="jkl" wx:if="{{!item.active}}"  ></view>
+    <icon class="jkl2" wx:if="{{item.active}}" type="success" color="#7eb6d7"  data-index="{{index}}" bindtap="chooseIt"/>
+    <view class="p2">
+      {{item.label}}
+    </view>
+  </view>
+ 
+  <view class="paybtn" bindtap="luck" >
+    <view >确认兑换</view>
+  </view>
+</view>
+
+    <view class="p1" style='margin-left:20rpx;margin-right:20rpx'>
+      PS：切勿自行兑换，请前往自营店进行兑换。地址：陕西省西安市灞桥区XX街道XX号，欢迎前来骚扰！
+    </view> 

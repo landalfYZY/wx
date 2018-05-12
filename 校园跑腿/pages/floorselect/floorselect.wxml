@@ -1,0 +1,5 @@
+<!--pages/floorselect/floorselect.wxml-->
+<view class='panel-between panel bottom-line' wx:for="{{floors}}" bindtap='cilckfloor' data-index='{{index}}'>
+  <view>{{item.name}}</view>
+  <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+</view>

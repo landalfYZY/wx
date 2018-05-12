@@ -1,0 +1,82 @@
+<!-- 轮播图 start -->
+<swiper style='width:100%;height:700rpx' indicator-dots="true" indicator-color="rgba(255,255,255,0.3)" indicator-active-color='#fff' autoplay="true">
+  <block wx:for="{{commodity[0].image}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" mode='aspectFill' style='width:100%;height:700rpx' />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='panele'>
+  <view class='sm'>
+    <view class='dm'>{{commodity[0].remark.shopName}}</view>
+    <view class='dh' bindtap="call" data-phone='{{commodity[0].remark.shopTel}}'>
+      <view style='font-size:26rpx'>{{commodity[0].remark.shopTel}}</view>
+      <image src='/images/shop/dianhua.png' style='margin-left:20rpx;width:40rpx;height:40rpx'></image>
+    </view>
+  </view>
+  <view class='dz'>{{commodity[0].remark.address}}</view>
+</view>
+<view class='panel'>
+  <view class='font-el bold'>{{commodity[0].name}}</view>
+  <view class='margin-top-xs font-md font-default'>{{commodity[0].remark.des}}</view>
+  <view class='panel-between'>
+    <view>
+      <text class='font-danger font-50 bold'>￥{{commodity[0].min==commodity[0].max?commodity[0].min*commodity[0].discount:commodity[0].dismin+'~'+commodity[0].dismax}}</text>
+      <text class='margin-left-xs font-default font-sm through' wx:if="{{commodity[0].discount!=1}}">￥{{commodity[0].min==commodity[0].max?commodity[0].min:commodity[0].min+'~'+commodity[0].max}}</text>
+    </view>
+    <!-- <view class='panel-end item-center font-default' wx:if="{{store.minMailPrice != null || store.maxWeight != null}}">
+      <icon type="success" size="15" color="#ff4040"/>
+      <view class='margin-left-xs font-sm' wx:if="{{store.minMailPrice > 0}}">{{'满￥'+store.minMailPrice}}包邮</view>
+      <view class='margin-left-xs font-sm' wx:if="{{store.maxWeight > 0}}">{{'小于'+store.minMailPrice}}g包邮</view>
+    </view>  -->
+  </view>
+</view>
+
+<!-- <view class='panel panel-between item-center margin-top-sm bottom-line' bindtap='openCan'>
+  <view>产品参数</view>
+  <image src='/images/shop/{{showCan ? "drop1":"drop"}}.png' class='icon-md'></image>
+</view> -->
+
+<view class='panel margin-top-sm' style='padding-bottom:0'>商品详情</view>
+<view class='panel'>
+  <rich-text nodes="{{commodity[0].richtext}}" bindtap="tap"></rich-text>
+</view>
+
+
+<view style='height:100rpx;'></view>
+<view class='bottom-bar'>
+  <button class='smbtn' open-type='contact'>
+    <image src='/images/shop/kefu.png' class='icon-lg margin-top-xs'></image>
+    <view class='font-22 font-default'>客服</view>
+  </button>
+  <view class='smbtn' bindtap='switchToCart'>
+    <image src='/images/shop/cart.png' class='icon-lg margin-top-xs'></image>
+    <view class='font-22 font-default'>购物车</view>
+  </view>
+  <view class='incart' bindtap='tempDu' data-type='0'>加入购物车</view>
+  <view class='buybtn' bindtap='tempDu' data-type='1'>立即购买</view>
+</view>
+
+<view class='guige' hidden='{{maskhidden}}'>
+  <image class='typeImage' wx:if="{{attributeIndex==null}}" src='{{commodity[0].image[0]}}'></image>
+  <image class='typeImage' wx:if="{{attributeIndex!=null}}" src='{{commodity[0].attribute[attributeIndex].image}}'></image>
+  <view class='panel'>
+    <view class='font-el bold '>{{commodity[0].name}}</view>
+    <view wx:if="{{attributeIndex==null}}" class='font-danger font-46 bold margin-top-sm'>¥{{commodity[0].min==commodity[0].max?commodity[0].dismin:commodity[0].dismin+'~'+commodity[0].dismax}}</view>
+    <view wx:if="{{attributeIndex!=null}}" class='font-danger font-46 bold margin-top-sm'>¥{{commodity[0].attribute[attributeIndex].disprice}}</view>
+    <view class='panel-between margin-top-sm'>
+      <view wx:for="{{commodity[0].attribute}}" class="{{item.sunwouId==sunwouId?'active':'type'}}" bindtap='chooseType' data-sunwouid='{{item.sunwouId}}' data-attributeindex="{{index}}">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+  <view class='panel-end margin-top-md panel item-center'>
+    <view class='numberBtn' bindtap='changeNumber' data-type='0'>-</view>
+    <view><input type='number' class='numberInput' value='{{number}}' bindinput='numberInput'></input></view>
+    <view class='numberBtn' bindtap='changeNumber' data-type='1'>+</view>
+  </view>
+  <view class='addShop' bindtap="{{btntype==0?'addShopCar':'downOrder'}}">{{btntype==0?'加入购物车':'立即购买'}}</view>
+</view>
+
+<mask hidden="{{maskhidden}}" bindtap="hiddenmask" z-index="1000" hover-style="none" />

@@ -1,0 +1,31 @@
+<!--pages/runvalidate/runvalidate.wxml-->
+
+<view class='panel-between bg-white padding-sm font-28'>
+  <view class=''>当前状态</view>
+  <view class=''>{{sender.status?sender.status:"未认证"}}</view>
+</view>
+
+<form bindsubmit="{{sender.status=='审核失败'?'updatesender':sender.status?'updatesender':'formSubmit'}}" report-submit='true'>
+  <view class='margin-top-sm padding-sm panel-between bottom-line bg-white'>
+    <view>姓名</view>
+    <view>
+      <input name="realName" class='forminput' placeholder='请输入你的真实姓名' value='{{sender.realName}}'></input>
+    </view>
+  </view>
+  <view class='padding-sm panel-between bottom-line bg-white'>
+    <view>学号</view>
+    <view>
+      <input name="classesNumber" value='{{sender.classesNumber}}' class='forminput' placeholder='请输入你的真实学号'></input>
+    </view>
+  </view>
+
+  <view class='margin-top-sm bg-white'>
+    <image class='picimg' src='{{studentimg}}' wx:if="{{studentimg!=''}}" bindtap='uploadimg'></image>
+    <view class='panel-center uploadmodel font-30 item-center' bindtap='uploadimg' wx:if="{{studentimg==''}}">
+      <image class='uploadimg' src='/images/upload.png'></image>
+      <view class='uploadtext'>点击此处上传你的学生证</view>
+    </view>
+  </view>
+
+  <button formType="submit" disabled='{{submitbtndis}}' class='submitbtn' type='primary'>{{sender.status=="待审核"?"待审核":sender.status=="审核通过"?"审核通过":sender.status=="审核失败"?"再次认证":"认证"}}</button>
+</form>

@@ -1,0 +1,66 @@
+<swiper class='swiper' indicator-dots="false" autoplay="true" interval="5000" duration="500" circular="true">
+  <block wx:for="{{groupInfo.groupInfo.gr_imglist}}">
+    <swiper-item>
+      <image src="{{ip+item}}" data-index="{{index}}" bindtap='previewimage' mode='aspectFill' class='img' />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='initview panel-around item-center' bindtap='navtoshop'>
+  <image src='/images/initshop.png' class='initimg padding-xs'></image>
+  <view class='font-28 margin-right-sm' style='color:#fff;'>进入店铺</view>
+</view>
+<view class='panel margin-top-sm'>
+  <view class='font-50 text-center'>{{groupInfo.groupInfo.gr_name}}</view>
+  <view class='panel-around'>
+    <view class='font-28 margin-top-sm'>团购成功人数：<text style='color:red;' class='font-36'>{{groupInfo.groupInfo.gr_limitnum}}</text>人</view>
+    <view class='font-28 margin-top-sm'>团购结束时间：<text style='color:red'>{{groupInfo.groupInfo.gr_deadline}}</text></view>
+  </view>
+</view>
+<view class='panel margin-top-sm'>
+  <view class='font-36 text-center'>团员优惠券：<text style='color:red'>{{groupInfo.groupInfo.cpon_info}}</text></view>
+  <view class='font-36 text-center'>团长优惠券：<text style='color:red'>{{groupInfo.groupInfo.cpon_head_info}}</text></view>
+  <view class='panel-around margin-top-sm'>
+    <view class='font-28'>{{groupInfo.groupInfo.cpon_start_time}}至{{groupInfo.groupInfo.cpon_deadline}}使用</view>
+  </view>
+</view>
+<view class='margin-top-sm panel panel-between'>
+  <view class='' style='width:15%'>
+    <view class='font-28'>团长</view>
+    <image class='usericon' src='{{groupInfo.usericon}}'></image>
+  </view>
+  <view class='text-center' style='width:60%;'>
+    <view class='font-28'>团员</view>
+    <scroll-view class="scroll" scroll-x style="width: 420rpx;">
+      <view style='display: inline-block' class='' wx:for="{{userlist}}">
+        <image class='usericon margin-right-sm' src='{{item.usericon}}'></image>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='font-28 text-center' style='width:20%'>
+    <view>参团人数</view>
+    <view><text style='color:red'>{{groupInfo.enjoy_num}}</text></view>
+  </view>
+</view>
+<view class='panel panel-center item-center margin-top-md'>
+  <image src='/images/line.png' class='line'></image>
+  <view class='text1 margin-left-sm margin-right-sm font-28'>团购规则</view>
+  <image src='/images/line.png' class='line'></image>
+</view>
+<view class='panel'>
+  <rich-text nodes="{{groupInfo.groupInfo.gr_rule}}"></rich-text>
+</view>
+<view style='height:110rpx;'></view>
+<button bindtap="navtogroupInfo" style='width:30%;background:#3399FF;' class='sharebtn'>我要开团</button>
+
+ <form bindsubmit='joingroup' report-submit='true' wx:if="{{SWuserInfo.sunwouId!=groupInfo.fk_us_id&&canjoin&&groupInfo.enjoy_num<groupInfo.groupInfo.gr_limitnum}}">
+<button formType="submit" class="fixed text-center panel-col-center greenbc" style="width:70%;right:0px" disabled="{{isdisabled}}" loading="{{isdisabled}}">我要参团</button>
+</form> 
+<view class="fixed text-center panel-col-center graybc" style="width:70%;right:0px;"  wx:if="{{groupInfo.enjoy_num>=groupInfo.groupInfo.gr_limitnum}}">人数已满团购成功</view>
+<button open-type='share' style="width:70%;right:0px;" class='sharebtn' wx:if="{{(SWuserInfo.sunwouId==groupInfo.fk_us_id||!canjoin)&&groupInfo.enjoy_num<groupInfo.groupInfo.gr_limitnum}}">邀请好友参团</button>
+
+<!-- <form bindsubmit='joingroup' report-submit='true'>
+<button formType="submit" class="fixed text-center panel-col-center greenbc" style="width:70%;right:0px" loading="{{isdisabled}}">我要参团</button>
+</form>
+
+<view class="fixed text-center panel-col-center graybc" style="width:70%;right:0px;"  wx:if="{{false}}">人数已满团购成功</view>
+<button open-type='share' style="width:70%;right:0px;" class='sharebtn' wx:if="{{false}}">邀请好友参团</button> -->
