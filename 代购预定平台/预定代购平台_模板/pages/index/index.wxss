@@ -1,0 +1,32 @@
+
+ .banner-bg{
+  width: 100%;
+  display: block;
+}
+ .banner-content-panel{
+  position: relative;
+  top: -400rpx;
+  padding:0 60rpx;
+  padding-top: 30rpx
+}
+ .banner-content-panel > .banner-search-panel{
+  height: 80rpx;
+  background: #fff;
+  border-radius: 100rpx;
+  box-shadow: 1px 1px 1px #d1d1d1
+}
+.svitem{
+  display: inline-block;
+  margin-right:30rpx;
+}
+
+.svitem .imgs{
+  width: 300rpx;
+  height: 350rpx;
+  border-radius: 5rpx;
+  overflow: hidden;
+}
+.svitem .imgs .im{
+  width: 300rpx;
+  height: 350rpx;
+}

@@ -1,0 +1,63 @@
+
+<view style='padding:20rpx 30rpx;background:#f3f3f3 '>
+  <view class='search panel-start item-center'>
+    <image src='/img/search.png' style='width:30rpx;height:30rpx;margin-left:30rpx'></image>
+    <view style='margin-left:30rpx;color:#aaa'>搜索...</view>
+  </view>
+</view>
+
+<view class='titlebar'>
+  <view class='lin'></view>
+  <view class='title'>热门订购</view>
+</view>
+
+<view style='padding-left:30rpx'>
+  <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex;">
+    <view class='svitem' wx:for="{{hots}}" bindtap='navToDetail'>
+      <view class='imgs'>
+        <image class='im' src='{{item.url}}' mode='aspectFill'></image>
+      </view>
+      <view style='padding:30rpx 0' class='panel-between'>
+        <view class='ell-1' style='width:150rpx;color:#888;font-size:26rpx'>Expected sdcdsf sda</view>
+        <view style='width:150rpx;text-align:right;font-weight:bold' class='color-price'>￥199.00</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class='titlebar'>
+  <view class='lin'></view>
+  <view class='title'>推荐订购</view>
+</view>
+<view class='panel panel-between item-end' wx:for="{{rm}}">
+  <view class='panel-start'>
+    <image src='{{item.url}}' style='width:200rpx;height:200rpx;' mode='aspectFill'></image>
+    <view style='width:400rpx;height:200rpx;margin-left:30rpx'>
+      <image src='/img/hot.png' style='width:50rpx;height:50rpx'></image>
+      <view>Sa.ad.Na</view>
+      <view style='color:#888;font-size:26rpx'>大师傅士大夫</view>
+      <view class='panel-start item-end'>
+        <view class='color-price bold' style='margin-top:20rpx'>￥255</view>
+        <view style='margin-top:20rpx;margin-left:20rpx' class='throuth-line color-gray font-26'>￥360</view>
+      </view> 
+    </view>
+  </view>
+  <image src='/img/right.png' style='width:30rpx;height:30rpx;'></image>
+</view>
+
+<view class='titlebar'>
+  <view class='lin'></view>
+  <view class='title'>有现货</view>
+</view>
+<view class='panel panel-between' style='padding-top:0'>
+  <view style='width:{{(width-45)/2}}px;margin-bottom:30rpx' wx:for="{{hots}}">
+    <view style='width:{{(width-45)/2}}px;height:{{(width-45)/2}}px;'>
+      <image style='width:{{(width-45)/2}}px;height:{{(width-45)/2}}px;' src='{{item.url}}' mode='aspectFill'></image>
+    </view>
+    <view class='ell-1' style='text-align:Center;margin-top:20rpx'>非常似的发射点</view>
+    <view class=' panel-center item-end' style='margin-top:10rpx'>
+      <view  class='color-price bold'>￥255</view>
+      <view class='font-26 throuth-line color-gray' style='margin-left:10rpx'>￥450</view>
+    </view>
+  </view>
+</view>

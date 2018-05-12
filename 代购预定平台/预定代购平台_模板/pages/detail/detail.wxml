@@ -1,0 +1,45 @@
+<view>
+  <swiper indicator-dots="true" style='width:{{width}}px;height:{{width}}px'
+    autoplay="true" interval="5000" duration="500" indicator-color="rgba(255,255,255,0.3)" indicator-active-color="#ffffff">
+    <block wx:for="{{hots}}">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" style='width:{{width}}px;height:{{width}}px' mode='aspectFill'/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='panel' style='padding:20rpx 30rpx'>
+  <view class=' bold font-34'>sdafv发士大夫撒地方撒地方</view>
+  <view class='font-26 color-gray' style='margin-top:10rpx'>法大师傅是否 撒地方撒旦撒旦</view>
+  <view class='panel-between item-end' style='margin-top:10rpx'>
+    <view class='panel-start item-end'>
+      <view class='color-price bold' style='font-size:40rpx'>￥125</view>
+      <view class='color-gray font-26 throuth-line'>￥155</view>
+    </view>
+    <view><image src='/img/hg.png' style='width:50rpx;height:30rpx'></image></view>
+  </view>
+</view>
+<view style='padding:20rpx 30rpx' class='color-gray font-26'>该产品无现货,需要预定。</view>
+<view class='panel' >
+  <view class='bold'>商品详情</view>
+  <view style='margin-top:20rpx'>
+  <!--详情  -->
+  </view>
+</view>
+<view style='height:100rpx'></view>
+<view class='fixbot'>
+  <view class='panel-start'>
+    <view style='background:#fff;width:33.33%;height:100rpx;' class='panel-start'>
+      <view style='width:50%;text-align:center' bindtap='backToHome'>
+        <image src='/img/sy.png' style='width:30rpx;height:30rpx;margin-top:20rpx'></image>
+        <view style='font-size:20rpx'>首页</view>
+      </view>
+      <view style='width:50%;text-align:center'>
+        <image src='/img/col1.png' style='width:30rpx;height:30rpx;margin-top:20rpx'></image>
+        <view style='font-size:20rpx'>已收藏</view>
+      </view>
+    </view>
+    <view style='background:#ff9900;width:33.33%;height:100rpx;color:#fff' class='panel-center item-center'>加入购物车</view>
+    <view style='background:#FF4040;width:33.33%;height:100rpx;color:#fff' class='panel-center item-center'>立即预定</view>
+  </view>
+</view>

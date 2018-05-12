@@ -1,0 +1,21 @@
+.svvitem{
+  width: 140rpx;
+  text-align: center;
+  display: inline-block
+}
+.svit{
+  height: 7rpx;
+  width: 100rpx;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+  background: #78e578;
+  margin-top: 18rpx;
+}
+.left{
+  width:150rpx;
+  background: #f3f3f3
+}
+.virem{
+  margin-left:20rpx;
+  margin-bottom:20rpx;
+}

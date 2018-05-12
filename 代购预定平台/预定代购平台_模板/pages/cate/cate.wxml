@@ -1,0 +1,31 @@
+<view class="fix-top bg-white">
+  <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex;">
+    <view class='svvitem' wx:for="{{countryList}}" data-index='{{index}}' data-id='{{item.sunwouId}}' bindtap='chooseCountry'>
+      <view>{{item.name}}</view>
+      <view wx:if="{{item.active}}" class='svit'></view>
+    </view>
+  </scroll-view>
+</view>
+<view style='height:60rpx'></view>
+<view class='panel-start'>
+  <view style='width:150rpx'>
+    <scroll-view scroll-y="true" class='left' style='height:{{height-30}}px'>
+      <view wx:for="{{cateList}}" style='padding:30rpx 0;text-align:Center;{{item.active ? "background:#ffffff":""}}' data-index='{{index}}' data-id='{{item.sunwouId}}' bindtap='chooseCate' class='font-26'>{{item.name}}</view>
+    </scroll-view>
+  </view>
+  <scroll-view scroll-y="true" style='width:{{width-85}}px;padding-left:20rpx;height:{{height-30}}px'>
+    <view class='panel-center item-center' style='padding:20rpx 0;'>
+      <view style='width:70rpx;border-bottom:2rpx solid #000;margin-right:20rpx'></view>
+      <view>{{cateList[cateFlag].name}}</view>
+      <view style='width:70rpx;border-bottom:2rpx solid #000;margin-left:20rpx'></view>
+    </view>
+    <view class='panel-start'>
+      <view class='virem' style='width:{{(width-125)/3}}px' wx:for="{{goodsList}}">
+        <view>
+          <image src='{{item.image[0].url}}' style='width:{{(width-125)/3}}px;height:{{(width-125)/3}}px' mode='aspectFill'></image>
+        </view>
+        <view class='font-24' style='text-align:center'>{{item.name}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

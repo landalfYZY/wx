@@ -1,0 +1,207 @@
+.indicator-dots-panel{
+  position: relative;
+  top: -140rpx
+}
+.search{
+  height: 80rpx;
+  background: #ffffff;
+  border-radius: 70rpx;
+}
+.font-34{
+  font-size: 34rpx
+}
+.indicator-dots-def{
+  width:25rpx;
+  height: 7rpx;
+  border-radius: 10rpx;
+  background: rgba(255,255,255,1)
+}
+.indicator-dots-act{
+  width:25rpx;
+  height: 7rpx;
+  border-radius: 10rpx;
+  background: #ff9900
+}
+.indicator-dots-item:first-child{
+  margin-left: 0rpx
+}
+.indicator-dots-item{
+  margin-left: 8rpx
+}
+.bg-white {
+  background: #fff;
+}
+.bottom-line{
+  border-bottom: 1px solid #e1e1e1
+}
+.panel-center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.fixtop{
+  position: fixed;
+  width: 100%;
+  top: 0
+}
+.panel-start {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  
+}
+.inline-block{
+  display: inline-block
+}
+.panel-end{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap
+}
+.panel-around{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap
+}
+.panel{
+  padding: 30rpx;
+  background: #ffffff
+}
+.panel-between {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.bg-blue{
+  background: #66CCFF
+}
+view {
+  font-size: 30rpx;
+  color: #444;
+}
+.font-24{
+  font-size: 24rpx
+}
+.font-26{
+  font-size: 26rpx
+}
+.item-center {
+  align-items: center;
+}
+.bold{
+  font-weight: bold
+}
+.color-gray {
+  color: #888;
+}
+.color-white {
+  color: #fff;
+}
+.color-price{
+  color: #FF4040
+}
+.fixbot{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+}
+.throuth-line{
+  text-decoration: line-through
+}
+.ell-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ell-2{
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+.font-36{
+  font-size: 36rpx
+}
+.item-end{
+  align-items: flex-end;
+}
+.font-22{
+  font-size: 22rpx
+}
+.icon-30{
+  width: 30rpx;
+  height: 30rpx;
+}
+.icon-35{
+  width: 35rpx;
+  height: 35rpx;
+}
+.icon-40{
+  width: 40rpx;
+  height: 40rpx;
+}
+.icon-45{
+  width: 45rpx;
+  height: 45rpx;
+}
+.icon-50{
+  width: 50rpx;
+  height: 50rpx;
+}
+.icon-25{
+  width: 25rpx;
+  height: 25rpx
+}
+.fix-top {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+@keyframes three-quarters-loader {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* :not(:required) hides this rule from IE9 and below */
+.three-quarters-loader:not(:required) {
+  animation: three-quarters-loader 1250ms infinite linear;
+  border: 8rpx solid #aaa;
+  border-right-color: transparent;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 35rpx;
+  height: 35rpx;
+}
+.loading-txt{
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #aaa;
+}
+
+.titlebar{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20rpx 0
+}
+.titlebar .lin{
+  height:60rpx;
+  width: 10rpx;
+  border-radius: 0 10rpx 10rpx 0;
+  background: #78e578;
+  margin-right: 20rpx;
+}
