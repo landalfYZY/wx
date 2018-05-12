@@ -1,0 +1,6 @@
+page {
+  background-color: #2b2d3a;
+}
+.cccc{
+  height:120rpx;background:rgba(255,255,255,0.3);margin-right:15px;border-radius:5rpx;margin-bottom: 30rpx
+}

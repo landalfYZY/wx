@@ -1,0 +1,15 @@
+page {
+  background-color: #2b2d3a;
+}
+.hbt{
+  padding: 15rpx 20rpx;
+  background: rgba(255, 255, 255, 0.4);
+  color: #fff;
+  border-radius: 5rpx
+}
+.hbt1{
+  padding: 15rpx 20rpx;
+  background: #0099FF;
+  color: #fff;
+  border-radius: 5rpx
+}

@@ -1,0 +1,22 @@
+page{
+  background: #f3f3f3
+}
+.sitem{
+  width: 30%;
+  height: 80rpx;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  margin-bottom: 20rpx
+}
+.tttem{
+  width: 33.33%;
+  height: 80rpx;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}

@@ -1,0 +1,250 @@
+<form>
+  <view class='panel panel-between item-center'>
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>图片
+        <text style='font-size:26rpx;color:#888'>(图一为封面，可上传9张图片)</text>
+      </view>
+    </view>
+  </view>
+  <view class='panel panel-start item-end' style='padding-top:0'>
+    <view wx:if="{{images.length < 9}}" style='background:#e1e1e1;height:150rpx;width:150rpx;font-size:50rpx;color:#aaa;margin-right:20rpx;margin-bottom:20rpx' class='panel-center item-center' bindtap='chooseCover'>
+      +</view>
+      <view style='height:150rpx;width:150rpx;overflow:hidden;margin-bottom:20rpx;margin-right:20rpx;' wx:for="{{imagesOr}}" wx:if="{{imagesOr.length>0}}">
+      <image   src='{{item.url}}' style='display:block;height:150rpx;width:150rpx' mode='aspectFill'></image>
+      <view style='width:100%;height:60rpx;background:rgba(0,0,0,0.7);color:#fff;position:relative;top:-60rpx' data-index='{{index}}'
+       class='panel-center item-center' bindtap='delUpim' >删除</view>
+    </view>
+    <view style='height:150rpx;width:150rpx;overflow:hidden;margin-bottom:20rpx;margin-right:20rpx;' wx:for="{{images}}" wx:if="{{images.length>0}}">
+      <image   src='{{item}}' style='display:block;height:150rpx;width:150rpx' mode='aspectFill'></image>
+      <view style='width:100%;height:60rpx;background:rgba(0,0,0,0.7);color:#fff;position:relative;top:-60rpx' data-index='{{index}}'
+       class='panel-center item-center' bindtap='delImage' >删除</view>
+    </view>
+    
+  </view>
+  <view class="panel panel-between item-center bottom-line " style='padding:40rpx 30rpx;margin-top:20rpx'>
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>标题</view>
+    </view>
+    <view>
+      <input style='width:400rpx;text-align:right;' value='{{formData.title}}' bindinput='titleInput' placeholder='输入标题(必填)'></input>
+    </view>
+  </view>
+  <view class="panel panel-between item-center bottom-line " style='padding:40rpx 30rpx;'>
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>面积(㎡)</view>
+    </view>
+    <view>
+      <input bindinput='areaInput' type='digit' value='{{formData.config.area}}' style='width:400rpx;text-align:right;' placeholder='输入面积(必填)'></input>
+    </view>
+  </view>
+  <view class="panel panel-between item-center bottom-line " style='padding:40rpx 30rpx;'>
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>售价</view>
+    </view>
+    <view>
+      <input bindinput='minPriceInput' type='digit' value='{{formData.minPrice}}' style='width:400rpx;text-align:right;' placeholder='输入价格(必填)'></input>
+    </view>
+  </view>
+  <view class="panel panel-between item-center bottom-line " style='padding:40rpx 30rpx;'>
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>单价(元/㎡)</view>
+    </view>
+    <view>
+      <input bindinput='priceInput' type='digit' value='{{formData.config.price}}' style='width:400rpx;text-align:right;' placeholder='输入价格(必填)'></input>
+    </view>
+  </view>
+  <picker mode="date" value="{{formData.config.listingDate}}" start="1900-01-01" end="2100-01-01" bindchange="bindDateChange">
+    <view class="panel panel-between item-center bottom-line " style='margin-top:20rpx'>
+      <view class='panel-start item-center'>
+        <view class='cii'></view>
+        <view style='margin-left:30rpx'>挂牌时间</view>
+      </view>
+      <view class='panel-end item-center'>
+        <view class='color-gray'>{{formData.config.listingDate}}</view>
+        <image src='/img/right.png' style='margin-left:20rpx ;width:30rpx;height:30rpx'></image>
+      </view>
+    </view>
+  </picker>
+
+  <picker bindchange="bindPickerChangeChaoxiang" value="{{cxflag}}" range="{{chaoxiang}}">
+    <view class="panel panel-between item-center bottom-line ">
+      <view class='panel-start item-center'>
+        <view class='cii'></view>
+        <view style='margin-left:30rpx'>朝向</view>
+      </view>
+      <view class='panel-end item-center'>
+        <view class='color-gray'>{{formData.config.orientation}}</view>
+        <image src='/img/right.png' style='margin-left:20rpx ;width:30rpx;height:30rpx'></image>
+      </view>
+    </view>
+  </picker>
+
+  <picker bindchange="bindPickerChangeFloorType" value="{{ftflag}}" range="{{floorTypes}}">
+    <view class="panel panel-between item-center bottom-line ">
+      <view class='panel-start item-center'>
+        <view class='cii'></view>
+        <view style='margin-left:30rpx'>楼型</view>
+      </view>
+      <view class='panel-end item-center'>
+        <view class='color-gray'>{{formData.config.floorType}}</view>
+        <image src='/img/right.png' style='margin-left:20rpx ;width:30rpx;height:30rpx'></image>
+      </view>
+    </view>
+  </picker>
+
+
+  <view class="panel panel-between item-center ">
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>户型</view>
+    </view>
+    <view class='panel-end item-center'>
+      <view class='color-gray'></view>
+    </view>
+  </view>
+  <view class='bg-white panel-between bottom-line'>
+    <view style='width:33%'>
+      <picker bindchange="bindPickerChangeHouseType" value="{{roflag}}" range="{{room}}">
+        <view style='width:100%;padding:30rpx 0;border-right:1px solid #e1e1e1;text-align:center' class='panel-center item-center'>
+          <view>{{formData.config.houseType ? formData.config.houseType:'室'}}</view>
+          <image src='/img/ds1.png' style='margin-left:20rpx;height:30rpx;width:30rpx'></image>
+        </view>
+      </picker>
+    </view>
+    <view style='width:33%'>
+      <picker bindchange="bindPickerChangeHouseType2" value="{{roflag2}}" range="{{room2}}">
+        <view style='width:100%;padding:30rpx 0;border-right:1px solid #e1e1e1;text-align:center' class='panel-center item-center'>
+          <view>{{formData.config.houseType2 ? formData.config.houseType2:'厅'}}</view>
+          <image src='/img/ds1.png' style='margin-left:20rpx;height:30rpx;width:30rpx'></image>
+        </view>
+      </picker>
+    </view>
+
+    <view style='width:33%'>
+      <picker bindchange="bindPickerChangeHouseType3" value="{{roflag3}}" range="{{room3}}">
+        <view style='width:100%;padding:30rpx 0;text-align:center' class='panel-center item-center'>
+          <view>{{formData.config.houseType3 ? formData.config.houseType3:'卫'}}</view>
+          <image src='/img/ds1.png' style='margin-left:20rpx;height:30rpx;width:30rpx'></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <picker bindchange="bindPickerChangeDecorates" value="{{deflag}}" range="{{decorates}}">
+    <view class="panel panel-between item-center bottom-line ">
+      <view class='panel-start item-center'>
+        <view class='cii'></view>
+        <view style='margin-left:30rpx'>装修</view>
+      </view>
+      <view class='panel-end item-center'>
+        <view class='color-gray'>{{formData.config.decorate}}</view>
+        <image src='/img/right.png' style='margin-left:20rpx ;width:30rpx;height:30rpx'></image>
+      </view>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChangeChewei" value="{{cwflag}}" range="{{chewei}}">
+    <view class="panel panel-between item-center bottom-line ">
+      <view class='panel-start item-center'>
+        <view class='cii'></view>
+        <view style='margin-left:30rpx'>车位</view>
+      </view>
+      <view class='panel-end item-center'>
+        <view class='color-gray'>{{formData.config.carnum}}</view>
+        <image src='/img/right.png' style='margin-left:20rpx ;width:30rpx;height:30rpx'></image>
+      </view>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChangeDianti" value="{{dtflag}}" range="{{dianti}}">
+    <view class="panel panel-between item-center bottom-line ">
+      <view class='panel-start item-center'>
+        <view class='cii'></view>
+        <view style='margin-left:30rpx'>电梯</view>
+      </view>
+      <view class='panel-end item-center'>
+        <view class='color-gray'>{{formData.config.elevator}}</view>
+        <image src='/img/right.png' style='margin-left:20rpx ;width:30rpx;height:30rpx'></image>
+      </view>
+    </view>
+  </picker>
+
+  <view class="panel panel-between item-center bottom-line " style='padding:40rpx 30rpx;margin-top:20rpx'>
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>楼层</view>
+    </view>
+    <view>
+      <input bindinput='floorNumInput' value='{{formData.config.floorNum}}' style='width:400rpx;text-align:right;' type='number' placeholder='输入楼层'></input>
+    </view>
+  </view>
+  <view class="panel panel-between item-center bottom-line " style='padding:40rpx 30rpx;'>
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>年代</view>
+    </view>
+    <view>
+      <input bindinput='yearInput' type='number' value='{{formData.config.year}}' style='width:400rpx;text-align:right;' placeholder='输入年代'></input>
+    </view>
+  </view>
+  <view class="panel panel-between item-center bottom-line " style='padding:40rpx 30rpx;'>
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>小区名称</view>
+    </view>
+    <view>
+      <input bindinput='villageInput' value='{{formData.config.village}}' style='width:400rpx;text-align:right;' placeholder='输入小区名称'></input>
+    </view>
+  </view>
+  <view class="panel panel-between item-center bottom-line " bindtap='chooseAddress' style='margin-top:20rpx'>
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>地址</view>
+    </view>
+    <view class='panel-end item-center'>
+      <view class='color-gray'>{{formData.config.city+formData.config.areas+formData.config.address}}</view>
+      <image src='/img/right.png' style='margin-left:20rpx ;width:30rpx;height:30rpx'></image>
+    </view>
+  </view>
+  <view class="panel panel-between item-center ">
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>简单描述</view>
+    </view>
+    <view class='panel-end item-center'>
+
+    </view>
+  </view>
+  <view class='panel' style='padding-top:0'>
+    <view style='background:#f3f3f3;padding:20rpx'>
+      <textarea value='{{formData.note}}' bindinput='noteInput' auto-height placeholder="简单描述" />
+    </view>
+  </view>
+
+  <view class="panel panel-between item-center bottom-line " style='padding:40rpx 30rpx;margin-top:20rpx'>
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>联系人</view>
+    </view>
+    <view>
+      <input bindinput='nameInput' value='{{formData.config.name}}' style='width:400rpx;text-align:right;'  placeholder='联系人'></input>
+    </view>
+  </view>
+  <view class="panel panel-between item-center bottom-line " style='padding:40rpx 30rpx;'>
+    <view class='panel-start item-center'>
+      <view class='cii'></view>
+      <view style='margin-left:30rpx'>联系方式</view>
+    </view>
+    <view>
+      <input bindinput='phoneInput' value='{{formData.config.phone}}' type='number' style='width:400rpx;text-align:right;' placeholder='联系方式'></input>
+    </view>
+  </view>
+
+  <view style='padding:60rpx 30rpx'>
+    <view class='bttn panel-center item-center' bindtap='submitPublic'>修改并发布</view>
+  </view>
+
+</form>

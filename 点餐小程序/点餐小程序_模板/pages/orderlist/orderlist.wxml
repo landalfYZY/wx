@@ -1,0 +1,47 @@
+<view style='padding:30rpx'>
+  <view class='tii' wx:for="{{list}}">
+    <view class='panel-between item-end'>
+      <view wx:if="{{item.status != '待付款'}}" class='font-white' style='font-size:100rpx;margin-left:30rpx'>{{item.waterNumber}}<text style='font-size:26rpx;margin-left:15rpx'>号</text></view>
+      <view wx:if="{{item.status == '待付款'}}" class='font-white' style='font-size:50rpx;margin-bottom:20rpx'>{{item.status}}</view>
+      <view style='text-align:right;margin-bottom:20rpx'>
+        <view class='font-white' wx:if="{{item.status != '待付款'}}" style='font-size:26rpx'>{{item.status}}</view>
+        <view class='font-white' style='font-size:26rpx'>{{item.createTime}}</view>
+        <view class='font-white'>{{item.type}}</view>
+      </view>
+    </view>
+    <view style='padding:20rpx 20rpx;background:rgba(0,0,0,0.1)'>
+      <view class='panel-center'   wx:for="{{item.op}}" wx:for-item="li" style='{{index == 0 ?"":"margin-top:20rpx"}}'>
+        <view class='font-white' style='width:30%;font-size:26rpx;'>{{li.product.name}}</view>
+        <view class='font-white' style='width:25%;font-size:26rpx;'><text wx:for="{{li.attribute}}" wx:for-item="l2" wx:for-index="f1"><text wx:for="{{l2.value}}" wx:for-item="l3" wx:for-index="f2" wx:if="{{li.opt[f1] == f2}}">{{l3.label+' '}}</text></text></view>
+        <view class='font-white' style='width:20%;text-align:right;font-size:26rpx;'>x{{li.count}}</view>
+        <view class='font-white' style='width:25%;text-align:right;font-size:26rpx;'>￥{{li.total}}</view>
+      </view>
+    </view>
+    <view class='panel-between' style='margin-top:20rpx'>
+      <view class='font-white'>{{item.status == '待付款'?'应付款':'实付款'}}</view>
+      <view class='font-white'>￥{{item.total}}</view>
+    </view>
+    <view class='panel-between' style='margin-top:20rpx'>
+      <view>
+        <!-- <view class='btnn' >删除订单</view> -->
+      </view>
+      <view class='panel-end'>
+        <view class='btnn' data-id='{{item.sunwouId}}' bindtap='previewOrder'>查看订单</view>
+        <view class='btnn1' style='margin-left:20rpx' wx:if="{{item.status == '待付款'}}" data-id='{{item.sunwouId}}' bindtap='paydo'>立即支付</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="panel-center item-center" style='padding:30rpx;' wx:if="{{load}}">
+  <view class="three-quarters-loader">Loading</view>
+  <view class="loading-txt">加载中...</view>
+</view>
+<view style='text-align:Center' wx:if="{{total == 0 && load == false}}">
+  <image src='/img/kong.png' style='width:400rpx;height:400rpx'></image>
+  <view style='color:#e1e1e1' bindtap='gotosOrder'>您还没有订单哦!</view>
+</view>
+<view class='panel-center item-center' wx:if="{{total == list.length  && total != 0}}">
+    <view style='width:150rpx;border-bottom:1px solid rgba(255,255,255,0.3)'></view>
+    <view style='color:#e1e1e1;margin:0 30rpx;font-size:26rpx'>没有更多了</view>
+    <view style='width:150rpx;border-bottom:1px solid rgba(255,255,255,0.3)'></view>
+</view>

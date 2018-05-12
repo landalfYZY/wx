@@ -1,0 +1,107 @@
+<view class='car'>
+  <swiper autoplay="true" interval="5000" duration="1000" style='width:100%;height:350rpx' bindchange='cuerrentChange'>
+    <block wx:for="{{msg.images}}">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" style='width:100%;height:350rpx' mode='aspectFill' bindtap='preview' />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='num'>
+    <view>{{current}}/{{msg.images.length}}</view>
+  </view>
+</view>
+
+<view class='panel'>
+  <view style='font-size:34rpx'>{{msg.title}}</view>
+  <view class='panel-start item-center'>
+    <view style='color:#ff735c;font-weight:bold;margin-top:10rpx'>{{msg.minPrice}}元/月</view>
+    <view class='asds'>{{msg.config.czfs}}</view>
+  </view>
+</view>
+
+<view class='panel panel-between' style='margin-top:20rpx;padding:15rpx 30rpx' >
+  <view class='sadf panel-start'>
+    <view class='color-gray '>户型:</view>
+    <view style='margin-left:20rpx' >{{msg.config.houseType}}{{msg.config.houseType2 ?  msg.config.houseType2:''}}{{msg.config.houseType3 ? msg.config.houseType3:''}}</view>
+  </view>
+  <view class='sadf panel-start'>
+    <view class='color-gray ' >面积:</view>
+    <view style='margin-left:20rpx' >{{msg.config.area}}㎡</view>
+  </view>
+  <view class='sadf panel-start'>
+    <view class='color-gray '>楼层:</view>
+    <view style='margin-left:20rpx' >{{msg.config.floorNum}}层</view>
+  </view>
+  <view class='sadf panel-start'>
+    <view class='color-gray '>朝向:</view>
+    <view style='margin-left:20rpx' >{{msg.config.orientation}}</view>
+  </view>
+  <view class='sadf panel-start'>
+    <view class='color-gray '>装修:</view>
+    <view style='margin-left:20rpx'>{{msg.config.decorate}}</view>
+  </view>
+  <view class='sadf panel-start'>
+    <view class='color-gray '>年代:</view>
+    <view style='margin-left:20rpx'>{{msg.config.year}}</view>
+  </view>
+  <view class='sadf panel-start'>
+    <view class='color-gray '>小区:</view>
+    <view style='margin-left:20rpx'>{{msg.config.village}}</view>
+  </view>
+  <!-- <view class='sadf panel-start'>
+    <view class='color-gray font-24'>车位:</view>
+    <view style='margin-left:20rpx' class='font-24'>{{msg.config.carnum}}</view>
+  </view> -->
+</view>
+
+<view class='panel' style='margin-top:20rpx;'>
+  <view class='panel-between' data-msg='{{msg.note}}' bindtap='navToMs'>
+    <view >描述</view>
+    <view class='panel-end item-center'>
+      <view style='font-size:26rpx;color:#888'>查看全部</view>
+      <image src='/img/right.png' style='margin-left:10rpx;width:30rpx;height:30rpx;'></image>
+    </view>
+  </view>
+  <view style='margin-top:20rpx;height:500rpx;overflow:hidden'>
+    <text>{{msg.note}}</text>
+  </view>
+</view>
+
+
+<view class='panel' style='margin-top:20rpx' bindtap='openLocation'>
+  <view>位置</view>
+  <view class='color-gray'>{{msg.config.province+' '+msg.config.city+' '+msg.config.areas+' '+msg.config.address}}</view>
+  <map id="map" markers="{{markers}}" style='width:100%;height:400rpx;margin-top:30rpx' longitude="{{msg.config.lng}}" latitude="{{msg.config.lat}}" scale="16"></map>
+</view>
+
+<view class='panel' style='margin-top:20rpx' wx:if="{{list.length > 0}}">
+  <view>推荐房源({{list.length}})</view>
+  <view style='margin-top:30rpx'>
+    <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+      <view class='inline-block' style='margin-right:30rpx' wx:for="{{list}}" data-id='{{item.sunwouId}}' bindtap='redTo'>
+        <image src='{{item.config.cover}}' mode='aspectFill' style='width:300rpx;height:250rpx;'></image>
+        <view>{{item.config.houseType}}{{msg.config.houseType2 ?  msg.config.houseType2:''}}/{{item.config.area}}㎡/{{item.config.orientation}}</view>
+        <view class='color-gray' style='font-size:26rpx'>{{item.config.village}}</view>
+        <view><text style='color:#FF6666;font-size:34rpx'>{{item.minPrice}}元/月</text></view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view style='height:140rpx;margin-top:20rpx'></view>
+<view class='fixbot' style='height:140rpx;bottom:-20rpx'>
+  <view class='bgg panel-between'>
+    <view style='width:20%;height:140rpx;background:#fff' class='panel-center item-center' bindtap='{{isFollow ? "removeFollow":"addFollow"}}'>
+      <image src='{{isFollow ? "/img/x1.png":"/img/x2.png"}}' style='width:40rpx;height:40rpx'></image>
+    </view>
+    <view style='width:80%;overflow:hidden;background:#fff;height:140rpx'>
+      <view style='padding:20rpx;'>
+        <view class='panel-center item-center' bindtap='makephoneCall' style='color: #ffffff;width:100%;background:#00c482;height:100rpx;border-radius:10rpx'>联系{{msg.config.name ? msg.config.name:''}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{iss}}" style='width:90rpx;height:90rpx;border-radius:100rpx;background:#00c482;position:fixed;bottom:200rpx;right:30rpx;text-align:center' bindtap='switchToHome'>
+  <image src='/img/home.png' style='width:40rpx;height:40rpx;display:block;margin:auto;margin-top:10rpx'></image>
+  <view style='color:#fff;font-size:22rpx'>首页</view>
+</view>

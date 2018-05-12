@@ -1,0 +1,75 @@
+<view style='padding:30rpx' >
+  <view class='font-white panel-between' >
+    <view class='font-white' style='font-size:50rpx'>订单{{msg.status}}</view>
+    <view class='font-white' style='font-size:50rpx' wx:if="{{msg.status != '待付款'}}">{{msg.waterNumber}}<text style='font-size:26rpx;'> 号</text></view>
+  </view>
+  <view style='margin-top:30rpx;background:rgba(255,255,255,0.3);padding:30rpx 20rpx' bindtap='redtoshop'>
+    <view class='panel-between item-center'>
+      <view class='font-white'>{{msg.shop.shopName}}</view>
+      <image src='/img/right2.png' style='width:30rpx;height:30rpx'></image>
+    </view> 
+  </view>
+  <view style='margin-top:20rpx;background:rgba(255,255,255,0.3);padding:0 20rpx;padding-bottom:20rpx'>
+    <view style='padding:20rpx 0;' class='bline panel-between item-center' wx:for="{{msg.op}}" wx:for-item="ite">
+      <image class='jc' style='width:100rpx;height:100rpx;border-radius:5rpx' mode='aspectFill' src='{{ite.product.image}}'></image>
+      <view style='width:300rpx;margin-left:10px' >
+        <view class='ell-1 font-white'>{{ite.product.name}}</view>
+        <view class='font-white'>sd sd</view>
+      </view>
+      <view style='width:70rpx;margin-left:10px' class='ell-1 font-white'>x{{ite.count}}</view>
+      <view style='width:120rpx;text-align:right' class='ell-1 font-white'>￥{{ite.total}}</view>
+    </view>
+    <view class='panel-between item-center' style='margin-top:20rpx'>
+      <view class='panel-start item-center' bindtap='makePhone'>
+        <image src='/img/ph.png' style='width:50rpx;height:50rpx'></image>
+        <view class='font-white' style='margin-left:20rpx'>联系卖家</view>
+      </view>
+    </view>
+  </view>
+
+  
+  <view style='margin-top:20rpx;background:rgba(255,255,255,0.3);padding:30rpx 20rpx;' class='bline panel-between item-center'>
+    <view class='font-white'>合计</view>
+    <view class='font-white'>￥{{msg.total}}</view>
+  </view>
+  <view style='background:rgba(255,255,255,0.3);padding:30rpx 20rpx;' class=' panel-between item-center'>
+    <view class='font-white'>取餐方式</view>
+    <view class='font-white'>{{msg.type}}</view>
+  </view>
+
+  <view style='margin-top:20rpx;background:rgba(255,255,255,0.3);padding:30rpx 20rpx;' class=''>
+    <view class='font-white'>备注信息</view>
+    <view class='font-white' style='margin-top:20rpx;'>
+      {{msg.bz}}
+    </view>
+  </view>
+  <view style='margin-top:20rpx;padding:0 20rpx;background:rgba(255,255,255,0.3);'>
+    <view style='padding:30rpx 0rpx;' class='bline panel-between item-center'>
+      <view class='font-white'>订单号</view>
+      <view class='font-white'>{{msg.sunwouId}}</view>
+    </view>
+    <view style='padding:30rpx 0rpx;' class=' panel-between item-center bline'>
+      <view class='font-white'>订单创建时间</view>
+      <view class='font-white'>{{msg.createTime}}</view>
+    </view>
+    <view style='padding:30rpx 0rpx;' class=' panel-between item-center bline'>
+      <view class='font-white'>订单支付时间</view>
+      <view class='font-white'>{{msg.payTime}}</view>
+    </view>
+    <view style='padding:30rpx 0rpx;' class=' panel-between item-center'>
+      <view class='font-white'>支付方式</view>
+      <view class='font-white'>{{msg.payment}}</view>
+    </view>
+  </view>
+</view>
+<view style='height:100rpx'></view>
+<view class='fixbot' style='background:#555761' wx:if="{{msg.status == '待付款'}}">
+  <view class='panel-between item-center' style='height:100rpx;padding-left:30rpx'>
+    <view class='panel-start item-center'>
+      <!-- <view class='hbt'>删除订单</view> -->
+    </view>
+    <view class='panel-end item-center' wx:if="{{msg.status == '待付款'}}">
+      <view class='hbt1' style='margin-right:30rpx' data-id='{{msg.sunwouId}}' bindtap='paydo'>立即支付</view>
+    </view>
+  </view>
+</view>

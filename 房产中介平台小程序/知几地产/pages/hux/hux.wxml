@@ -1,0 +1,57 @@
+<view class='car'>
+  <swiper autoplay="true" interval="5000" duration="1000" style='width:100%;height:450rpx'>
+    <block>
+      <swiper-item>
+        <image src="{{msg.img}}" class="slide-image" bindtap='preview' style='width:100%;height:450rpx' mode='aspectFill' />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class='panel'>
+  <view style='font-size:34rpx'>{{msg.title+' '+msg.houseStyle}}</view>
+  <view class='panel-start item-center'>
+    <view style='color:#FF6666;font-weight:bold;margin-top:10rpx'>参考总价{{msg.price}}万</view>
+    <view class='asds'>{{status}}</view>
+  </view>
+</view>
+
+<view class='panel panel-between' style='margin-top:20rpx;padding:0 30rpx'>
+  <view class='sadf panel-start'>
+    <view class='color-gray font-24'>面积:</view>
+    <view style='margin-left:20rpx' class='font-24'>{{msg.area}}㎡</view>
+  </view>
+  <view class='sadf panel-start'>
+    <view class='color-gray font-24'>户型结构:</view>
+    <view style='margin-left:20rpx' class='font-24'>{{msg.huxinjiegou}}</view>
+  </view>
+  
+  <view class='sadf panel-start'>
+    <view class='color-gray font-24'>朝向:</view>
+    <view style='margin-left:20rpx' class='font-24'>{{msg.chaoxiang}}</view>
+  </view>
+</view>
+
+<view class='panel' style='margin-top:20rpx'>
+  <view>优势</view>
+  <view style='padding:20rpx;background:#f3f3f3;margin-top:30rpx' class='color-gray'>
+    {{msg.youshi}}
+  </view>
+</view>
+
+<view class='panel' style='margin-top:20rpx'>
+  <view>不足</view>
+  <view style='padding:20rpx;background:#f3f3f3;margin-top:30rpx' class='color-gray'>
+    {{msg.buzu}}
+  </view>
+</view>
+
+
+
+
+<view style='height:100rpx;margin-top:20rpx' ></view>
+<view class='fixbot'>
+  <view class='bgg' bindtap='makephoneCall'>
+    <view style='color: #ffffff'>联系经纪人</view>
+  </view>
+</view>

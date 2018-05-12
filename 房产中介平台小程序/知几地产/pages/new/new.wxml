@@ -1,0 +1,96 @@
+<view class='fixtop'>
+  <!--搜索框 start  -->
+  <view class="search-panel">
+    <view class='panel-start item-center searchs'>
+      <image src='/img/search.png' class='icon-35' style='margin-left:20rpx'></image>
+      <input style='width:600rpx;margin-left:20rpx' placeholder='请输入关键字' bindinput='searchInput'></input>
+    </view>
+  </view>
+  <!--搜索框 end  -->
+
+  <!--筛选条 start  -->
+  <view class='screen panel-between bottom-line' >
+    <view class='screen-item panel-center item-center' wx:for="{{screenTitle}}" data-index='{{index}}' bindtap='openScreen'>
+      <view style='font-size:26rpx ;{{item.active ? "color:#33CC99":""}};width:80rpx;text-align:Center' class='ell-1'>{{item.label}}</view>
+      <image src='{{item.active ? "/img/ds2.png":"/img/ds1.png"}}' class='icon-25'></image>
+    </view>
+  </view>
+  <!--筛选条 end  -->
+</view>
+<!--遮盖层 start  -->
+<view class='fixmodel' style='height:{{height-87}}px' wx:if="{{showModel}}">
+  <view class='box-panel'>
+    <view style='padding-left: 30rpx;'>
+      <!--city  -->
+      <view wx:if="{{screenFlag == 0}}" class='panel bottom-line panel-between' wx:for="{{city}}" data-name='city'  data-index='{{index}}' bindtap='chooseSimItem'>
+        <view>{{item.label}}</view>
+        <icon wx:if="{{item.active}}" type='success' color='#33CC99'></icon>
+      </view>
+      <!--价格  -->
+      <view wx:if="{{screenFlag == 1}}" class='panel bottom-line panel-between' wx:for="{{priceList}}" data-name='priceList'  data-index='{{index}}' bindtap='chooseSimItem'>
+        <view>{{item.label}}</view>
+        <icon wx:if="{{item.active}}" type='success' color='#33CC99'></icon>
+      </view>
+      <!--户型  -->
+      <view wx:if="{{screenFlag == 2}}" class='panel-start'  >
+        <view  wx:for="{{huxin}}" class='hxk {{item.active ? "hxkact":"hxkdef"}}' data-name='huxin' data-index='{{index}}' bindtap='chooseSItem'>{{item.label}}</view>
+      </view>
+      
+      <view wx:if="{{screenFlag == 3}}" >
+      <!--朝向  -->
+        <view style='padding:30rpx 30rpx 30rpx 0' class='bottom-line' >
+          <view >特色</view>
+          <view class='panel-start' >
+            <view wx:for="{{chaoxiang}}" class='wd {{item.active ? "hxkact":"hxkdef"}}'  data-name='chaoxiang'  data-index='{{index}}' bindtap='chooseSItem'>{{item.label}}</view>
+          </view>
+        </view>
+        
+        <view style='padding:30rpx 30rpx 30rpx 0' class='bottom-line'>
+          <view >售卖状态</view>
+          <view class='panel-start' >
+            <view wx:for="{{zhuangxiu}}" class='wd {{item.active ? "hxkact":"hxkdef"}}'  data-name='zhuangxiu'  data-index='{{index}}' bindtap='chooseSItem'>{{item.label}}</view>
+          </view>
+        </view>
+        
+      </view>
+    </view>
+    <view class='btngroup panel-around' wx:if="{{screenFlag == 3}}" >
+      <view class='panel-center' style='width:100%;'>
+        <view class='bt1 panel-center item-center' bindtap='reset'>重置</view>
+        <view class='bt2 panel-center item-center' bindtap='tempData'>确定</view>
+      </view>
+    </view>
+  </view>
+  <!--点击取消区域  -->
+  <view style='height:{{height-87-400}}px' bindtap='closeScreen'></view>
+</view>
+<!--遮盖层 end  -->
+
+
+ <view class='panel' style='padding-top:170rpx'>
+  <view wx:for="{{list}}" class='{{list.length-1 == index ? "":"bottom-line"}} panel-start' style='padding:30rpx 0;' data-id='{{item.sunwouId}}' bindtap='navToDetail' >
+    <image style='width:200rpx;height:170rpx;' src='{{item.config.cover}}' mode='aspectFill'></image>
+    <view class='stytt'>
+      <view class='panel-start'>
+        <view style='margin-right:20rpx'>{{item.title}}</view>
+        <view  class='{{item.config.status == "在售" ? "qwe1":"qwe2"}}'>{{item.config.status}}</view>
+        <view  class='qwe3'>{{item.config.decorate}}</view>
+      </view>
+      
+      <view class='panel-start'>
+        <view wx:for="{{item.config.tag}}" wx:for-item="ul" class='{{ul == "随时看房" ? "qwe4":""}}{{ul == "全新" ? "qwe4":""}}{{ul == "满五年" ? "qwe4":""}}{{ul == "满十年" ? "qwe4":""}}'>{{ul}}</view>
+      </view>
+      <view class='panel-start item-end' style="margin-top:10rpx">
+        <view style='color:#ff735c;font-weight:bold;font-size:34rpx'>{{item.config.price}}元/㎡</view>
+        <view class='font-22 color-gray' style='margin-left:20rpx'>{{item.config.area}}㎡</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="panel-center item-center" style='padding:30rpx;' wx:if="{{load}}">
+    <view class="three-quarters-loader">Loading</view>
+    <view class="loading-txt">加载中...</view>
+  </view>
+
+  <view style='text-align:center;padding:30rpx;color:#888;font-size:28rpx' wx:if="{{total == list.length && load == false}}">没有更多了</view>
+</view> 

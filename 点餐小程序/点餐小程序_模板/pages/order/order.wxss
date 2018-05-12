@@ -1,0 +1,13 @@
+page{
+ background-color: #2b2d3a;
+}
+.panels{
+  padding: 30rpx 30rpx 30rpx 0rpx
+}
+.hbt1{
+  height: 100rpx;
+  width: 300rpx;
+  background: #00CCFF;
+  color: #fff;
+  text-align: center
+}

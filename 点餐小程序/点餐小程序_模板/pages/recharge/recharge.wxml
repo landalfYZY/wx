@@ -1,0 +1,17 @@
+<view style='padding:30rpx' class='font-white' >
+  选择充值项
+</view>
+<view class='panel-start' style='padding-left:15px'>
+  <view style='width:{{(width-60)/3}}px;' class='cccc panel-center item-center font-white' wx:for="{{list}}" data-pri='{{item.charge}}' bindtap='rechage'>
+    <view class='font-white' style='text-align:center'>
+      <view class='font-white'>{{item.charge}}元</view>
+      <view style='font-size:22rpx;color:#e1e1e1;'>送 {{item.send}}元</view>
+    </view>
+  </view>
+</view>
+<view style='padding:30rpx;padding-top:0' class='font-white'  >
+  充值说明
+</view>
+<view style='padding:30rpx;padding-top:0;color:#e1e1e1'>
+  <text >{{bk}}</text>
+</view>

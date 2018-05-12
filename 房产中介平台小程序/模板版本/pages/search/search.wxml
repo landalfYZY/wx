@@ -1,0 +1,46 @@
+<view class='fixtop'>
+  <view style="padding:0 30rpx 30rpx 30rpx;background:#ffffff" class='panel-between'>
+    <view class='panel-start item-center' style='height:70rpx;width:520rpx;background:#f3f3f3;border-radius:5rpx'>
+      <image src='/img/search.png' style='width:30rpx;height:30rpx;margin-left:20rpx'></image>
+      <input style='width:450rpx;height:70rpx;margin-left:20rpx' value='{{search}}' bindfocus='searchFocus' bindinput='searchInput' placeholder='输入关键字搜索'></input>
+    </view>
+    <view style='width:150rpx;height:70rpx;background:#e1e1e1;border-radius:5rpx' bindtap='doSearch' class='panel-center item-center'>搜索</view>
+  </view>
+</view>
+<view style='height:100rpx'></view>
+<view wx:if="{{history.length > 0 && showHistory == true}}">
+  <view style='padding:0 30rpx 0rpx 30rpx' class='panel-between'>
+    <view>历史记录</view>
+    <view style='color:#888' bindtap='clearHistory'>清空</view>
+  </view>
+  <view class='panel panel-start'>
+    <view class='panel-center item-center iitm' wx:for="{{history}}" data-his='{{item}}' bindtap='chooseHistory'>{{item}}</view>
+  </view>
+</view>
+<view class='panel' style='text-align:center' wx:if="{{history.length == 0 && showHistory == true}}">
+  <image src='/img/kong.png' style='width:300rpx;height:500rpx;' mode='aspectFill'></image>
+  <view style='color:#888'>暂无历史记录</view>
+</view>
+<view style='padding:20rpx;text-align:Center;color:#888;font-size:26rpx;background:#f3f3f3' wx:if="{{showHistory == false}}">共搜索到{{total}}条与“{{search}}”相关的记录</view>
+<view class='panel' >
+  <view wx:for="{{list}}" class='{{list.length-1 == index ? "":"bottom-line"}} panel-start' style='padding:30rpx 0;' bindtap='navToDetail' data-id='{{item.sunwouId}}' data-name='{{item.remark1}}'>
+    <image style='width:200rpx;height:170rpx;' src='{{item.config.cover}}' mode='aspectFill'></image>
+    <view class='stytt'>
+      <view>{{item.title}}</view>
+      <view class='font-24 color-gray' style='margin-top:10rpx' wx:if="{{item.remark1 != '新房'}}">{{item.config.houseType}}{{item.config.houseType2 ?  item.config.houseType2:''}}{{item.config.houseType3 ? item.config.houseType3:''}}/{{item.config.area}}㎡/{{item.config.orientation}}</view>
+      <view class='font-24 color-gray' style='margin-top:10rpx'  wx:if="{{item.remark1 == '新房'}}">{{item.config.status}}/{{item.config.decorate}}</view>
+      <view class='panel-start'>
+        <view wx:for="{{item.config.tag}}" wx:for-item="ul" class='{{ul == "随时看房" ? "qwe3":""}}{{ul == "全新" ? "qwe1":""}}{{ul == "满五年" ? "qwe2":""}}{{ul == "满十年" ? "qwe2":""}}'>{{ul}}</view>
+      </view>
+      <view class='panel-start item-end' style="margin-top:10rpx">
+        <view style='color:#FF6666;font-weight:bold;font-size:34rpx'>{{item.remark1=='新房' ? '均价':''}}{{item.minPrice}}{{item.remark1=='租房' ? '元/月':'万元'}}</view>
+        <view class='font-22 color-gray' style='margin-left:20rpx'>{{item.remark1=='租房' ? '':(item.config.price+'元/㎡')}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="panel-center item-center" style='padding:30rpx;' wx:if="{{load}}">
+    <view class="three-quarters-loader">Loading</view>
+    <view class="loading-txt">加载中...</view>
+  </view>
+</view>

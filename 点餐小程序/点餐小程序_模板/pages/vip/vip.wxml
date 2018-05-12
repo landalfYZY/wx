@@ -1,0 +1,33 @@
+<view style="padding:30rpx 60rpx">
+  <view style='height:400rpx;background:#0099CC;border-radius:20rpx'>
+    <view class='panel-between' style='padding:30rpx'>
+      <view class='panel-start item-center'>
+        <image src='/img/bj.png' style='width:90rpx;height:90rpx;border-radius:100rpx'></image>
+        <view style='margin-left:30rpx' class='font-white'>达咖会员尊享卡</view>
+      </view>
+    </view>
+    <view class='panel-center' style='margin-top:30rpx'>
+      <view class='font-white' style='font-size:50rpx'>￥{{userInfo.money}}</view>
+    </view>
+    <view class='font-white' style='margin-top:90rpx;margin-left:30rpx'>{{userInfo.phone}}</view>
+  </view>
+</view>
+<view style='padding:30rpx 60rpx;padding-top:0'>
+  <view style='color:#e1e1e1;font-size:26rpx;text-align:Center'>
+    充值会员卡，享专属折扣。
+  </view>
+</view>
+
+<view style="padding:0rpx 60rpx">
+  <view style='padding:30rpx 0' class='panel-between item-center bline' bindtap='navToRecharge'>
+    <view class='font-white'>充值</view>
+    <image src='/img/right2.png' style='width:30rpx;height:30rpx'></image>
+  </view>
+  <view style='padding:30rpx 0' class='panel-between item-center bline' bindtap="navToRecord">
+    <view class='font-white'>充值记录</view>
+    <image src='/img/right2.png' style='width:30rpx;height:30rpx'></image>
+  </view>
+</view>
+
+<view style='text-align:Center;font-size:26rpx;color:#e1e1e1;margin-top:150rpx'>大家地理提供技术支持</view>
+<view style='text-align:Center;font-size:26rpx;color:#e1e1e1;'>www.sunwou.com</view>

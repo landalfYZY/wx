@@ -1,0 +1,12 @@
+.iitt{
+  width: 25%;
+  height: 70rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.iact{
+  border-bottom: 1px solid #33CC99;
+  color: #33CC99
+}

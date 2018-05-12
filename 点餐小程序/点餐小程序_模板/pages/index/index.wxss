@@ -1,0 +1,56 @@
+page {
+  background-color: #2b2d3a;
+}
+
+.diandan {
+  background: linear-gradient(to right, #ff9b00, #f63);
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 34rpx;
+  text-align: center;
+  border-radius: 80rpx;
+}
+
+.q1 {
+  height: 200rpx;
+  background: #51b985;
+  margin-top: 60rpx;
+  border-radius: 0rpx 60rpx 0rpx 60rpx;
+  box-shadow: 1px 1px 1px 1px #2b2d3a;
+  background-size:cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.q2 {
+  margin-left: 20rpx;
+  height: 200rpx;
+  background: #45a9db;
+  margin-top: 60rpx;
+  border-radius: 60rpx 0rpx 60rpx 0rpx;
+  box-shadow: 1px 1px 1px 1px #2b2d3a;
+  background-size:cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.q3 {
+  height: 200rpx;
+  background: #45a9db;
+  border-radius: 60rpx 0rpx 60rpx 0rpx;
+  box-shadow: 1px 1px 1px 1px #2b2d3a;
+  background-size:cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.q4 {
+  margin-left: 20rpx;
+  height: 200rpx;
+  background: #f90;
+  border-radius: 0rpx 60rpx 0rpx 60rpx;
+  box-shadow: 1px 1px 1px 1px #2b2d3a;
+  background-size:cover;
+  background-position: center;
+  overflow: hidden;
+}

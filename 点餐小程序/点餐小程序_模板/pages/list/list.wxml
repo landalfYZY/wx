@@ -1,0 +1,113 @@
+<view class='panel-between item-center' style="height:39px;padding:0rpx 30rpx;border-bottom:1px dotted rgba(255,255,255,0.2)">
+  <view class='font-white'>{{shopName}}</view>
+  <view class='panel-end item-center' bindtap='changeShop'>
+    <view style='color:#e1e1e1'>切换</view>
+    <view><image src='/img/right.png' style='width:30rpx;height:30rpx'></image></view>
+  </view>
+</view>
+<!--goods start  -->
+<view class='panel-center' style='height:{{height-90}}px'>
+  <scroll-view scroll-y="true" class='left' style='height:{{height-90}}px'>
+    <view wx:for="{{origin_category}}" data-index='{{index}}' bindtap='changeMeun' class='bottom-line-th {{index == origin_category_flag ? "act":""}}'>{{item.name}}</view>
+  </scroll-view>
+  <scroll-view scroll-y="true" style='height:{{height-90}}px;width:{{width-130}}px;padding:0 15px'  scroll-into-view="{{origin_category[origin_category_flag].sunwouId}}" scroll-with-animation="true">
+   <block wx:for="{{origin_goods}}" wx:for-item="it" wx:for-index="findex">
+    <view id='{{it.id}}' class='panel-center item-center' style='padding:20rpx 0;padding-top:40rpx'>
+      <view style='width:70rpx;border-bottom:2rpx solid #f3f3f3;margin-right:20rpx'></view>
+      <view class='font-white font-24'>{{it.name}}</view>
+      <view style='width:70rpx;border-bottom:2rpx solid #f3f3f3;margin-left:20rpx'></view>
+    </view>
+    <view class='panel-start bline' style='padding:30rpx 0' wx:for="{{it.children}}" wx:for-item="li" wx:for-index="lindex">
+      <view >
+        <image src='{{li.cover}}' mode='aspectFill' style='width:180rpx;height:180rpx;border-radius:5rpx'></image>
+      </view>
+      <view style='margin-left:20rpx'>
+        <view class='font-white'>{{li.name}}</view>
+        <view style='color:#e1e1e1;font-size:24rpx'>月销120笔</view>
+        <view class='font-price' style='font-size:45rpx'>￥{{li.price}}</view>
+        <view class='panel-end item-center' style='width:280rpx'>
+          <image wx:if="{{li.count > 0}}" src='/img/jian.png' style='width:50rpx;height:50rpx' data-findex='{{findex}}' data-lindex='{{lindex}}'  bindtap="refuToCart"></image>
+          <view wx:if="{{li.count > 0}}" style='margin-left:20rpx;' class='font-white'>{{li.count}}</view>
+          <image src='/img/jia.png' style='margin-left:20rpx;width:50rpx;height:50rpx' data-findex='{{findex}}' data-lindex='{{lindex}}' bindtap='addToCart'></image>
+        </view>
+      </view>
+    </view>
+    </block>
+  </scroll-view>
+</view>
+<!--goods end  -->
+
+
+<!--goods detail start  -->
+<view class='fiss' wx:if="{{showGd}}">
+  <view style='padding:60rpx;'>
+    <view style='background:#ffffff;border-radius:10rpx'>
+      <image src='{{origin_goods[findex].children[lindex].image}}' style='width:100%;height:500rpx;border-radius:10rpx 10rpx 0 0' mode='aspectFill'></image>
+      <view style='height:300rpx;padding:20rpx;padding-right:0;padding-top:0;overflow-y:scroll' >
+        <block wx:for="{{origin_goods[findex].children[lindex].attr}}" wx:for-item="it" wx:for-index="fi">
+          <view style='margin-top:30rpx'>{{it.name}}</view>
+          <view class='panel-start'>
+            <view wx:for="{{it.value}}" wx:for-item="li" wx:for-index="lb" style='background:#{{li.active ? "e7fff3":"f3f3f3"}};padding:20rpx 30rpx;border-radius:5rpx;margin-top:20rpx;margin-right:20rpx;color:#{{li.active ? "00cc66":"000000"}}' data-fi='{{fi}}' data-lb='{{lb}}' bindtap='chtags' >
+              {{li.label}}{{li.price == 0 ? '':' ￥'+li.price}}
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class='dfg panel-center'>
+        <view style='height:100rpx;width:50%;' class='panel-center item-center' bindtap='cancel'>取消</view>
+        <view style='height:100rpx;width:50%;background:#0099ff;color:#fff' class='panel-center item-center' bindtap='doOk'>确定</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--goods detail end -->
+
+
+<!--cart start  -->
+<view class='seekBody' wx:if="{{showCart}}" style='width:{{width}}px;height:{{height-50}}px'>
+  <view style='height:{{height-50-cartHeight}}px' bindtap='isCart'></view>
+  <view id='cart' style='max-height:275px;min-height:100px;background:#2b2d3a'>
+    <view class='panel-between' style='background:#aaa;padding:20rpx 30rpx'>
+      <view >已选商品</view>
+      <view class='panel-end item-center'>
+        <image src='/img/trash.png' style='width:30rpx;height:30rpx'></image>
+        <view style='margin-left:20rpx'>清空</view>
+      </view>
+    </view>
+    <view style='min-height:50px;max-height:225px;overflow:scroll;padding:0 30rpx'>
+      <view style='padding:30rpx 0' class='bline panel-between item-center' wx:for="{{carts}}">
+        <view class='font-white ell-1' style='width:50%'>
+          <view class='font-white'>{{item.name}}</view>
+          <view style='font-size:24rpx;color:#e1e1e1'>
+            <text wx:for="{{item.attr}}" wx:for-item="li"><text wx:for="{{li.value}}" wx:for-item="op" wx:if="{{op.active}}">{{op.label}} </text></text>
+          </view>
+        </view>
+        <view class='font-price' style='width:20%'>￥{{item.realprice}}</view>
+        <view style='width:30%' class='panel-end item-center'>
+          <image src='/img/jian.png' style='width:50rpx;height:50rpx' data-index='{{index}}' bindtap='cartRuf'></image>
+          <view style='margin-left:20rpx;' class='font-white'>{{item.count}}</view>
+          <image src='/img/jia.png' style='margin-left:20rpx;width:50rpx;height:50rpx' data-index='{{index}}' bindtap='cartCount'></image>
+        </view>
+      </view>  
+    </view>
+  </view>
+</view>
+<!--cart end  -->
+
+<view class='botbar'>
+  <view class='panel-between'>
+    <view style='width:65%' class='panel-start'>
+      <view >
+        <view  class='asdf panel-center item-center' style='background:#{{carts.length > 0 ? "0099ff":"aaa"}};' bindtap='isCart'>
+          <image src='/img/car.png' style='width:50rpx;height:50rpx;'></image>
+        </view>
+        <view class='hjk panel-center item-center' wx:if="{{count > 0}}" >{{count}}</view>
+      </view>
+      <view class='font-white panel-start item-center' style='height:100rpx;margin-left:30rpx'>
+        {{sum > 0 ? '合计 ￥'+sum:'未选购商品'}}
+      </view>
+    </view>
+    <view style='width:35%;background:#58d178;height:100rpx;color:#fff' class='panel-center item-center' bindtap='subSum'>结算</view>
+  </view>
+</view>
+

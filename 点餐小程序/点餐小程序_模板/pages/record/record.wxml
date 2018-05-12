@@ -1,0 +1,8 @@
+<view style="padding:0 30rpx">
+  <view class='bline panel-between item-center' style='padding:30rpx 0' wx:for="{{list}}">
+    <view class='font-white'>{{item.createTime}}</view>
+    <view class='font-white'>
+      <view class='font-white'>充值 ￥{{item.total}} 赠送 ￥{{item.send}}</view>
+    </view>
+  </view>
+</view>

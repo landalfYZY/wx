@@ -1,0 +1,62 @@
+<view style='padding:30rpx'>
+<view class="panel panel-between item-center bottom-line "  style='border-radius:10rpx 10rpx 0 0'>
+  <view class='panel-start item-center'>
+    <view >小区名称</view>
+  </view>
+  <view>
+    <input style='width:400rpx;text-align:right;' bindinput='titleInput' placeholder='输入小区名称题'></input>
+  </view>
+</view>
+<view class="panel panel-between item-center bottom-line ">
+  <view class='panel-start item-center'>
+    <view >楼栋号</view>
+  </view>
+  <view>
+    <input bindinput='areaInput' type='number' style='width:400rpx;text-align:right;' placeholder='输入楼栋号'></input>
+  </view>
+</view>
+<view class="panel panel-between item-center bottom-line ">
+  <view class='panel-start item-center'>
+    <view >单元号</view>
+  </view>
+  <view>
+    <input bindinput='areaqInput' type='number' style='width:400rpx;text-align:right;' placeholder='输入单元号'></input>
+  </view>
+</view>
+<view class="panel panel-between item-center bottom-line ">
+  <view class='panel-start item-center'>
+    <view >门牌号</view>
+  </view>
+  <view>
+    <input bindinput='areasInput' type='number' style='width:400rpx;text-align:right;' placeholder='输入门牌号'></input>
+  </view>
+</view>
+<view class="panel panel-between item-center bottom-line " style='margin-top:20rpx'>
+  <view class='panel-start item-center'>
+    <view >{{ty == 1? '售价(万元)':'租金(元/月)'}}</view>
+  </view>
+  <view>
+    <input bindinput='priceInput' type='digit' style='width:400rpx;text-align:right;' placeholder='售价'></input>
+  </view>
+</view>
+<view class="panel panel-between item-center bottom-line " style='margin-top:20rpx'>
+  <view class='panel-start item-center'>
+    <view >联系人</view>
+  </view>
+  <view>
+    <input bindinput='nameInput'  style='width:400rpx;text-align:right;' placeholder='联系人'></input>
+  </view>
+</view>
+<view class="panel panel-between item-center bottom-line " style='border-radius:0 0 10rpx 10rpx '>
+  <view class='panel-start item-center'>
+    <view >联系方式</view>
+  </view>
+  <view>
+    <input bindinput='phoneInput'  type='number' style='width:400rpx;text-align:right;' placeholder='联系方式'></input>
+  </view>
+</view>
+
+<view style='padding:60rpx 30rpx'>
+  <view class='bttn panel-center item-center' bindtap='submitPublic'>提交房源</view>
+</view>
+</view>

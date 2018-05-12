@@ -1,0 +1,67 @@
+<view class="banner-panel">
+  <image class='banner-bg' src='/img/banner.png' mode='aspectFill'></image><!--banner图片  -->
+  <view class='banner-content-panel'>
+    <view class='banner-search-panel panel-start item-center'>
+
+      <!--定位start  -->
+      <view class='panel-center item-center' style='width:150rpx;'>
+        <view class='font-24 ell-1' style='max-width:100rpx;text-align:center' bindtap='getCity'>{{cityText}}</view>
+        <image src='/img/ds1.png' style='width:20rpx;height:25rpx'></image>
+      </view><!--定位end  -->
+      
+      <view class='line-right'></view><!--中间线  -->
+
+      <!--搜索框start  -->
+      <view class='search-box panel-start item-center' bindtap='navToSearch'>
+        <image src='/img/search.png' style='width:30rpx;height:30rpx;margin-left:40rpx;margin-right:10rpx'></image>
+        <view class='font-24 color-gray'>你想住在哪？</view>
+      </view><!--搜索框end  -->
+      
+    </view>
+  </view>
+</view>
+
+<view class='panel-around'>
+  <view class='sitem' wx:for="{{iconList}}" data-index='{{index}}' bindtap='navToList'>
+    <view class='cri panel-center item-center' style='background:{{item.color}}'><image src='{{item.image}}'></image></view>
+    <view style='font-size:26rpx;text-align:Center;margin-top:10rpx;color:#444444'>{{item.label}}</view>
+  </view>
+</view>
+
+<view class='font-36 panel' style='padding-bottom:0'>推荐房源</view>
+<view class='panel' style='padding-top:0'>
+  <view wx:for="{{list}}" class='{{list.length-1 == index ? "":"bottom-line"}} panel-start' style='padding:30rpx 0;' bindtap='navToDetail' data-id='{{item.sunwouId}}' data-name='{{item.remark1}}'>
+    <image style='width:200rpx;height:170rpx;' src='{{item.config.cover}}' mode='aspectFill'></image>
+    <view class='stytt'>
+      <view class='panel-start'>
+        <view style='margin-right:20rpx'>{{item.title}}</view>
+        <view wx:if="{{item.remark1 == '新房'}}" class='{{item.config.status == "在售" ? "qwe1":"qwe2"}}'>{{item.config.status}}</view>
+        <view wx:if="{{item.remark1 == '新房'}}" class='qwe3'>{{item.config.decorate}}</view>
+      </view>
+      <view class='font-24 color-gray' style='margin-top:10rpx' wx:if="{{item.remark1 != '新房'}}">{{item.config.houseType}}{{item.config.houseType2 ?  item.config.houseType2:''}}{{item.config.houseType3 ? item.config.houseType3:''}}/{{item.config.area}}㎡/{{item.config.orientation}}</view>
+      <view class='font-24 color-gray panel-start'   wx:if="{{item.remark1 == '新房'}}">
+        
+      </view>
+      <view class='panel-start' wx:if="{{item.remark1 != '新房'}}">
+        <view wx:for="{{item.config.tag}}" wx:for-item="ul" class='{{ul == "随时看房" ? "qwe3":""}}{{ul == "全新" ? "qwe1":""}}{{ul == "满五年" ? "qwe2":""}}{{ul == "满十年" ? "qwe2":""}}'>{{ul}}</view>
+      </view>
+      <view class='panel-start' wx:if="{{item.remark1 == '新房'}}">
+        <view wx:for="{{item.config.tag}}" wx:for-item="ul" class='{{ul == "随时看房" ? "qwe4":""}}{{ul == "全新" ? "qwe4":""}}{{ul == "满五年" ? "qwe4":""}}{{ul == "满十年" ? "qwe4":""}}'>{{ul}}</view>
+      </view>
+      <view class='panel-start item-end' style="margin-top:10rpx">
+        <view style='color:#ff735c;font-weight:bold;font-size:34rpx'>{{item.remark1=='新房' ? item.config.price:item.minPrice}}{{item.remark1=='租房' ? '元/月':'元/㎡'}}</view>
+        <view class='font-22 color-gray' style='margin-left:20rpx'>{{(item.config.area+'㎡')}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="panel-center item-center" style='padding:30rpx;' wx:if="{{load}}">
+    <view class="three-quarters-loader">Loading</view>
+    <view class="loading-txt">加载中...</view>
+  </view>
+  <view style='text-align:center;padding:30rpx;color:#888;font-size:28rpx' wx:if="{{list.length == 0 && load == false}}">该城市暂无房源</view>
+</view>
+
+<!-- <view  style='padding:60rpx;padding-top:0;' wx:if="{{list.length < total}}">
+  <view class='seeall'>查看全部</view>
+</view> -->

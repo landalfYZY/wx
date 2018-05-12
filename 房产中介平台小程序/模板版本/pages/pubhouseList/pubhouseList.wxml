@@ -1,0 +1,31 @@
+<view class='panel'>
+  <view wx:for="{{list}}">
+    <view class='{{(list.length-1) == index ? "":"bottom-line"}} panel-start' style='padding:30rpx 0;'  >
+      <image style='width:200rpx;height:170rpx;' src='{{item.config.cover}}' mode='aspectFill'></image>
+      <view class='stytt'>
+        <view>{{item.title}}</view>
+        <view class='font-24 color-gray' style='margin-top:10rpx'>{{item.config.houseType}}{{item.config.houseType2 ? item.config.houseType2:''}}{{item.config.houseType3 ? item.config.houseType3:''}}/{{item.config.area}}㎡/{{item.config.orientation}}</view>
+        <view class='panel-start'>
+          <view wx:for="{{item.config.tag}}" wx:for-item="ul" class='{{ul == "随时看房" ? "qwe3":""}}{{ul == "全新" ? "qwe1":""}}{{ul == "满五年" ? "qwe2":""}}{{ul == "满十年" ? "qwe2":""}}'>{{ul}}</view>
+        </view>
+        <view class='panel-start item-end' style="margin-top:10rpx">
+          <view style='color:#FF6666;font-weight:bold;font-size:34rpx'>{{item.minPrice}}万</view>
+          <view class='font-22 color-gray' style='margin-left:20rpx'>{{item.config.price}}元/㎡</view>
+        </view>
+      </view>
+      <view class='panel-center' style='width:100%;margin-top:20rpx'>
+        <view wx:if="{{item.remark2 == '上架'}}" style='width:33.33%;background:#f3f3f3;height:70rpx;font-size:28rpx;color:#aaa' class='panel-center item-center' data-id='{{item.sunwouId}}' data-cz='下架' bindtap='navToUpd'>下架</view>
+        <view wx:if="{{item.remark2 == '下架'}}" style='width:66.66%;background:#f3f3f3;height:70rpx;font-size:28rpx;color:#aaa' class='panel-center item-center' data-id='{{item.sunwouId}}' data-cz='删除' bindtap='navToUpd'>删除</view>
+        <view wx:if="{{item.remark2 == '上架'}}" style='width:33.33%;background:#f3f3f3;height:70rpx;font-size:28rpx;color:#aaa' class='panel-center item-center' data-id='{{item.sunwouId}}' bindtap='navToHo'>编辑</view>
+        <view style='width:33.33%;background:#f3f3f3;height:70rpx;font-size:28rpx;color:#aaa' class='panel-center item-center' data-id='{{item.sunwouId}}' bindtap='navToDetail'>查看</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="panel-center item-center" style='padding:30rpx;' wx:if="{{load}}">
+    <view class="three-quarters-loader">Loading</view>
+    <view class="loading-txt">加载中...</view>
+  </view>
+
+  <view style='text-align:center;padding:30rpx;color:#888;font-size:28rpx' wx:if="{{total == list.length && load == false}}">没有更多了</view>
+</view>

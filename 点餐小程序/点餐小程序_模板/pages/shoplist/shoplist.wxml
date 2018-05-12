@@ -1,0 +1,33 @@
+<view style='position:fixed;top:0;width:100%;background:#2b2d3a'>
+  <view style='padding:20rpx 30rpx;'>
+    <view class='panel-start searc item-center'>
+      <image src='/img/search.png' style='width:30rpx;height:30rpx;margin-left:30rpx'></image>
+      <input placeholder='搜索附近的店铺' bindinput='searchInput' style='margin-left:30rpx;color:#fff;width:560rpx' placeholder-style='color:#fff'></input>
+    </view>
+  </view>
+</view>
+<view style='height:120rpx'></view>
+<view class='panel-between item-end' style='padding:30rpx' wx:for="{{list}}" data-box='{{item.boxPrice}}' data-id='{{item.sunwouId}}' data-name='{{item.shopName}}' bindtap='navToDetail'>
+  <view class='panel-start'>
+    <image src='{{item.shopImage}}' style='width:220rpx;height:180rpx;border-radius:5rpx' mode='aspectFill'></image>
+    <view style='margin-left:30rpx;width:400rpx'>
+      <view class='font-white ell-1'>{{item.shopName}}</view>
+      <view style='font-size:26rpx;margin-top:10rpx;color:#f3f3f3'>距离我<text class='font-price'>{{item.distance+item.unit}}</text></view>
+      <view style='font-size:26rpx;margin-top:30rpx;color:#aaa'>{{item.province}} {{item.city}} {{item.area}} {{item.shopAddress}}</view>
+    </view>
+  </view>
+  <image src='/img/right1.png' style='width:30rpx;height:30rpx'></image>
+</view>
+<view class="panel-center item-center" style='padding:30rpx;' wx:if="{{load}}">
+  <view class="three-quarters-loader">Loading</view>
+  <view class="loading-txt">加载中...</view>
+</view>
+<view style='text-align:Center' wx:if="{{total == 0 && load == false}}">
+  <image src='/img/sk.png' style='width:400rpx;height:400rpx'></image>
+</view>
+
+<view class='panel-center item-center' wx:if="{{total == list.length && total != 0}}">
+    <view style='width:150rpx;border-bottom:1px solid rgba(255,255,255,0.3)'></view>
+    <view style='color:#e1e1e1;margin:0 30rpx;font-size:26rpx'>没有更多了</view>
+    <view style='width:150rpx;border-bottom:1px solid rgba(255,255,255,0.3)'></view>
+</view>

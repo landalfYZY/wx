@@ -1,0 +1,57 @@
+.banner-panel{
+  height: 400rpx;
+  overflow: hidden; 
+}
+.banner-panel > .banner-bg{
+  width: 100%;
+  height: 400rpx;
+  display: block;
+}
+.banner-panel > .banner-content-panel{
+  height: 400rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: -400rpx;
+  padding:40rpx;
+}
+.banner-panel > .banner-content-panel > .banner-search-panel{
+  height: 80rpx;
+  background: #fff;
+  border-radius: 5rpx;
+  box-shadow: 1px 1px 1px #d1d1d1
+}
+.line-right{
+  border-right: 1px solid #e1e1e1;
+  height: 35rpx
+}
+.search-box{
+  width: 500rpx;
+  height: 80rpx;
+}
+.search-box > input{
+  line-height: 80rpx;
+  font-size: 24rpx
+}
+.cri{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 90rpx;
+}
+.panel-around{
+  display: flex;
+  justify-content: space-around
+}
+.cri image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.sitem{
+  margin-top: 30rpx;
+}
+
+.seeall{
+  background-color: #f3f3f3;
+  text-align: center;
+  line-height: 80rpx;
+  color: #115d8f;
+}

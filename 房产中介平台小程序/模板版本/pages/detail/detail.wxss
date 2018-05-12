@@ -1,0 +1,45 @@
+page{
+  background: #f3f3f3
+}
+.car{
+  height:350rpx;
+  overflow: hidden;
+}
+.num{
+  position: relative;
+  top: -50rpx;
+  
+  
+}
+.num > view{
+  padding: 0 30rpx;
+  background: rgba(0, 0, 0, 0.5);
+  float: right;
+  color: #ffffff;
+  margin-right: 30rpx;
+  font-size: 26rpx;
+  border-radius: 50rpx
+}
+.asds{
+  background: #ff9933;
+  color: #fff;
+  font-size: 26rpx;
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+  padding: 0 30rpx ;
+  line-height: 40rpx;
+  border-radius: 10rpx;
+}
+.sadf{
+  width: 50%;
+  padding: 30rpx 0;
+}
+.bgg{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  background: #00c482;
+  
+}

@@ -1,0 +1,32 @@
+<!--搜索框 start  -->
+<view style='padding:30rpx'>
+  <view class='panel-start item-center searchs' style='background-color:#ffffff;'>
+    <image src='/img/search.png' class='icon-35' style='margin-left:20rpx'></image>
+    <input style='width:600rpx;margin-left:20rpx' value='{{searchText}}' bindinput='searchInput'  placeholder='输入城市名进行搜索'></input>
+  </view>
+</view>
+<!--搜索框 end  -->
+
+<view wx:if="{{searchText != ''}}" style='padding: 15rpx 30rpx; font-size:26rpx;color:#888888'>{{searchList.length > 0 ? '搜索结果':'索搜无结果'}}</view>
+<view wx:if="{{searchText != ''}}" style='padding: 15rpx 30rpx' class='panel-start'>
+  <view class='tttem ell-1' wx:for="{{searchList}}" wx:for-item="li" wx:for-index="inx" data-name='{{li.name}}' bindtap='chooseCity'>
+    <view>{{li.name}}</view>
+  </view>
+</view>
+
+<!--热门城市 start  -->
+<view style='padding: 15rpx 30rpx; font-size:26rpx;color:#888888'>热门城市</view>
+<view style='padding: 15rpx 30rpx' class='panel-between'>
+  <view class='sitem' wx:for="{{hot}}" data-name='{{item}}' bindtap='chooseCity'>
+    <view>{{item}}</view>
+  </view>
+</view>
+<!--热门城市 end  -->
+<block wx:for="{{china}}" wx:for-item="it" wx:for-index="in">
+<view style='padding: 15rpx 30rpx;padding-top:0rpx; font-size:26rpx;color:#888888'>{{it.name}}</view>
+<view style='padding: 15rpx 30rpx' class='panel-start'>
+  <view class='tttem ell-1' wx:for="{{it.city}}" wx:for-item="li" wx:for-index="inx" data-name='{{li.name}}' bindtap='chooseCity'>
+    <view>{{li.name}}</view>
+  </view>
+</view>
+</block>

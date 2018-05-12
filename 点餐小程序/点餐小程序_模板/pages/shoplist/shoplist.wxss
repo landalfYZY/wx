@@ -1,0 +1,8 @@
+page{
+ background-color: #2b2d3a;
+}
+.searc{
+  height: 80rpx;
+  background: rgba(255,255,255,0.2);
+  border-radius: 5rpx
+}

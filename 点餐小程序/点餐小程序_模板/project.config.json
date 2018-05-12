@@ -1,0 +1,86 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.94",
+	"appid": "wx9676e5a723951d1a",
+	"projectname": "%E7%82%B9%E9%A4%90%E5%B0%8F%E7%A8%8B%E5%BA%8F_%E6%A8%A1%E6%9D%BF",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "菜单",
+					"pathName": "pages/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品列表",
+					"pathName": "pages/shoplist/shoplist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "绑定手机号",
+					"pathName": "pages/bindPhone/bindPhone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "充值",
+					"pathName": "pages/recharge/recharge",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/orderlist/orderlist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收银助手",
+					"pathName": "pages/shouyin/shouyin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "充值记录",
+					"pathName": "pages/record/record",
+					"query": ""
+				}
+			]
+		}
+	}
+}

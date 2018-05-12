@@ -1,0 +1,12 @@
+/*
+
+1.首页推荐房源，后台设置，推荐的房源可以是二手房，新房或者租房
+
+二手房列表页：house   -> houseDetail
+新房列表页：new    -> newDetail
+租房列表页：list   ->   listDetail
+
+
+
+
+*/

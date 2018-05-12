@@ -1,0 +1,27 @@
+page{
+ background-color: #2b2d3a;
+}
+.bggs{
+  margin-top: 30rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 5rpx;
+  color: #fff;
+  background: rgba(255,255,255,0.3)
+}
+.bggs:active{
+  background: rgba(255,255,255,0.5)
+}
+.items{
+  width: 70rpx;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+  text-align: center;
+  color: #fff;
+  margin-left: 70rpx;
+  padding: 30rpx 0;
+  font-size: 60rpx;
+  height: 60rpx
+}
+.items:first-child{
+  margin-left: 0
+}

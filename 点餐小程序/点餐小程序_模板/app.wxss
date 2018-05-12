@@ -1,0 +1,158 @@
+.bg-white {
+  background: #fff;
+}
+.bottom-line{
+  border-bottom: 1px solid #e1e1e1
+}
+.font-white{
+  color: #fff
+}
+.panel-center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.fixtop{
+  position: fixed;
+  width: 100%;
+  top: 0
+}
+.bline{
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.panel-start {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  
+}
+.inline-block{
+  display: inline-block
+}
+.panel-end{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap
+}
+.panel-around{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap
+}
+.panel{
+  padding: 30rpx;
+  background: #ffffff
+}
+.panel-between {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.bg-blue{
+  background: #66CCFF
+}
+.font-price{
+  color: #FFCC33
+}
+view {
+  font-size: 30rpx;
+  color: #444;
+}
+.font-24{
+  font-size: 24rpx
+}
+.item-center {
+  align-items: center;
+}
+
+.color-gray {
+  color: #888;
+}
+
+.bg-str {
+  background-size: cover;
+  background-position: center;
+  background-color: #aaa;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.fixbot{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+}
+
+.ell-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.font-36{
+  font-size: 36rpx
+}
+.item-end{
+  align-items: flex-end;
+}
+.font-22{
+  font-size: 22rpx
+}
+.icon-30{
+  width: 30rpx;
+  height: 30rpx;
+}
+.icon-35{
+  width: 35rpx;
+  height: 35rpx;
+}
+.icon-40{
+  width: 40rpx;
+  height: 40rpx;
+}
+.icon-45{
+  width: 45rpx;
+  height: 45rpx;
+}
+.icon-50{
+  width: 50rpx;
+  height: 50rpx;
+}
+.icon-25{
+  width: 25rpx;
+  height: 25rpx
+}
+@keyframes three-quarters-loader {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* :not(:required) hides this rule from IE9 and below */
+.three-quarters-loader:not(:required) {
+  animation: three-quarters-loader 1250ms infinite linear;
+  border: 8rpx solid #e1e1e1;
+  border-right-color: transparent;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 35rpx;
+  height: 35rpx;
+}
+.loading-txt{
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #e1e1e1;
+}

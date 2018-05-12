@@ -1,0 +1,21 @@
+<view class="panel panel-between item-center bottom-line " style='padding:40rpx 30rpx;margin-top:20rpx'>
+  <view class='panel-start item-center'>
+    <view class='cii'></view>
+    <view style='margin-left:30rpx'>姓名</view>
+  </view>
+  <view>
+    <input bindinput='nickInput' type='number' value="{{name}}" style='width:400rpx;text-align:right;' placeholder='输入姓名'></input>
+  </view>
+</view>
+<view class="panel panel-between item-center  " style='padding:40rpx 30rpx'>
+  <view class='panel-start item-center'>
+    <view class='cii'></view>
+    <view style='margin-left:30rpx'>手机号</view>
+  </view>
+  <view>
+    <input bindinput='phoneInput' type='number' value="{{phone}}" style='width:400rpx;text-align:right;' placeholder='输入手机号'></input>
+  </view>
+</view>
+<view style='padding:60rpx 30rpx'>
+  <view class='bttn panel-center item-center' bindtap='submitPublic'>保存修改</view>
+</view>

@@ -1,0 +1,105 @@
+<view style='padding-left:30rpx;'>
+  <picker bindchange="bindPickerChange" value="{{flag}}" range="{{getStyle}}">
+    <view class='panels bline panel-between item-center' style='border-bottom:10rpx solid rgba(255,255,255,0.3)'>
+      <view class='panel-start item-center'>
+        <view>
+          <image src='/img/c1.png' style='width:40rpx;height:40rpx'></image>
+        </view>
+        <view class='font-white' style='margin-left:30rpx'>取餐方式</view>
+      </view>
+      <view class='panel-end item-center'>
+        <view class='font-white'>{{getStyle[flag]}}</view>
+        <image src='/img/right2.png' style='width:30rpx;height:30rpx;margin-left:30rpx'></image>
+      </view>
+    </view>
+  </picker>
+  <view class='panels  panel-between item-center'>
+    <view class='panel-start item-center'>
+      <view>
+        <image src='/img/c2.png' style='width:40rpx;height:40rpx'></image>
+      </view>
+      <view class='font-white' style='margin-left:30rpx'>{{shopName}}</view>
+    </view>
+    <view></view>
+  </view>
+  <view style='background:rgba(255,255,255,0.1);padding:20rpx;padding-right:30rpx;'>
+    <view wx:for="{{carts}}" wx:for-item="item" class='panel-between item-end' style='{{index < carts.length-1 ? "margin-bottom:20rpx":""}}'>
+      <view class='panel-start'>
+        <image src='{{item.cover}}' style='width:120rpx;height:120rpx;border-radius:5rpx' mode='aspectFill'></image>
+        <view style='margin-left:20rpx'>
+          <view class='font-white'>{{item.name}}</view>
+          <view class='font-white' style='font-size:24rpx;margin-top:10rpx'>
+            <text wx:for="{{item.attr}}" wx:for-item="io"><text  wx:for="{{io.value}}" wx:for-item="il" wx:if="{{il.active}}">{{il.label}} </text></text>
+          </view>
+        </view>
+      </view>
+      <view style='text-align:right'>
+        <view class='font-white'>x{{item.count}}</view>
+        <view class='font-white'>￥{{item.realprice}}</view>
+      </view>
+    </view>
+  </view>
+  <view style='margin-top:30rpx;padding-right:30rpx;' class='panel-between'>
+    <view class='font-white'>数量</view>
+    <view class='font-white'>x{{count}}</view>
+  </view>
+  <view style='margin-top:30rpx;padding-right:30rpx;padding-bottom:30rpx' class='panel-between bline'>
+    <view class='font-white'>合计</view>
+    <view class='font-white'>￥{{sum}}</view>
+  </view>
+  <view style='margin-top:30rpx;padding-right:30rpx;padding-bottom:30rpx' wx:if="{{flag == 1}}" class='panel-between bline'>
+    <view class='font-white'>餐盒费</view>
+    <view class='font-white'>x{{boxP}}</view>
+  </view>
+
+  <view class='panels  panel-between item-center'>
+    <view class='panel-start item-center'>
+      <view>
+        <image src='/img/bz.png' style='width:40rpx;height:40rpx'></image>
+      </view>
+      <view class='font-white' style='margin-left:30rpx'>支付方式</view>
+    </view>
+    <view></view>
+  </view>
+
+  <view class='panel-between'>
+    <view data-sty='微信支付' bindtap='changePay' style='width:48%;height:100rpx;background:rgba(255,255,255,0.2);border-radius:5rpx;' class='panel-between item-center'>
+      <view class='font-white' style='margin-left:30rpx'>微信支付</view>
+      <icon wx:if="{{payment =='微信支付'}}" type='success' color="#FFCC33" style='margin-right:30rpx'></icon>
+    </view>
+    <view  data-sty='余额支付' bindtap='changePay' style='width:48%;height:100rpx;background:rgba(255,255,255,0.2);border-radius:5rpx;' class='panel-between item-center'>
+      <view class='font-white' style='margin-left:30rpx'>会员支付</view>
+      <icon wx:if="{{payment =='余额支付'}}" type='success' color="#FFCC33" style='margin-right:30rpx'></icon>
+    </view>
+  </view>
+
+  <view class='panels  panel-between item-center'>
+    <view class='panel-start item-center'>
+      <view>
+        <image src='/img/bz.png' style='width:40rpx;height:40rpx'></image>
+      </view>
+      <view class='font-white' style='margin-left:30rpx'>备注信息</view>
+    </view>
+    <view></view>
+  </view>
+  <view style='background:rgba(255,255,255,0.1);padding:20rpx;padding-right:30rpx;'>
+    <textarea bindinput='bzInput' auto-height placeholder="填写备注信息(选填)" placeholder-style='color:#f3f3f3' style='color:#fff' />
+  </view>
+</view>
+
+
+
+<view class='fixbot' style='background:#555761'>
+  <view class='panel-between item-center' style='height:100rpx;padding-left:30rpx'>
+    <view class='panel-start item-center'>
+      <view class='font-white'>需付款:
+        <text class='font-price'>￥{{sum}}</text>
+      </view>
+    </view>
+    <view class='panel-end item-center'>
+      <form bindsubmit="submitOrder" report-submit="true">
+        <button class='hbt1 panel-center item-center' style='border-radius:0' form-type='submit'>立即支付</button>
+      </form>
+    </view>
+  </view>
+</view>

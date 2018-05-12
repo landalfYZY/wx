@@ -1,0 +1,12 @@
+page {
+  background-color: #2b2d3a;
+}
+.tii{
+  background:rgba(255,255,255,0.2);padding:20rpx;border-radius:5rpx;margin-bottom: 30rpx
+}
+.btnn{
+  background:rgba(255,255,255,0.3);color:#fff;font-size:26rpx;padding:15rpx 15rpx;border-radius:5rpx
+}
+.btnn1{
+  background:#0099FF;color:#fff;font-size:26rpx;padding:15rpx 15rpx;border-radius:5rpx
+}

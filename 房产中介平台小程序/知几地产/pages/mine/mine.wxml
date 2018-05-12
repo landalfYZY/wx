@@ -1,0 +1,28 @@
+<view class='panel panel-start item-center' bindtap='navToMsg'>
+  <view>
+    <image src='{{userInfo.avatarUrl ? userInfo.avatarUrl:"/img/tx.png"}}' style='height:110rpx;width:110rpx'></image>
+  </view>
+  <view style='margin-left:30rpx'>{{userInfo.nickName ? userInfo.nickName:userInfo.openid}}</view>
+</view>
+
+<!-- <view class='panel panel-between item-center bottom-line' bindtap='navToEr' style='margin-top:20rpx'>
+  <view>我发布的二手房</view>
+  <image src='/img/right.png' class='icon-30'></image>
+</view>
+<view class='panel panel-between item-center bottom-line' bindtap='navToCu' >
+  <view>我的出租房</view>
+  <image src='/img/right.png' class='icon-30'></image>
+</view> -->
+<view class='panel panel-between item-center bottom-line' bindtap='navTo' style='margin-top:20rpx'>
+  <view>收藏</view>
+  <image src='/img/right.png' class='icon-30'></image>
+</view>
+<view class='panel panel-between item-center' bindtap='makephoneCall'>
+  <view>客服电话</view>
+  <view class='color-gray'>{{phone}}</view>
+</view>
+
+<view style='padding-top:200rpx'>
+  <view style='text-align:center;font-size:26rpx' class='color-gray'>双沃科技提供技术支持</view>
+  <view style='text-align:center;font-size:26rpx' class='color-gray'>www.sunwou.com</view>
+</view>

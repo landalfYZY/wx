@@ -1,0 +1,17 @@
+<view style="padding:60rpx">
+  <view class='panel-start bline item-end' style='padding-bottom:30rpx'>
+    <view class='font-white'>手机号</view>
+    <input class='font-white' type='number' placeholder='输入手机号' placeholder-style='font-size:65rpxrpx;color:#f3f3f3' style='margin:0;height:65rpx;padding:0;margin-left:30rpx;font-size:65rpx;width:500rpx;line-height:65rpx' bindinput='getphone'></input>
+  </view>
+  <input style='display:none' focus='{{focus}}' bindinput='getNumber' type='number' ></input>
+  <view class='bggs'  bindtap='getYcode'>
+    {{text == "获取验证码" ? text:time+text}}
+  </view>
+  <view class='font-white' style='margin-top:30rpx'>输入验证码</view>
+
+  <view class='panel-center' bindtap='getKeyBord'>
+    <view class='items' wx:for="{{values}}">
+      {{item}}
+    </view>
+  </view>
+</view>

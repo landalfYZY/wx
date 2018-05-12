@@ -1,0 +1,17 @@
+.cii{
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 5rpx;
+  background: #00c482
+}
+ page{
+  background: #f3f3f3
+} 
+.bttn{
+  width: 100%;
+  border-radius: 10rpx;
+  height: 100rpx;
+  text-align: center;
+  background: #00c482;
+  color: #fff
+}

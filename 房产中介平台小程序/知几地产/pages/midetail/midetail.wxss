@@ -1,0 +1,67 @@
+.screen{
+background: #ffffff;
+}
+.screen-item{
+  width: 25%;
+  border-top: 1px solid #e1e1e1;
+  line-height: 80rpx
+}
+@keyframes boxPanel{
+  from { height: 0;}
+  to {height: 700rpx;}
+}
+.box-panel{
+  background: #fff;
+  animation: boxPanel 0.3s forwards;
+  overflow: scroll
+}
+.hxk{
+  width: 205rpx;
+  height: 70rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+
+  font-size: 26rpx;
+}
+.hxkdef{
+  border: 1px solid #e1e1e1;
+  color: #aaaaaa;
+}
+.hxkact{
+  border: 1px solid #33CC99;
+  color: #33CC99;
+}
+.btngroup{
+  width: 100%;
+  position: fixed;
+  top: 874rpx;
+  height: 100rpx;
+}
+.btngroup .bt1{
+  width: 50%;
+  background: #f3f3f3;
+  color: #aaaaaa;
+  text-align: center;
+}
+.btngroup .bt2{
+  width: 50%;
+  background: #33CC99;
+  color: #ffffff;
+  text-align: center;
+}
+.wd{
+  width: 20%;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+
+  font-size: 26rpx;
+}

@@ -1,0 +1,4 @@
+/* pages/search/search.wxss */
+.iitm{
+  margin-right:30rpx;margin-bottom:30rpx;padding:0 30rpx;background:#f3f3f3;color:#888888;height:70rpx;border-radius:10rpx
+}

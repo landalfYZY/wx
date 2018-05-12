@@ -1,0 +1,30 @@
+<!-- <view class="fixtop panel-between">
+  <view wx:for="{{fil}}" data-index='{{index}}'  class='iitt {{filflag == index ? "iact":""}}' bindtap='filter'>{{item}}</view>
+</view> -->
+<!-- <view style='height:100rpx'></view> -->
+<view class='panel' style='padding-top:0'>
+  <view wx:for="{{list}}" class='{{list.length-1 == index ? "":"bottom-line"}} panel-start' style='padding:30rpx 0;' bindtap='navToDetail' data-id='{{item.table._id}}' data-name='{{item.table.remark1}}'>
+    <image style='width:200rpx;height:170rpx;' src='{{item.table.config.cover}}' mode='aspectFill'></image>
+    <view class='stytt'>
+      <view>{{item.table.title}}</view>
+      <view class='font-24 color-gray' style='margin-top:10rpx' wx:if="{{item.remark1 != '新房'}}">{{item.table.config.houseType}}{{item.table.config.houseType2 ?  item.table.config.houseType2:''}}{{item.table.config.houseType3 ? item.table.config.houseType3:''}}/{{item.table.config.area}}㎡/{{item.table.config.orientation}}</view>
+      <view class='font-24 color-gray' style='margin-top:10rpx'  wx:if="{{item.remark1 == '新房'}}">{{item.table.config.status}}/{{item.table.config.decorate}}</view>
+      <view class='panel-start'>
+        <view wx:for="{{item.table.config.tag}}" wx:for-item="ul" class='{{ul == "随时看房" ? "qwe3":""}}{{ul == "全新" ? "qwe1":""}}{{ul == "满五年" ? "qwe2":""}}{{ul == "满十年" ? "qwe2":""}}'>{{ul}}</view>
+      </view>
+      <view class='panel-start item-end' style="margin-top:10rpx">
+        <view style='color:#FF6666;font-weight:bold;font-size:34rpx'>{{item.table.remark1=='新房' ? '均价':''}}{{item.table.minPrice}}{{item.table.remark1=='租房' ? '元/月':'万元'}}</view>
+        <view class='font-22 color-gray' style='margin-left:20rpx'>{{item.table.remark1=='租房' ? '':(item.table.config.price+'元/㎡')}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='panel' style='text-align:center' wx:if="{{list.length == 0 && load == false}}">
+    <image src='/img/kong.png' style='width:300rpx;height:500rpx;' mode='aspectFill'></image>
+    <view style='color:#888'>暂无收藏记录</view>
+  </view>
+  <view class="panel-center item-center" style='padding:30rpx;' wx:if="{{load}}">
+    <view class="three-quarters-loader">Loading</view>
+    <view class="loading-txt">加载中...</view>
+  </view>
+  <view style='text-align:center;padding:30rpx;color:#888;font-size:28rpx' wx:if="{{total == list.length && load == false}}">没有更多了</view>
+</view>
