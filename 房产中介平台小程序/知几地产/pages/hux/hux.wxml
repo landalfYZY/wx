@@ -55,3 +55,8 @@
     <view style='color: #ffffff'>联系经纪人</view>
   </view>
 </view>
+
+<view wx:if="{{iss}}" style='width:90rpx;height:90rpx;border-radius:100rpx;background:#00c482;position:fixed;bottom:200rpx;right:30rpx;text-align:center' bindtap='switchToHome'>
+  <image src='/img/home.png' style='width:40rpx;height:40rpx;display:block;margin:auto;margin-top:10rpx'></image>
+  <view style='color:#fff;font-size:22rpx'>首页</view>
+</view>

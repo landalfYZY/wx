@@ -13,7 +13,7 @@ Page({
       fields: [],
       wheres: [
         {
-          value: "shop.sunwouId",
+          value: "shopId",
           opertionType: "equal",
           opertionValue: wx.getStorageSync("app").shopId
         },
@@ -35,6 +35,7 @@ Page({
       }
     }
   },
+  
   changeTs(e){
     var that = this;
     if (e.currentTarget.dataset.id == 1){
