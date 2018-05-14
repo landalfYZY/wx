@@ -44,7 +44,8 @@ Page({
   onShareAppMessage: function () {
     var that = this;
     return {
-      path:'/pages/hux/hux?status='+this.data.status+'&data='+this.data.msg+'&iss=1'
+      title:'户型图',
+      path:'/pages/hux/hux?status='+this.data.status+'&data='+JSON.stringify(this.data.msg)+'&iss=1'
     }
   } 
 })
