@@ -30,12 +30,13 @@ Page({
     }
     this.setData({
       status:options.status,
-      msg:JSON.parse(options.data)
+      msg:JSON.parse(options.data),
+      phone:options.phone
     })
   },
   makephoneCall() {
     wx.makePhoneCall({
-      phoneNumber: wx.getStorageSync('showData')[0].admin.phone,
+      phoneNumber:this.data.phone,
     })
   },
   /**

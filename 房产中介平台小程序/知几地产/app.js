@@ -35,28 +35,31 @@ App({
     })
   },
   //获取用户信息接口
-  getUserInfo: function(){
+  getUserInfo: function(cb){
     var that = this;
-    wx.getUserInfo({
-      success(res){
-        that.post('wxuser/update', {
-          userId: wx.getStorageSync('app').sunwouId,
-          nickName: res.userInfo.nickName,
-          avatarUrl: res.userInfo.avatarUrl,
-          province: res.userInfo.province,
-          city: res.userInfo.city,
-          gender: res.userInfo.gender
-        }, function (res) {
-          if (res.code) {
-            wx.setStorageSync('app', res.params.user);
-          } else {
-            wx.showToast({
-              title: res.msg,
-            })
-          }
-        })
-      }
-    })
+    if(wx.getStorageSync("tempuser")){
+      that.post('wxuser/update', {
+        userId: wx.getStorageSync('app').sunwouId,
+        nickName: wx.getStorageSync("tempuser").nickName,
+        avatarUrl: wx.getStorageSync("tempuser").avatarUrl,
+        province: wx.getStorageSync("tempuser").province,
+        city: wx.getStorageSync("tempuser").city,
+        gender: wx.getStorageSync("tempuser").gender
+      }, function (res) {
+        if (res.code) {
+          cb(res)
+          wx.setStorageSync('app', res.params.user);
+        } else {
+          wx.showToast({
+            title: res.msg,
+          })
+        }
+      })
+    }else{
+
+    }
+        
+     
   },
   id:'sunwou20180427125258627',
   uid:'sunwou20180427123421438',

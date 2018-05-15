@@ -14,12 +14,13 @@
 <view class='panel'>
   <view class='panel-start item-center'>
     <view style='font-size:36rpx'>{{msg.title}}</view>
-    <view style='margin-left:20rpx;font-size:22rpx;padding:0 15rpx;background:#ddf2fd;color:#3399FF;height:30rpx;line-height:30rpx'>{{msg.config.decorate}}</view>
+    <view wx:if="{{msg.config.decorate != ''}}" style='margin-left:20rpx;font-size:22rpx;padding:0 15rpx;background:#ddf2fd;color:#3399FF;height:30rpx;line-height:30rpx'>{{msg.config.decorate}}</view>
     <view style='margin-left:20rpx;font-size:22rpx;padding:0 15rpx;background:#{{msg.config.status == "待售" ? "fff1e4":"e9fff4"}};color:#{{msg.config.status == "待售" ? "ff9933":"00c482"}};height:30rpx;line-height:30rpx'>{{msg.config.status}}</view>
   </view>
   <view class='panel-start' style='margin-top:20rpx'>
-    <view style='padding:0 15rpx;border:1px solid #e1e1e1;color:#aaa;font-size:24rpx;border-radius:5rpx'>{{msg.config.floorType}}</view>
-  </view>
+        <view wx:for="{{msg.config.tag}}" wx:for-item="ul" class='qwe4'>{{ul}}</view>
+        <view wx:if="{{msg.config.floorType !=''}}"  class='qwe4'>{{msg.config.floorType}}</view>
+      </view>
   <view style='padding:15rpx 0;margin-top:20rpx' class='panel-between'>
     <view class='panel-start'>
       <view style='font-size:34rpx'>均价:</view>

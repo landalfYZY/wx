@@ -1,8 +1,11 @@
-<view class='panel panel-start item-center' bindtap='navToMsg'>
+<view class='panel panel-start item-center' >
   <view>
     <image src='{{userInfo.avatarUrl ? userInfo.avatarUrl:"/img/tx.png"}}' style='height:110rpx;width:110rpx'></image>
   </view>
-  <view style='margin-left:30rpx'>{{userInfo.nickName ? userInfo.nickName:userInfo.openid}}</view>
+  <view style='margin-left:30rpx'>
+    <view>{{userInfo.nickName ? userInfo.nickName:''}}</view>
+    <button wx:if="{{!userInfo.nickName}}" open-type='getUserInfo' bindgetuserinfo='getUser' lang='zh_CN' size='mini' type='primary'>登陆</button>
+  </view>
 </view>
 
 <!-- <view class='panel panel-between item-center bottom-line' bindtap='navToEr' style='margin-top:20rpx'>
