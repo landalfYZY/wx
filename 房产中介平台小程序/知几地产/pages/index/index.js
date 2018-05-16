@@ -105,6 +105,9 @@ Page({
     }
 
   },
+  onPullDownRefresh(){
+    this.getList()
+  },
   getCity() {
     wx.navigateTo({
       url: '/pages/area/area',
@@ -164,7 +167,7 @@ Page({
         }
         var li = [];
           li = res.params.result
-       
+       wx.stopPullDownRefresh()
         that.setData({
           list: li,
           total: res.params.total,

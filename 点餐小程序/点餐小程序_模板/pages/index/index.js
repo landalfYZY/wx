@@ -10,6 +10,29 @@ Page({
     ],
     shop:''
   },
+  getUser(e) {
+    var user = e.detail.userInfo
+    wx.setStorageSync("tempuser", e.detail.userInfo)
+    if (wx.getStorageSync("app")){
+
+    }else{
+      app.login(function (res) {
+        if (res.code) {
+          wx.removeStorageSync('app')
+          wx.setStorageSync('app', res.params.user);
+          app.getUserInfo(function (res) {
+            that.setData({
+              userInfo: wx.getStorageSync("app")
+            })
+          })
+        } else {
+          wx.showToast({
+            title: res.msg,
+          })
+        }
+      })
+    }
+  },
   shoyihn(){
     if(wx.getStorageSync("app").shopId){
       wx.navigateTo({
@@ -205,7 +228,6 @@ Page({
         if(wx.getStorageSync("app")){
           app.getUserInfo(function(res){
             that.setData({
-              
               userInfo: wx.getStorageSync("app")
             })
           })
@@ -227,8 +249,7 @@ Page({
             }
           })
         }
-       
-        
+
       },
     })
     this.getPhotos()

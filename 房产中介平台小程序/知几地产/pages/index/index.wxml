@@ -36,7 +36,7 @@
       <view class='panel-start'>
         <view style='margin-right:20rpx'>{{item.title}}</view>
         <view wx:if="{{item.remark1 == '新房'}}" class='{{item.config.status == "在售" ? "qwe1":"qwe2"}}'>{{item.config.status}}</view>
-        <view wx:if="{{item.remark1 == '新房'}}" class='qwe3'>{{item.config.decorate}}</view>
+        <view wx:if="{{item.remark1 == '新房'}}" class='qwe3' wx:if="{{item.config.decorate != ''}}">{{item.config.decorate}}</view>
       </view>
       <view class='font-24 color-gray' style='margin-top:10rpx' wx:if="{{item.remark1 != '新房'}}">{{item.config.houseType}}{{item.config.houseType2 ?  item.config.houseType2:''}}{{item.config.houseType3 ? item.config.houseType3:''}}/{{item.config.area}}㎡/{{item.config.orientation}}</view>
       <view class='font-24 color-gray panel-start'   wx:if="{{item.remark1 == '新房'}}">
@@ -46,7 +46,8 @@
         <view wx:for="{{item.config.tag}}" wx:for-item="ul" class='{{ul == "随时看房" ? "qwe3":""}}{{ul == "全新" ? "qwe1":""}}{{ul == "满五年" ? "qwe2":""}}{{ul == "满十年" ? "qwe2":""}}'>{{ul}}</view>
       </view>
       <view class='panel-start' wx:if="{{item.remark1 == '新房'}}">
-        <view wx:for="{{item.config.tag}}" wx:for-item="ul" class='{{ul == "随时看房" ? "qwe4":""}}{{ul == "全新" ? "qwe4":""}}{{ul == "满五年" ? "qwe4":""}}{{ul == "满十年" ? "qwe4":""}}'>{{ul}}</view>
+        <view wx:for="{{item.config.tag}}" wx:for-item="ul" class='qwe4'>{{ul}}</view>
+        <view wx:if="{{item.config.floorType !=''}}"  class='qwe4'>{{item.config.floorType}}</view>
       </view>
       <view class='panel-start item-end' style="margin-top:10rpx">
         <view style='color:#ff735c;font-weight:bold;font-size:34rpx'>{{item.remark1=='新房' ? item.config.price:item.minPrice}}{{item.remark1=='租房' ? '元/月':'元/㎡'}}</view>

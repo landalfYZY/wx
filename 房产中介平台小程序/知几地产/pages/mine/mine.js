@@ -8,6 +8,10 @@ Page({
     phone: '',
     userInfo: null
   },
+  getUser(e){
+    var user = e.detail.userInfo
+    wx.setStorageSync("tempuser", user)
+  },
   navTo(){
     wx.navigateTo({
       url: '/pages/follow/follow',

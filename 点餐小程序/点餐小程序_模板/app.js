@@ -42,16 +42,14 @@ App({
   //获取用户信息接口
   getUserInfo: function (cb) {
     var that = this;
-    wx.getUserInfo({
-      lang:'zh_CN',
-      success(res) {
+    if (wx.getStorageSync('tempuser')){
         that.post('wxuser/update', {
           userId: wx.getStorageSync('app').sunwouId,
-          nickName: res.userInfo.nickName,
-          avatarUrl: res.userInfo.avatarUrl,
-          province: res.userInfo.province,
-          city: res.userInfo.city,
-          gender: res.userInfo.gender,
+          nickName: wx.getStorageSync('tempuser').nickName,
+          avatarUrl: wx.getStorageSync('tempuser').avatarUrl,
+          province: wx.getStorageSync('tempuser').province,
+          city: wx.getStorageSync('tempuser').city,
+          gender: wx.getStorageSync('tempuser').gender,
           minProgramId:that.id
         }, function (res) {
           if (res.code) {
@@ -63,8 +61,9 @@ App({
             })
           }
         })
-      }
-    })
+    }else{
+      cb('none')
+    }
   },
   id: 'sunwou20180510132515918',
   uid: 'sunwou20180510132333835',

@@ -71,7 +71,7 @@ Page({
   },
   navToDetail(e){
     wx.navigateTo({
-      url: '/pages/hux/hux?status='+this.data.msg.config.status+'&data='+JSON.stringify(e.currentTarget.dataset.item),
+      url: '/pages/hux/hux?status=' + this.data.msg.config.status + '&data=' + JSON.stringify(e.currentTarget.dataset.item) + '&phone=' + this.data.msg.config.phone,
     })
   },
   addFollow() {
@@ -165,6 +165,9 @@ Page({
       if (res.code) {
         res.params.result[0].images = JSON.parse(res.params.result[0].images)
         res.params.result[0].config.huxin = JSON.parse(res.params.result[0].config.huxin)
+        if(res.params.result[0].config.tag){
+          res.params.result[0].config.tag = JSON.parse(res.params.result[0].config.tag)
+        }
         if (res.params.result[0].config.kpDate){
           res.params.result[0].config.kpDate = res.params.result[0].config.kpDate.substring(0, 10)
         }

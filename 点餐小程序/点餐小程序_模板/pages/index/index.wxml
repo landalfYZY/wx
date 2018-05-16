@@ -36,9 +36,10 @@
     </view>
   </view>
   <view class='panel-center' style='height:20rpx'>
-    <view bindtap='shoyihn' style='height:60rpx;width:60rpx;border:7rpx solid #fff;border-radius:100rpx;position:relative;background:#f3f3f3;top:-20rpx'>
-      <image src='{{userInfo.avatarUrl}}' style='height:60rpx;width:60rpx;border-radius:100rpx'></image>
-    </view>
+    <button class='sssd panel-center item-center' open-type='getUserInfo' lang="zh_CN" bindgetuserinfo='getUser' bindtap='shoyihn'>
+      <image  wx:if="{{userInfo.avatarUrl}}" src='{{userInfo.avatarUrl}}' style='height:80rpx;width:80rpx;border-radius:80rpx'></image>
+      <view wx:if="{{!userInfo.avatarUrl}}" style='font-size:22rpx'>登陆</view>
+    </button>
   </view>
   <view class='panel-center' style='padding:0 15px'>
     <view class='q3' style='width:{{(width-110)/2}}px;background-image:url();' bindtap='navToShopList'>

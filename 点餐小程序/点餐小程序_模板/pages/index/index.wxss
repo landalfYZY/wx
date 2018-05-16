@@ -1,7 +1,11 @@
 page {
   background-color: #2b2d3a;
 }
-
+.sssd{
+  height:80rpx;width:80rpx;border:7rpx solid #fff;border-radius:100rpx;position:relative;background:#f3f3f3;top:-20rpx;
+  padding: 0;margin: 0;
+  line-height: normal
+}
 .diandan {
   background: linear-gradient(to right, #ff9b00, #f63);
   line-height: 100rpx;

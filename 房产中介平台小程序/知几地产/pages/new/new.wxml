@@ -74,11 +74,12 @@
       <view class='panel-start'>
         <view style='margin-right:20rpx'>{{item.title}}</view>
         <view  class='{{item.config.status == "在售" ? "qwe1":"qwe2"}}'>{{item.config.status}}</view>
-        <view  class='qwe3'>{{item.config.decorate}}</view>
+        <view  class='qwe3' wx:if="{{item.config.decorate != ''}}">{{item.config.decorate}}</view>
       </view>
       
       <view class='panel-start'>
-        <view wx:for="{{item.config.tag}}" wx:for-item="ul" class='{{ul == "随时看房" ? "qwe4":""}}{{ul == "全新" ? "qwe4":""}}{{ul == "满五年" ? "qwe4":""}}{{ul == "满十年" ? "qwe4":""}}'>{{ul}}</view>
+        <view wx:for="{{item.config.tag}}" wx:for-item="ul" class='qwe4'>{{ul}}</view>
+        <view wx:if="{{item.config.floorType !=''}}"  class='qwe4'>{{item.config.floorType}}</view>
       </view>
       <view class='panel-start item-end' style="margin-top:10rpx">
         <view style='color:#ff735c;font-weight:bold;font-size:34rpx'>{{item.config.price}}元/㎡</view>
