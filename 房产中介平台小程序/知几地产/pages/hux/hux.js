@@ -9,6 +9,11 @@ Page({
     msg:null,
     iss:false
   },
+  switchToHome() {
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
   preview() {
     var that = this
     var uls = [];

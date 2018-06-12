@@ -1,4 +1,4 @@
-// pages/mine/mine.js
+var app = getApp()
 Page({
 
   /**
@@ -13,15 +13,20 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    wx.getUserInfo({
-      success: function (res) {
-        that.setData({
-          userInfo:res.userInfo
-        })
-      }
+    if(wx.getStorageSync('user').nickName){
+      this.setData({
+        userInfo: wx.getStorageSync('user')
+      })
+    }
+  },
+  bindGetUserInfo(e){
+    var user = e.detail.userInfo;
+    app.getUserInfo(user,function(res){
+      that.setData({
+        userInfo: res.result
+      })
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

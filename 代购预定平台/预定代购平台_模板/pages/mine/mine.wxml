@@ -1,5 +1,9 @@
 <view class="panel panel-between item-end">
-  <image src='{{userInfo.avatarUrl}}' style='width:150rpx;height:150rpx;border-radius:10rpx'></image>
+  <view class='panel-start item-center'>
+    <image src='{{userInfo.avatarUrl ? userInfo.avatarUrl:"/img/t7.png"}}' style='width:150rpx;height:150rpx;border-radius:10rpx'></image>
+    <button type='primary' wx:if="{{!userInfo}}" open-type="getUserInfo" size="mini" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+  </view>
+  
   <view style='text-align:right'>
     <view class='font-34'>{{userInfo.nickName}}</view>
     <view>{{userInfo.gender == 1 ? '男':''}}{{userInfo.gender == 2 ? '女':''}}{{userInfo.gender == 0 ? '未知':''}}</view>
