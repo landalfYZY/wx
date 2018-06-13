@@ -47,7 +47,7 @@
     </view>
   </view>
 </view>
-<view class='bg-white' style='padding-left:30rpx;margin-top:20rpx'>
+<!-- <view class='bg-white' style='padding-left:30rpx;margin-top:20rpx'>
   <view class='panel-between panel bottom-line' style='padding-left:0rpx'>
     <view>代购计划</view>
     <view  class='panel-end item-center'>
@@ -70,7 +70,7 @@
     <view style='width:100rpx;height:100rpx;box-shadow:1px 1px 1px 1px #f3f3f3;border-radius:100rpx;' class='panel-center item-center font-34'>+</view>
   </view>
   <view style='padding-right:30rpx;padding-bottom:30rpx' class='panel-center font-24'>计划一项行程</view>
-</view>
+</view> -->
 
 <view style='padding:60rpx 0'>
   <view style='text-align:center;font-size:24rpx' class='color-gray'>双沃科技提供技术支持</view>

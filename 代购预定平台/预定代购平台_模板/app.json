@@ -22,11 +22,6 @@
       "text": "首页",
       "iconPath": "img/t1.png",
       "selectedIconPath": "img/t2.png"
-    },{
-      "pagePath": "pages/cate/cate",
-      "text": "分类",
-      "iconPath": "img/t3.png",
-      "selectedIconPath": "img/t4.png"
     },
     {
       "pagePath": "pages/cart/cart",
