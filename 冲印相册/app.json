@@ -7,6 +7,7 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "冲印相册",
+   
     "navigationBarTextStyle":"black"
   }
 }
