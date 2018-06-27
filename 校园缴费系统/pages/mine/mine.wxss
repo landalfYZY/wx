@@ -1,0 +1,45 @@
+page {
+  background: #f7f7f7;
+}
+
+.touXiang {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  border: 5rpx solid #f3f3f3;
+}
+
+.backgg {
+  padding-top: 30rpx;
+  width: 100%;
+  height: 260rpx;
+  background: linear-gradient(to top, #1759e3 0%, #41a4f5 100%);
+}
+
+.list-wrap {
+  width: 100%;
+  background: #efefef;
+}
+
+.list-item {
+  background: #fff;
+  margin-bottom: 30rpx;
+}
+
+.list-item:last-child {
+  margin: 0;
+}
+
+.item {
+  flex: 1;
+}
+
+.desc-highlight {
+  font-size: 24rpx;
+  height: 38rpx;
+  padding: 0 22rpx;
+  border: 1px solid #f5342f;
+  border-radius: 20rpx;
+  color: #f5342f;
+  line-height: 38rpx;
+}

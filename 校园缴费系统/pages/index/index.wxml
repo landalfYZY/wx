@@ -1,0 +1,110 @@
+<!--通知-->
+<i-notice-bar icon="systemprompt" loop closable>
+  2018年世界杯,将于6月14日至7月15日举行;2018年世界杯,将于6月14日至7月15日举行;
+</i-notice-bar>
+<!--轮播图-->
+<view class="pst">
+  <swiper style="height:330rpx" autoplay="{{autoplay}}" current="{{swiperCurrent}}" bindchange="swiperChange">
+    <block wx:for="{{slider}}">
+      <swiper-item>
+        <image style="height:330rpx;width:100%" mode="aspectFill" src="{{item.url}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="dots">
+    <block wx:for="{{slider}}">
+      <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+    </block>
+  </view>
+</view>
+<!--选项卡-->
+<i-tabs current="{{ current }}" bindchange="handleChange" i-class="i-tabs">
+  <i-tab key="tab1" title="待缴费"></i-tab>
+  <i-tab key="tab2" title="已缴费"></i-tab>
+</i-tabs>
+<!--未关联-->
+<view wx:if="{{list.length == 0}}">
+  <wxc-abnor type="SEARCH" title="暂无关联学生"></wxc-abnor>
+  <view class='paybtn' style='margin:30rpx 220rpx 0rpx 220rpx' bindtap="guanlian">立即关联</view>
+</view>
+<!--弹窗登录 -->
+<view class="{{showdetail ? '':'hide'}}" style="width:100%;height:100%;background: rgba(0, 0, 0, 0.4);position: fixed;top: 0;">
+  <view class="shunbo" style='height: 550rpx'>
+    <view class='font-32-black2 text-center margin-top-wushi bold'>关联学生</view>
+    <input class='font-30-black3 bottom-line' style='padding:0 15rpx;width:450rpx' type='number' bindinput="zhengjian" placeholder="请输入身份证号码" maxlength="18" placeholder-style="color:#b1b1b1" />
+    <view class="font-24-zhonhui text-left" style='width:85%'>关联后可再次切换关联学生</view>
+    <button class='font-32-white bg-ju2 btn' bindtap="queding">关联</button>
+  </view>
+</view>
+<!--显示缴费项目 -->
+
+<view wx:for="{{listorder}}" wx:if="{{current == 'tab1'}}" class='margin-bottom-sishi'>
+  <view class='kapian' wx:if="{{list.length != 0 && listorder.length !=0}}">
+    <!-- <image class="avatar" src="/images/food.png"></image> -->
+    <view class='flexc-start margin-left-ershi' style='width:370rpx'>
+      <view class='flexr-start' bindtap="getPay" data-index="{{index}}">
+        <view class="gouXuan" wx:if="{{!item.act}}"></view>
+        <icon  wx:if="{{item.act}}" type="success" size="22" color="#50c9c3" />
+        <view class='font-30-black2 margin-left-ershi bold' wx:if="{{item.need}}">{{item.goods.describe}}</view>
+        <view class='font-30-black2 margin-left-ershi bold' wx:if="{{!item.need}}">{{item.goods.describe}}（选缴）</view>
+      </view>
+      <!-- <i-checkbox-group current="{{current3}}" bindchange="handleFruitChange">
+        <i-checkbox  position="{{position}}" wx:key="{{item.sunwouId}}" wx:if="{{item.need}}" value="{{item.goods.describe}}" ></i-checkbox>
+        <i-checkbox  position="{{position}}" wx:key="{{item.sunwouId}}" wx:if="{{!item.need}}" value="{{item.goods.describe}}（选缴）" ></i-checkbox>
+    </i-checkbox-group> -->
+      <wxc-elip class='font-22-qianhui margin-top-ershi space-san' line="2">学生信息：
+        <text class='font-22-black2'>{{item.user.name}} {{item.user.schoolTime}}届 {{item.user.cl}} {{item.user.gender}}</text>
+      </wxc-elip>
+    </view>
+    <view class='flexc-start item-end margin-right-ershi'>
+      <wxc-price class="price-demo" icon="sup">{{item.amount}}</wxc-price>
+      <view class='paybtn2 margin-top-shi' bindtap="quxiao" data-id="{{item.sunwouId}}" wx:if="{{!item.need}}">取消</view>
+    </view>
+  </view>
+</view>
+  <view wx:if="{{list.length != 0 && listorder.length ==0 && current == 'tab1'}}">
+    <wxc-abnor type="SEARCH" title="暂无待缴费清单"></wxc-abnor>
+  </view>
+<view style='height:100rpx' wx:if="{{current == 'tab1'}}"></view>
+<view class="bottomCart" wx:if="{{current == 'tab1' && list.length != 0}}">
+  <view class="zongji">
+    <view class='flexr-start item-center' bindtap="quanxuan">
+      <view class="gouXuan margin-left-sanshi" wx:if="{{!quan}}"></view>
+      <icon class='margin-left-sanshi' wx:if="{{quan}}" type="success" size="22" color="#50c9c3" />
+      <view class='font-27-zhonhui margin-left-ershi' style='background:#fff;width:100rpx;'>全选</view>
+    </view>
+    <view>
+      <text class='margin-right-sanshi font-30-black2'>总计：</text>
+      <text class="margin-right-ershi font-30-zhonhong">¥ {{zonji}}</text>
+    </view>
+  </view>
+  <view class="jiesuan">
+    <view class='paybtn3 ' bindtap="xuangou" data-id="{{item.sunwouId}}" wx:if="{{!item.need}}">结算（{{jiesuan}}）</view>
+  </view>
+</view>
+
+<view wx:for="{{listorders}}" wx:if="{{current == 'tab2'}}" class='margin-bottom-sishi'>
+  <view class='kapian'  wx:if="{{list.length != 0 && listorders.length !=0}}">
+    <!-- <image class="avatar" src="/images/food.png"></image> -->
+    <view class='flexc-start margin-left-ershi' style='width:370rpx'>
+      <view class='flexr-start' bindtap="getPay" data-index="{{index}}">
+        <view class='font-30-black2 bold' wx:if="{{item.need}}">{{item.goods.describe}}</view>
+        <view class='font-30-black2 margin-left-ershi' wx:if="{{!item.need}}">{{item.goods.describe}}（选缴）</view>
+      </view>
+      <!-- <i-checkbox-group current="{{current3}}" bindchange="handleFruitChange">
+        <i-checkbox  position="{{position}}" wx:key="{{item.sunwouId}}" wx:if="{{item.need}}" value="{{item.goods.describe}}" ></i-checkbox>
+        <i-checkbox  position="{{position}}" wx:key="{{item.sunwouId}}" wx:if="{{!item.need}}" value="{{item.goods.describe}}（选缴）" ></i-checkbox>
+    </i-checkbox-group> -->
+      <wxc-elip class='font-22-qianhui margin-top-ershi space-san' line="2">学生信息：
+        <text class='font-22-black2'>{{item.user.name}} {{item.user.schoolTime}}届 {{item.user.cl}} {{item.user.gender}}</text>
+      </wxc-elip>
+    </view>
+    <view class='flexc-start item-end margin-right-ershi'>
+      <wxc-price class="price-demo" icon="sup">{{item.amount}}</wxc-price>
+      <view class='font-28-zhonhui'>{{item.status}}</view>
+    </view>
+  </view>
+</view>
+  <view wx:if="{{list.length != 0 && listorders.length ==0 && current == 'tab2'}}">
+    <wxc-abnor type="SEARCH" title="暂无已缴费清单"></wxc-abnor>
+  </view>

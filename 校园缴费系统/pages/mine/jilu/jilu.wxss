@@ -1,0 +1,28 @@
+page{
+  background: #f7f7f7
+}
+.shunbo{
+  margin: auto;
+  margin-top: 250rpx;
+  width: 550rpx;
+  height: 480rpx;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 3px 10px #2c3e50;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center
+}
+.kapian{
+  background: #fff;
+  box-shadow: 0px 5px 5px #cfcfcf;
+  margin: 30rpx 30rpx 0rpx 30rpx;
+  border-radius: 20rpx;
+  height: 170rpx;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
