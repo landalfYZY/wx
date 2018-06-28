@@ -406,11 +406,11 @@ Page({
     for (var i in china.getAreaSim(wx.getStorageSync('city'))){
       city.push({ label: china.getAreaSim(wx.getStorageSync('city'))[i], active: false })
     }
-    this.data.query.wheres.push({
-      value: "config.city",
-      opertionType: "equal",
-      opertionValue: wx.getStorageSync('city')
-    })
+    // this.data.query.wheres.push({
+    //   value: "config.city",
+    //   opertionType: "equal",
+    //   opertionValue: wx.getStorageSync('city')
+    // })
     wx.getSystemInfo({
       success: function(res) {
         //统一渲染数据

@@ -72,7 +72,7 @@ Page({
         })
       }
         wx.navigateTo({
-          url: '/pages/litmsg/litmsg?type=1',
+          url: '/pages/pubhouse/pubhouse',
         })
       
       
@@ -99,7 +99,7 @@ Page({
         })
       }
       wx.navigateTo({
-        url: '/pages/litmsg/litmsg?type=2',
+        url: '/pages/pubDetail/pubDetail',
       })
 
     }

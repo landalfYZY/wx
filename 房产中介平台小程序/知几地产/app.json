@@ -18,7 +18,8 @@
     "pages/pubDetail/pubDetail",
     "pages/midetail/midetail",
     "pages/litmsg/litmsg",
-    "pages/mess/mess"
+    "pages/mess/mess",
+    "pages/login/login"
   ],
   "window":{
     "backgroundTextStyle":"dark",

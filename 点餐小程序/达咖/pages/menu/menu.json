@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-notice-bar": "../../iview/notice-bar/index",
+    "wxc-elip": "../../dist/packages/@minui/wxc-elip/dist/index"
+  }
+}

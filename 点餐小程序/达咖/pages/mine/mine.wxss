@@ -1,0 +1,56 @@
+page {
+  background: #f4f7fc;
+}
+.kapian{
+  background: white;
+  box-shadow: 0px 5px 7px #cfcfcf;
+  border-radius: 20rpx;
+  width: 90%;
+  height: 60%
+}
+.touXiang{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  box-shadow: 0px 5px 7px #cfcfcf;
+  top: 28%;
+  left: 42%
+}
+.list-wrap {
+    width: 100%;
+    background: #efefef;
+  }
+  .list-item {
+    background: #fff;
+    margin-bottom: 30rpx;
+  }
+  .list-item:last-child {
+    margin: 0;
+  }
+  .item {
+    flex: 1;
+  }
+  .desc-highlight {
+    font-size: 24rpx;
+    height: 38rpx;
+    padding: 0 22rpx;
+    border: 1px solid #f5342f;
+    border-radius: 20rpx;
+    color: #f5342f;
+    line-height: 38rpx;
+  }
+.paybtn {
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #45aaf2 100%);
+  box-shadow: 0px 5px 7px #cfcfcf;
+  color: #fff;
+  width: 350rpx;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.paybtn:active {
+  background: #eee;
+}

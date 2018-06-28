@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/menu/menu",
+    "pages/mine/mine"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fd8b69",
+    "navigationBarTitleText": "达咖",
+    "navigationBarTextStyle":"white"
+  }
+}

@@ -91,6 +91,12 @@
 					"name": "lit",
 					"pathName": "pages/litmsg/litmsg",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "dengl",
+					"pathName": "pages/login/login",
+					"query": ""
 				}
 			]
 		}

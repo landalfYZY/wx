@@ -1,0 +1,92 @@
+page{
+  background: #f3f3f3
+}
+.home-bg{
+  padding: 60rpx;
+  height: 530rpx;
+  background: linear-gradient(to bottom, #fd8b69 , #fe6a9a);
+}
+.home-title{
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: bold
+}
+.home-time{
+  font-size: 24rpx;
+  color: #fff;
+  margin-top: 20rpx;
+}
+.home-leng{
+  font-size: 24rpx;
+  color: #fff;
+  margin-top: 60rpx
+}
+.dropdown-icon-white{
+  width: 25rpx;
+  height: 25rpx;
+  margin-top: 60rpx;
+  margin-left: 20rpx
+}
+.shop-panel{
+  box-shadow: 0 0 10px 0 #e1e1e1;
+  height: 450rpx;
+  border: 2px solid #fff;
+  border-radius: 10rpx;
+  background: #fff;
+  position: relative;
+  top: -380rpx;
+  overflow: hidden
+}
+.tleng{
+  margin-left: 20rpx;
+  font-size: 30rpx;
+
+}
+.taddress{
+  color: #888;
+  font-size: 24rpx;
+  margin-left: 20rpx
+}
+.gotoShop{
+  width: 150rpx;
+  height: 70rpx;
+  background: #fd8b69;
+  margin-right: 20rpx;
+  border-radius: 70rpx;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 70rpx;
+}
+.ka-panel{
+  padding: 10rpx 30rpx;
+  box-shadow: 0 0 10px 0px #e1e1e1;
+  border-radius: 10rpx;
+  background: #fff;
+  margin-top: 20rpx
+}
+.katext{
+  font-size: 30rpx;
+  color: #888
+}
+.title-item{
+  line-height: 70rpx;
+  width: 100%;
+  overflow: hidden;
+  font-size: 26rpx;
+  text-align: center;
+}
+.itemcard{
+  width:250rpx;
+  height: 250rpx;
+  background: #fff;
+  box-shadow: 0 0 10rpx 0 #e1e1e1;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+  display: inline-block;
+  margin-right: 30rpx;
+  overflow: hidden
+}
+.itemcard:last-child{
+  margin-right: 0
+}

@@ -1,0 +1,14 @@
+.hd{
+  width: 100%;
+  overflow: hidden;
+  height: 200rpx
+}
+.hdd{
+  width: 1000%;
+  position: relative;
+  top: -500px;
+  left: 
+  height: 1000px;
+  border-radius: 9999px;
+  background: #ff9900
+}

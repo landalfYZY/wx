@@ -1,0 +1,99 @@
+page {
+  background: #f4f7fc;
+}
+.kapian{
+  background: white;
+  box-shadow: 0px 0px 7px 0 #e1e1e1;
+  border-radius: 20rpx;
+  width: 90%;
+  height: 60%
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 10rpx;
+  box-shadow: 0px 5px 7px #cfcfcf;
+}
+.paybtn {
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #45aaf2 100%);
+  box-shadow: 0px 3px 5px #cfcfcf;
+  color: #fff;
+  width: 75px;
+  line-height: 60rpx;
+  font-size: 27rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.paybtn:active {
+  background: #eee;
+}
+.lis{
+  width: 50rpx;
+  height: 50rpx;
+}
+.paybtn2{
+  margin-top: 50rpx;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #45aaf2 100%);
+  box-shadow: 0px 3px 5px #cfcfcf;
+  color: #fff;
+  width: 320rpx;
+  line-height: 72rpx;
+  font-size: 28rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.paybtn2:active {
+  background: #eee;
+}
+.item1{
+  margin: 30rpx;
+  border-radius: 10rpx;
+  background: #e6edf3;
+}
+.fenlei{
+  margin: 20rpx 20rpx 0rpx 20rpx
+}
+.num{
+  margin: 5rpx 20rpx 20rpx 20rpx;
+  text-align: right
+}
+.kapian2{
+  background: white;
+  box-shadow: 1px 1px 10px 0px #e1e1e1;
+  border-radius: 10rpx;
+  width: 100%
+}
+.t1{
+  font-size: 27rpx;
+  color: #363636;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+.img{
+  width: 150rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+  margin:30rpx 0 0 30rpx;
+}
+.btngroup{
+  top: 130rpx;
+  right: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+.rel{
+  width: 70rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.nums{
+  width: 40rpx;
+  text-align:center;
+  color: #888888;
+  font-size: 28rpx;
+}

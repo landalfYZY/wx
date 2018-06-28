@@ -33,7 +33,7 @@ Page({
       minPrice: "",
       note: "",
       remark1: "租房",
-      remark2: "上架",
+      remark2: "下架",
       images: [],
       config: {
         wxuid: wx.getStorageSync("app").sunwouId,
