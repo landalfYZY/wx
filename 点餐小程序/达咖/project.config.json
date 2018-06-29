@@ -40,6 +40,12 @@
 					"name": "meun",
 					"pathName": "pages/menu/menu",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "me",
+					"pathName": "pages/mine/mine",
+					"query": ""
 				}
 			]
 		}

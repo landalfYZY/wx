@@ -1,4 +1,5 @@
 var app = getApp()
+var com = require('../../utils/common.js')
 Page({
 
   /**
@@ -83,7 +84,7 @@ Page({
 
     },
   onLoad: function (options) {
-    app.getWindow(this);
+    com.getWindowSize(this);
   },
 
   onReady: function () {

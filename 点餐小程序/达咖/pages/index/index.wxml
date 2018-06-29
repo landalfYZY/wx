@@ -6,17 +6,24 @@
     <image class='dropdown-icon-white' src='/images/dropdown_white.png'></image>
   </view>
 </view>
-<view style='height:0;padding:0 60rpx'>
-  <view class='shop-panel'>
-    <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530173008254&di=4ccd11c20b56aa21dd5bf0ef22c73952&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0107ae57f7bdc0a84a0e282b764425.jpg%401280w_1l_2o_100sh.jpg' style='width:100%;height:330rpx' mode='aspectFill'></image>
-    <view class='panel-between item-center'>
-      <view style='width:400rpx;padding:15rpx 0' >
-        <view class='tleng'>本店距离您100m</view>
-        <view class='taddress'>杭州市 拱塑区 邬阳街道 148号</view>
+<view style='height:0;'>
+  <swiper class='swiper-home' style='height:450rpx;'>
+    <swiper-item>
+      <view style='padding:0 60rpx'>
+        <view class='shop-panel' data-navurl="menu/menu" data-id="1" bindtap='navTo'>
+          <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530173008254&di=4ccd11c20b56aa21dd5bf0ef22c73952&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0107ae57f7bdc0a84a0e282b764425.jpg%401280w_1l_2o_100sh.jpg' style='width:100%;height:330rpx'
+            mode='aspectFill'></image>
+          <view class='panel-between item-center'>
+            <view style='width:400rpx;padding:15rpx 0'>
+              <view class='tleng'>本店距离您100m</view>
+              <view class='taddress'>杭州市 拱塑区 邬阳街道 148号</view>
+            </view>
+            <view class='gotoShop'>立即点餐</view>
+          </view>
+        </view>
       </view>
-      <view class='gotoShop'>立即点餐</view>
-    </view>
-  </view>
+    </swiper-item>
+  </swiper>
 </view>
 
 <view style="text-align:Center;font-size:26rpx;color:#888;margin-top:100rpx">不喜欢这家？ 左划试试</view>
@@ -28,8 +35,9 @@
   </view>
   <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
     <view class='itemcard' wx:for="{{5}}">
-      <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530180500057&di=92ad0d26cbfeada80e22e2fce61a058e&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F3812b31bb051f8199db3d042d0b44aed2e73e720.jpg' mode='aspectFill' style='width:100%;height:180rpx;display:block'></image>
+      <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530180500057&di=92ad0d26cbfeada80e22e2fce61a058e&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F3812b31bb051f8199db3d042d0b44aed2e73e720.jpg' mode='aspectFill'
+        style='width:100%;height:180rpx;display:block'></image>
       <view class='title-item'>美式咖啡卡</view>
-    </view>  
+    </view>
   </scroll-view>
 </view>

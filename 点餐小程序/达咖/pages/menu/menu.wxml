@@ -1,5 +1,5 @@
 <!--卡片-->
-<view class='flexr-center' style='margin:0 30rpx 0 30rpx'>
+<view class='flexr-center' style='margin:30rpx 30rpx 0 30rpx'>
   <view class=' flexc-start item-center kapian padding-sishi'>
     <view class='flexr-between item-center' style='width:100%'>
       <image class="avatar" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529494767466&di=97bbdf3d321079a649ee4e28c8c39aa1&imgtype=0&src=http%3A%2F%2Fimgs.bzw315.com%2Fuploadfiles%2Fversion2%2F0%2F20160407%2F201604071806532677.jpg%3FisWatermark%3D2"></image>
@@ -41,7 +41,7 @@
 <view class="flexr-between" style='height:80%'>
   <!--左半边分类-->
   <scroll-view scroll-y="true" style="width:23%;height:100%;">
-    <view class="item1 flexc-start" style="{{curNav == item.id ? 'background-image: linear-gradient(120deg, #a1c4fd 0%, #45aaf2 100%);box-shadow: 0px 7px 15px #c8d5e1;':''}}" wx:for="{{navList}}" bindtap="selectNav" data-id="{{item.id}}"> 
+    <view class="item1 flexc-start" style="{{curNav == item.id ? 'background-image: linear-gradient(120deg, #fd8b69 0%, #fe6a9a 100%);box-shadow: 0px 7px 15px #c8d5e1;':''}}" wx:for="{{navList}}" bindtap="selectNav" data-id="{{item.id}}"> 
     <view class='fenlei' style="{{curNav == item.id ? 'color:#fff;font-size:24rpx':'color:#666;font-size:24rpx'}}" data-id="{{item.id}}">{{item.name}}</view>
     <view class='num' style="{{curNav == item.id ? 'color:#fff;font-size:40rpx':'color:#b1b1b1;font-size:40rpx'}}" data-id="{{item.id}}">{{item.num}}</view>
     </view>
