@@ -1,0 +1,28 @@
+<view wx:for="{{listorders}}" class='margin-bottom-sishi'>
+  <view class='kapian'  wx:if="{{listorders.length !=0}}">
+    <!-- <image class="avatar" src="/images/food.png"></image> -->
+    <view class='flexc-start margin-left-ershi' style='width:370rpx'>
+      <view class='flexr-start' bindtap="getPay" data-index="{{index}}">
+        <view class='font-30-black2 bold' wx:if="{{item.need}}">{{item.goods.describe}}</view>
+        <view class='font-30-black2 margin-left-ershi' wx:if="{{!item.need}}">{{item.goods.describe}}（选缴）</view>
+      </view>
+      <!-- <i-checkbox-group current="{{current3}}" bindchange="handleFruitChange">
+        <i-checkbox  position="{{position}}" wx:key="{{item.sunwouId}}" wx:if="{{item.need}}" value="{{item.goods.describe}}" ></i-checkbox>
+        <i-checkbox  position="{{position}}" wx:key="{{item.sunwouId}}" wx:if="{{!item.need}}" value="{{item.goods.describe}}（选缴）" ></i-checkbox>
+    </i-checkbox-group> -->
+      <wxc-elip class='font-22-qianhui margin-top-ershi space-san' line="2">待缴费学生信息：
+        <text class='font-22-black2'>{{item.user.name}} {{item.user.cl}} {{item.user.gender}}</text>
+      </wxc-elip>
+    </view>
+    <view class='flexc-start item-end margin-right-ershi'>
+      <wxc-price class="price-demo" icon="sup">{{item.amount}}</wxc-price>
+      <view class='font-28-zhonhui'>{{item.status}}</view>
+    </view>
+  </view>
+
+</view>
+  <view wx:if="{{listorders.length ==0}}">
+    <wxc-abnor type="SEARCH" title="暂无已缴费清单"></wxc-abnor>
+  </view>
+
+

@@ -1,0 +1,98 @@
+page{
+  background: #f7f7f7
+}
+.address{
+  background: #ffffff;
+  padding: 30rpx;
+  margin: 20rpx;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px #e1e1e1
+}
+.gouXuan{
+  width: 30rpx;
+  height: 30rpx;
+  border: 2rpx #d1d1d1 solid;
+  border-radius: 30rpx
+}
+.btn-ori{
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 110rpx;
+  line-height: 95rpx;
+  text-align: center;
+  background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+  font-size: 90rpx;
+  color: #fff;
+  box-shadow: 2px 2px 2px #c1c1c1;
+  position: fixed;
+  right: 30rpx;
+  bottom: 60rpx;
+  opacity: 0.9;
+}
+.btn-ori:active{
+  background: #eeeeee
+}
+.paybtn{
+  background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+  color: #ffffff;
+  line-height: 75rpx;
+  font-size: 28rpx;
+  text-align: center;
+  border-radius: 12rpx
+}
+.paybtn:active{
+  background: #eeeeee
+}
+.shunbo{
+  margin: auto;
+  margin-top: 250rpx;
+  width: 550rpx;
+  height: 480rpx;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 3px 10px #2c3e50;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center
+}
+.btn6{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 0px 10px 10px
+}
+.btn6:active{
+  background: #eeeeee
+}
+.kapian{
+  background: #fff;
+  box-shadow: 0px 5px 5px #cfcfcf;
+  margin: 30rpx 30rpx 0rpx 30rpx;
+  border-radius: 20rpx;
+  height: 200rpx;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center
+}
+.avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+}
+.paybtn2{
+  background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+  color: #ffffff;
+  line-height: 60rpx;
+  font-size: 27rpx;
+  text-align: center;
+  border-radius: 12rpx
+}
+.paybtn2:active{
+  background: #eeeeee
+}

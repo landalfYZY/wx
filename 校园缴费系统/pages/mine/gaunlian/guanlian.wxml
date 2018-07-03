@@ -1,0 +1,33 @@
+<!--已创建地址显示 -->
+<view class="address"  wx:for="{{list}}" wx:if="{{list.length != 0}}">
+  <view wx:if="{{guanlian == true}}" >
+    <view class='flexr-start item-center'>
+      <view class="font-30-black2 bold">关联学生信息：</view>
+      <view class="font-26-zhonhui ">{{item.name}} {{item.cl}} {{item.gender}}</view>
+    </view>
+    <view class='flexr-end item-center'>
+      <view class='flexr-start item-center padding-top-ershi'>
+        <image class="icon-sanwu margin-right-shi" src="/images/shanChu.png" mode="aspectFit"></image>
+        <view class='font-24-zhonhong' bindtap='quguan' data-id="{{item.sunwouId}}">退出关联</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="btn-ori" bindtap="guanlian">+</view>
+
+<!--弹窗登录 -->
+<view class="{{showdetail ? '':'hide'}}" style="width:100%;height:100%;background: rgba(0, 0, 0, 0.4);position: fixed;top: 0;">
+  <view class="shunbo" style='height: 550rpx'>
+    <view class='font-32-black2 text-center margin-top-wushi bold'>关联学生</view>
+    <input class='font-30-black3 bottom-line' style='padding:0 15rpx;width:450rpx' type='number' bindinput="zhengjian" placeholder="请输入身份证号码" maxlength="18" placeholder-style="color:#b1b1b1" value='{{zhengjian}}'/>
+    <view class="font-24-zhonhui text-left" style='width:85%'>关联后可再次切换关联学生</view>
+    <button class='font-32-white bg-ju2 btn6' bindtap="queding">关联</button>
+  </view>
+</view>
+
+<!--未关联-->
+<view wx:if="{{list.length == 0 && guanlian == false}}">
+  <wxc-abnor type="SEARCH" title="暂无关联学生"></wxc-abnor>
+  <button class='paybtn' style='margin:30rpx 220rpx 0rpx 220rpx' bindtap="guanlian">立即关联</button>
+</view>

@@ -62,9 +62,13 @@ App({
      
   },
   id:'sunwou20180323141554582',
+<<<<<<< HEAD
   uid:'sunwou20180427123421438',
+=======
+  uid:'sunwou20180322130653845',
+>>>>>>> a0fb2ffb48560e435fcaa48a3dcc6b607f735a53
   ip:'https://www.sunwou.com/sunwou/',
-  phone:'17855889966',
+  
   post: function (url, data, success, fail, method) {
     //通用post接口实现方法
     var that = this;

@@ -1,0 +1,28 @@
+<!--创建地址-->
+<view class="tiShi">请如实填写相关信息</view>
+<view class="shuRu">
+  <view class='flexr-start item-center'>
+    <image class='icon-sishi' src="/images/l1.png"></image>
+    <view class='font-26-black2 margin-left-sanshi'>联系人</view>
+  </view>
+  <input class='tianXie' placeholder="联系人姓名" bindinput="contactPersonInput" placeholder-style="color:#b1b1b1" value="{{contactPerson}}"/>
+</view>
+<view class="shuRu">
+  <view class='flexr-start item-center'>
+    <image class='icon-sishi' src="/images/l2.png"></image>
+    <view class='font-26-black2 margin-left-sanshi'>联系方式</view>
+  </view>
+  <input class='tianXie' placeholder="请输入手机号" type='number' bindinput="telInput" maxlength="11" placeholder-style="color:#b1b1b1" value="{{tel}}"/>
+</view>
+<view class="shuRu" style='border-bottom:1px solid #e1e1e1'>
+  <view class='flexr-start item-center'>
+    <image class='icon-sishi' src="/images/l4.png"></image>
+    <view class='font-26-black2 margin-left-sanshi'>验证码</view>
+  </view>
+  <input class='tianXie' placeholder="请获取并输入验证码" bindinput="detailAddressInput" placeholder-style="color:#b1b1b1" value="{{detailAddress}}"/>
+</view>
+
+  <!--创建按钮-->
+  <view style='padding:80rpx 100rpx'>
+    <button class='paybtn' open-type="getUserInfo"  bindgetuserinfo="saveNewAdres" lang="zh_CN">保存</button>
+  </view>

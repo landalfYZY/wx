@@ -1,0 +1,38 @@
+page{
+  background-color: #f7f7f7
+}
+.tiShi{
+  padding: 20rpx 0 20rpx 20rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 30rpx;
+  color: #888888;
+  border-bottom: 1px solid #e1e1e1
+}
+.shuRu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  height: 100rpx;
+  padding: 0 20rpx 0 20rpx;
+  border-bottom: 1px solid #f3f3f3
+}
+.tianXie{
+  width: 450rpx;
+  text-align: right;
+  font-size:26rpx;
+  color: #666666
+}
+.paybtn{
+  background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+  color: #ffffff;
+  line-height: 85rpx;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 12rpx
+}
+.paybtn:active{
+  background: #eeeeee
+}

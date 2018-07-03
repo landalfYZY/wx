@@ -1,0 +1,155 @@
+page{
+  background: #f7f7f7
+}
+.dots{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: center
+}
+.dots .dot{
+  margin: 0 8rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: #ffffff;
+  border-radius: 8rpx;
+  transition: all .6s
+}
+.dots .dot.active{
+  width: 24rpx;
+  background: #f80
+}
+.i-tabs{
+  box-shadow: 0px 1px 1px #e1e1e1;
+}
+.paybtn{
+  background-image: linear-gradient(60deg, #3ebff8 0%, #1759e3 100%);
+  color: #ffffff;
+  line-height: 75rpx;
+  font-size: 28rpx;
+  text-align: center;
+  border-radius: 12rpx
+}
+.paybtn:active{
+  background: #eeeeee
+}
+.shunbo{
+  margin: auto;
+  margin-top: 250rpx;
+  width: 550rpx;
+  height: 480rpx;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 3px 10px #2c3e50;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center
+}
+.btn{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 0px 10px 10px
+}
+.btn:active{
+  background: #eeeeee
+}
+.kapian{
+  background: #fff;
+  box-shadow: 0px 1px 1px #e1e1e1;
+  margin: 30rpx 30rpx 0rpx 30rpx;
+  border-radius: 5rpx;
+  height: 170rpx;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
+.avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+}
+.paybtn2{
+  background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+  color: #ffffff;
+  line-height: 60rpx;
+  font-size: 27rpx;
+  text-align: center;
+  border-radius: 12rpx;
+  padding: 0 20rpx
+}
+.paybtn2:active{
+  background: #eeeeee
+}
+.user {
+    width: 100rpx;
+    height: 100rpx;
+    position: fixed;
+    right: 6%;
+    bottom: 2%
+  }
+  .user__avatar {
+    display: block;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+  }
+  .user__un-read-msg-count {
+    position: absolute;
+    top: -16rpx;
+    right: -8rpx;
+  }
+    .price-demo {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #ff4422;
+  }
+  .bottomCart{
+  border-top: 1px solid #e1e1e1;
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+	display: flex;
+  justify-content: space-between;
+  bottom: 0;
+}
+.zongji{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+	width: 70%;
+  height: 100%;
+  background: #fff
+} 
+.jiesuan{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+	height: 100%;
+	width: 30%;
+	background: #fff;
+}
+.gouXuan{
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx #d1d1d1 solid;
+  border-radius: 40rpx
+}
+.paybtn3{
+  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+  color: #ffffff;
+  line-height: 70rpx;
+  padding:0 20rpx;
+  font-size: 28rpx;
+  text-align: center;
+  border-radius: 30rpx
+}

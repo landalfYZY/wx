@@ -1,0 +1,17 @@
+  <!--顶部背景图-->
+  <view style='height:260rpx'>
+    <view  class='backgg'>
+    <view style='text-align: center'>
+      <button class='touXiang ' style="overflow:hidden;background-image:url({{touxiangsrc}});background-size:cover" open-type="getUserInfo"  bindgetuserinfo="saveNewAdres" lang="zh_CN"></button>
+      <open-data class='font-30-white ' style='margin: auto;' type="userNickName" lang="zh_CN"></open-data>
+    </view>
+    </view>
+  </view>
+  <!--列表-->
+  <view class="list-wrap">
+    <view class="list-item">
+      <wxc-list wx:for="{{list}}" wx:key="index" class="item" title="{{item.title}}" desc="{{item.slot? '' : item.desc}}" mode="{{index == list.length-1 ? 'none': ''}}" src="{{item.src}}" icon="{{item.icon}}" bind:click="{{item.bind}}" icon-color="{{item.icolor}} ">
+        <view wx:if="{{item.slot && item.desc}}" class="desc-highlight">{{item.desc}}</view>
+      </wxc-list>
+    </view>
+  </view>
