@@ -1,0 +1,24 @@
+.search-contain{
+  background: #f3f3f3;
+  padding: 20rpx 30rpx
+}
+.search-panel{
+  box-shadow: 0 0 10rpx 0 #fff;
+  background: #fff;
+  border-radius: 10rpx
+}
+.city{
+  height: 90rpx;
+  padding: 0 20rpx
+}
+.city view{
+  font-size: 30rpx
+}
+.search{
+  width:450rpx;
+  padding: 0 20rpx;
+}
+.clasitem{
+  padding:  30rpx 0;
+  border-bottom: 1px solid #e1e1e1
+}

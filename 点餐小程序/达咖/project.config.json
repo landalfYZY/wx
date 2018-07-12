@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -33,19 +33,37 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
 					"name": "meun",
 					"pathName": "pages/menu/menu",
-					"query": ""
+					"query": "id=e7cb0-20180711102529855"
 				},
 				{
 					"id": -1,
 					"name": "me",
 					"pathName": "pages/mine/mine",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "meun",
+					"pathName": "pages/index/index",
+					"query": "id=e7cb0-20180711102529855"
+				},
+				{
+					"id": -1,
+					"name": "dadsa",
+					"pathName": "pages/mine/coupon/coupon",
+					"query": "id=e7cb0-20180711102529855"
+				},
+				{
+					"id": 4,
+					"name": "dadsa",
+					"pathName": "pages/pay/pay",
+					"query": "shop={\"userId\":\"5d906-20180709140636111\",\"shopImage\":\"https://www.sunwou.com/upload/5d906-20180709140636111/740bd495c300444c8739d2da9a0e4aa4.jpg\",\"shopName\":\"BIGJA CAFE 国遥店\",\"phone\":\"1231231231\",\"address\":\"科源路-道路\",\"openStatus\":true,\"lat\":\"30.524472\",\"lng\":\"119.987755\",\"sendMode\":true,\"getMode\":true,\"exam\":false,\"city\":\"湖州\",\"range\":[\"科源路10号1幢\",\"科源路10号2幢\",\"科源路10号3幢\",\"科源路10号4幢\"],\"boxPrice\":2,\"sunwouId\":\"e7cb0-20180711102529855\",\"createTime\":\"2018-07-11 10:25:29\",\"createDate\":\"2018-07-11\",\"isDelete\":false,\"sort\":\"20180711102529855\"}&cart=[{\"shopId\":\"e7cb0-20180711102529855\",\"productCategoryId\":\"507d9-20180711103439680\",\"productName\":\"美式咖啡\",\"productImage\":\"https://www.sunwou.com/upload/5d906-20180709140636111/740bd495c300444c8739d2da9a0e4aa4.jpg\",\"amount\":18,\"discount\":16,\"sale\":14,\"des\":\"方式v兄弟苏打士大夫是否 \",\"attributes\":[\"b0df1-20180709221315294\",\"66582-20180710091439443\"],\"attributeCategorys\":[{\"parentId\":\"5d906-20180709140636111\",\"name\":\"甜度\",\"des\":\"11\",\"attributes\":[{\"parentid\":\"66582-20180710091439443\",\"name\":\"不加糖\",\"add\":0,\"sunwouId\":\"5b440892702c2d68df98a981\",\"sort\":\"1\",\"active\":false},{\"parentid\":\"66582-20180710091439443\",\"name\":\"少糖\",\"add\":0,\"sunwouId\":\"5b44089c702c2d68df98a982\",\"sort\":\"2\",\"active\":false},{\"parentid\":\"66582-20180710091439443\",\"name\":\"多糖\",\"add\":0,\"sunwouId\":\"5b4408a2702c2d68df98a983\",\"sort\":\"3\",\"active\":true}],\"sunwouId\":\"66582-20180710091439443\",\"createTime\":\"2018-07-10 09:15:14\",\"createDate\":\"2018-07-10\",\"isDelete\":false,\"sort\":\"2\"},{\"parentId\":\"5d906-20180709140636111\",\"name\":\"温度\",\"des\":\"用户有选择适合的温度\",\"attributes\":[{\"parentid\":\"b0df1-20180709221315294\",\"name\":\"常温\",\"add\":0,\"sunwouId\":\"5b437447702c2d68df98a97d\",\"sort\":\"1\",\"active\":false},{\"parentid\":\"b0df1-20180709221315294\",\"name\":\"去冰\",\"add\":0,\"sunwouId\":\"5b437860702c2d68df98a97e\",\"sort\":\"2\",\"active\":false},{\"parentid\":\"b0df1-20180709221315294\",\"name\":\"少冰\",\"add\":0,\"sunwouId\":\"5b437888702c2d68df98a97f\",\"sort\":\"3\",\"active\":true},{\"parentid\":\"b0df1-20180709221315294\",\"name\":\"多冰\",\"add\":0,\"sunwouId\":\"5b43788f702c2d68df98a980\",\"sort\":\"4\",\"active\":false}],\"sunwouId\":\"b0df1-20180709221315294\",\"createTime\":\"2018-07-09 23:00:31\",\"createDate\":\"2018-07-09\",\"isDelete\":false,\"sort\":\"1\"}],\"able\":true,\"boxPrice\":true,\"sunwouId\":\"31d11-20180712085006495\",\"createTime\":\"2018-07-12 08:50:06\",\"createDate\":\"2018-07-12\",\"isDelete\":false,\"sort\":\"1\",\"num\":1,\"index1\":0,\"index2\":0},{\"shopId\":\"e7cb0-20180711102529855\",\"productCategoryId\":\"507d9-20180711103439680\",\"productName\":\"撒旦\",\"productImage\":\"https://www.sunwou.com/upload/5d906-20180709140636111/740bd495c300444c8739d2da9a0e4aa4.jpg\",\"amount\":15,\"discount\":15,\"sale\":1,\"des\":\"而无法市场调查都是产生的苏打\",\"attributes\":[\"b0df1-20180709221315294\"],\"attributeCategorys\":[{\"parentId\":\"5d906-20180709140636111\",\"name\":\"温度\",\"des\":\"用户有选择适合的温度\",\"attributes\":[{\"parentid\":\"b0df1-20180709221315294\",\"name\":\"常温\",\"add\":0,\"sunwouId\":\"5b437447702c2d68df98a97d\",\"sort\":\"1\",\"active\":false},{\"parentid\":\"b0df1-20180709221315294\",\"name\":\"去冰\",\"add\":0,\"sunwouId\":\"5b437860702c2d68df98a97e\",\"sort\":\"2\",\"active\":false},{\"parentid\":\"b0df1-20180709221315294\",\"name\":\"少冰\",\"add\":0,\"sunwouId\":\"5b437888702c2d68df98a97f\",\"sort\":\"3\",\"active\":false},{\"parentid\":\"b0df1-20180709221315294\",\"name\":\"多冰\",\"add\":0,\"sunwouId\":\"5b43788f702c2d68df98a980\",\"sort\":\"4\",\"active\":true}],\"sunwouId\":\"b0df1-20180709221315294\",\"createTime\":\"2018-07-09 23:00:31\",\"createDate\":\"2018-07-09\",\"isDelete\":false,\"sort\":\"1\"}],\"able\":true,\"boxPrice\":false,\"sunwouId\":\"f7ee3-20180711114659916\",\"createTime\":\"2018-07-11 11:46:59\",\"createDate\":\"2018-07-11\",\"isDelete\":false,\"sort\":\"2\",\"num\":1,\"index1\":0,\"index2\":1}]&sum=31.00"
 				}
 			]
 		}

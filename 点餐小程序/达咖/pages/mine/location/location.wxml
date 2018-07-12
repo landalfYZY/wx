@@ -1,0 +1,45 @@
+<!--弹窗登录 -->
+<view class="pst3 flexr-center item-center" style="width:100%;height:100%;background:rgba(0, 0, 0, 0.3)" wx:if="{{showdetail}}">
+  <view class="bg-white radius-20 flexc-start item-center" style='width:550rpx;'>
+    <view class='font-32-black2 text-center margin-top-wushi bold'>新用户绑定</view>
+    <input class='font-30-black3 bottom-line margin-top-liushi' style='padding:0 15rpx;width:450rpx' type='number' bindinput="phone" placeholder="请输入手机号码" maxlength="11" placeholder-style="color:#b1b1b1" />
+    <view class='flexr-between item-end bottom-line margin-top-liushi' style='padding:0 15rpx;width:450rpx;'>
+      <input class='font-30-black3' style='width:250rpx' type='number' bindinput="telInput" placeholder="请输入验证码" placeholder-style="color:#b1b1b1" />
+      <view wx:if="{{!captchaDisabled}}" class="font-26-zhonju padding-bottom-shi" bindtap="captcha">{{captchaLabel}}</view>
+      <view wx:if="{{captchaDisabled}}" class="font-26-qianhui padding-bottom-shi">{{captchaLabel}}</view>
+    </view>
+    <view class="font-24-zhonhui text-left margin-top-sanshi" style='width:450rpx'>注意：登录后请点击允许调用用户信息</view>
+    <button class='font-32-white bg-lan btn' open-type="getUserInfo" bindgetuserinfo="saveNewAdres" lang="zh_CN">登录</button>
+  </view>
+</view>
+
+<!--没有地址-->
+<view style='margin-top:300rpx' wx:if="{{address.length == 0 && !showdetail}}">
+  <wxc-abnor type="FOLLOW" title=" " tip="您一个地址也没添加哟"></wxc-abnor>
+</view>
+
+<!--已创建地址显示 -->
+<view class="radius-10 padding-sanshi margin-sanshi shadow top-line2 bg-white" wx:for="{{address}}">
+  <view class='flexr-between item-center'>
+    <view class="font-32-black2 bold">{{item.concatName}} {{item.concatPhone}}</view>
+    <view class='flexr-start item-center' data-index="{{index}}" bindtap='setDefault'>
+      <view class="icon-sanshi margin-right-shi" style='border:2rpx #d1d1d1 solid;border-radius:30rpx' wx:if="{{item.sunwouId != addressId}}"></view>
+      <icon wx:if="{{item.sunwouId == addressId}}" class='margin-right-shi' type="success" size="16" color="#3797ee" />
+      <view class="{{item.sunwouId == addressId ? 'font-24-lan':'font-24-qianhui'}}">{{item.sunwouId == addressId ? '默认地址':'设为默认'}}</view>
+    </view>
+  </view>
+  <view class="font-30-zhonhui space-san margin-top-shi">{{item.schoolName}}{{item.floorName}}{{item.detail}}</view>
+  <view class='flexr-end item-center'>
+    <view class='flexr-start item-center padding-top-ershi' data-index="{{index}}" catchtap="bianJi">
+      <image class="icon-sanwu margin-right-shi" src="/images/bianJi.png" mode="aspectFit"></image>
+      <view class='font-24-zhonhong padding-right-sishi' style='color:#4f647a'>编辑</view>
+    </view>
+    <view class='flexr-start item-center padding-top-ershi' data-index="{{index}}" catchtap="delItem">
+      <image class="icon-sanwu margin-right-shi" src="/images/shanChu.png" mode="aspectFit"></image>
+      <view class='font-24-zhonhong'>删除</view>
+    </view>
+  </view>
+</view>
+
+<!--添加地址按钮 -->
+<view class="btn-ori bg-lan shadow2" bindtap="addAddress" wx:if="{{!showdetail}}">+</view>

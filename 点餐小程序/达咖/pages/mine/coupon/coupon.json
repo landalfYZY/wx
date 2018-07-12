@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的优惠群",
+  "usingComponents": {
+    "wxc-price": "../../../dist/packages/@minui/wxc-price/dist/index",
+    "wxc-abnor": "../../../dist/packages/@minui/wxc-abnor/dist/index"
+  }
+}

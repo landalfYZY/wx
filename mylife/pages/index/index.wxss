@@ -1,0 +1,46 @@
+page{
+  background-color: #f3f3f3
+}
+.canvas{
+  width: 100%; 
+  height: 700rpx;
+  background: #fff;
+  border-radius: 5rpx;
+  background: #fff;
+}
+.canvasPanel{
+  padding: 20rpx;
+  height: 870rpx;
+  background: #fff;
+  border-radius: 5rpx;
+  background: rgba(0,153,255,0.2);
+  box-shadow: 0 0 10px 0 rgba(0,153,255,0.2)
+}
+.cri{
+  border-radius: 50rpx;
+  background: #000;
+  margin-left: 20rpx;
+  border: 3px solid #c2e1f5;
+}
+.cri-act{
+  border:3px solid #FFFF99
+}
+.submitCanvas{
+  line-height: 90rpx;
+  background: #ff9900;
+  color: #fff;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10px 0 #ff9900
+}
+.cel{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  margin-left: 20rpx;
+  border: 3px solid #c2e1f5;
+}
+.cel-act{
+  border:3px solid #FFFF99
+}

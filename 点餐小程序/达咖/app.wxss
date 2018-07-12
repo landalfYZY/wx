@@ -1,50 +1,54 @@
-.panel-center {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+
+/* icon */
+.icon-erliu{
+  width: 26rpx;
+  height: 26rpx
 }
-.panel-start {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+.icon-siwu{
+  width: 45rpx;
+  height: 45rpx
 }
-.inline-block{
-  display: inline-block
-}
-.panel-end{
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap
-}
-.item-center {
-  align-items: center;
-}
-.panel-around{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap
+.icon-jiuba{
+  width: 90rpx;
+  height: 80rpx
 }
 .panel{
   padding: 30rpx;
-  background: #ffffff
+  background: #fff
 }
-.panel-between {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+/* 其他 */
+.line-sishi{
+  line-height: 40rpx
+}
+.line-wushi{
+  line-height: 50rpx
+}
+.space-san{
+  letter-spacing: 3rpx
+}
+.space-wu{
+  letter-spacing: 5rpx
+}
+.img{
+  border-radius: 12rpx;
+  border: 2rpx solid gainsboro
+}
+.bold{
+  font-weight: bold
+}
+.text-right{
+  text-align: right
 }
 
-
-
-/* line */
-.top-line{
-  border-top: 1px solid #e1e1e1
+/* position */
+.pst{
+  position: relative
 }
-.bottom-line{
-  border-bottom: 1px solid #e1e1e1
+.pst2{
+  position: absolute
 }
-.bottom-line2{
-  border-bottom: 1px solid #f3f3f3
+.pst3{
+  position: fixed
 }
 
 /* flex */
@@ -93,15 +97,17 @@
   flex-direction: column;
   justify-content: flex-end
 }
-
+.item-center{
+  align-items: center
+}
 .item-end{
   align-items: flex-end
 }
-
-/* margin */
-.margin-shi{
-  margin: 10rpx
+.item-start{
+  align-items: flex-start
 }
+
+/* margin和padding */
 .margin-ershi{
   margin: 20rpx
 }
@@ -192,46 +198,11 @@
 .margin-left-liushi{
   margin-left: 60rpx
 }
-
-/* padding */
 .padding-ershi{
   padding: 20rpx
 }
 .padding-sanshi{
   padding: 30rpx
-}
-.padding-sishi{
-  padding: 30rpx
-}
-.padding-liushi{
-  padding: 60rpx
-}
-.padding-ba-erwu{
-  padding: 8rpx 25rpx
-}
-.padding-er-san{
-  padding: 20rpx 30rpx
-}
-.padding-wu-shi{
-  padding: 5rpx 10rpx
-}
-.padding-er-lin{
-  padding: 20rpx 0rpx
-}
-.padding-san-lin{
-  padding: 30rpx 0rpx
-}
-.padding-si-lin{
-  padding: 40rpx 0rpx
-}
-.padding-si-san{
-  padding: 40rpx 30rpx
-}
-.padding-wu-bai{
-  padding: 50rpx 100rpx
-}
-.padding-jiu-san{
-  padding: 90rpx 30rpx
 }
 .padding-top-wu{
   padding-top: 5rpx
@@ -318,18 +289,54 @@
   padding-left: 60rpx
 }
 
-/* font */
-.font-20-zhonhui{
+/* font-组合 */
+.font-18-white{
+  font-size: 18rpx;
+  color: #ffffff
+}
+.font-20-white{
+  font-size: 20rpx;
+  color: #ffffff
+}
+.font-20-qianhui{
   font-size: 20rpx;
   color: #b1b1b1
+}
+.font-20-zhonhui{
+  font-size: 20rpx;
+  color: #888888
+}
+.font-20-lan{
+  font-size: 20rpx;
+  color: #3797ee
+}
+.font-22-white{
+  font-size: 22rpx;
+  color: #ffffff
+}
+.font-22-black2{
+  font-size: 22rpx;
+  color: #363636
+}
+.font-22-black3{
+  font-size: 22rpx;
+  color: #666666
+}
+.font-22-zhonhui{
+  font-size: 22rpx;
+  color: #888888
 }
 .font-22-qianhui{
   font-size: 22rpx;
   color: #b1b1b1
 }
-.font-22-zhonhui{
+.font-22-lan{
   font-size: 22rpx;
-  color: #b1b1b1
+  color: #3797ee
+}
+.font-23-white{
+  font-size: 23rpx;
+  color: #ffffff
 }
 .font-23-zhonhui{
   font-size: 23rpx;
@@ -343,21 +350,37 @@
   font-size: 24rpx;
   color: #ffffff
 }
-.font-24-qianhui{
+.font-24-black2{
   font-size: 24rpx;
-  color: #b1b1b1
+  color: #363636
+}
+.font-24-black3{
+  font-size: 24rpx;
+  color: #666666
 }
 .font-24-zhonhui{
   font-size: 24rpx;
   color: #888888
 }
+.font-24-zhonhong{
+  font-size: 24rpx;
+  color: #ee5353
+}
+.font-24-zhonju{
+  font-size: 24rpx;
+  color: #f47f50
+}
+.font-24-qianhui{
+  font-size: 24rpx;
+  color: #b1b1b1
+}
+.font-24-lan{
+  font-size: 24rpx;
+  color: #3797ee
+}
 .font-26-white{
   font-size: 26rpx;
   color: #ffffff
-}
-.font-26-zhonhui{
-  font-size: 26rpx;
-  color: #888888
 }
 .font-26-black2{
   font-size: 26rpx;
@@ -367,57 +390,190 @@
   font-size: 26rpx;
   color: #666666
 }
+.font-26-zhonhui{
+  font-size: 26rpx;
+  color: #888888
+}
+.font-26-qianhui{
+  font-size: 26rpx;
+  color: #b1b1b1
+}
+.font-26-lan{
+  font-size: 26rpx;
+  color: #3797ee
+}
 .font-26-zhonju{
   font-size: 26rpx;
   color: #f47f50
 }
-.font-27-zhonhong{
+.font-27-white{
   font-size: 27rpx;
-  color: #ee5353
-}
-.font-27-zhonhui{
-  font-size: 27rpx;
-  color: #888888
+  color: #ffffff
 }
 .font-27-black2{
   font-size: 27rpx;
   color: #363636
 }
+.font-27-black3{
+  font-size: 27rpx;
+  color: #666666
+}
+.font-27-zhonhui{
+  font-size: 27rpx;
+  color: #888888
+}
+.font-27-qianhui{
+  font-size: 27rpx;
+  color: #b1b1b1
+}
+.font-27-zhonhong{
+  font-size: 27rpx;
+  color: #ee5353
+}
+.font-27-lan{
+  font-size: 27rpx;
+  color: #3797ee
+}
+.font-28-white{
+  font-size: 28rpx;
+  color: #fff 
+}
+.font-28-black2{
+  font-size: 28rpx;
+  color: #363636 
+}
 .font-28-black3{
   font-size: 28rpx;
   color: #666666 
+}
+.font-28-zhonhui{
+  font-size: 28rpx;
+  color: #888888 
+}
+.font-28-qianhui{
+  font-size: 28rpx;
+  color: #b1b1b1 
+}
+.font-28-zhonju{
+  font-size: 28rpx;
+  color: #f47f50 
 }
 .font-30-white{
   font-size: 30rpx;
   color: #ffffff
 }
-.font-30-zhonhui{
+.font-30-black{
   font-size: 30rpx;
-  color: #888888
+  color: #000000
 }
 .font-30-black2{
   font-size: 30rpx;
   color: #363636
 }
+.font-30-black3{
+  font-size: 30rpx;
+  color: #666666
+}
+.font-30-zhonhui{
+  font-size: 30rpx;
+  color: #888888
+}
+.font-30-qianhui{
+  font-size: 30rpx;
+  color: #b1b1b1
+}
+.font-30-lan{
+  font-size: 30rpx;
+  color: #3797ee
+}
 .font-30-zhonhong{
   font-size: 30rpx;
   color: #ee5353
+}
+.font-32-white{
+  font-size: 32rpx;
+  color: #ffffff
+}
+.font-32-black{
+  font-size: 32rpx;
+  color: #000000
+}
+.font-32-black2{
+  font-size: 32rpx;
+  color: #363636
+}
+.font-32-zhonhui{
+  font-size: 32rpx;
+  color: #888888
+}
+.font-35-white{
+  font-size: 35rpx;
+  color: #ffffff
+}
+.font-35-black2{
+  font-size: 35rpx;
+  color: #363636
+}
+.font-35-zhonhong{
+  font-size: 35rpx;
+  color: #ee5353
+}
+.font-40-white{
+  font-size: 40rpx;
+  color: #ffffff
 }
 .font-40-black2{
   font-size: 40rpx;
   color: #363636
 }
+.font-40-zhonhong{
+  font-size: 40rpx;
+  color: #ee5353
+}
+.font-42-black2{
+  font-size: 42rpx;
+  color: #363636
+}
+.font-45-black2{
+  font-size: 45rpx;
+  color: #363636
+}
+.font-45-lan{
+  font-size: 45rpx;
+  color: #3797ee
+}
+.font-50-white{
+  font-size: 50rpx;
+  color: #ffffff
+}
+.font-50-black2{
+  font-size: 50rpx;
+  color: #363636
+}
+.font-60-lan{
+  font-size: 60rpx;
+  color: #3797ee
+}
+
 /* icon */
-.icon-erliu{
-  width: 26rpx;
-  height: 26rpx
+.icon-sanshi{
+  width: 30rpx;
+  height: 30rpx
 }
-.icon-siwu{
-  width: 45rpx;
-  height: 45rpx
+.icon-saner{
+  width: 32rpx;
+  height: 32rpx
 }
-.icon-jiuba{
-  width: 90rpx;
+.icon-sanwu{
+  width: 35rpx;
+  height: 35rpx
+}
+.icon-sishi{
+  width: 40rpx;
+  height: 40rpx
+}
+.icon-bashi{
+  width: 80rpx;
   height: 80rpx
 }
 
@@ -429,16 +585,44 @@
   background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
 }
 .bg-hong{
-  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f  100%);
 }
 .bg-lan{
-  background-image: linear-gradient(120deg, #a1c4fd 0%, #45aaf2 100%);
+  background-image: linear-gradient(120deg, #45aaf2 0%, #3797ee 100%);
 }
 .bg-huang{
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 }
 
-/* 其他 */
+/* 截断段落 */
+.elip{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+/* 阴影 */
+.shadow{
+  box-shadow: 0 5rpx 7rpx #e1e1e1;
+}
+.shadow2{
+  box-shadow: 0 10rpx 10rpx #e1e1e1;
+}
+
+/* 圆角 */
+.radius-10{
+  border-radius: 10rpx;
+}
+.radius-20{
+  border-radius: 20rpx;
+}
+
+/* 粗体 */
+.bold{
+  font-weight: bold
+}
+
+/* 间距 */
 .line-sishi{
   line-height: 40rpx
 }
@@ -451,13 +635,61 @@
 .space-wu{
   letter-spacing: 5rpx
 }
-.img{
-  border-radius: 12rpx;
-  border: 2rpx solid gainsboro
+
+/* 下划线 */
+.top-line{
+  border-top: 1px solid #e1e1e1
 }
-.bold{
-  font-weight: bold
+.top-line2{
+  border-top: 1px solid #f3f3f3
+}
+.bottom-line{
+  border-bottom: 1px solid #e1e1e1
+}
+.bottom-line2{
+  border-bottom: 1px solid #f3f3f3
+}
+
+
+/* text */
+.text-left{
+  text-align: left
+}
+.text-center{
+  text-align: center
 }
 .text-right{
   text-align: right
+}
+@keyframes three-quarters-loader {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* :not(:required) hides this rule from IE9 and below */
+.three-quarters-loader:not(:required) {
+  animation: three-quarters-loader 1250ms infinite linear;
+  border: 8rpx solid #aaaaaa;
+  border-right-color: transparent;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 35rpx;
+  height: 35rpx;
+}
+.loading-txt{
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #aaa;
 }

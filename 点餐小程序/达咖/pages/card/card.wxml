@@ -1,0 +1,22 @@
+<view class="flexc-start" style='margin:0 30rpx 30rpx 30rpx'>
+  <view class='flexr-between margin-top-sanshi'>
+    <view class='flexc-start item-center' style='height:280rpx;width:320rpx;border-radius:10rpx;box-shadow: 0px 5px 7px #cfcfcf;'>
+      <image style='height:200rpx;width:320rpx;border-radius:10rpx 10rpx 0 0;' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529560008260&di=dd995cd716f1a8084596f2a912f69c03&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F0823dd54564e9258cf32c8d29782d158ccbf4e83.jpg"></image>
+      <view class='margin-top-sanshi font-28-black3'>26元把爱买回家</view>
+    </view>
+    <view class='flexc-start item-center' style='height:280rpx;width:320rpx;border-radius:10rpx;box-shadow: 0px 5px 7px #cfcfcf;'>
+      <image style='height:200rpx;width:320rpx;border-radius:10rpx 10rpx 0 0;' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529560008260&di=dd995cd716f1a8084596f2a912f69c03&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F0823dd54564e9258cf32c8d29782d158ccbf4e83.jpg"></image>
+      <view class='margin-top-sanshi font-28-black3'>26元把爱买回家</view>
+    </view>
+  </view>
+    <view class='flexr-between margin-top-sanshi'>
+    <view class='flexc-start item-center' style='height:280rpx;width:320rpx;border-radius:10rpx;box-shadow: 0px 5px 7px #cfcfcf;'>
+      <image style='height:200rpx;width:320rpx;border-radius:10rpx 10rpx 0 0;' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529560008260&di=dd995cd716f1a8084596f2a912f69c03&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F0823dd54564e9258cf32c8d29782d158ccbf4e83.jpg"></image>
+      <view class='margin-top-sanshi font-28-black3'>26元把爱买回家</view>
+    </view>
+    <view class='flexc-start item-center' style='height:280rpx;width:320rpx;border-radius:10rpx;box-shadow: 0px 5px 7px #cfcfcf;'>
+      <image style='height:200rpx;width:320rpx;border-radius:10rpx 10rpx 0 0;' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529560008260&di=dd995cd716f1a8084596f2a912f69c03&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F0823dd54564e9258cf32c8d29782d158ccbf4e83.jpg"></image>
+      <view class='margin-top-sanshi font-28-black3'>26元把爱买回家</view>
+    </view>
+  </view>
+</view>

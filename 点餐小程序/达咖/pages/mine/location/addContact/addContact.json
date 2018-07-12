@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-switch": "../../../../iview/switch/index",
+    "i-icon": "../../../../iview/icon/index"
+  }
+}

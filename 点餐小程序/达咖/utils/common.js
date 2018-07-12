@@ -1,5 +1,106 @@
-var config = {
-  API_URL:'http://www.sunwou.com/',
+const config = {
+  //API_URL:'http://192.168.31.250/jf/',
+  API_URL:'https://www.sunwou.com/dk/',
+  KEY:'oRYkfitFSo3DxFdy8aI9y2PiQ6Km2DjC',
+  MAP_API:'https://api.map.baidu.com/'
+}
+function prePage(){
+  var pages = getCurrentPages();
+  var beforePage = pages[pages.length - 2];
+  return beforePage;
+}
+function getCoupon(show,cb){
+  post('wxusercoupon/mycoupon',{userId:wx.getStorageSync("user").sunwouId},function(res){
+    cb(res)
+  })
+}
+
+function location(callback){
+  if (wx.getStorageSync("location")) {
+    if (wx.getStorageSync("location").location) {
+      callback({
+        city: wx.getStorageSync("location").city.replace("市", ""),
+        lat: wx.getStorageSync("location").location.lat,
+        lng: wx.getStorageSync("location").location.lng
+      })
+    } else {
+      if (wx.getStorageSync("location").lat) {
+        callback({
+          city: wx.getStorageSync("location").city,
+          lat: wx.getStorageSync("location").lat,
+          lng: wx.getStorageSync("location").lng
+        })
+      } else {
+        dget(config.MAP_API +'geoconv/v1/', {
+          type: 1,
+          coords: wx.getStorageSync("location").longitude + ',' + wx.getStorageSync("location").latitude,
+          output: 'json',
+          ak: config.KEY
+        }, function (res) {
+          var loc = res.data.result[0];
+          dget(config.MAP_API +'geocoder/v2/', {
+            location: loc.y + ',' + loc.x,
+            ak: config.KEY,
+            output: 'json',
+          }, function (res) {
+            var dg = wx.getStorageSync("location");
+            dg.city = res.data.result.addressComponent.city.replace("市", "");
+            dg.lat = loc.y;
+            dg.lng = loc.x;
+            wx.setStorageSync("location", dg);
+            callback({
+              city: res.data.result.addressComponent.city.replace("市", ""),
+              lat: loc.y,
+              lng: loc.x
+            })
+          })
+        })
+      }
+
+    }
+  } else {
+    getLocation(function (res) {
+      if (res.code) {
+        wx.setStorageSync("location", res);
+        location(callback)
+      } else {
+        wxNavgiteTo("location/location")
+      }
+    })
+  }
+}
+function getLocation(callback){
+  wx.getLocation({
+    success: function(res) {
+      res.code = true;
+      callback(res)
+    },
+    fail: function(res){
+      callback({code:false})
+    }
+  })
+}
+function updateUser(params,callback){
+  var data = params;
+  data.sunwouId = wx.getStorageSync("user").sunwouId
+  mget('wxuser/update',data,function(res){
+    login(function(res){
+      callback(res)
+    })
+  })
+}
+function login(callback){
+  wx.login({
+    success(res){
+      mget('wxuser/login',{code:res.code},function(res){
+        wx.setStorageSync("user", res.params.msg)
+        if(callback){
+          callback(res)
+        }
+      })
+    }
+  })
+  
 }
 /**
  * 设置标题栏颜色
@@ -46,23 +147,16 @@ function wxNavgiteTo(url,props,params){
 /**
  * 查询接口
  */
-function query(fields,wheres,sort,currentPage,size,url,cb){
-  var query = {
-    fields: fields,
-    wheres:wheres,
-    sort:sort,
-    pages:{
-      currentPage: currentPage,
-      size:size
-    }
-  }
-  post(url,{query:JSON.stringify(query)},function(res){
-    cb(res)
-  })
-}
+
 
 //post请求
-function post (url, data, success, fail, method) {
+function post (url, data, success, fail) {
+  http('POST', url, data, success, fail)
+}
+function mget(url, data, success, fail){
+  http('GET', url, data, success, fail)
+}
+function http(method,url, data, success, fail){
   //通用post接口实现方法
   var that = this;
   let _data = data || {};
@@ -105,11 +199,32 @@ function post (url, data, success, fail, method) {
     }
   });
 }
+function dget(url,data,callback){
+  wx.request({
+    url: url,
+    method: 'get',
+    dataType: 'json',
+    data: data,
+    success(res) {
+      callback(res)
+    }
+  })
+}
 module.exports = {
   setTitleBarColor: setTitleBarColor,
   getWindowSize: getWindowSize,
   post:post,
+  mget:mget,
+  http:http,
+  dget,dget,
   API_URL:config.API_URL,
-  query:query,
-  wxNavgiteTo: wxNavgiteTo
+  // query:query,
+  wxNavgiteTo: wxNavgiteTo,
+  login:login,
+  updateUser: updateUser,
+  getLocation: getLocation,
+  location: location,
+  config:config,
+  getCoupon: getCoupon,
+  prePage: prePage
 }

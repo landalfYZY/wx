@@ -1,0 +1,35 @@
+<view style='padding:10rpx'>
+  <view class='canvasPanel'>
+    <canvas class='canvas' canvas-id="canvas" disable-scroll="true" bindtouchstart="touchStart" bindtouchend='touchEnd' bindtouchmove="touchMove"></canvas>
+    <view class='panel-between' style='margin-top:20rpx'>
+      <view class='panel-start'>
+        <image src='/img/pan.png' style='width:40rpx;height:40rpx'></image>
+        <view style='font-size:30rpx;margin-left:10rpx'>粗细</view>
+        <view class='panel-start'>
+            <view  wx:for="{{cri}}" style='height:{{item.x}}rpx;width:{{item.x}}rpx' data-width='{{index}}' class='cri {{flag == index? "cri-act":""}}' bindtap='setWidth'></view>
+        </view>
+      </view>
+      <view class='panel-end'>
+        <view class='panel-start xiangpi' bindtap='clearSomeOne'>
+           <image src='/img/rule.png' style='width:40rpx;height:40rpx'></image>
+           <view style='font-size:30rpx;margin-left:10rpx'>橡皮</view>
+        </view>
+        <view  class='panel-start xiangpi' bindtap='clear' style='margin-left:30rpx'>
+           <image src='/img/trash.png' style='width:30rpx;height:30rpx'></image>
+           <view style='font-size:30rpx;margin-left:10rpx'>清除</view>
+        </view>
+      </view>
+    </view>
+    <view class='panel-start' style='margin-top:20rpx'>
+      <image src='/img/panel.png' style='width:40rpx;height:40rpx'></image>
+      <view style='font-size:30rpx;margin-left:10rpx'>颜色</view>
+      <view class='panel-start'>
+        <view wx:for="{{color}}" class='cel {{index == colorFlag ? "cel-act":""}}' style='background:{{item}}' data-index='{{index}}' bindtap='changeColor'>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view style='padding:30rpx 80rpx'>
+  <view class='submitCanvas' bindtap='submitCanvas'>保存提交</view>
+</view>

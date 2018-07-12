@@ -1,0 +1,74 @@
+<picker bindchange="bindPickerChange" value="{{flag}}" range="{{getStyle}}">
+<view class="flexr-between item-center panel">
+  <view >
+    <view class='pay-label'>取货方式</view>
+    <view class='pay-title'>{{getStyle[flag]}}</view>
+  </view>
+  <view>
+    <view class='get-btn bg-lan'>切换</view>
+  </view>
+</view>
+</picker>
+
+<view class='panel' style='margin-top:20rpx' wx:if="{{flag == 0 || flag == 2}}">
+  <view class='pay-label'>自取门店</view>
+  <view style='margin-top:10rpx'>{{shop.shopName}}</view>
+  <view style='margin-top:10rpx;font-size:30rpx;color:#666'>{{shop.address}}</view>
+</view>
+
+<view class='panel' style='margin-top:20rpx' bindtap='navTo2' wx:if="{{flag == 1}}">
+  <view class='pay-label'>配送地址</view>
+  <view class='flexr-between item-center' style='margin-top:10rpx' wx:if="{{address == ''}}">
+    <view >请选择配送地址</view>
+    <view><image src='/images/right1.png' style='width:30rpx;height:30rpx'></image></view>
+  </view>
+  <view class='flexr-between item-center' wx:if="{{address != ''}}" style='margin-top:10rpx'>
+    <view >
+      <view >{{address.buildName}}</view>
+      <view style='font-size:30rpx;color:#888'>{{address.floor}} {{address.des}}</view>
+      <view style='font-size:30rpx;color:#888'>{{address.realName}} {{address.phone}}</view>
+    </view>
+    <view><image src='/images/right1.png' style='width:30rpx;height:30rpx'></image></view>
+  </view>
+</view>
+
+<view class='panel' style='margin-top:20rpx'>
+  <view class='pay-label'>订单信息</view>
+  <view style='margin-top:10rpx'>
+    <view class='pay-item flexr-between item-center' wx:for="{{cart}}" wx:for-item="item1">
+      <view>
+        <view style='font-size:30rpx'>{{item1.productName}}</view>
+        <view style='font-size:24rpx;color:#666'>
+          <text wx:for="{{item1.attributeCategorys}}" wx:for-item="item2"><text wx:for="{{item2.attributes}}" wx:for-item="item3" wx:if="{{item3.active}}">{{item3.name + ' '}}</text></text>
+        </view>
+      </view>
+      <view class='flexr-end item-center'>
+        <view style='font-size:30rpx'>x{{item1.num}}</view>
+        <view style='font-size:30rpx;margin-left:80rpx;font-weight:bold'>￥{{item1.discount}}</view>
+      </view>
+    </view>
+    <view class='flexr-end' style='padding:30rpx 0;padding-bottom:0'>
+      <view>合计：<text style='font-weight:bold'>￥{{sum}}</text></view>
+    </view>
+  </view>
+</view>
+
+<view class='panel flexr-between item-center bottom-line' data-navurl='mine/coupon/coupon' data-flag='back' data-price='30' bindtap='navTo' style='margin-top:20rpx'>
+  <view>
+    <view class='pay-label'>优惠券</view>
+    <view style='font-size:30rpx;margin-top:10rpx'>选择优惠券</view>
+  </view>
+  <image src='/images/right1.png' style='width:30rpx;height:30rpx'></image>
+</view>
+<view class='panel flexr-between'>
+  <view style='font-size:30rpx'>优惠满30减10</view>
+  <view>-￥10</view>
+</view>
+
+<view style='height:120rpx'></view>
+<view class='fix-bot-pay'>
+  <view style='padding: 0 30rpx;padding-right:0;height:100rpx' class='flexr-between item-center'>
+    <view class=''><text style='font-size:28rpx'>需付款 </text><text style='font-size:50rpx'>￥89</text></view>
+    <view class='paybtns bg-lan'>立即支付</view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+<view style='background:#f3f3f3;padding:20rpx 30rpx;font-size:30rpx;color:#888'>
+  温馨提示: 只可选择商家支持配送的地点
+</view>
+<!--创建地址-->
+<view class='margin-sanshi'>
+  <view class="flexr-between item-center bottom-line2" style='height:100rpx'>
+    <view class='flexr-start item-center'>
+      <image class='icon-sishi' src="/images/name.png"></image>
+      <view class='font-28-black2 margin-left-ershi'>联系人</view>
+    </view>
+    <input class='text-right font-28-black3' style='width:450rpx' placeholder="联系人姓名(必填)" data-name='realName' bindinput="input" placeholder-style="color:#b1b1b1" value="{{formData.realName}}" />
+  </view>
+  <view class="flexr-between item-center bottom-line2" style='height:100rpx'>
+    <view class='flexr-start item-center'>
+      <image class='icon-sishi' src="/images/phone.png"></image>
+      <view class='font-28-black2 margin-left-ershi'>联系方式</view>
+    </view>
+    <input class='text-right font-28-black3' style='width:450rpx' type='number' maxlength="11" placeholder="联系方式(必填)" data-name='phone' bindinput="input" placeholder-style="color:#b1b1b1" value="{{formData.phone}}" />
+  </view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{build}}">
+    <view class="flexr-between item-center bottom-line2" style='height:100rpx'>
+      <view class='flexr-start item-center'>
+        <image class='icon-sishi' src="/images/floor.png"></image>
+        <view class='font-28-black2 margin-left-ershi'>选择楼栋</view>
+      </view>
+      <view class='text-right font-28-black3' style='width:450rpx' style="color:{{buildName == '请选择(必选)' ? '#b1b1b1':'#666666'}};">{{formData.buildName}}</view>
+    </view>
+  </picker>
+  <view class="flexr-between item-center bottom-line2" style='height:100rpx'>
+    <view class='flexr-start item-center'>
+      <image class='icon-sishi' src="/images/door.png"></image>
+      <view class='font-28-black2 margin-left-ershi'>楼层</view>
+    </view>
+    <input class='text-right font-28-black3' style='width:450rpx' placeholder="请输入楼层(必填)" type='number' data-name='floor' bindinput="input" placeholder-style="color:#b1b1b1" value="{{formData.floor}}" />
+  </view>
+  <view class="flexr-between item-center bottom-line2" style='height:100rpx'>
+    <view class='flexr-start item-center'>
+      <image class='icon-sishi' src="/images/right.png"></image>
+      <view class='font-28-black2 margin-left-ershi'>备注</view>
+    </view>
+    <input class='text-right font-28-black3' style='width:450rpx' placeholder="门牌号,描述(选填)" data-name='des' bindinput="input" placeholder-style="color:#b1b1b1" value="{{formData.des}}" />
+  </view>
+</view>
+
+<!--创建按钮-->
+<view style='padding:80rpx 100rpx'>
+  <view class='paybtn bg-lan font-32-white text-center shadow radius-10' bindtap="onSubmit">确定</view>
+</view>

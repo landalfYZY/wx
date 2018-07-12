@@ -1,0 +1,27 @@
+<view class='radius-10 margin-sanshi shadow top-line2 pst  bg-white' wx:for="{{coupon}}" wx:if="{{coupon.length != 0}}">
+  <view class='flexr-between item-center padding-sanshi'>
+    <view class='flexc-start item-center' style='width:20%'>
+      <wxc-price class="price-demo" icon="sup">{{item.coupon.reduce}}</wxc-price>
+      <view class='font-23-zhonhui'>{{item.coupon.full == 0 ? '直减券':'满'+item.coupon.reduce+'元可使用'}}</view>
+    </view>
+    <view class='flexc-start' style='width:45%'>
+      <view class='font-30-black2 bold'>{{item.coupon.des}}</view>
+      <view class='font-20-zhonhui margin-top-shi'>{{item.stopTime}}到期</view>
+    </view>
+    <view wx:if="{{flag == -1}}" class='flexr-center item-center paybtn margin-top-sishi' style='background:#fe8071' data-index='{{index}}' bindtap='useIt'>立即使用</view>
+    <view wx:if="{{flag == 'back' && price >= item.coupon.full}}" class='flexr-center item-center paybtn margin-top-sishi' style='background:#fe8071' data-index='{{index}}' bindtap='useIt'>立即使用</view>
+    <view wx:if="{{flag == 'back' && price < item.coupon.full}}" class='flexr-center item-center paybtn margin-top-sishi' style='background:#aaaaaa'>不可用</view>
+  </view>
+  <view class='font-20-zhonhui' style='padding: 20rpx;background:#fcfcfc'>不限品类</view>
+  <view class='qiu'></view>
+  <view class='qiu2'></view>
+</view>
+
+<view class="flexr-center item-center" wx:if="{{load}}">
+  <view class="three-quarters-loader">Loading</view>
+  <view class="loading-txt">加载中...</view>
+</view>
+<!--暂时没有优惠券-->
+<view style='margin-top:300rpx' wx:if="{{!load && coupon.length == 0}}">
+  <wxc-abnor type="COUPON" title=" " tip="优惠券列表空空如也～"></wxc-abnor>
+</view>

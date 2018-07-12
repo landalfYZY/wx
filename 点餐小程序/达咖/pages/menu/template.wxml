@@ -1,0 +1,52 @@
+<template name="goodsCard">
+  <view class='goodsDix' style='height:{{height}}px;width:{{width}}px'>
+    <view class='goodsCard-panel'>
+      <view class='oplo'>
+        <view class='goodsCard'>
+          <view class='gimg'>
+            <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529494767466&di=97bbdf3d321079a649ee4e28c8c39aa1&imgtype=0&src=http%3A%2F%2Fimgs.bzw315.com%2Fuploadfiles%2Fversion2%2F0%2F20160407%2F201604071806532677.jpg%3FisWatermark%3D2'
+              mode='aspectFill'></image>
+            <image  bindtap='closeAttr' src='/images/close.png' class='clodbtn' style='width:50rpx;height:50rpx'></image>
+          </view>
+          <view style='padding:20rpx'>
+            <view style='font-size:30rpx;'>{{data.productName}}</view>
+            <block wx:for="{{data.attributeCategorys}}" wx:for-item="item1" wx:for-index="index1">
+              <view style='color:#888;font-size:30rpx;margin-top:20rpx;'>{{item1.name}}</view>
+              <view class='flexr-start item-center'>
+                <view wx:for="{{item1.attributes}}" wx:for-item="item2" wx:for-index="index2" data-index='{{index1}}' data-indexr='{{index2}}' bindtap='attrChecked' class='{{item2.active ? "botbtnsa-act":"botbtnsa-def"}}' >{{item2.name}} {{item2.add == 0 ? '':'+￥'+item2.add}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class='btnpanel'>
+        <view class='btn1' bindtap='closeAttr'>取消</view>
+        <view class='btn2' bindtap='chooseAttr'>确定</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<template name="fixBotCat">
+  <view class='fix-bot-cat'>
+    <view class='cartbtn flexr-center item-center'>
+      <view class='' bindtap='openCart'>
+        <image src='/images/cart.png' style='width:50rpx;height:50rpx'></image>
+      </view>
+    </view>
+    <view style='padding:0 30rpx;padding-left:80rpx'>
+      <view class='cartPanel flexr-between'>
+        <view class='numb' >{{nums > 0 ? nums:''}}
+          <text wx:if="{{nums > 0}}" style='font-size:20rpx'>件</text>
+        </view>
+        <view class=' flexr-end'>
+          <view class='price' style='text-align:right'>
+            <view class='tit'>￥{{sum}}</view>
+            <view class='tet'>店铺满￥30减￥5</view>
+          </view>
+          <view class='sumShop' bindtap='payIt'>结 算</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

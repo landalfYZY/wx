@@ -1,0 +1,15 @@
+.panel-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+.panel-start{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center
+}
+.panel-end{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center
+}

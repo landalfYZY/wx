@@ -1,0 +1,41 @@
+page {
+  background: #f4f7fc;
+}
+
+.price-demo {
+  font-size: 55rpx;
+  font-weight: bold;
+  color: #f42;
+}
+
+.paybtn {
+  height: 55rpx;
+  width: 140rpx;
+  font-size: 27rpx;
+  color: #fff;
+  border-radius: 10rpx;
+}
+
+.paybtn:active {
+  background: #eee;
+}
+
+.qiu{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 20rpx;
+  background: #f4f7fc;
+  position: absolute;
+  top: 68%;
+  left: -13rpx
+} 
+
+.qiu2{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 20rpx;
+  background: #f4f7fc;
+  position: absolute;
+  top: 68%;
+  right: -13rpx
+} 

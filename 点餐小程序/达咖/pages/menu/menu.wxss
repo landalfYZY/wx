@@ -8,14 +8,71 @@ page {
   width: 90%;
   height: 60%
 }
+.goodsDix{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: rgba(0,0,0,0.4)
+}
+.goodsCard-panel{
+  padding: 100rpx 60rpx;
+}
+.goodsCard{
+  height:900rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5px 0 #fff;
+  background: #fff;
+  border: 2px solid #fff;
+  z-index: 100
+}
+.gimg{
+  height:400rpx;
+  width: 100%;
+  overflow: hidden
+}
+.clodbtn{
+  width:60rpx;
+  height:60rpx;
+  position: fixed;
+  z-index: 101;
+  top: 130rpx;
+  right:90rpx
+}
+.oplo{
+  height: 800rpx;
+  overflow-y: scroll;
+}
+.gimg image{
+  height:400rpx;
+  width: 100%;
+}
 .avatar {
   width: 50px;
   height: 50px;
   border-radius: 10rpx;
   box-shadow: 0px 5px 7px #cfcfcf;
 }
+.botbtnsa-act{
+  padding: 20rpx 30rpx;
+  box-shadow: 0 0 2px #0099ff;
+  background: #0099ff;
+  color: #fff;
+  border-radius: 5rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx
+}
+.botbtnsa-def{
+  font-size: 30rpx;
+  padding: 20rpx 30rpx;
+  box-shadow: 0 0 2px #e1e1e1;
+  background: #e1e1e1;
+  color: #000;
+  border-radius: 5rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx
+}
 .paybtn {
-  background-image: linear-gradient(120deg, #fd8b69 0%, #fe6a9a 100%);
   box-shadow: 0px 3px 5px #cfcfcf;
   color: #fff;
   width: 75px;
@@ -33,7 +90,6 @@ page {
 }
 .paybtn2{
   margin-top: 50rpx;
-  background-image: linear-gradient(120deg, #fd8b69 0%, #fe6a9a 100%);
   box-shadow: 0px 3px 5px #cfcfcf;
   color: #fff;
   width: 320rpx;
@@ -64,8 +120,9 @@ page {
   width: 100%
 }
 .t1{
-  font-size: 27rpx;
+  font-size: 30rpx;
   color: #363636;
+  height: 60rpx;
   font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -78,10 +135,8 @@ page {
   margin:30rpx 0 0 30rpx;
 }
 .btngroup{
-  top: 130rpx;
-  right: 20rpx;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center
 }
 .rel{
@@ -96,4 +151,104 @@ page {
   text-align:center;
   color: #888888;
   font-size: 28rpx;
+}
+.fix-bot-cat{
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* background: rgba(0,0,0,0.7) */
+}
+.cartbtn{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  background: #ff9900;
+  position: relative;
+  top: -50rpx;
+  left: 30rpx;
+  z-index: 1000;
+  box-shadow: 0 0 10px 0 #ff9900
+}
+.cartPanel{
+  width: 100%;
+  height: 90rpx;
+  background: rgba(0,0,0,0.7);
+  position: relative;
+  top: -120rpx;
+  margin: auto;
+  z-index: 10;
+  border-radius: 100rpx;
+  box-shadow: 0 0 10px 0 #888
+}
+.sumShop{
+  width: 200rpx;
+  height: 90rpx;
+  border-radius: 0 100rpx 100rpx 0;
+  background: linear-gradient(to right, #33CC99 0%,  #33CC66 100%);
+  color: #fff;
+  text-align: center;
+  font-size: 34rpx;
+  line-height: 90rpx
+}
+.price{
+  margin-right: 30rpx;
+  margin-top: 10rpx;
+}
+.price .tit{
+  font-size: 34rpx;
+  color: #fff
+}
+.price .tet{
+  font-size: 22rpx;
+  color: #e1e1e1
+}
+.numb{
+  margin-left: 60rpx;
+  margin-top: 10rpx;
+  color: #fff;
+  font-size: 30rpx
+}
+
+.out-panel{
+  position: fixed;
+  width: 100%;
+  bottom: 160rpx;
+}
+.panel-cen{
+  background: rgba(0,0,0,0.7);
+  height: 600rpx;
+  border-radius: 20rpx;
+}
+.cartitem{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #aaaaaa
+}
+.cart-title{
+  padding: 20rpx;
+  background: #999;
+  border-radius: 10rpx 10rpx 0 0
+}
+.btnpanel{
+  width: 100%;
+}
+.btnpanel .btn1{
+  width: 50%;
+  display: inline-block;
+  line-height: 100rpx;
+  color: #aaa;
+  font-size: 30rpx;
+  background: #e1e1e1;
+  text-align: center;
+  border-radius: 0 0 0 10rpx
+}
+.btnpanel .btn2{
+  width: 50%;
+  display: inline-block;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 30rpx;
+  background: #0099ff;
+  text-align: center;
+  border-radius: 0 0  10rpx 0
 }
