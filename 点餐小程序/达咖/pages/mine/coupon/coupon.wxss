@@ -7,7 +7,17 @@ page {
   font-weight: bold;
   color: #f42;
 }
-
+.nodoc{
+  padding: 30rpx
+}
+.nodoc view{
+  line-height: 80rpx;
+  background: #aaaaaa;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  box-shadow: 0 0 2px 0 #e1e1e1
+}
 .paybtn {
   height: 55rpx;
   width: 140rpx;

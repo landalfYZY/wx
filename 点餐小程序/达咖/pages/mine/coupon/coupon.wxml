@@ -9,7 +9,7 @@
       <view class='font-20-zhonhui margin-top-shi'>{{item.stopTime}}到期</view>
     </view>
     <view wx:if="{{flag == -1}}" class='flexr-center item-center paybtn margin-top-sishi' style='background:#fe8071' data-index='{{index}}' bindtap='useIt'>立即使用</view>
-    <view wx:if="{{flag == 'back' && price >= item.coupon.full}}" class='flexr-center item-center paybtn margin-top-sishi' style='background:#fe8071' data-index='{{index}}' bindtap='useIt'>立即使用</view>
+    <view wx:if="{{flag == 'back' && price >= item.coupon.full && price >= item.coupon.reduce}}" class='flexr-center item-center paybtn margin-top-sishi' style='background:#fe8071' data-index='{{index}}' bindtap='useIt'>立即使用</view>
     <view wx:if="{{flag == 'back' && price < item.coupon.full}}" class='flexr-center item-center paybtn margin-top-sishi' style='background:#aaaaaa'>不可用</view>
   </view>
   <view class='font-20-zhonhui' style='padding: 20rpx;background:#fcfcfc'>不限品类</view>
@@ -17,11 +17,15 @@
   <view class='qiu2'></view>
 </view>
 
-<view class="flexr-center item-center" wx:if="{{load}}">
+<view class="flexr-center item-center" wx:if="{{load}}" style='margin-top:20rpx'>
   <view class="three-quarters-loader">Loading</view>
   <view class="loading-txt">加载中...</view>
 </view>
 <!--暂时没有优惠券-->
 <view style='margin-top:300rpx' wx:if="{{!load && coupon.length == 0}}">
   <wxc-abnor type="COUPON" title=" " tip="优惠券列表空空如也～"></wxc-abnor>
+</view>
+
+<view class='nodoc' wx:if="{{flag == 'back'}}" >
+  <view data-index='不使用优惠券' bindtap='useIt'>不使用优惠券</view>
 </view>

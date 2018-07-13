@@ -17,9 +17,18 @@ Page({
         url: '/pages/index/index',
       })
     }else{
-      prePage.setData({
-        couponId:that.data.coupon[index].sunwouId
-      })
+      if(index == '不使用优惠券'){
+        prePage.setData({
+          couponIndex: -2,
+          couponId:''
+        })
+      }else{
+        prePage.setData({
+          couponIndex: index,
+          couponId: that.data.coupon[index].sunwouId
+        })
+      }
+      prePage.getTotal()
       wx.navigateBack({
         delta:1
       })

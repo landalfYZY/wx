@@ -1,6 +1,6 @@
 const config = {
-  //API_URL:'http://192.168.31.250/jf/',
-  API_URL:'https://www.sunwou.com/dk/',
+  API_URL:'http://192.168.31.250/jf/',
+  //API_URL:'https://www.sunwou.com/dk/',
   KEY:'oRYkfitFSo3DxFdy8aI9y2PiQ6Km2DjC',
   MAP_API:'https://api.map.baidu.com/'
 }

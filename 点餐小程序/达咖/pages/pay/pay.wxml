@@ -26,7 +26,7 @@
     <view >
       <view >{{address.buildName}}</view>
       <view style='font-size:30rpx;color:#888'>{{address.floor}} {{address.des}}</view>
-      <view style='font-size:30rpx;color:#888'>{{address.realName}} {{address.phone}}</view>
+      <view style='font-size:26rpx;color:#888'>{{address.realName}} {{address.phone}}</view>
     </view>
     <view><image src='/images/right1.png' style='width:30rpx;height:30rpx'></image></view>
   </view>
@@ -47,28 +47,38 @@
         <view style='font-size:30rpx;margin-left:80rpx;font-weight:bold'>￥{{item1.discount}}</view>
       </view>
     </view>
+    <view class='pay-item flexr-between item-center' wx:if="{{box > 0}}">
+      <view style='font-size:30rpx'>餐盒费</view>
+      <view style='font-size:30rpx;font-weight:bold'>￥{{box}}</view>
+    </view>
     <view class='flexr-end' style='padding:30rpx 0;padding-bottom:0'>
       <view>合计：<text style='font-weight:bold'>￥{{sum}}</text></view>
     </view>
+
   </view>
 </view>
 
-<view class='panel flexr-between item-center bottom-line' data-navurl='mine/coupon/coupon' data-flag='back' data-price='30' bindtap='navTo' style='margin-top:20rpx'>
+<view class='panel flexr-between item-center bottom-line' data-navurl='mine/coupon/coupon' data-flag='back' data-price='30' bindtap='{{couponIndex == -1 ? "":"navTo"}}' style='margin-top:20rpx'>
   <view>
     <view class='pay-label'>优惠券</view>
-    <view style='font-size:30rpx;margin-top:10rpx'>选择优惠券</view>
+    <view style='font-size:30rpx;margin-top:10rpx' wx:if="{{couponIndex == -1}}">暂无优惠券可用
+    </view>
+    <view style='font-size:30rpx;margin-top:10rpx' wx:if="{{couponIndex == -2}}">不使用优惠券
+    </view>
+    <view style='font-size:30rpx;margin-top:10rpx' wx:if="{{couponIndex > -1}}">{{coupon[couponIndex].coupon.des}}
+    </view>
   </view>
   <image src='/images/right1.png' style='width:30rpx;height:30rpx'></image>
 </view>
-<view class='panel flexr-between'>
-  <view style='font-size:30rpx'>优惠满30减10</view>
-  <view>-￥10</view>
+<view class='panel flexr-between' wx:if="{{couponIndex > -1}}">
+  <view style='font-size:30rpx'>优惠 {{coupon[couponIndex].coupon.full > 0 ? '满￥'+coupon[couponIndex].coupon.full+'减￥'+coupon[couponIndex].coupon.reduce:'直减'+coupon[couponIndex].coupon.reduce+'元'}}</view>
+  <view>-￥{{coupon[couponIndex].coupon.reduce}}</view>
 </view>
 
 <view style='height:120rpx'></view>
 <view class='fix-bot-pay'>
   <view style='padding: 0 30rpx;padding-right:0;height:100rpx' class='flexr-between item-center'>
-    <view class=''><text style='font-size:28rpx'>需付款 </text><text style='font-size:50rpx'>￥89</text></view>
-    <view class='paybtns bg-lan'>立即支付</view>
+    <view class=''><text style='font-size:28rpx'>需付款 </text><text style='font-size:50rpx'>￥{{total}}</text></view>
+    <view class='paybtns bg-lan' bindtap='submitPay'>立即支付</view>
   </view>
 </view>

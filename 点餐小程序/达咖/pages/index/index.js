@@ -61,7 +61,7 @@ Page({
   //获取店铺
   getShop(){
     
-    com.mget('shop/findbydistance',{
+    com.post('shop/findbydistance',{
       userId:wx.getStorageSync("user").sunwouId,
       lat:this.data.lat,
       lng:this.data.lng,
