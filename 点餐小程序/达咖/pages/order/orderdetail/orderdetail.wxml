@@ -1,89 +1,81 @@
+<view class="flexr-center item-center" wx:if="{{load}}" style='margin-top:20rpx'>
+  <view class="three-quarters-loader">Loading</view>
+  <view class="loading-txt">加载中...</view>
+</view>
+
+<block wx:for="{{list}}" >
+
 <view style='height:100%;padding:0 30rpx;'>
   <!--订单详情顶部-->
   <view class="panel bottom-line flexc-start margin-top-ershi">
-    <view class='font-40-black2 bottom-line text-center' style='padding-bottom:20rpx;width:100%'>待取货<text class='font-30-zhonhui margin-left-shi'>（自提）</text></view>
-    <view class='flexr-start margin-top-ershi' style='width:100%'>
-      <image class='touXiang' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529494767466&di=97bbdf3d321079a649ee4e28c8c39aa1&imgtype=0&src=http%3A%2F%2Fimgs.bzw315.com%2Fuploadfiles%2Fversion2%2F0%2F20160407%2F201604071806532677.jpg%3FisWatermark%3D2"></image>
-      <view class='flexc-start item-start margin-left-ershi margin-top-shi'>
-        <view  class='font-30-black2' style='width:500rpx;'>下沙店好旺角咖啡屋</view>
-        <view class='font-27-zhonhui margin-top-ershi'>2018-06-21 21:59</view>
+    <view class='font-40-black2 bottom-line text-center flexr-between item-center' style='padding-bottom:20rpx;'>
+      <view class='flexr-end item-center'>
+          <view class='cri cri{{item.style}}'></view>
+          <view style='font-size:28rpx;margin-left:20rpx'>{{item.status}}</view>
+        </view>
+      <view wx:if="{{item.waterNumber > -1}}">
+        <text style='font-size:50rpx;font-weight:bold'>{{item.waterNumber}}</text><text style='font-size:30rpx'>号</text>
       </view>
+    </view>
+    <view class='flexr-between margin-top-ershi item-center' >
+      <view class='flexc-start item-start  margin-top-shi'>
+        <view  class='font-30-black2' style='width:500rpx;'>{{item.shopName}}</view>
+        <view class='font-27-zhonhui margin-top-ershi'>{{item.createTime}}</view>
+      </view>
+      <view><image src='/images/right1.png' style='width:30rpx;height:30rpx'></image></view>
     </view>
   </view>  
 
   <!--详情中间部分-->
   <view class="panel margin-top-ershi bottom-line" style='padding-bottom:60rpx'>
-    <view class='font-26-black2 bottom-line' style='padding-bottom:30rpx'>订单号：takeout201806212159-101</view>
-    <view class="flexr-between bottom-line2 padding-si-lin">
+    <view class='font-26-black2 bottom-line' style='padding-bottom:30rpx'>订单号：{{item.sunwouId}}</view>
+    <view class="flexr-between bottom-line2 padding-si-lin" style='padding:20rpx 0' wx:for="{{item.ops}}" wx:for-item="item1">
       <view class='flexr-start'>
-        <image class='icon-jiuba img' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529560008260&di=dd995cd716f1a8084596f2a912f69c03&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F0823dd54564e9258cf32c8d29782d158ccbf4e83.jpg"></image>
+        <image class='icon-jiuba' src="{{item1.productImage}}"></image>
           <view class='flexc-start'>
-            <view class='xinXi margin-left-ershi' style='width:420rpx'>美国式卡布基诺</view>
+            <view class='xinXi margin-left-ershi' style='width:420rpx'>{{item1.productName}}</view>
             <view class='xinXi margin-left-ershi margin-top-shi' style='width:320rpx;color:#888;font-size:22rpx' >小杯/加冰</view>
           </view>
       </view>
       <view class='flexc-start item-end'>
-        <view class='font-26-black3'>￥28</view>
-        <view class='font-24-zhonhui margin-top-shi'>1份</view>
+        <view style='font-size:30rpx;font-weight:bold'>￥{{item1.productAmount}}</view>
+        <view class=' margin-top-shi' style='font-size:30rpx;'>x{{item1.number}}</view>
       </view>
     </view>
-    <view class="flexr-end item-center" style='height:100rpx;'>
-      <view class='font-26-black2 margin-right-ershi'>共计</view>
-      <view class='font-26-black3'>￥28</view>
-    </view>
-    <view class="bottom-line2 flexr-end" style='height:70rpx;'>
-      <view class='flexr-start'><text class='font-24-qianhui margin-left-ershi'>暂无参与优惠</text></view>
-    </view>
-    <view class="bottom-line2 flexr-between item-center" style='height:100rpx;'>
+   
+    <view class="bottom-line2 flexr-between item-center" style='height:100rpx;' wx:if="{{item.boxPrice}}">
       <view class='font-26-black2'>打包费</view>
-      <view class='font-26-black3'>￥0</view>
+      <view class='font-26-black3'>{{item.boxPrice ? '￥'+item.boxPrice:''}}</view>
     </view>
-    <view class="bottom-line2 flexr-between item-center" style='height:100rpx;'>
-      <view class='font-26-black2'>配送费</view>
-      <view class='font-26-black3'>￥0</view>
-    </view>
+     <view wx:if="{{item.fullReduce}}" class="bottom-line2 flexr-between item-center" style='height:100rpx;'>
+      <view class='font-26-black2'>店铺优惠</view>
+      <view style='font-size:30rpx'>-￥{{item.fullReduce}}</view>
+    </view> 
     <view class="bottom-line2 flexr-between item-center" style='height:100rpx;'>
       <view class='font-26-black2' wx:if="{{order.status != '待付款'}}">实付款</view>
-      <view class='font-30-zhonhong'>￥28</view>
+      <view style='font-weight:bold'>￥{{item.total}}</view>
     </view>
     <view class='font-26-black2 padding-top-sanshi'>备注信息<text class='font-24-zhonhui margin-left-ershi space-san line-wushi'>冰块放的少一点点吧</text></view>
   </view>
-
-  <!--外卖订单详情底部-->
-  <!-- <view wx:if="{{order.type == '外卖订单'}}">
-  <view class="panel margin-top-ershi bottom-line" style='padding-bottom:60rpx' wx:if="{{order.status == '配送员已接手' || order.status == '已完成'}}">
-    <view class='font-26-black2'>送达时间<text class='font-26-black3 margin-left-ershi'>预计 {{order.createDate}} {{order.reserveTime}} 送达</text></view>
-    <view class='font-26-black2 padding-si-lin'>送餐人员<text class='font-26-black3 margin-left-ershi'>{{order.senderName}}，</text><text class='font-26-qianlan' bindtap="lianxiqishou">{{order.senderPhone}}</text></view>
-    <view class="flexr-start">
-      <view class='font-26-black2'>配送地址</view>
-      <view class="flexc-start margin-left-ershi">
-        <view class='font-26-black3'>{{order.address.concatName}}，{{order.address.concatPhone}}</view>
-        <view class='font-26-zhonhui margin-top-shi' style='width:470rpx;'>{{order.address.schoolName}}{{order.address.floorName}}{{order.address.detail}}</view>
-      </view>
-    </view>  
-  </view>
-  </view> -->
-
-  <!--到店自取取货详情-->
-  <view class="panel margin-top-ershi bottom-line" style='padding-bottom:60rpx'>
-    <view class='font-26-black2'>取件号码<text class='font-26-zhonju margin-left-ershi'>16 号</text></view>
-    <view class='font-26-black2 padding-top-sishi'>到店时间<text class='font-26-black3 margin-left-ershi'>预计 2018-06-21 22:10 来取</text></view>
-    <view class='font-26-black2 padding-si-lin'>取货人员<text class='font-26-black3 margin-left-ershi'>陈顺波，</text><text class='font-26-black3' bindtap="qrsh">18857818257</text></view>
-    <view class='font-26-black2'>取货地址<text class='font-26-black3 margin-left-ershi' style='width:470rpx;'>杭州市下沙区唐人街好旺角</text></view>
+<!--到店自取取货详情-->
+  <view wx:if="{{item.address}}" class="panel margin-top-ershi bottom-line" style='padding-bottom:60rpx'>
+    <view class='font-26-black2 padding-si-lin'>取货人员<text class='font-26-black3 margin-left-ershi'>{{item.contactName}}</text><text class='font-26-black3' bindtap="qrsh">{{item.phone}}</text></view>
+    <view class='font-26-black2'>取货地址<text class='font-26-black3 margin-left-ershi' style='width:470rpx;'>{{item.address}}</text></view>
   </view>
 </view>
 
 <view style='height:150rpx;'></view>
 <!--fixed按钮-->
-<view class="diBu">
-  <view class='flexr-center item-center font-30-black2 bg-white top-line' style='width:50%;box-sizing:border-box;'>(隔日凌晨自动取消)</view>
-  <view class='flexr-center item-center font-30-white bg-lan' style='width:50%' bindtap="tijiaodingdan">确认付款</view>
+<view class="diBu" wx:if="{{item.status == '待付款'}}">
+  <view class='flexr-center item-center font-30-black2 bg-white top-line' style='width:50%;box-sizing:border-box;'>(15分钟后自动取消)</view>
+  <view class='flexr-center item-center font-30-white bg-lan' data-id='{{item.sunwouId}}' style='width:50%' bindtap="tijiaodingdan">确认付款</view>
 </view>
-<!-- <view class="diBu">
+ <view class="diBu" wx:if="{{item.status == '待付款' || item.status == '待接手'}}">
   <view class='flexr-center item-center font-30-black2 bg-white top-line' style='width:50%;box-sizing:border-box;'>(取消后将全额退回)</view>
   <view class='flexr-center item-center font-30-white bg-hong' style='width:50%' bindtap="quxiaodingdan">取消订单</view>
-</view> -->
-<!-- <view class="diBu">
+</view> 
+ <!-- <view class="diBu">
   <view class='flexr-center item-center font-30-white bg-hong' style='width:50%;' bindtap="chaoshi">超时反馈</view>
   <view class='flexr-center item-center font-30-white bg-lv' style='width:50%' bindtap="lianxishangjia">联系商家</view>
-</view> -->
+</view>  -->
+</block>

@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data            : {
+    reduce        : 0,
     nums          : 0,
     sum           : 0.00,
     flag1         : 0,
@@ -81,6 +82,7 @@ Page({
             +'shop='+ JSON.stringify(this.data.shopMsg)
             +'&cart='+ JSON.stringify(this.data.cart)
             +'&sum=' + this.data.sum
+            +'&reduce=' + this.data.reduce
     })
   },
   iconClick(e) {
@@ -202,17 +204,17 @@ Page({
       this.data.tempGoods.num    = 1;
       this.data.tempGoods.index1 = this.data.flag1;
       this.data.tempGoods.index2 = this.data.flag2;
-      for (var i in this.data.cart) {
+      
           var add = 0;
-          for (var j in this.data.cart[i].attributeCategorys) {
-            for (var k in this.data.cart[i].attributeCategorys[j].attributes) {
-              if (this.data.cart[i].attributeCategorys[j].attributes[k].active) {
-                add += parseFloat(this.data.cart[i].attributeCategorys[j].attributes[k].add)
+          for (var j in this.data.tempGoods.attributeCategorys) {
+            for (var k in this.data.tempGoods.attributeCategorys[j].attributes) {
+              if (this.data.tempGoods.attributeCategorys[j].attributes[k].active) {
+                add += parseFloat(this.data.tempGoods.attributeCategorys[j].attributes[k].add)
               }
             }
           }
-          cart[i].discount += add;
-      }
+          this.data.tempGoods.discount += add;
+      
       this.data.cart.push(JSON.parse(JSON.stringify(this.data.tempGoods)));
     }else{
       this.data.cart[temp].num += 1;
@@ -237,6 +239,7 @@ Page({
       cart: cart,
       category: category
     })
+    this.cartFilter()
   },
   //添加到购物车点击事件
   addToCart: function(e) {
@@ -282,15 +285,17 @@ Page({
     var category = this.data.category;
     if (category[index1].children[index2].attributes.length > 0){
       category[index1].children[index2].num -= 1;
-      for(var i in cart){
+      var top = -1
+      for(var i in cart){  
         if (cart[i].sunwouId == category[index1].children[index2].sunwouId){
-          if (JSON.stringify(cart[i].attributeCategorys) == JSON.stringify(category[index1].children[index2].attributeCategorys)){
-            if(cart[i].num > 1){
-              cart[i].num -= 1
-            }else{
-              cart.splice(i,1)
-            }
-          }
+            top = i      
+        }
+      }
+      if(top != -1 ){
+        if (cart[top].num > 1) {
+          cart[top].num -= 1
+        } else {
+          cart.splice(top, 1)
         }
       }
     }else{
@@ -303,6 +308,7 @@ Page({
     })
     this.cartFilter()
   },
+
   //移除购物车2
   disAddCart2(e){
     var index        = e.currentTarget.dataset.index;
@@ -329,25 +335,41 @@ Page({
     var cart = this.data.cart;
     var nums = 0;
     var sum  = 0;
+    var fd   = this.data.fullReduce;
+    var reduce = 0;
 
     for( var i in cart ){
       nums  += parseInt(cart[i].num);
-      if (cart[i].attributes.length == 0){
-        sum += parseFloat(cart[i].discount) * parseFloat(cart[i].num)
-      }else{
-        var add = 0;
-        for (var j in cart[i].attributeCategorys){
-          for (var k in cart[i].attributeCategorys[j].attributes){
-            if (cart[i].attributeCategorys[j].attributes[k].active){
-              add += parseFloat(cart[i].attributeCategorys[j].attributes[k].add)
-            }
-          }
-        }
-        sum += (parseFloat(cart[i].discount) + add) * parseFloat(cart[i].num)
+      sum += parseFloat(cart[i].discount) * parseFloat(cart[i].num)
+      // if (cart[i].attributes.length == 0){
+      //   sum += parseFloat(cart[i].discount) * parseFloat(cart[i].num)
+      // }else{
+      //   var add = 0;
+      //   for (var j in cart[i].attributeCategorys){
+      //     for (var k in cart[i].attributeCategorys[j].attributes){
+      //       if (cart[i].attributeCategorys[j].attributes[k].active){
+      //         add += parseFloat(cart[i].attributeCategorys[j].attributes[k].add)
+      //       }
+      //     }
+      //   }
+      //   sum += (parseFloat(cart[i].discount) + add) * parseFloat(cart[i].num)
+      // }
+    }
+    var dtemp = -1;
+    for( var i=fd.length-1; i>=0;i-- ){
+      if(sum > fd[i].full){
+        dtemp = i;
       }
+    }
+    if(dtemp == -1){
+      reduce = 0
+    }else{
+      sum -= fd[dtemp].reduce;
+      reduce = fd[dtemp].reduce;
     }
 
     this.setData({
+      reduce:reduce,
       nums : nums,
       sum  : sum.toFixed(2)
     })
@@ -400,6 +422,7 @@ Page({
     }, function(res) {
       if (res.code) {
         that.setData({
+          fullReduce: res.params.msg[0].fullReduce ? JSON.parse(res.params.msg[0].fullReduce):[],
           shopMsg: res.params.msg[0]
         })
         that.getCategory()
@@ -478,6 +501,7 @@ Page({
     return {
       title: this.data.shopMsg.shopName,
       path: '/pages/menu/menu?id=' + this.data.shopMsg.sunwouId
+            + '&userId=' + wx.getStorageSync("user").sunwouId
     }
   }
 })

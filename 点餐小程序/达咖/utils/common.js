@@ -4,6 +4,48 @@ const config = {
   KEY:'oRYkfitFSo3DxFdy8aI9y2PiQ6Km2DjC',
   MAP_API:'https://api.map.baidu.com/'
 }
+function pay (orderId,payType,navStyle) {
+  post('order/pay',{
+    orderId:orderId,
+    payType:payType
+  },function(res){
+    if(res.code){
+      var pay = res.params.msg;
+      wx.requestPayment({
+        'timeStamp': pay.time,
+        'nonceStr': pay.nonceStr,
+        'package': 'prepay_id=' + pay.prepay_id,
+        'signType': 'MD5',
+        'paySign': pay.paySign,
+        'success': function (res) {
+          wx.showToast({
+            title: '订单支付成功',
+            duration: 1000
+          })
+          var nt = "redirectTo";
+          if (navStyle){
+            nt = navStyle;
+          }
+          setTimeout(function(res){
+            wx[nt]({
+              url: '/pages/order/orderdetail/orderdetail?id=' + orderId,
+            })
+          },1000)
+        },
+        'fail': function (res) {
+          wx[nt]({
+            url: '/pages/order/orderdetail/orderdetail?id=' + orderId,
+          })
+        }
+      })
+    }else{
+      wx.showToast({
+        title: '服务器内部错误',
+        icon:'neno'
+      })
+    }
+  })
+}
 function prePage(){
   var pages = getCurrentPages();
   var beforePage = pages[pages.length - 2];
@@ -226,5 +268,6 @@ module.exports = {
   location: location,
   config:config,
   getCoupon: getCoupon,
-  prePage: prePage
+  prePage: prePage,
+  pay:pay
 }

@@ -42,7 +42,7 @@
         <view class=' flexr-end'>
           <view class='price' style='text-align:right'>
             <view class='tit'>￥{{sum}}</view>
-            <view class='tet'>店铺满￥30减￥5</view>
+            <view class='tet'>{{reduce > 0 ? '已优惠￥'+reduce: '满￥'+fullReduce[fullReduce.length-1].full+'减￥'+fullReduce[fullReduce.length-1].reduce}}</view>
           </view>
           <view class='sumShop' bindtap='payIt'>结 算</view>
         </view>

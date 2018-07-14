@@ -15,7 +15,7 @@
     "pages/pay/address/address"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "达咖",
     "navigationBarTextStyle": "black"
@@ -24,6 +24,7 @@
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "color": "#939393",
+    "backgroundTextStyle": "dark",
     "selectedColor": "#45aaf2",
     "list": [
       {

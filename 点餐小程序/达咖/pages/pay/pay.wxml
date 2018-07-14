@@ -51,6 +51,10 @@
       <view style='font-size:30rpx'>餐盒费</view>
       <view style='font-size:30rpx;font-weight:bold'>￥{{box}}</view>
     </view>
+    <view class='pay-item flexr-between item-center' wx:if="{{reduce > 0}}">
+      <view style='font-size:30rpx'>店铺优惠</view>
+      <view style='font-size:30rpx;font-weight:bold'>-￥{{reduce}}</view>
+    </view>
     <view class='flexr-end' style='padding:30rpx 0;padding-bottom:0'>
       <view>合计：<text style='font-weight:bold'>￥{{sum}}</text></view>
     </view>
@@ -79,6 +83,8 @@
 <view class='fix-bot-pay'>
   <view style='padding: 0 30rpx;padding-right:0;height:100rpx' class='flexr-between item-center'>
     <view class=''><text style='font-size:28rpx'>需付款 </text><text style='font-size:50rpx'>￥{{total}}</text></view>
-    <view class='paybtns bg-lan' bindtap='submitPay'>立即支付</view>
+    <form report-submit="true" bindsubmit='submitPay'>
+      <button class='paybtns bg-lan' formType="submit">立即支付</button>
+    </form>
   </view>
 </view>

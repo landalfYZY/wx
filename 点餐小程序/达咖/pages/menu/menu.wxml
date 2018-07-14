@@ -79,7 +79,7 @@
 </scroll-view>
 
 <!--底部兰 start  -->
-<template is="fixBotCat" data="{{nums:nums,sum:sum}}" />
+<template is="fixBotCat" data="{{nums:nums,sum:sum,reduce:reduce,fullReduce,fullReduce}}" />
 <!--底部兰 end-->
 <template wx:if="{{showTempGoods}}" is="goodsCard" data="{{width:innerWidth,height:innerHeight,data:tempGoods}}" />
 

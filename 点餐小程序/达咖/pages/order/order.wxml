@@ -1,36 +1,50 @@
-<!--订单循环-->
-<view class='padding-sanshi'>
- <view class="card" bindtap="toorder">
-      <view class="touBu">
-        <view class='flexc-start'>
-          <view class='dianMin' style='width:{{innerWidth-30-20-120-30}}px;'>下沙店好旺角咖啡屋</view>
-          <view class='font-24-black2'>2018-06-21 21:59（自提）</view>
+<view style="padding:30rpx">
+  <view wx:for="{{list}}"  class='carpanelItem car{{item.style}}'>
+    <view class='flexr-between item-center'>
+      <view wx:if='{{item.status != "待付款" && item.status != "待接手"}}'><text style='font-size:100rpx;font-weight:bold'>{{item.waterNumber}}</text><text style='font-size:30rpx;'>号</text>
+      </view>
+      <view wx:if='{{item.status == "待付款"}}'>
+        <view style='font-size:50rpx;font-weight:bold'>待付款</view>
+        <view style='font-size:26rpx;color:#888;margin-top:10rpx'>15分钟后将自动取消</view>
+      </view>
+      <view wx:if='{{item.status == "待接手"}}'>
+        <view style='font-size:50rpx;font-weight:bold'>等待接单</view>
+      </view>
+      <view >
+        <view class='flexr-end item-center'>
+          <view class='cri cri{{item.style}}'></view>
+          <view style='font-size:28rpx;margin-left:20rpx'>{{item.status}}</view>
         </view>
-      <view class='flexc-start item-end' style='width:17%'>
-        <view class='font-40-black2'>150 <text class='font-27-black2'>号</text></view>
-        <view class='font-24-black2'>待取货</view>
-      </view>
-      </view>
-      <view class="item">
-        <view class="csitem bottom-line">
-          <view class='flexr-start'>
-            <image class='icon-jiuba img' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529560008260&di=dd995cd716f1a8084596f2a912f69c03&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F0823dd54564e9258cf32c8d29782d158ccbf4e83.jpg"></image>
-            <view class='flexc-start'>
-              <view class='xinXi margin-left-sanshi' style='width:420rpx'>美国式卡布基诺</view>
-              <view class='xinXi margin-left-sanshi margin-top-shi' style='width:320rpx;color:#888;font-size:22rpx'>小杯/加冰</view>
-            </view>
-          </view>
-          <view class='font-30-zhonhui text-right'>x 1</view>
-        </view> 
-        <view class='flexr-between item-center margin-top-ershi'>
-          <view class='font-23-zhonhui' style="width:280rpx;"><text>共1件商品，实付</text><text style="color:#ee5353">￥28</text></view>
-          <view class='flexr-center item-center paybtn bg-white' style='color:#363636;border:2rpx solid #d1d1d1;box-sizing:border-box;' catchtap="navtos">再来一单</view>
-           <!-- <view class='flexr-center item-center paybtn bg-lan' catchtap="navtos1">确认付款</view>   -->
-            <view class='flexr-center item-center paybtn bg-hong' catchtap="navtos2">取消订单</view>  
-           <!-- <view class='flexr-center item-center paybtn bg-huang' catchtap="navtos3">我要评论</view>    -->
+        <view class='flexr-end item-center'>
+          <view class='elip' style='width:300rpx;text-align:right'>{{item.shopName}}</view>
+          <image src='/images/right1.png' style='width:30rpx;height:30rpx;margin-left:5rpx'></image>
         </view>
+        <view class='flexr-end' style='font-size:24rpx;color:#999'>2018-08-90 13:34:09</view>
       </view>
-      <view class='qiu'></view>
-      <view class='qiu2'></view>
+    </view>
+    <view class='flexr-between' style='margin-top:30rpx'>
+      <view class='flexr-between' style='width:40%'>
+        <view style='font-size:30rpx'>商品</view>
+        <view style='font-size:30rpx'>x{{item.productCount}}</view>
+      </view>
+      <view class='flexr-between' style='width:40%'>
+        <view style='font-size:30rpx'>{{item.status == "待付款" ? '需付款':"实付款"}}</view>
+        <view style='font-size:30rpx;font-weight:bold'>￥{{item.total}}</view>
+      </view>
+    </view>
+    <view class='flexr-between' style='margin-top:30rpx'>
+      <view>
+        <view class='cancelbtn' wx:if="{{item.status == '待接单'}}">取消订单</view>
+      </view>
+      <view class='flexr-end'>
+        <view class='paybtn' wx:if="{{item.status == '待付款'}}" data-id='{{item.sunwouId}}' bindtap='pay'>立即支付</view>
+        <view class='lookbtn' style='margin-left:30rpx' data-id='{{item.sunwouId}}'  data-navurl='order/orderdetail/orderdetail' bindtap='navToDetail'>查看详情</view>
+      </view>
+    </view>
   </view>
+</view>
+
+<view class="flexr-center item-center" wx:if="{{load}}" style='margin-top:20rpx'>
+  <view class="three-quarters-loader">Loading</view>
+  <view class="loading-txt">加载中...</view>
 </view>

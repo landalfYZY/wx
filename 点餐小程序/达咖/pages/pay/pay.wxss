@@ -37,4 +37,5 @@ page {
   color: #fff;
   line-height: 100rpx;
   font-size: 30rpx;
+  border-radius: 0
 }

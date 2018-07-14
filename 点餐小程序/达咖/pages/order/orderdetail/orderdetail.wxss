@@ -35,3 +35,97 @@ page {
 .bg-lv:active{
   background: #eeeeee
 }
+page {
+  background: #f4f7fc;
+}
+.carpanelItem{
+  background: #ffffff;
+  border-radius: 10rpx;
+
+  padding: 20rpx;
+  margin-top: 30rpx;
+}
+.carpanelItem:first-child{
+  margin-top: 0
+}
+.cri{
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+}
+.car0{
+  border-top: 3px solid #0099ff;
+  box-shadow: 0 0 10px 0 #c1e4fc;
+}
+
+.cri0{
+  background: #0099ff
+}
+
+.car1{
+  border-top: 3px solid #ff9933;
+  box-shadow: 0 0 10px 0 #f8ddc2;
+}
+.cri1{
+  background: #ff9933
+}
+
+.car2{
+  border-top: 3px solid #FF6666;
+  box-shadow: 0 0 10px 0 #fdcdcd;
+}
+.cri2{
+  background: #FF6666
+}
+
+.car3{
+  border-top: 3px solid #CCCC66;
+  box-shadow: 0 0 10px 0 #e5e5c6;
+}
+.cri3{
+  background: #CCCC66
+}
+
+.car4{
+  border-top: 3px solid #33CC66;
+  box-shadow: 0 0 10px 0 #b8eeca;
+}
+.cri4{
+  background: #33CC66
+}
+
+.car5{
+  border-top: 3px solid #aaa;
+  box-shadow: 0 0 10px 0 #e1e1e1;
+}
+.cri5{
+  background: #aaa
+}
+
+.obtn{
+  font-size: 30rpx;
+}
+.cancelbtn{
+  color: #888;
+  background: #f3f3f3;
+  padding:0 20rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  border-radius: 5rpx
+}
+.paybtn{
+  color: #0099ff;
+  background: rgba(0, 153, 255, 0.1);
+  padding:0 20rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  border-radius: 5rpx
+}
+.lookbtn{
+  color: #000;
+  background: #f3f3f3;
+  padding:0 20rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  border-radius: 5rpx
+}
