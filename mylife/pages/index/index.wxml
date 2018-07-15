@@ -1,2 +1,30 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view class="box-0">
+  <view class='box-1'>
+    <view style='height:50rpx'>
+       <view class='avatar'></view>
+    </view>
+    <form class='form'>
+      <view class='form-item'>
+        <view style='font-size:34rpx'>设置答案</view>
+        <view class='input'><input placeholder='设置答案'></input></view>
+      </view>
+      <view class='form-item'>
+        <view style='font-size:34rpx'>答案提示</view>
+        <view class='input'><input placeholder='设置答案提示'></input></view>
+      </view>
+      <view class='panel-end'>
+        <view class='btn'>点击开始画画</view>
+      </view>
+      <view class='form-item'>
+        <view style='font-size:34rpx'>红包金额</view>
+        <view class='input'><input placeholder='填写红包总金额'></input></view>
+      </view>
+      <view class='form-item'>
+        <view style='font-size:34rpx'>红包个数</view>
+        <view class='input'><input placeholder='红包个数'></input></view>
+      </view>
+      <view style='text-align:center;font-size:26rpx;color:#888;margin-top:50rpx'>需支付￥0.00服务费</view>
+      <button form-type='submit' class='frombtn'>生成红包</button>
+    </form>
+  </view>
+</view>

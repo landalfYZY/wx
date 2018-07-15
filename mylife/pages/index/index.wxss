@@ -1,1 +1,53 @@
-/* pages/index/index.wxss */
+page{
+  background: #f3f3f3
+}
+.box-0{
+  padding:30rpx;padding-top:100rpx
+}
+.box-1{
+  padding:60rpx;
+  background: #fff
+}
+.avatar{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100rpx;
+  background: #aaaaaa;
+  margin: auto;
+  position: relative;
+  top: -70rpx
+}
+.form{
+  width: 100%
+}
+.form-item{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  align-items: center
+}
+.input{
+  width: 360rpx;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 5rpx 20rpx;
+  font-size: 34rpx;
+  margin-left: 30rpx
+}
+.btn{
+  width: 250rpx;
+  height: 80rpx;
+  background: #ff6633;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 34rpx;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+}
+.frombtn{
+  margin-top: 10rpx;
+  border-radius: 100rpx;
+  border: none;
+  background: #ff6600;
+  color: #fff;
+}
