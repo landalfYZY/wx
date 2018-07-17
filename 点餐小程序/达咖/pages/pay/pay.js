@@ -15,7 +15,14 @@ Page({
     couponIndex:-1,
     couponId:'',
     total:0,
-    orsum:0
+    orsum:0,
+    card:['使用次卡','不使用次卡'],
+    cflag:0
+  },
+  cardChange(e){
+    this.setData({
+      cflag: e.detail.value
+    })
   },
   navTo(e){
     com.wxNavgiteTo(e.currentTarget.dataset.navurl, ["flag","price"], e.currentTarget.dataset)

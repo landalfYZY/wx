@@ -62,6 +62,19 @@
   </view>
 </view>
 
+<picker bindchange='cardChange' range='{{card}}' value="{{cflag}}" >
+  <view class='panel flexr-between item-center' style='margin-top:20rpx'>
+    <view>
+      <view class='pay-label'>次卡</view>
+      <view style='font-size:30rpx;margin-top:10rpx'>{{card[cflag]}}</view>
+    </view>
+    <view class='flexr-end item-center'>
+      <view style='font-size:30rpx;'>还可抵15次</view>
+      <image src='/images/right1.png' style='width:30rpx;height:30rpx;margin-left:20rpx'></image>
+    </view>
+  </view>
+</picker>
+
 <view class='panel flexr-between item-center bottom-line' data-navurl='mine/coupon/coupon' data-flag='back' data-price='30' bindtap='{{couponIndex == -1 ? "":"navTo"}}' style='margin-top:20rpx'>
   <view>
     <view class='pay-label'>优惠券</view>
@@ -78,6 +91,8 @@
   <view style='font-size:30rpx'>优惠 {{coupon[couponIndex].coupon.full > 0 ? '满￥'+coupon[couponIndex].coupon.full+'减￥'+coupon[couponIndex].coupon.reduce:'直减'+coupon[couponIndex].coupon.reduce+'元'}}</view>
   <view>-￥{{coupon[couponIndex].coupon.reduce}}</view>
 </view>
+
+
 
 <view style='height:120rpx'></view>
 <view class='fix-bot-pay'>
