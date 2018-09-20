@@ -1,0 +1,40 @@
+page{
+  background: #fff
+}
+
+.label{
+  line-height: 90rpx;
+  font-size: 30rpx;
+  margin: auto
+}
+
+.bar-default{
+  color: #888888;
+}
+
+.bar-active{
+  border-bottom: 2px solid #afc5da;
+  animation: barActive 1s forwards
+}
+
+@keyframes barActive{
+  from {color: #4f527a;border-bottom: 2px solid #4f527a;}
+  to {color: #3797ee;border-bottom: 2px solid #3797ee;}
+}
+
+.paybtn{
+  height: 55rpx;
+  width: 140rpx;
+  font-size: 27rpx;
+  color: #fff;
+  border-radius: 10rpx
+}
+
+.btn {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 20rpx 20rpx;
+}

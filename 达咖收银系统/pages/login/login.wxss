@@ -1,0 +1,5 @@
+/* pages/login/login.wxss */
+.teet{
+  border-bottom: 1px solid #aaa;
+  margin-top: 15rpx
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxc-price": "../../../dist/packages/@minui/wxc-price/dist/index",
+    "wxc-abnor": "../../../dist/packages/@minui/wxc-abnor/dist/index"
+  }
+}

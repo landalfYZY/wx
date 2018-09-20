@@ -1,0 +1,7 @@
+.cpitem{
+  border-bottom: 1px solid #e1e1e1;
+  padding: 30rpx 0
+}
+.logo{
+  border-radius: 90rpx
+}

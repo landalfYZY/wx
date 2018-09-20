@@ -1,0 +1,18 @@
+<view class='rebg'>
+  <view class='rebgbtn'>添加一张{{registType == 1? '店铺':'企业'}}图片</view>
+</view>
+<i-panel title="基础信息">
+    <i-input value="{{ name }}" title="{{registType == 1? '店铺':'企业'}}名称" autofocus placeholder="店铺名称" />
+    <i-input value="{{ detail }}" type="textarea" title="{{registType == 1? '店铺':'企业'}}描述" placeholder="{{registType == 1? '店铺':'企业'}}描述(最多100字)" maxlength="100" />
+    <i-input value="{{ contact }}" title="联系人" autofocus placeholder="联系人" />
+    <i-input value="{{ contactPhone }}" type="number" title="联系电话" placeholder="请输入手机号" />
+    <i-cell-group>
+        <i-cell title="{{registType == 1? '店铺':'企业'}}所在地" is-link value="{{address}}" bind:click="getLocation"></i-cell>
+    </i-cell-group>
+</i-panel>
+
+<i-panel title="账号设置">
+    <i-input value="{{ username }}" title="用户名" autofocus placeholder="用户名" />
+    <i-input value="{{ password }}" type="password" title="密码" placeholder="密码" />
+    <i-input value="{{ lpassword }}" type="password" title="确认密码" placeholder="再次输入  密码" />
+</i-panel>

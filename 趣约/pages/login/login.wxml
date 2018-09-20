@@ -1,0 +1,11 @@
+<i-panel title="">
+    <i-input value="{{ realName }}" title="姓名" bind:change="realNameInput" autofocus placeholder="姓名" />
+    <i-input value="{{ phone }}" title="手机号" bind:change="phoneInput" autofocus placeholder="手机号" />
+</i-panel>
+<view style='padding:30rpx'>
+  <!-- <button type="primary" style='background:#0099ff' open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">获取微信手机号</button> -->
+</view>
+
+<view style='padding:30rpx'>
+  <button type="primary" open-type='getUserInfo' lang='zh_CN' bindgetuserinfo='getUserInfo'>登录/注册</button>
+</view>

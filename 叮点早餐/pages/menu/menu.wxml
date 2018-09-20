@@ -1,0 +1,215 @@
+<!--卡片-->
+<scroll-view scroll-y="true" style="width:{{innerWidth}}px;height:{{innerHeight}}px">
+  <view class='flexc-start item-center bg-white shadow radius-10' style='margin:0px 15px 0 15px;height:210rpx;padding:10rpx 30rpx 20rpx 30rpx' wx:if="{{top}}">
+    <view class='flexr-start item-center' style='width:100%'>
+      <image class="avatar shadow2" src="{{shop.shopImage}}" mode='aspectFill'></image>
+      <view class='flexc-start margin-left-sanshi' style='width:70%'>
+        <view>
+          <text class='font-24-zhonhui bold'>起送￥{{shop.startPrice}}</text>
+          <text class='margin-left-shi margin-right-shi bold font-20-qianhui'>丨</text>
+          <text class='font-24-zhonhui bold'>餐盒￥{{shop.boxPrice}}</text>
+          <text class='margin-left-shi margin-right-shi bold font-20-qianhui'>丨</text>
+          <text class='font-24-zhonhui bold'>{{shop.sendTime}}分钟</text>
+        </view>
+        <view class="font-24-zhonhui bold margin-top-shi elip">公告：
+          <text class='font-22-qianhui'>{{shop.topTitle != ''? shop.topTitle:'该店暂时没有公告'}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='flexr-around margin-top-sanshi' style='width:100%'>
+      <view wx:for="{{iconList}}" data-index='{{index}}' bindtap='iconClick'>
+        <button open-type="{{item.share}}" class='kf_button flexc-start item-center'>
+          <image class='icon-wushi' mode="aspectFill" src="{{item.icon}}"></image>
+          <view class='font-22-qianhui'>{{item.text}}</view>
+        </button>
+      </view>
+    </view>
+  </view>
+  <view style='height:80rpx;margin-top:5px;margin-right:10rpx' wx:if="{{fullcut.length != 0}}">
+    <wxc-notice scroll="{{true}}" show-icon="{{true}}" notice="{{fulltext}} 不与折扣叠加使用" bg-color="#fff"></wxc-notice>
+  </view>
+
+  <!--中间分类和菜-->
+  <view class="flexr-between" style="{{fullcut.length != 0 ? 'width:{{innerWidth}}px;height:73%;':'width:{{innerWidth}}px;height:78%;margin-top:30rpx'}}" wx:if="{{top}}">
+    <!--左半边分类-->
+    <scroll-view scroll-y="true" style="width:23%;height:100%;">
+      <view class='margin-sanshi radius-10 flexc-start' wx:for="{{navList}}" wx:key="cateno" style="{{curIndex == item.id ? 'background-image: linear-gradient(120deg, #fd8b69 0%, #fe6a9a 100%);box-shadow: 0px 2px 10px #fe6a9a;':'background: #e6edf3'}};margin-top:0rpx"
+        bindtap="scrollLeftTap" data-cateno="{{item.id}}">
+        <view class="{{curIndex == item.id ? 'font-24-white':'font-24-black3'}}" style='margin:20rpx 20rpx 0rpx 20rpx'>{{item.name}}</view>
+        <view class='text-right' style="{{curIndex == item.id ? 'color:#fff;font-size:40rpx':'color:#b1b1b1;font-size:40rpx'}};margin: 5rpx 20rpx 20rpx 20rpx;">{{item.foods.length}}</view>
+      </view>
+      <view style='height:150rpx'></view>
+    </scroll-view>
+    <!--右半边菜品-->
+    <scroll-view scroll-y="true" style="width:77%;height:100%;" scroll-into-view="{{rightToView}}">
+      <block wx:for="{{navList}}" wx:key="cateno" wx:for-item="item1" wx:for-index="index1">
+        <view class='item margin-top-ershi' data-cateno="{{item1.id}}" id="r_{{item1.id}}">
+          <view class='font-27-black2 bold'>{{item1.name}}</view>
+          <block wx:for="{{item1.foods}}" wx:for-item="item2" wx:key="cateno">
+            <view class="padding-ershi flexr-between pst bg-white shadow radius-10 top-line2" style='margin: 20rpx 30rpx 0 5rpx'>
+              <view class="flexr-start item-start" bindtap="open" data-inde="{{item1.index}}" data-index="{{index}}">
+                <image class='radius-10' style='width:125rpx;height:115rpx;border: 2rpx solid gainsboro' mode='aspectFill' src="{{item2.image}}"></image>
+                <view class="flexc-between margin-left-ershi" style='height:120rpx;'>
+                  <view class="title">{{item2.name}}</view>
+                  <view class="font-22-zhonhui">月售:{{item2.sales}}</view>
+                  <view class='font-30-zhonhong' wx:if="{{item2.discount == 1}}">
+                    <text class="bold">￥{{item2.attribute[0].zkprice}}</text>
+                  </view>
+                  <view class='font-30-zhonhong' wx:if="{{item2.discount != 1}}">
+                    <text class="bold">￥{{item2.attribute[0].zkprice}}</text>
+                    <text style="font-size:20rpx;text-decoration:line-through;margin-left:10rpx;color:#aaa">￥{{item2.attribute[0].price}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="pst2 flexr-between item-center" style='top:80rpx;right:5rpx'>
+                <view class="flexr-center item-center" style='width:70rpx;height:80rpx' wx:if="{{item2.num>0 && item2.attribute.length ==1}}" bindtap="disaddCart" data-inde="{{item1.index}}" data-index="{{index}}">
+                  <image class='icon-siwu' src="/images/add2.png"></image>
+                </view>
+                <view class="text-center font-28-zhonhui" style='width:20rpx' wx:if="{{item2.num>0 && item2.attribute.length ==1}}">{{item2.num}}</view>
+                <view class="flexr-center item-center" style='width:70rpx;height:80rpx' bindtap="addCart" data-inde="{{item1.index}}" data-index="{{index}}" wx:if="{{item2.attribute.length ==1 }}">
+                  <image class='icon-siwu' src="/images/add.png"></image>
+                </view>
+                <view bindtap="addCart" data-inde="{{item1.index}}" data-index="{{index}}" wx:if="{{item2.attribute.length !=1 }}">
+                  <view class='font-23-lan margin-top-shi margin-right-shi' style='border-radius: 40rpx;border: 2rpx solid gainsboro;padding: 8rpx 22rpx'>可选规格</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+      <view style='height:150rpx'></view>
+    </scroll-view>
+  </view>
+    <!--中间分类和菜-->
+  <view class="flexr-between" style="{{fullcut.length != 0 ? 'width:{{innerWidth}}px;height:92%;':'width:{{innerWidth}}px;height:100%;'}}" wx:if="{{!top}}">
+    <!--左半边分类-->
+    <scroll-view scroll-y="true" style="width:23%;height:100%;">
+      <view class='radius-10 flexc-start item-center bg-lan margin-sanshi padding-ershi' style="box-shadow: 0px 2px 10px #3797ee;margin-top:0" bindtap="letTop">
+        <view class="font-24-white">显示顶部</view>
+      </view>
+      <view class='margin-sanshi radius-10 flexc-start' wx:for="{{navList}}" wx:key="cateno" style="{{curIndex == item.id ? 'background-image: linear-gradient(120deg, #fd8b69 0%, #fe6a9a 100%);box-shadow: 0px 2px 10px #fe6a9a;':'background: #e6edf3'}};margin-top:0rpx"
+        bindtap="scrollLeftTap" data-cateno="{{item.id}}">
+        <view class="{{curIndex == item.id ? 'font-24-white':'font-24-black3'}}" style='margin:20rpx 20rpx 0rpx 20rpx'>{{item.name}}</view>
+        <view class='text-right' style="{{curIndex == item.id ? 'color:#fff;font-size:40rpx':'color:#b1b1b1;font-size:40rpx'}};margin: 5rpx 20rpx 20rpx 20rpx;">{{item.foods.length}}</view>
+      </view>
+      <view style='height:150rpx'></view>
+    </scroll-view>
+    <!--右半边菜品-->
+    <scroll-view scroll-y="true" style="width:77%;height:100%;" scroll-into-view="{{rightToView}}">
+      <block wx:for="{{navList}}" wx:key="cateno" wx:for-item="item1" wx:for-index="index1">
+        <view class='item margin-top-ershi' data-cateno="{{item1.id}}" id="r_{{item1.id}}">
+          <view class='font-27-black2 bold'>{{item1.name}}</view>
+          <block wx:for="{{item1.foods}}" wx:for-item="item2" wx:key="cateno">
+            <view class="padding-ershi flexr-between pst bg-white shadow radius-10 top-line2" style='margin: 20rpx 30rpx 0 5rpx'>
+              <view class="flexr-start item-start" bindtap="open" data-inde="{{item1.index}}" data-index="{{index}}">
+                <image class='radius-10' style='width:125rpx;height:115rpx;border: 2rpx solid gainsboro' mode='aspectFill' src="{{item2.image}}"></image>
+                <view class="flexc-between margin-left-ershi" style='height:120rpx;'>
+                  <view class="title">{{item2.name}}</view>
+                  <view class="font-22-zhonhui">月售:{{item2.sales}}</view>
+                  <view class='font-30-zhonhong' wx:if="{{item2.discount == 1}}">
+                    <text class="bold">￥{{item2.attribute[0].zkprice}}</text>
+                  </view>
+                  <view class='font-30-zhonhong' wx:if="{{item2.discount != 1}}">
+                    <text class="bold">￥{{item2.attribute[0].zkprice}}</text>
+                    <text style="font-size:20rpx;text-decoration:line-through;margin-left:10rpx;color:#aaa">￥{{item2.attribute[0].price}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="pst2 flexr-between item-center" style='top:80rpx;right:5rpx'>
+                <view class="flexr-center item-center" style='width:70rpx;height:80rpx' wx:if="{{item2.num>0 && item2.attribute.length ==1}}" bindtap="disaddCart" data-inde="{{item1.index}}" data-index="{{index}}">
+                  <image class='icon-siwu' src="/images/add2.png"></image>
+                </view>
+                <view class="text-center font-28-zhonhui" style='width:20rpx' wx:if="{{item2.num>0 && item2.attribute.length ==1}}">{{item2.num}}</view>
+                <view class="flexr-center item-center" style='width:70rpx;height:80rpx' bindtap="addCart" data-inde="{{item1.index}}" data-index="{{index}}" wx:if="{{item2.attribute.length ==1 }}">
+                  <image class='icon-siwu' src="/images/add.png"></image>
+                </view>
+                <view bindtap="addCart" data-inde="{{item1.index}}" data-index="{{index}}" wx:if="{{item2.attribute.length !=1 }}">
+                  <view class='font-23-lan margin-top-shi margin-right-shi' style='border-radius: 40rpx;border: 2rpx solid gainsboro;padding: 8rpx 22rpx'>可选规格</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+      <view style='height:150rpx'></view>
+    </scroll-view>
+  </view>
+</scroll-view>
+
+<!--底部购物车和确认订单按钮-->
+<view class="blank" style="display:{{blankHeight}}" bindtap="showCartGoods"></view>
+<view class="cart">
+  <view class="flexc-start margin-sanshi radius-10 pst" style="display:{{castListStyle}};left:0;right:0;margin-bottom:80rpx">
+    <view class="flexr-between padding-ershi" style='background:#999;border-radius: 10rpx 10rpx 0 0'>
+      <view class="font-28-white bold">购物车</view>
+      <view class='flexr-end item-center' bindtap="clearCart">
+        <image class="icon-sanshi margin-right-shi" src="/images/trash.png" mode="aspectFit"></image>
+        <view class="font-28-white">清空购物车</view>
+      </view>
+    </view>
+    <scroll-view scroll-y="true" class='pst' style="max-height:455rpx;background:rgba(0,0,0,0.7);border-radius: 0rpx 0rpx 10rpx 10rpx;">
+      <block wx:for="{{cart}}" wx:key="cart">
+        <view class="flexr-between item-center bottom-line2 cart_list">
+          <view>
+            <view class="font-26-white elip" style='width:360rpx'>{{item.name}}</view>
+            <view wx:if="{{item.attrLength!=1}}" class="font-22-qianhui">({{item.attr}})</view>
+          </view>
+          <view class='font-27-white'>￥{{item.sum}}</view>
+          <view class='flexr-between item-center'>
+            <view class='flexr-center item-center' style='width:60rpx;height:60rpx'>
+            <image class="icon-siwu" src="/images/add2.png" bindtap="disaddGoods" data-attIndex="{{item.attIndex}}" data-inde="{{item.curIndex}}" data-index="{{item.index}}"></image>
+            </view>
+            <view class="text-center font-28-qianhui" style='width:30rpx'>{{item.num}}</view>
+            <view class='flexr-center item-center' style='width:60rpx;height:60rpx'>
+            <image class="icon-siwu" src="/images/add.png" bindtap="addGoods" data-attindex="{{item.attIndex}}" data-inde="{{item.curIndex}}" data-index="{{item.index}}"></image>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <view class='triangle pst2'></view>
+  </view>
+  <view class='flexr-end item-cente pst' style='width:100%'>
+    <view class='gouwuche_icon pst2'>
+      <image class='gouwuche_img' src="/images/gouWu.png" bindtap="showCartGoods"></image>
+    </view>
+    <view class="flexr-between" style='width:55%;height:95rpx;background:rgba(0,0,0,0.7);border-radius: 50rpx 0 0 50rpx'>
+      <view class='font-22-white margin-top-wu' style='margin-left:75rpx'>
+        <text class='font-30-white'>{{totalNum}}</text> 件</view>
+      <view class="flexc-center item-end leftBottom margin-right-sanshi">
+        <text wx:if="{{cart.length == 0}}" class='font-30-white'>未选购商品 </text>
+        <text wx:if="{{cart.length > 0}}" class="font-35-white">￥{{totalPrice}}</text>
+        <text wx:if="{{cart.length > 0 && discountflag == true}}" class='font-20-white'>享折扣优惠￥{{discountPrice}}</text>
+        <text wx:if="{{cart.length > 0 && discountflag == false}}" class='font-20-white'>享满减优惠￥{{discountPrice}}</text>
+      </view>
+    </view>
+    <view class="{{totalPrice >= shop.startPrice && shop.open == true ? 'bg-lan':'bg-hui'}} click flexr-center item-center font-30-white margin-right-sanshi" style="height:95rpx;width:30%;border-radius: 0rpx 50rpx 50rpx 0rpx;"
+      bindtap="settlement">
+      <view wx:if="{{totalPrice < shop.startPrice && shop.open == true}}">起送￥{{shop.startPrice}}</view>
+      <view wx:if="{{totalPrice >= shop.startPrice && shop.open == true}}">结算</view>
+      <view wx:if="{{shop.open == false}}">休息中</view>
+    </view>
+  </view>
+</view>
+
+<!--二级弹窗详情-->
+<view class="goodsdetail" style="width:{{innerWidth}}px;height:{{innerHeight}}px;{{showdetail ? '':'display: none'}}">
+  <view class="flexc-between item-start bg-white radius-10" style='width:500rpx;margin:auto;margin-top:150rpx;box-shadow: 2px 3px 10px #2c3e50;'>
+    <image class='margin-ershi' style='width:460rpx;height:300rpx;margin-bottom:0rpx' mode="aspectFill" src="{{openfoods.image}}"></image>
+    <view class="flexc-start" style='padding:0rpx 20rpx;'>
+      <view class="font-30-black2 bold margin-top-sanshi">{{openfoods.name}}</view>
+      <text class='font-26-zhonhui margin-top-ershi'>月售:{{openfoods.sales}}</text>
+      <view class="flexr-start margin-top-ershi" wx:if="{{openfoods.attribute.length !=1 }}">
+        <view class="text-left padding-wu-shi attr"  wx:for="{{openfoods.attribute}}">
+          <view data-index="{{index}}" bindtap="attrClick" class="{{item.active ? 'bar-active':'bar-default'}}">{{item.name}}</view>
+        </view>
+      </view>      
+      <view class='margin-top-ershi font-30-zhonhong bold' wx:if="{{discount2 == 10}}">￥{{openfoods.attribute[attrIndex].price}}</view>
+      <view class='margin-top-ershi font-30-zhonhong bold' wx:if="{{discount2 != 10}}">￥{{openfoods.attribute[attrIndex].zkprice}}<text style="font-size:23rpx;text-decoration: line-through;margin-left:10rpx;color:#aaa;font-weight:normal;">￥{{openfoods.attribute[attrIndex].price}}</text><text class="discount">{{discount2}}折</text></view>
+    </view>
+    <view class="flexr-center top-line margin-top-sanshi" style='height:90rpx;width:100%'>
+      <view class="bg-white font-30-zhonhui flexr-center item-center click" style='width:50%;height:100%;' bindtap="close">取消</view>
+      <view class="bg-lan font-30-white flexr-center item-center click" style='width:50%;height:100%;' bindtap="addCarte">加入购物车</view>
+    </view>
+  </view>
+</view>

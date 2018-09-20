@@ -1,0 +1,133 @@
+page {
+  background: #fff;
+}
+
+.avatar {
+  width: 95rpx;
+  height: 95rpx;
+  border-radius: 95rpx;
+}
+
+.kf_button {
+  background-color: rgba(255, 255, 255, 0);
+  border: 0px;
+}
+
+.kf_button::after {
+  border: 0px;
+}
+
+.title {
+  width: 350rpx;
+  font-size: 30rpx;
+  color: #363636;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item:first-child {
+  margin-top: 0;
+}
+
+.blank {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 6;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow-y: hidden
+}
+
+.cart {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  bottom: 30rpx;
+}
+
+.cart_list{
+  height:110rpx;
+  margin:0 20rpx;
+}
+
+.cart_list:last-child {
+  border-bottom: none
+}
+
+.gouwuche_icon {
+  z-index: 7;
+  left: 30rpx;
+  bottom: 10rpx
+}
+
+.gouwuche_img{
+  height:115rpx;
+  width:115rpx;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 15px solid #000;
+  opacity: 0.7;
+  margin-left: 45rpx;
+}
+
+.leftBottom {
+  width: 230rpx;
+  height: 100%;
+  border-radius: 50rpx 0 0 50rpx
+}
+
+.goodsdetail{
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  animation: goodsdetail 1s forwards
+}
+
+.bar-default{
+  color: #888888;
+  font-size: 30rpx;
+  padding-bottom: 5rpx
+}
+
+.bar-active{
+  font-size: 30rpx;
+  animation: barActive 1s forwards;
+  border-bottom: 1px solid #afc5da;
+  padding-bottom: 5rpx
+}
+
+@keyframes barActive{
+  from {color: #888;border-bottom: 2px solid #888;}
+  to {color: #3797ee;border-bottom: 2px solid #3797ee;}
+}
+
+.discount{
+  font-size: 20rpx;
+  color: #f86c2e;
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 15rpx;
+  padding-left: 8rpx;
+  padding-right: 8rpx;
+  border: 1px solid #f86c2e
+}
+
+.attr {
+  margin-left: 20rpx;
+}
+
+.attr:first-child {
+  margin-left: 0rpx;
+}

@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/set/set",
+    "pages/order/order",
+    "pages/mine/mine",
+    "pages/menu/calculate/calculate",
+    "pages/menu/menu",
+    "pages/mine/location/location",
+    "pages/mine/location/addContact/addContact",
+    "pages/mine/coupon/coupon",
+    "pages/mine/integral/integral",
+    "pages/mine/about/about",
+    "pages/mine/help/help",
+    "pages/order/comment/comment",
+    "pages/order/orderDetail/orderDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "叮点早餐",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#0099ff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/t1.png",
+        "selectedIconPath": "img/t2.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "img/t3.png",
+        "selectedIconPath": "img/t4.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "img/t5.png",
+        "selectedIconPath": "img/t6.png"
+      }
+    ]
+  }
+}

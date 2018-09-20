@@ -1,0 +1,22 @@
+<!--上部分图片和名字-->
+<view class="padding-sanshi text-center">
+  <image style='width:100rpx;height:100rpx' src="/images/logo.png" mode="aspectFill"></image>
+  <view class='font-32-black2 margin-top-ershi'>叮点蜗居校园</view>
+  <view class='font-26-qianhui margin-top-shi'>www.wojush.com</view>
+</view>
+
+<!--中间简介-->
+<view class="padding-sanshi bottom-line2">
+  <view class='line-wushi font-26-black2 space-san'>
+    叮点蜗居校园，由蜗居(武汉)信息科技有限公司出品，是一个专注于为全国高校师生提供最便捷的校园生活服务的对接平台。我们也承接各种网站开发、小程序开发、UI设计等各种互联网项目。只要您有创新的想法，又想像我们一样爱搞事情！就请通过下方联系方式进行咨询。
+  </view>
+</view>
+
+<!--底部联系方式-->
+<view class='padding-sanshi font-26-qianhui'>联系方式：</view>
+<view class="font-26-black2 bottom-line2" style='padding:0 30rpx 30rpx 30rpx'>
+  官方客服（QQ）: <text class='font-26-zhonhui margin-left-ershi'>3451352595</text>
+</view>
+<view class="padding-sanshi font-26-black2 bottom-line2">
+  该校负责人: <text class='font-26-zhonhui margin-left-ershi'>{{phone}}</text>
+</view>

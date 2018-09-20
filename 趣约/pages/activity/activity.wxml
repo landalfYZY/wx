@@ -1,0 +1,54 @@
+<image src="{{msg.image}}" style="width:100%;height:300rpx;" mode="aspectFill"></image>
+<view class='panel bold' style='font-size:34rpx;'>
+  {{msg.title}}
+</view>
+
+
+<view class='panel flexr-between' style='margin-top:20rpx'>
+  <view class='flexr-between' style='width:47%'>
+    <view style='color:#888'>类型</view>
+    <view>{{msg.type}}</view>
+  </view>
+  <view class='flexr-between' style='width:47%'>
+    <view style='color:#888'>需要人数</view>
+    <view>{{msg.needPeopleNumber}}人</view>
+  </view>
+
+  <view class='flexr-between' style='width:47%;margin-top:30rpx'>
+    <view style='color:#888'>活动费用</view>
+    <view>{{msg.payEveryOne}}元</view>
+  </view>
+  <view class='flexr-between item-center' style='width:47%;margin-top:30rpx'>
+    <view style='color:#888'>截至时间</view>
+    <view style='font-size:26rpx'>{{msg.stopTime}}</view>
+  </view>
+   <view class='flexr-start item-center' style='width:100%;margin-top:30rpx'>
+    <view style='color:#888'>活动地点</view>
+    <view style='margin-left:30rpx'>{{msg.address}}</view>
+  </view>
+</view>
+
+<view class='panel' style='margin-top:20rpx'>
+  {{msg.text}}
+</view>
+
+<view class='panel'  style='margin-top:20rpx'>
+  已报名({{people.length}}人)
+</view>
+<view style='padding:0 30rpx'>
+  <scroll-view scroll-x="true" style='white-space: nowrap; display: flex;height:150rpx'>
+    <view class='sdas' wx:for="{{people}}">
+      <image src='{{item.avatarUrl}}' style='width:80rpx;height:80rpx;border-radius:80rpx'></image>
+      <view class='elip'>{{item.nickName}}</view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class='dif flexr-between item-center'>
+  <view class='dj'>
+    <button class='zf' open-type='share'><image src='/img/fx.png' style='margin-top:30rpx;width:40rpx;height:40rpx'></image></button>
+  </view>
+  <view class='dj' ><image src='/img/phone.png'  style='margin-top:10rpx;width:40rpx;height:40rpx'></image></view>
+  <view class='bm'  style='width:{{width-100}}px;background:{{status == "立即参加" ? "#ff6633":"#aaaaaa"}}' bindtap='{{status == "立即参加" ? "lijican":""}}'>{{status}}</view>
+</view>
+

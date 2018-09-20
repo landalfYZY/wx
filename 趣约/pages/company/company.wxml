@@ -1,0 +1,16 @@
+<view style="padding:0 30rpx">
+    <view class='search flexr-center item-center'>
+      <image src='/img/search.png' style='width:30rpx;height:30rpx'></image>
+      <view class='sear-text'>搜索 活动 企业 商铺</view>
+    </view>
+
+    <view class='cpitem'>
+      <view class='flexr-between item-center'>
+        <view class='flexr-start item-center'>
+          <image class='logo' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533197397740&di=5f37fcdacfe294f64716c526bad45206&imgtype=0&src=http%3A%2F%2Fimg6.ccement.com%2F2015%2F11%2F30%2Fdbd02cbd.jpg' style='width:90rpx;height:90rpx;'></image>
+          <view style='margin-left:30rpx'>重庆千卡网络科技有限公司</view>
+        </view>
+        
+      </view>
+    </view>
+</view>

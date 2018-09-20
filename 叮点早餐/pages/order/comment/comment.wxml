@@ -1,0 +1,38 @@
+<!-- 配送员评论 -->
+<view class='top-line2 flexc-start item-start margin-sanshi radius-10 shadow padding-sanshi bg-white' wx:if="{{show1 == true}}">
+  <view class='flexr-start item-center bottom-line2' style='width:100%;padding:0rpx 0rpx 30rpx 0rpx'>
+    <image class='avatar shadow2' src="{{order.senderImage}}"></image>
+    <view class='font-30-black2 bold margin-left-sanshi' style='width:450rpx;'>{{order.senderName}}</view>
+  </view>
+  <view class='flexc-start item-center' style='width:100%;padding:30rpx 0' bindtap="myStarChoose">
+    <view class='font-26-zhonhui'>为配送员打星星~ {{starMap[star-1]}}</view>
+    <view class='flexr-between margin-top-sishi' style='width:50%'>
+    <block wx:for="{{starMap}}">
+      <image src="{{star >= index+1 ? '/images/pinFen2.png':'/images/pinFen.png'}}" class='icon-sishi' data-star="{{index+1}}"/> 
+    </block>
+    </view>
+  </view>
+  <textarea class='address' placeholder="请尽情的调侃这位配送员吧" placeholder-style="color:#b1b1b1" maxlength='-1' bindinput="getpspl"/>
+</view>
+
+<!-- 商家评论 -->
+<view class='top-line2 flexc-start item-start margin-sanshi radius-10 shadow padding-sanshi bg-white' wx:if="{{show2 == true}}">
+  <view class='flexr-start item-center bottom-line2' style='width:100%;padding:0rpx 0rpx 30rpx 0rpx'>
+    <image class='avatar shadow2' src="{{order.shopImage}}" ></image>
+    <view class='font-30-black2 bold margin-left-sanshi' style='width:450rpx;'>{{order.shopName}}</view>
+  </view>
+  <view class='flexc-start item-center' style='width:100%;padding:30rpx 0' bindtap="myStarChoose2">
+    <view class='font-26-zhonhui'>为商家打星星~ {{starMap2[star2-1]}}</view>
+    <view class='flexr-between margin-top-sishi' style='width:50%'>
+    <block wx:for="{{starMap2}}">
+      <image src="{{star2 >= index+1 ? '/images/pinFen2.png':'/images/pinFen.png'}}" class='icon-sishi' data-star="{{index+1}}"/> 
+    </block> 
+    </view>
+  </view>
+  <textarea class='address' placeholder="写下您对商家的评价吧" placeholder-style="color:#b1b1b1" maxlength='-1' bindinput="getsjpl"/>
+</view>
+
+<!-- 确认评论 -->
+<view style='padding:60rpx 100rpx'>
+  <view class='paybtn bg-lan font-32-white text-center shadow radius-10 click' bindtap="reallyConment">确认评论</view>
+</view>

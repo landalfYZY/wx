@@ -1,0 +1,14 @@
+<view class='fixtop'>
+  <view class='fixitem' wx:for="{{fixbar}}" data-index='{{index}}' bindtap='changeFixbar'>
+    <view class='{{item.active ? "ftextact":"ftextdef"}}'>{{item.label}}</view>
+    <view class='flineact' wx:if="{{item.active}}"></view>
+  </view>
+</view>
+<view style='height:120rpx'></view>
+<view style='padding:0 30rpx;background:#fff'>
+  <view class='orderitem'>
+    <view class='flexr-between item-center'>
+      
+    </view>
+  </view>
+</view>

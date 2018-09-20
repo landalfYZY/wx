@@ -1,0 +1,35 @@
+/* pages/other/other.wxss */
+
+.ban{
+  border-radius: 10rpx;
+  height: 200rpx;
+  box-shadow: 0 0 10px #e1e1e1;
+  overflow: hidden;
+}
+.ban-ava{
+  width: 200rpx;
+  height: 200rpx;
+  
+}
+.banbg1{
+background-color: #ff6633
+}
+.banbg2{
+background-color: #00CC66
+}
+.banbg3{
+background-color: #3399FF
+}
+.bantxt{
+  margin-left: 50rpx;
+  
+}
+.bant1{
+  font-size: 40rpx;
+  font-weight: bold
+}
+.bant2{
+  font-size: 26rpx;
+  color: #888;
+  margin-top: 10rpx
+}

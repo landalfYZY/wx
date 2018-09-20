@@ -1,0 +1,45 @@
+<!--创建地址-->
+<view class='margin-sanshi'>
+  <view class="flexr-between item-center bottom-line2" style='height:100rpx'>
+    <view class='flexr-start item-center'>
+      <image class='icon-sishi' src="/images/name.png"></image>
+      <view class='font-28-black2 margin-left-ershi'>联系人</view>
+    </view>
+    <input class='text-right font-28-black3' style='width:450rpx' placeholder="请输入联系人姓名" bindinput="contactPersonInput" placeholder-style="color:#b1b1b1" value="{{contactPerson}}" />
+  </view>
+  <view class="flexr-between item-center bottom-line2" style='height:100rpx'>
+    <view class='flexr-start item-center'>
+      <image class='icon-sishi' src="/images/phone.png"></image>
+      <view class='font-28-black2 margin-left-ershi'>联系方式</view>
+    </view>
+    <input class='text-right font-28-black3' style='width:450rpx' type='number' maxlength="11" placeholder="请输入联系方式" bindinput="contactPhoneInput" placeholder-style="color:#b1b1b1" value="{{contactPhone}}" />
+  </view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{schoolFloors}}">
+    <view class="flexr-between item-center bottom-line2" style='height:100rpx'>
+      <view class='flexr-start item-center'>
+        <image class='icon-sishi' src="/images/floor.png"></image>
+        <view class='font-28-black2 margin-left-ershi'>选择楼栋</view>
+      </view>
+      <view class='text-right font-28-black3' style='width:450rpx' style="color:{{floorName == '请选择该校楼栋' ? '#b1b1b1':'#666666'}};">{{floorName}}</view>
+    </view>
+  </picker>
+  <view class="flexr-between item-center bottom-line2" style='height:100rpx'>
+    <view class='flexr-start item-center'>
+      <image class='icon-sishi' src="/images/door.png"></image>
+      <view class='font-28-black2 margin-left-ershi'>详细地址</view>
+    </view>
+    <input class='text-right font-28-black3' style='width:450rpx' placeholder="请输入详细地址如：6楼601" bindinput="contactDoorInput" placeholder-style="color:#b1b1b1" value="{{contactDoor}}" />
+  </view>
+  <view class="flexr-end item-end margin-top-liushi">
+    <view class='font-28-qianhui margin-right-sanshi'>是否设为默认地址</view>
+    <i-switch value="{{setDefault}}" bind:change="setDefault" slot="footer">
+      <i-icon type="right" slot="open"></i-icon>
+      <i-icon type="close" slot="close"></i-icon>
+    </i-switch>
+  </view>
+</view>
+
+<!--创建按钮-->
+<view style='padding:80rpx 100rpx'>
+  <view class='paybtn bg-lan font-32-white text-center shadow radius-10 click' bindtap="saveAddress">保存</view>
+</view>

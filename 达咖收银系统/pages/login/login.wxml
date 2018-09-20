@@ -1,0 +1,20 @@
+<view style="padding:100rpx 60rpx ">
+  <view>达咖门店管理系统</view>
+  <view style='margin-top:100rpx'>
+    <view>用户名</view>
+    <view class='teet'>
+      <input  bindinput='unInput' placeholder='输入用户名'></input>
+    </view>
+  </view>
+
+  <view style='margin-top:30rpx'>
+    <view>密码</view>
+    <view class='teet'>
+      <input confirm-type="go" bindinput='pwdInput' bindconfirm='login' password='true' placeholder='输入密码'></input>
+    </view>
+  </view>
+
+  <view style='margin-top:100rpx'>
+    <button style='background:#43a3f7;color:#fff' size='long' bindtap='login' loading='{{loading}}'>登 录</button>
+  </view>
+</view>

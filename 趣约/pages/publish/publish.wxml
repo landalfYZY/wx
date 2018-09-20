@@ -1,0 +1,110 @@
+<view class='cover'>
+  <image src='{{tempFilePath ? tempFilePath:"/img/bg.jpg"}}' mode='aspectFill'></image>
+  <view class='co' bindtap='scphoto'>上传背景图</view>
+</view>
+<view style='padding:0 30rpx'>
+  <view class='itm flexr-between item-center bottom-line'>
+    <view class='flexr-start item-center'>
+      <view class='cri'></view>
+      <view>活动主题</view>
+    </view>
+    <input placeholder='输入活动主题(必填)' bindinput='titleInput' class='input'></input>
+  </view>
+  <view class='itm flexr-between item-center bottom-line' bindtap='chooseAddress'>
+    <view class='flexr-start item-center'>
+      <view class='cri'></view>
+      <view>活动地点</view>
+    </view>
+    <view class='flexr-end item-center'>
+        <view style='color:{{address ? "#000":"#888"}}'>{{address ? address:"(必选)"}}</view>
+        <image src='/img/right1.png' style='width:30rpx;height:30rpx;margin-left:10rpx'></image>
+      </view>
+  </view>
+  <picker bindchange="bindAtypeChange" value="{{aflag}}" range="{{atype}}">
+    <view class='itm flexr-between item-center bottom-line'>
+      <view class='flexr-start item-center'>
+        <view class='cri'></view>
+        <view>活动类型</view>
+      </view>
+      <view class='flexr-end item-center'>
+        <view style='color:{{atype[aflag] ? "#000":"#888"}}'>{{atype[aflag] ? atype[aflag]:"(必选)"}}</view>
+        <image src='/img/right1.png' style='width:30rpx;height:30rpx;margin-left:10rpx'></image>
+      </view>
+    </view>
+  </picker>
+ 
+  <picker mode="date" value="{{date}}" start="{{startDate}}" end="2050-09-01" bindchange="bindDateChange">
+    <view class='itm flexr-between item-center bottom-line'>
+      <view class='flexr-start item-center'>
+        <view class='cri'></view>
+        <view>截止报名日期</view>
+      </view>
+      <view class='flexr-end item-center'>
+        <view style='color:{{date ? "#000":"#888"}}'>{{date ? date:"(必选)"}}</view>
+        <image src='/img/right1.png' style='width:30rpx;height:30rpx;margin-left:10rpx'></image>
+      </view>
+    </view>
+  </picker>
+
+  <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+    <view class='itm flexr-between item-center bottom-line'>
+      <view class='flexr-start item-center'>
+        <view class='cri'></view>
+        <view>截止报名时间</view>
+      </view>
+      <view class='flexr-end item-center'>
+        <view style='color:{{time ? "#000":"#888"}}'>{{time ? time:"(必选)"}}</view>
+        <image src='/img/right1.png' style='width:30rpx;height:30rpx;margin-left:10rpx'></image>
+      </view>
+    </view>
+  </picker>
+
+  <view class='itm flexr-between item-center'>
+    <view class='flexr-start item-center'>
+      <view class='cri'></view>
+      <view>活动描述</view>
+    </view>
+  </view>
+  <view style='padding-bottom:30rpx;' class='bottom-line'>
+    <textarea class='texa' bindinput='textInput'  placeholder='描述活动内容(必填)'></textarea>
+  </view>
+
+  <view class='itm flexr-between item-center bottom-line'>
+    <view class='flexr-start item-center'>
+      <view class='cri'></view>
+      <view>人数限制</view>
+    </view>
+    <input placeholder='输入数量(必填)' value="{{needPeopleNumber}}" type='number' bindinput='bindPersonChange' class='input'></input>
+  </view>
+
+  <picker bindchange="bindDayChange" value="{{dflag}}" range="{{days}}">
+    <view class='itm flexr-between item-center bottom-line'>
+      <view class='flexr-start item-center'>
+        <view class='cri'></view>
+        <view>活动天数</view>
+      </view>
+      <view class='flexr-end item-center'>
+        <view >{{days[dflag]}}</view>
+        <image src='/img/right1.png' style='width:30rpx;height:30rpx;margin-left:10rpx'></image>
+      </view>
+    </view>
+  </picker>
+  <view class='itm flexr-between item-center bottom-line'>
+    <view class='flexr-start item-center'>
+      <view class='cri'></view>
+      <view>人均消费/报名费</view>
+    </view>
+    <input placeholder='输入消费金额(选填)' class='input'></input>
+  </view>
+
+  <view class='itm flexr-between item-center bottom-line'>
+    <view class='flexr-start item-center'>
+      <view class='cri'></view>
+      <view>在线收缴报名费</view>
+    </view>
+    <switch disabled="{{disabled}}" bindchange="getSw" checked="{{swcheck}}"></switch>
+  </view>
+</view>
+<view style='margin-top:60rpx'>
+<i-button bind:click="handleClick"  type="primary">立即发布</i-button>
+</view>

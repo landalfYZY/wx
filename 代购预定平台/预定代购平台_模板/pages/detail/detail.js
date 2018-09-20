@@ -1,4 +1,5 @@
-// pages/detail/detail.js
+var that;
+var util = require("../../utils/util.js")
 Page({
 
   /**
@@ -20,56 +21,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
+    that = this;
+    
     wx.getSystemInfo({
       success: function(res) {
         that.setData({
-          width:res.windowWidth
+          width:res.windowWidth,
+          id:options.id
         })
       },
     })
+    this.getGood()
   },
-  
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
+  getGood(){
+    wx.showNavigationBarLoading()
+    util.get('goods/findById',{id:this.data.id},function(res){
+      wx.hideNavigationBarLoading()
+      that.setData({
+        msg:res.data.data[0]
+      })
+    })
   },
 
   /**

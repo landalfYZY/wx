@@ -1,0 +1,40 @@
+page{
+  background-color: #f3f3f3
+}
+.dif{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  height: 100rpx;
+}
+.dj{
+  width: 50px;
+  text-align: center
+}
+.zf{
+  width:50px;
+  height: 100rpx;
+  border-radius: 0;
+  border: none;
+  padding: 0;
+  line-height: normal;
+  background: #fff;
+  box-sizing: unset
+}
+.bm{
+  background: #ff6633;
+  color: #fff;
+  height: 100rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.sdas{
+  text-align: center;
+  width: 80rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  display: inline-block
+}

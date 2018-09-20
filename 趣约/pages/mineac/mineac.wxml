@@ -1,0 +1,21 @@
+<i-tabs current="{{ current }}" color="#ff6633" bindchange="handleChange">
+    <i-tab key="tab1" title="我的活动"></i-tab>
+    <i-tab key="tab2" title="我的参与"></i-tab>
+</i-tabs>
+
+<view class='flexr-start panel bottom-line' wx:for="{{list}}" data-id='{{item.sunwouId}}' bindtap='showAc'>
+  <image src='{{item.image}}' style='width:200rpx;height:180rpx;border:1px solid #f3f3f3' mode='aspectFill'></image>
+  <view style='width:450rpx;margin-left:30rpx;'>
+    <view class='bold'>{{item.title}}</view>
+    <view style='font-size:28rpx;margin-top:10rpx;color:#888'>截至报名:{{item.stopTime}}</view>
+    <view style='font-size:28rpx;margin-top:10rpx;'>已报名:{{item.nowPeopleNumber}}人</view>
+    <view class='flexr-end'>
+      <view class='bbtn' >操作</view>
+    </view>
+  </view>
+</view>
+
+<view class="flexr-center item-center" wx:if="{{load}}" style='margin-top:20rpx'>
+  <view class="three-quarters-loader">Loading</view>
+  <view class="loading-txt">加载中...</view>
+</view>

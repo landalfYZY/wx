@@ -13,7 +13,7 @@
         <view class='input'><input placeholder='设置答案提示'></input></view>
       </view>
       <view class='panel-end'>
-        <view class='btn'>点击开始画画</view>
+        <view class='btn' bindtap='startPan'>点击开始画画</view>
       </view>
       <view class='form-item'>
         <view style='font-size:34rpx'>红包金额</view>

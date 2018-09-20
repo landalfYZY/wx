@@ -1,0 +1,19 @@
+page{
+  background-color: #f3f3f3
+}
+.rebg{
+  background-color: #e1e1e1;
+  background-size: cover;
+  background-position: center;
+  height: 400rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.rebgbtn{
+  line-height: 70rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0 30rpx;
+  border-radius: 30rpx
+}

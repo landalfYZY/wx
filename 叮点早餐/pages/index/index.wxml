@@ -1,0 +1,46 @@
+
+<view style='padding:0 30rpx;'>
+  <swiper indicator-dots="true"
+  autoplay="true" interval="5000" duration="500" style='height:400rpx;width:100%;border-radius:10rpx;overflow:hidden' indicator-color="rgba(255,255,255,0.3)" indicator-active-color="#ffffff">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item.mediaUrl}}"  style='height:400rpx;width:100%;border-radius:10rpx' mode='aspectFill'/>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+<view style='padding:30rpx'>
+  <view class='ban flexr-start item-center' bindtap='navtotime'>
+    <view class='ban-ava banbg1 flexr-center item-center'>
+      <image src='/img/sun.png' style='width:90rpx;height:90rpx'></image>
+    </view>
+    <view class='bantxt'>
+      <view class='bant1'>预定明天</view>
+      <view class='bant2' wx:if="{{time}}">{{tom}} {{time}}</view>
+      <view class='bant2'>(请在20:00前完成预定)</view>
+    </view>
+  </view> 
+
+  <view class='ban flexr-start item-center' style='margin-top:30rpx'>
+    <view class='ban-ava banbg2 flexr-center item-center'>
+      <image src='/img/zhou.png' style='width:90rpx;height:90rpx'></image>
+    </view>
+    <view class='bantxt'>
+      <view class='bant1'>预定下一周</view>
+      <view class='bant2' wx:if="{{time}}"> 8.2 ~ 8.24 {{time}} </view>
+      <view class='bant2'>(请在这周日20:00前完成预定) </view>
+    </view>
+  </view> 
+
+  <view class='ban flexr-start item-center' style='margin-top:30rpx'>
+    <view class='ban-ava banbg3 flexr-center item-center'>
+      <image src='/img/mo.png' style='width:90rpx;height:90rpx'></image>
+    </view>
+    <view class='bantxt'>
+      <view class='bant1'>我想要</view>
+      <view class='bant2'>每周推出新品，投票你想吃的早餐</view>
+    </view>
+  </view> 
+</view>
+
+

@@ -1,0 +1,96 @@
+
+
+<!--顶部地址-->
+<view class='padding-sanshi margin-sanshi shadow radius-10 top-line2' style='margin-top:0'>
+  <view class="flexr-between item-center margin-bottom-sanshi padding-bottom-sanshi bottom-line2" bindtap="moreCusInfo">
+    <view class='flexr-start item-center'>
+      <image class="icon-sishi" src="/images/location2.png" mode="aspectFit"></image>
+      <view class='margin-left-sanshi' style='width:500rpx'>
+        <view class="font-30-black2">{{address.concatName}} {{address.concatPhone}}</view>
+        <view class="font-27-zhonhui">{{address.floorName}}{{address.detail}}</view>
+      </view>
+    </view>
+    <image class='icon-sanshi' src="/images/jianTou.png" mode="aspectFit"></image>
+  </view>
+  <!--送达时间-->
+  <view class="flexr-between item-center  padding-bottom-sanshi bottom-line2" bindtap="bindTimeChange">
+    <view class='flexr-start item-center'>
+       <image class="icon-sishi" src="/images/time.png" mode="aspectFit"></image>
+      <view class='margin-left-sanshi' style='width:500rpx'>
+        <view class="font-30-black2">送达时间<text class='margin-left-shi font-24-zhonju'>(次日{{time}})</text></view>
+      </view>
+    </view>
+    <image class='icon-sanshi' src="/images/jianTou.png" mode="aspectFit"></image>
+  </view>
+</view>
+
+<!--信息备注-->
+<view class="flexr-between item-center padding-bottom-shi margin-sanshi bottom-line2">
+  <view class='font-30-black2'>备注信息：</view>
+  <input class='text-left font-28-black3' style='width:76%' placeholder="输入备注内容（选填)" bindinput="remark" placeholder-style="color:#b1b1b1" />
+</view>
+
+<image style='width:100%;height:8rpx;display:block' src="/images/line.png"></image>
+
+<!--订单菜品详情-->
+<view class='padding-sanshi margin-sanshi shadow radius-10 top-line2'>
+  <view class="flexr-start padding-bottom-sanshi bottom-line2">
+    <image class='icon-sishi' src="/images/shop.png"></image>
+    <view class='font-30-black2 margin-left-sanshi elip' style='width:440rpx'>{{shop.shopName}}</view>
+  </view>
+  <view class="flexr-between bottom-line2 padding-top-sanshi padding-bottom-sanshi" wx:for="{{cart}}" wx:key="{{cart}}">
+    <view class='flexr-start'>
+      <image class='radius-10' style='width:100rpx;height:95rpx;border: 2rpx solid gainsboro' src="{{item.img}}"></image>
+      <view class='flexc-start'>
+        <wxc-elip line="2" class='font-26-black2 space-san margin-left-sanshi' style="width:400rpx">{{item.name}}</wxc-elip>
+        <view class='font-26-black2 space-san elip margin-left-sanshi margin-top-shi' style='width:320rpx;color:#888;font-size:22rpx' wx:if="{{item.attrLength != 1}}">({{item.attr}})</view>
+      </view>
+    </view>
+    <view class='flexc-start item-end'>
+      <view class='font-26-black3'>￥{{item.price}}</view>
+      <view class='font-24-qianhui margin-top-shi'>{{item.num}}份</view>
+    </view>
+  </view>
+
+  <!--价格-->
+  <view class="flexr-between item-center margin-top-sanshi padding-bottom-sanshi bottom-line2">
+    <view class='font-26-black2'>餐盒费</view>
+    <view class='font-26-black3'>￥{{totalCanhefei}}</view>
+  </view>
+  <view class="flexr-between item-center margin-top-sanshi padding-bottom-ershi">
+    <view class='font-26-black2'>配送费</view>
+    <view class='font-26-black3'>￥{{sendPrice}}</view>
+  </view>
+  <view class="flexr-between padding-bottom-sanshi bottom-line2">
+    <view class='font-26-zhonhui'>超出指定距离额外配送费</view>
+    <view class='font-26-black3'>￥{{otherSendPrice}}</view>
+  </view>
+  <view class="flexc-start item-end margin-top-sanshi">
+    <view class='flexr-start item-center'>
+      <view class='flexr-start item-center' wx:if="{{discountflag == 'null'}}">
+        <text class='font-26-qianhui margin-left-ershi'>暂无参与优惠</text>
+      </view>
+      <view class='flexr-start item-center' wx:if="{{discountflag == 'true'}}">
+        <view class='zheKou'>折</view>
+        <text class='font-26-black2 margin-left-ershi'>折扣优惠</text>
+      </view>
+      <view class='flexr-start item-center' wx:if="{{discountflag == 'false'}}">
+        <view class='zheKou' style='background: #ff7e97'>减</view>
+        <text class='font-26-black2 margin-left-ershi'>满减优惠</text>
+      </view>
+      <view class='font-26-black3 margin-left-sanshi' wx:if="{{discountflag != 'null'}}">-￥{{discountPrice}}</view>
+    </view>
+    <view class="flexr-start item-center margin-top-ershi">
+      <view class='font-26-black2'>总计</view>
+      <view class='font-32-zhonhong bold margin-left-sanshi'>￥{{payment}}</view>
+    </view>
+  </view>
+</view>
+
+<view style="height:100rpx;"></view>
+
+<!--提交订单-->
+<view class="diBu">
+  <view class='flexr-center item-center font-30-black2 top-line bg-white' style='width:50%'>待支付￥{{payment}}</view>
+  <view class='flexr-center item-center font-30-white bg-lan click' style='width:50%' bindtap="wxPay">确认付款</view>
+</view>

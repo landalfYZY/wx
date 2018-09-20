@@ -1,0 +1,69 @@
+<view class='mine'>
+  <view class='flexr-between item-center'>
+    <view class='flexr-start item-center'> 
+      <view style='width:100rpx;height:100rpx;background:#fff;border-radius:100rpx;'></view>
+      <view style='color:#fff;margin-left:30rpx'>Landalf</view>
+    </view>
+    <image src='/img/right.png' style='width:30rpx;height:30rpx'></image>
+  </view>
+</view>
+
+<view style='padding:30rpx'>
+  <view class='e1'>
+   <view class='e1item' data-index='1' bindtap='navTom'>
+      <image src='/img/m1.png'></image>
+      <view>我的活动</view>
+   </view>
+   <view class='e1item' data-index='2' bindtap='navTom'>
+      <image src='/img/m2.png'></image>
+      <view>我的参与</view>
+   </view>
+  </view>
+</view>
+
+
+<view style='padding:0 30rpx 30rpx 30rpx'>
+  <view class='e2'>
+    <view class='e2item flexr-between item-center'>
+      <view class='flexr-start item-center'>
+        <image src='/img/m3.png'></image>
+        <view>商铺入驻/登录</view>
+      </view>
+      <image src='/img/right1.png' style='width:30rpx;height:30rpx'></image>
+    </view>
+    <view class='e2item flexr-between item-center'>
+      <view class='flexr-start item-center'>
+        <image src='/img/m4.png'></image>
+        <view>企业入驻/登录</view>
+      </view>
+      <image src='/img/right1.png' style='width:30rpx;height:30rpx'></image>
+    </view>
+    <view class='e2item flexr-between item-center'>
+      <view class='flexr-start item-center'>
+        <image src='/img/m5.png'></image>
+        <view>客服</view>
+      </view>
+      <image src='/img/right1.png' style='width:30rpx;height:30rpx'></image>
+    </view>
+  </view>
+</view>
+
+<view style='padding:0 30rpx 30rpx 30rpx'>
+  <view class='e2'>
+    <view class='e2item flexr-between item-center'>
+      <view class='flexr-start item-center'>
+        <image src='/img/m6.png'></image>
+        <view>关于趣玩吧</view>
+      </view>
+      <image src='/img/right1.png' style='width:30rpx;height:30rpx'></image>
+    </view>
+    <view class='e2item flexr-between item-center'>
+      <view class='flexr-start item-center'>
+        <image src='/img/m7.png'></image>
+        <view>使用说明</view>
+      </view>
+      <image src='/img/right1.png' style='width:30rpx;height:30rpx'></image>
+    </view>
+    
+  </view>
+</view>

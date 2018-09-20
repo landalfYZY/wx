@@ -1,0 +1,56 @@
+<!--订单循环-->
+<view wx:for="{{orders}}" style='margin:30rpx 30rpx 0 30rpx'>
+  <view class="pst radius-10 shadow car{{item.style}}">
+    <view class="flexr-between item-center bg-white bottom-line2" style='padding:10rpx 20rpx;border-radius:10rpx 10rpx 0 0;' bindtap="toShop" data-index="{{index}}">
+      <view class='flexc-start' style='width:58%'>
+        <view class='font-30-black2 elip'>{{item.shopName}}</view>
+        <view class='font-24-zhonhui' wx:if="{{item.type == '外卖订单'}}">{{item.createTime}}（专送）</view>
+        <view class='font-24-zhonhui' wx:if="{{item.type == '堂食订单'}}">{{item.createTime}}（自取）</view>
+      </view>
+      <view class='flexr-between item-center margin-left-ershi'>
+        <view class='flexc-start item-end'>
+          <view class='font-40-black2 bold' wx:if="{{item.status != '待付款' && item.status != '待接手' && item.status != '已取消'}}">{{item.waterNumber}}
+            <text class='font-27-black2' style='font-weight:normal'>号</text>
+          </view>
+          <view class='flexr-start item-center'>
+            <view class='cri cri{{item.style}}'></view>
+            <view class='margin-left-shi font-24-black2'>{{item.status}}</view>
+          </view>
+        </view>
+        <image class="icon-saner margin-left-ershi" src="/images/jianTou.png"></image>
+      </view>
+    </view>
+    <view class="flexr-between item-center bottom-line2 padding-sanshi" wx:for="{{item.orderProduct}}" wx:for-item="li">
+      <image class='radius-10 icon-jiushi' style='border: 0.5rpx solid gainsboro' src="{{li.product.image}}"></image>
+      <view class='flexc-start text-left' style='width:68%;'>
+        <view class='font-26-black2 space-san elip'>{{li.product.name}}</view>
+        <view class='font-26-black2 space-san margin-top-shi elip' style='color:#888;font-size:22rpx' wx:if="{{li.product.attribute.length != 1}}">({{li.attribute.name}})</view>
+      </view>
+      <view class='font-30-zhonhui text-right'>x {{li.number}}</view>
+    </view>
+    <view class='flexr-between item-center padding-ershi'>
+      <view class='font-23-zhonhui'>
+        <text>共{{item.orderProduct.length}}件商品，实付</text>
+        <text style="color:#ee5353">￥{{item.total}}</text>
+      </view>
+      <view class='flexr-end item-center'>
+        <view class='flexr-center item-center paybtn bg-white click' style='color:#363636;border:2rpx solid #d1d1d1;box-sizing:border-box;' id="{{item.sunwouId}}" catchtap="navtos">查看详情</view>
+        <view class='flexr-center item-center paybtn bg-lan click margin-left-wushi' id="{{item.sunwouId}}" data-index="{{index}}" wx:if="{{item.status == '待付款'}}" catchtap="wxPay">确认付款</view> 
+        <view class='flexr-center item-center paybtn bg-lv click margin-left-wushi' id="{{item.sunwouId}}" data-index="{{index}}" wx:if="{{item.status == '商家已接手'}}" catchtap="shopPhone">联系商家</view>
+        <view class='flexr-center item-center paybtn bg-lv click margin-left-wushi' id="{{item.sunwouId}}" data-index="{{index}}" wx:if="{{item.status == '配送员已接手'}}" catchtap="runPhone">联系骑手</view>    
+        <!-- <view class='flexr-center item-center paybtn bg-hong click margin-left-wushi' id="{{item.sunwouId}}" data-index="{{index}}" wx:if="{{item.status == '待接手'}}" catchtap="navtos2">取消订单</view> -->
+        <view class='flexr-center item-center paybtn bg-huang click margin-left-wushi' id="{{item.sunwouId}}" data-index="{{index}}" wx:if="{{item.status == '已完成' && !item.pl}}" catchtap="navtos3">我要评论</view>   
+      </view>
+    </view>
+  </view>
+</view>
+<view style='height:100rpx' class='font-28-qianhui flexr-center item-center' wx:if="{{orders.length != 0 }}">
+  <image style='height:5rpx;width:200rpx' src="/images/line2.png"></image>
+  <view class='font-28-qianhui margin-left-ershi margin-right-ershi bold'>到底了</view>
+  <image style='height:5rpx;width:200rpx' src="/images/line2.png"></image>
+</view>
+
+<!--暂时没有订单-->
+<view style='margin-top:300rpx' wx:if="{{orders.length == 0 }}">
+  <wxc-abnor type="ORDER" title=" " tip="订单列表空空如也，快去下单吧"></wxc-abnor>
+</view>

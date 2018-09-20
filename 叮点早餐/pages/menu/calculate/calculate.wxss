@@ -1,0 +1,72 @@
+page {
+  background: #fff;
+}
+
+.order-bar {
+  width: 100%;
+  margin-bottom: 10rpx;
+  background: #fff;
+  z-index: 1000000000;
+}
+
+.order-bar .item {
+  line-height: 90rpx;
+  text-align: center;
+  width:25%;
+}
+
+.bar-default {
+  color: #888;
+  font-size: 30rpx;
+}
+
+.bar-active {
+  animation: barActive 1s forwards;
+  border-bottom: 2px solid #afc5da;
+  font-size: 30rpx;
+}
+
+@keyframes barActive {
+  from {
+    color: #888;
+    border-bottom: 2px solid #888;
+  }
+
+  to {
+    color: #3797ee;
+    border-bottom: 2px solid #3797ee;
+  }
+}
+
+.remarks {
+  width: 94%;
+  height: 200rpx;
+  background: #f7f7f7;
+  margin-top: 10rpx;
+  padding: 20rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.zheKou{
+  font-size: 18rpx;
+  width: 30rpx;
+  height: 30rpx; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff946f;
+  color: #fff;
+  border-radius: 10rpx
+}
+
+.diBu {
+  z-index: 999999999;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+}
+

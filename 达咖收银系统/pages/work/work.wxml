@@ -1,0 +1,17 @@
+<view style="padding:30rpx 60rpx;">
+  <view class='btn flexr-center item-center bg1'>
+    <view class='titles te1'>出 库</view>
+  </view>
+</view> 
+
+<view style="padding:30rpx 60rpx;">
+  <view class='btn flexr-center item-center bg2'>
+    <view class='titles te2'>入 库</view>
+  </view>
+</view>
+
+<view style="padding:30rpx 60rpx;">
+  <view class='btn flexr-center item-center bg3'>
+    <view class='titles te3'>盘 货</view>
+  </view>
+</view>

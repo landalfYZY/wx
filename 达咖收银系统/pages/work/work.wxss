@@ -1,0 +1,35 @@
+.btn{
+  height: 250rpx;
+  border-radius: 5rpx;
+  background: #f3f3f3;
+}
+.titles{
+  font-size: 40rpx
+}
+.bg1{
+  background: #d4ebff
+}
+.bg1:active{
+  background: #e2f1fd
+}
+.te1{
+  color: #0099ff
+}
+.bg2{
+  background: #d5fbe8
+}
+.bg2:active{
+  background: #e7fdf2
+}
+.te2{
+  color: #00cc66
+}
+.bg3{
+  background: #fbe8e1
+}
+.bg3:active{
+  background: #fbefeb
+}
+.te3{
+  color: #ff6633
+}

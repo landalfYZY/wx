@@ -1,0 +1,11 @@
+page {
+  background: #fff;
+}
+
+.paybtn{
+  height: 55rpx;
+  width: 140rpx;
+  font-size: 27rpx;
+  color: #fff;
+  border-radius: 10rpx
+}

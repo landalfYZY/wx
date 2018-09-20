@@ -1,0 +1,725 @@
+.search{
+  height: 70rpx;
+  background: #f3f3f3;
+  border-radius: 70rpx
+}
+.sear-text{
+  font-size: 28rpx;
+  margin-left: 30rpx;
+  color: #8a8a8a
+}
+/* icon */
+.icon-erliu{
+  width: 26rpx;
+  height: 26rpx
+}
+.icon-siwu{
+  width: 45rpx;
+  height: 45rpx
+}
+.icon-jiuba{
+  width: 90rpx;
+  height: 80rpx
+}
+view{
+  font-size: 30rpx
+}
+.panel{
+  padding: 30rpx;
+  background: #fff
+}
+/* 其他 */
+.line-sishi{
+  line-height: 40rpx
+}
+.line-wushi{
+  line-height: 50rpx
+}
+.space-san{
+  letter-spacing: 3rpx
+}
+.space-wu{
+  letter-spacing: 5rpx
+}
+.img{
+  border-radius: 12rpx;
+  border: 2rpx solid gainsboro
+}
+.bold{
+  font-weight: bold
+}
+.text-right{
+  text-align: right
+}
+
+/* position */
+.pst{
+  position: relative
+}
+.pst2{
+  position: absolute
+}
+.pst3{
+  position: fixed
+}
+
+/* flex */
+.flexr-start{
+  display: flex;
+  justify-content: flex-start;
+ 
+}
+.flex-flow{
+ flex-flow: wrap
+}
+.flexr-center{
+  display: flex;
+  justify-content: center
+}
+.flexr-between{
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap
+}
+.flexr-around{
+  display: flex;
+  justify-content: space-around
+}
+.flexr-end{
+  display: flex;
+  justify-content: flex-end
+}
+.flexc-start{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start
+}
+.flexc-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+.flexc-between{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.flexc-around{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
+}
+.flexc-end{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end
+}
+.item-center{
+  align-items: center
+}
+.item-end{
+  align-items: flex-end
+}
+.item-start{
+  align-items: flex-start
+}
+
+/* margin和padding */
+.margin-ershi{
+  margin: 20rpx
+}
+.margin-sanshi{
+  margin: 30rpx
+}
+.margin-top-wu{
+  margin-top: 5rpx
+}
+
+.margin-top-shi{
+  margin-top: 10rpx
+}
+.margin-top-ershi{
+  margin-top: 20rpx
+}
+.margin-top-sanshi{
+  margin-top: 30rpx
+}
+.margin-top-sishi{
+  margin-top: 40rpx
+}
+.margin-top-wushi{
+  margin-top: 50rpx
+}
+.margin-top-liushi{
+  margin-top: 60rpx
+}
+.margin-right-wu{
+  margin-right: 5rpx
+}
+.margin-right-shi{
+  margin-right: 10rpx
+}
+.margin-right-ershi{
+  margin-right: 20rpx
+}
+.margin-right-sanshi{
+  margin-right: 30rpx
+}
+.margin-right-sishi{
+  margin-right: 40rpx
+}
+.margin-right-wushi{
+  margin-right: 50rpx
+}
+.margin-right-liushi{
+  margin-right: 60rpx
+}
+.margin-bottom-wu{
+  margin-bottom: 5rpx
+}
+.margin-bottom-shi{
+  margin-bottom: 10rpx
+}
+.margin-bottom-ershi{
+  margin-bottom: 20rpx
+}
+.margin-bottom-sanshi{
+  margin-bottom: 30rpx
+}
+.margin-bottom-sishi{
+  margin-bottom: 40rpx
+}
+.margin-bottom-wushi{
+  margin-bottom: 50rpx
+}
+.margin-bottom-liushi{
+  margin-bottom: 60rpx
+}
+.margin-left-wu{
+  margin-left: 5rpx
+}
+.margin-left-shi{
+  margin-left: 10rpx
+}
+.margin-left-ershi{
+  margin-left: 20rpx
+}
+.margin-left-sanshi{
+  margin-left: 30rpx
+}
+.margin-left-sishi{
+  margin-left: 40rpx
+}
+.margin-left-wushi{
+  margin-left: 50rpx
+}
+.margin-left-liushi{
+  margin-left: 60rpx
+}
+.padding-ershi{
+  padding: 20rpx
+}
+.padding-sanshi{
+  padding: 30rpx
+}
+.padding-top-wu{
+  padding-top: 5rpx
+}
+.padding-top-shi{
+  padding-top: 10rpx
+}
+.padding-top-ershi{
+  padding-top: 20rpx
+}
+.padding-top-sanshi{
+  padding-top: 30rpx
+}
+.padding-top-sishi{
+  padding-top: 40rpx
+}
+.padding-top-wushi{
+  padding-top: 50rpx
+}
+.padding-top-liushi{
+  padding-top: 60rpx
+}
+.padding-right-wu{
+  padding-right: 5rpx
+}
+.padding-right-shi{
+  padding-right: 10rpx
+}
+.padding-right-ershi{
+  padding-right: 20rpx
+}
+.padding-right-sanshi{
+  padding-right: 30rpx
+}
+.padding-right-sishi{
+  padding-right: 40rpx
+}
+.padding-right-wushi{
+  padding-right: 50rpx
+}
+.padding-right-liushi{
+  padding-right: 60rpx
+}
+.padding-bottom-wu{
+  padding-bottom: 5rpx
+}
+.padding-bottom-shi{
+  padding-bottom: 10rpx
+}
+.padding-bottom-ershi{
+  padding-bottom: 20rpx
+}
+.padding-bottom-sanshi{
+  padding-bottom: 30rpx
+}
+.padding-bottom-sishi{
+  padding-bottom: 40rpx
+}
+.padding-bottom-wushi{
+  padding-bottom: 50rpx
+}
+.padding-bottom-liushi{
+  padding-bottom: 60rpx
+}
+.padding-left-wu{
+  padding-left: 5rpx
+}
+.padding-left-shi{
+  padding-left: 10rpx
+}
+.padding-left-ershi{
+  padding-left: 20rpx
+}
+.padding-left-sanshi{
+  padding-left: 30rpx
+}
+.padding-left-sishi{
+  padding-left: 40rpx
+}
+.padding-left-wushi{
+  padding-left: 50rpx
+}
+.padding-left-liushi{
+  padding-left: 60rpx
+}
+
+/* font-组合 */
+.font-18-white{
+  font-size: 18rpx;
+  color: #ffffff
+}
+.font-20-white{
+  font-size: 20rpx;
+  color: #ffffff
+}
+.font-20-qianhui{
+  font-size: 20rpx;
+  color: #b1b1b1
+}
+.font-20-zhonhui{
+  font-size: 20rpx;
+  color: #888888
+}
+.font-20-lan{
+  font-size: 20rpx;
+  color: #3797ee
+}
+.font-22-white{
+  font-size: 22rpx;
+  color: #ffffff
+}
+.font-22-black2{
+  font-size: 22rpx;
+  color: #363636
+}
+.font-22-black3{
+  font-size: 22rpx;
+  color: #666666
+}
+.font-22-zhonhui{
+  font-size: 22rpx;
+  color: #888888
+}
+.font-22-qianhui{
+  font-size: 22rpx;
+  color: #b1b1b1
+}
+.font-22-lan{
+  font-size: 22rpx;
+  color: #3797ee
+}
+.font-23-white{
+  font-size: 23rpx;
+  color: #ffffff
+}
+.font-23-zhonhui{
+  font-size: 23rpx;
+  color: #888888
+}
+.font-23-zhonju{
+  font-size: 23rpx;
+  color: #f47f50
+}
+.font-24-white{
+  font-size: 24rpx;
+  color: #ffffff
+}
+.font-24-black2{
+  font-size: 24rpx;
+  color: #363636
+}
+.font-24-black3{
+  font-size: 24rpx;
+  color: #666666
+}
+.font-24-zhonhui{
+  font-size: 24rpx;
+  color: #888888
+}
+.font-24-zhonhong{
+  font-size: 24rpx;
+  color: #ee5353
+}
+.font-24-zhonju{
+  font-size: 24rpx;
+  color: #f47f50
+}
+.font-24-qianhui{
+  font-size: 24rpx;
+  color: #b1b1b1
+}
+.font-24-lan{
+  font-size: 24rpx;
+  color: #3797ee
+}
+.font-26-white{
+  font-size: 26rpx;
+  color: #ffffff
+}
+.font-26-black2{
+  font-size: 26rpx;
+  color: #363636
+}
+.font-26-black3{
+  font-size: 26rpx;
+  color: #666666
+}
+.font-26-zhonhui{
+  font-size: 26rpx;
+  color: #888888
+}
+.font-26-qianhui{
+  font-size: 26rpx;
+  color: #b1b1b1
+}
+.font-26-lan{
+  font-size: 26rpx;
+  color: #3797ee
+}
+.font-26-zhonju{
+  font-size: 26rpx;
+  color: #f47f50
+}
+.font-27-white{
+  font-size: 27rpx;
+  color: #ffffff
+}
+.font-27-black2{
+  font-size: 27rpx;
+  color: #363636
+}
+.font-27-black3{
+  font-size: 27rpx;
+  color: #666666
+}
+.font-27-zhonhui{
+  font-size: 27rpx;
+  color: #888888
+}
+.font-27-qianhui{
+  font-size: 27rpx;
+  color: #b1b1b1
+}
+.font-27-zhonhong{
+  font-size: 27rpx;
+  color: #ee5353
+}
+.font-27-lan{
+  font-size: 27rpx;
+  color: #3797ee
+}
+.font-28-white{
+  font-size: 28rpx;
+  color: #fff 
+}
+.font-28-black2{
+  font-size: 28rpx;
+  color: #363636 
+}
+.font-28-black3{
+  font-size: 28rpx;
+  color: #666666 
+}
+.font-28-zhonhui{
+  font-size: 28rpx;
+  color: #888888 
+}
+.font-28-qianhui{
+  font-size: 28rpx;
+  color: #b1b1b1 
+}
+.font-28-zhonju{
+  font-size: 28rpx;
+  color: #f47f50 
+}
+.font-30-white{
+  font-size: 30rpx;
+  color: #ffffff
+}
+.font-30-black{
+  font-size: 30rpx;
+  color: #000000
+}
+.font-30-black2{
+  font-size: 30rpx;
+  color: #363636
+}
+.font-30-black3{
+  font-size: 30rpx;
+  color: #666666
+}
+.font-30-zhonhui{
+  font-size: 30rpx;
+  color: #888888
+}
+.font-30-qianhui{
+  font-size: 30rpx;
+  color: #b1b1b1
+}
+.font-30-lan{
+  font-size: 30rpx;
+  color: #3797ee
+}
+.font-30-zhonhong{
+  font-size: 30rpx;
+  color: #ee5353
+}
+.font-32-white{
+  font-size: 32rpx;
+  color: #ffffff
+}
+.font-32-black{
+  font-size: 32rpx;
+  color: #000000
+}
+.font-32-black2{
+  font-size: 32rpx;
+  color: #363636
+}
+.font-32-zhonhui{
+  font-size: 32rpx;
+  color: #888888
+}
+.font-35-white{
+  font-size: 35rpx;
+  color: #ffffff
+}
+.font-35-black2{
+  font-size: 35rpx;
+  color: #363636
+}
+.font-35-zhonhong{
+  font-size: 35rpx;
+  color: #ee5353
+}
+.font-40-white{
+  font-size: 40rpx;
+  color: #ffffff
+}
+.font-40-black2{
+  font-size: 40rpx;
+  color: #363636
+}
+.font-40-zhonhong{
+  font-size: 40rpx;
+  color: #ee5353
+}
+.font-42-black2{
+  font-size: 42rpx;
+  color: #363636
+}
+.font-45-black2{
+  font-size: 45rpx;
+  color: #363636
+}
+.font-45-lan{
+  font-size: 45rpx;
+  color: #3797ee
+}
+.font-50-white{
+  font-size: 50rpx;
+  color: #ffffff
+}
+.font-50-black2{
+  font-size: 50rpx;
+  color: #363636
+}
+.font-60-lan{
+  font-size: 60rpx;
+  color: #3797ee
+}
+
+/* icon */
+.icon-sanshi{
+  width: 30rpx;
+  height: 30rpx
+}
+.icon-saner{
+  width: 32rpx;
+  height: 32rpx
+}
+.icon-sanwu{
+  width: 35rpx;
+  height: 35rpx
+}
+.icon-sishi{
+  width: 40rpx;
+  height: 40rpx
+}
+.icon-bashi{
+  width: 80rpx;
+  height: 80rpx
+}
+
+/* bg-color */
+.bg-white{
+  background-color: #ffffff
+}
+.bg-lv{
+  background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+}
+.bg-hong{
+  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f  100%);
+}
+.bg-lan{
+  background-image: linear-gradient(120deg, #45aaf2 0%, #3797ee 100%);
+}
+.bg-huang{
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+/* 截断段落 */
+.elip{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+/* 阴影 */
+.shadow{
+  box-shadow: 0 5rpx 7rpx #e1e1e1;
+}
+.shadow2{
+  box-shadow: 0 10rpx 10rpx #e1e1e1;
+}
+
+/* 圆角 */
+.radius-10{
+  border-radius: 10rpx;
+}
+.radius-20{
+  border-radius: 20rpx;
+}
+
+/* 粗体 */
+.bold{
+  font-weight: bold
+}
+
+/* 间距 */
+.line-sishi{
+  line-height: 40rpx
+}
+.line-wushi{
+  line-height: 50rpx
+}
+.space-san{
+  letter-spacing: 3rpx
+}
+.space-wu{
+  letter-spacing: 5rpx
+}
+
+/* 下划线 */
+.top-line{
+  border-top: 1px solid #e1e1e1
+}
+.top-line2{
+  border-top: 1px solid #f3f3f3
+}
+.bottom-line{
+  border-bottom: 1px solid #e1e1e1
+}
+.bottom-line2{
+  border-bottom: 1px solid #f3f3f3
+}
+
+
+/* text */
+.text-left{
+  text-align: left
+}
+.text-center{
+  text-align: center
+}
+.text-right{
+  text-align: right
+}
+@keyframes three-quarters-loader {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* :not(:required) hides this rule from IE9 and below */
+.three-quarters-loader:not(:required) {
+  animation: three-quarters-loader 1250ms infinite linear;
+  border: 8rpx solid #aaaaaa;
+  border-right-color: transparent;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 35rpx;
+  height: 35rpx;
+}
+.loading-txt{
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #aaa;
+}
+.bg-success{
+  background-color: #00cc66
+}
+.bg-primary{
+  background-color: #0099ff
+}
+.bg-warning{
+  background-color: #ff6633
+}
+.bg-error{
+  background-color: #FF6666
+}

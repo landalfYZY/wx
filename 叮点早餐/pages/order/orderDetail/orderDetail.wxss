@@ -1,0 +1,30 @@
+page{
+  background-color: #fff
+}
+
+.avatar {
+  width: 95rpx;
+  height: 95rpx;
+  border-radius: 95rpx;
+}
+
+.zheKou{
+  font-size: 18rpx;
+  width: 30rpx;
+  height: 30rpx; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff946f;
+  color: #fff;
+  border-radius: 10rpx
+}
+
+.diBu{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between
+}

@@ -1,0 +1,89 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.1",
+	"appid": "wxa1eb92d785421f14",
+	"projectname": "%E8%B6%A3%E7%8E%A9%E5%90%A7",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": -1,
+					"name": "企业",
+					"pathName": "pages/company/company",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商铺",
+					"pathName": "pages/mechant/mechant",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "入住",
+					"pathName": "pages/manager/register/register",
+					"query": "name=1"
+				},
+				{
+					"id": 4,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": "name=1"
+				},
+				{
+					"id": -1,
+					"name": "发布活动",
+					"pathName": "pages/publish/publish",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "我的活动",
+					"pathName": "pages/mineac/mineac",
+					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "活动详情",
+					"pathName": "pages/activity/activity",
+					"query": "id=42e40-20180906151828129"
+				}
+			]
+		}
+	}
+}

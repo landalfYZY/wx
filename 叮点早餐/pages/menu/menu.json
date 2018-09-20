@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "wxc-notice": "../../../../dist/packages/@minui/wxc-notice/dist/index"
+  }
+}

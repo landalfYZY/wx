@@ -1,0 +1,181 @@
+<view style='height:100%'>
+
+  <!--详情顶部-->
+  <view class="top-line2 flexc-start margin-sanshi padding-sanshi shadow radius-10">
+    <view class='flexr-between item-center bottom-line padding-bottom-sanshi'>
+      <view class='flexr-start item-center'>
+        <view wx:if="{{order.status == '待付款'}}" class='cri cri0'></view>
+        <view wx:if="{{order.status == '待接手'}}" class='cri cri1'></view>
+        <view wx:if="{{order.status == '商家已接手' || order.status == '配送员已接手'}}" class='cri cri2'></view>
+        <view wx:if="{{order.status == '已完成'}}" class='cri cri3'></view>
+        <view wx:if="{{order.status == '已取消'}}" class='cri cri4'></view>
+        <view class='font-35-black2 margin-left-sanshi'>{{order.status}}</view>
+      </view>
+      <view wx:if="{{order.status != '待付款' && order.status != '待接手' && order.status != '已取消'}}">
+        <text class='font-40-black2 bold'>{{order.waterNumber}}</text>
+        <text class='font-27-black2 margin-left-shi'>号</text>
+      </view>
+    </view>
+    <view class='flexr-start item-start margin-top-sanshi' style='width:100%'>
+      <image wx:if="{{order.type == '外卖订单' || order.type == '堂食订单'}}" class='avatar shadow2' src="{{order.shopImage}}"></image>
+      <image wx:if="{{order.type == '跑腿订单'}}" class='avatar shadow2' src="/images/ceShi2.jpg"></image>
+      <view class='flexc-start item-start margin-left-sanshi'>
+        <view class='font-30-black2' style='width:500rpx;' wx:if="{{order.type == '外卖订单' || order.type == '堂食订单'}}">{{order.shopName}}</view>
+        <view class='font-30-black2' style='width:500rpx;' wx:if="{{order.type == '跑腿订单'}}">校园跑腿</view>
+        <view class='font-27-zhonhui margin-top-ershi'>{{order.createTime}}
+          <text class='font-28-zhonhui margin-left-shi' wx:if="{{order.type == '外卖订单'}}">(专送)</text>
+          <text class='font-28-zhonhui margin-left-shi' wx:if="{{order.type == '堂食订单'}}">(自取)</text>
+          <text class='font-28-zhonhui margin-left-shi' wx:if="{{order.type == '跑腿订单'}}">(跑腿)</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--订单菜品详情-->
+  <view class='padding-sanshi margin-sanshi shadow radius-10 top-line2' wx:if="{{order.type == '外卖订单' || order.type == '堂食订单'}}">
+    <view class='font-26-black2 bottom-line' style='padding-bottom:30rpx'>订单号：{{order.sunwouId}}</view>
+    <view class="flexr-between bottom-line2 padding-top-sanshi padding-bottom-sanshi" wx:for="{{order.orderProduct}}" wx:key="{{orderProduct}}">
+      <view class='flexr-start'>
+        <image class='radius-10' style='width:100rpx;height:95rpx;border: 2rpx solid gainsboro' src="{{item.product.image}}"></image>
+        <view class='flexc-start'>
+          <wxc-elip line="2" class='font-26-black2 space-san margin-left-sanshi' style="width:400rpx">{{item.product.name}}</wxc-elip>
+          <view class='font-26-black2 space-san elip margin-left-sanshi margin-top-shi' style='width:320rpx;color:#888;font-size:22rpx' wx:if="{{item.product.attribute.length != 1}}">({{item.attribute.name}})</view>
+        </view>
+      </view>
+      <view class='flexc-start item-end'>
+        <view class='font-26-black3'>￥{{item.attribute.price}}</view>
+        <view class='font-24-qianhui margin-top-shi'>{{item.number}}份</view>
+      </view>
+    </view>
+    <!--价格-->
+    <view class="flexr-between item-center margin-top-sanshi padding-bottom-sanshi bottom-line2">
+      <view class='font-26-black2'>餐盒费</view>
+      <view class='font-26-black3'>￥{{order.boxPrice}}</view>
+    </view>
+    <view class="flexr-between item-center margin-top-sanshi padding-bottom-sanshi bottom-line2">
+      <view class='font-26-black2'>配送费</view>
+      <view class='font-26-black3'>￥{{order.sendPrice}}</view>
+    </view>
+    <view class="flexc-start item-end margin-top-sanshi bottom-line">
+      <view class='flexr-start item-center'>
+        <view class='flexr-start item-center' wx:if="{{order.discountType != '商品折扣' && order.discountType != '满减优惠'}}">
+          <text class='font-26-qianhui margin-left-ershi'>暂无参与优惠</text>
+        </view>
+        <view class='flexr-start item-center' wx:if="{{order.discountType == '商品折扣'}}">
+          <view class='zheKou'>折</view>
+          <text class='font-26-black2 margin-left-ershi'>折扣优惠</text>
+        </view>
+        <view class='flexr-start item-center' wx:if="{{order.discountType == '满减优惠'}}">
+          <view class='zheKou' style='background: #ff7e97'>减</view>
+          <text class='font-26-black2 margin-left-ershi'>满减优惠</text>
+        </view>
+        <view class='font-26-black3 margin-left-sanshi' wx:if="{{order.discountType == '商品折扣'||order.discountType == '满减优惠'}}">-￥{{discountPrice}}</view>
+      </view>
+      <view class="flexr-start item-center margin-top-sanshi padding-bottom-sanshi">
+        <view class='font-26-black2'>总计</view>
+        <view class='font-32-zhonhong bold margin-left-sanshi'>￥{{payment}}</view>
+      </view>
+    </view>
+    <view class='font-26-black2 padding-top-sanshi'>备注信息
+      <text class='font-24-qianhui margin-left-ershi space-san'>{{order.remark}}</text>
+    </view>
+  </view>
+
+  <!--跑腿订单详情中间部分-->
+  <view class="padding-sanshi margin-sanshi shadow radius-10 top-line2" wx:if="{{order.type == '跑腿订单'}}">
+    <view class='font-26-black2 bottom-line' style='padding-bottom:30rpx'>订单号：{{order.sunwouId}}</view>
+    <view class='font-26-black2' style='padding:30rpx 0'>代跑内容：</view>
+    <view class='font-26-zhonhui bottom-line2' style='padding:40rpx 20rpx;background:#f7f7f7'>{{order.remark}}</view>
+    <view class="bottom-line2 flexr-between item-center" style='height:100rpx;'>
+      <view class='font-26-black2'>代跑赏金</view>
+      <view class='font-26-black3'>￥{{order.total}}</view>
+    </view>
+    <view class="bottom-line2 flexr-between item-center" style='height:100rpx;'>
+      <view class='font-26-black2'>总计</view>
+      <view class='font-30-zhonhong'>￥{{payment}}</view>
+    </view>
+    <view class='font-26-black2 padding-top-sanshi'>备注信息
+      <text class='font-24-zhonhui margin-left-ershi space-san line-wushi'>{{order.secret}}</text>
+    </view>
+  </view>
+
+  <!--外卖订单详情底部-->
+  <view wx:if="{{order.type == '外卖订单'}}">
+    <view class="padding-sanshi margin-sanshi shadow radius-10 top-line2" wx:if="{{order.status == '配送员已接手' || order.status == '已完成'}}">
+      <view class='flexr-start item-center'>
+        <view class='font-26-black2'>送达时间</view>
+        <view class='font-26-zhonhui margin-left-sanshi'>预计 {{order.createDate}} {{order.reserveTime}} 送达</view>
+      </view>
+      <view class='flexr-start item-center margin-top-sanshi'>
+        <view class='font-26-black2'>送餐人员</view>
+        <view class='font-26-zhonhui margin-left-sanshi'>{{order.senderName}}，</view>
+        <view class='font-26-lan' bindtap="runPhone">{{order.senderPhone}}</view>
+      </view>
+      <view class="flexr-start item-start font-26-black2 margin-top-sanshi">配送地址
+        <view class="flexc-start margin-left-sanshi">
+          <view class='font-26-zhonhui'>{{order.address.concatName}}，{{order.address.concatPhone}}</view>
+          <view class='font-26-zhonhui' style='width:470rpx;'>{{order.address.schoolName}}{{order.address.floorName}}{{order.address.detail}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--跑腿订单详情底部-->
+  <view wx:if="{{order.type == '跑腿订单'}}">
+    <view class="padding-sanshi margin-sanshi shadow radius-10 top-line2" wx:if="{{order.status == '配送员已接手' || order.status == '已完成'}}">
+      <view class='flexr-start item-center'>
+        <view class='font-26-black2'>完成时间</view>
+        <view class='font-26-zhonhui margin-left-ershi'>预计 {{order.createDate}} {{order.reserveTime}} 完成</view>
+      </view>
+      <view class='font-26-black2 padding-si-lin'>代跑人员
+        <text class='font-26-zhonhui margin-left-ershi'>{{order.senderName}}，</text>
+        <text class='font-26-lan' bindtap="runPhone">{{order.senderPhone}}</text>
+      </view>
+      <view class="flexr-start">
+        <view class='font-26-black2'>雇主信息</view>
+        <view class="flexc-start margin-left-ershi">
+          <view class='font-26-zhonhui'>{{order.address.concatName}}，{{order.address.concatPhone}}</view>
+          <view class='font-26-zhonhui margin-top-shi' style='width:470rpx;'>{{order.address.schoolName}}{{order.address.floorName}}{{order.address.detail}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--到店自取取货详情底部-->
+  <view class="padding-sanshi margin-sanshi shadow radius-10 top-line2" wx:if="{{order.status != '待付款' && order.status != '待接手' && order.type == '堂食订单'}}">
+    <view class='flexr-start item-center'>
+      <view class='font-26-black2'>取件号码</view>
+      <view class='font-26-zhonju margin-left-sanshi'>{{order.waterNumber}} 号</view>
+    </view>
+    <view class='flexr-start item-center margin-top-sanshi'>
+      <view class='font-26-black2'>到店时间</view>
+      <view class='font-26-zhonhui margin-left-sanshi'>预计 {{order.createDate}} {{order.reserveTime}} 来取</view>
+    </view>
+    <view class='flexr-start item-center margin-top-sanshi'>
+      <view class='font-26-black2'>取货地址</view>
+      <view class='font-26-zhonhui margin-left-sanshi' style='width:470rpx;'>{{order.shopAddress}}</view>
+    </view>
+  </view>
+</view>
+
+<view style='height:100rpx;'></view>
+<!--待付款fixed按钮-->
+<view class="diBu" wx:if="{{order.status == '待付款'}}">
+  <view class='flexr-center item-center font-30-black2 bg-white top-line' style='width:50%;box-sizing:border-box;'>(隔日凌晨自动取消)</view>
+  <view class='flexr-center item-center font-30-white bg-lan' style='width:50%' bindtap="wxPay">确认付款</view>
+</view>
+<!--待接手fixed按钮-->
+<!-- <view class="diBu" wx:if="{{order.status == '待接手'}}">
+  <view class='flexr-center item-center font-30-black2 bg-white top-line' style='width:50%;box-sizing:border-box;'>(取消后将全额退回)</view>
+  <view class='flexr-center item-center font-30-white bg-hong click' style='width:50%' bindtap="cancel">取消订单</view>
+</view> -->
+<!--待接手fixed按钮-->
+<view class="diBu" wx:if="{{order.status == '商家已接手'}}">
+  <view class='flexr-center item-center font-30-black2 bg-white click top-line' style='width:50%;' bindtap="exceed">超时反馈</view>
+  <view class='flexr-center item-center font-30-white bg-lv click' style='width:50%' bindtap="shopPhone">联系商家</view>
+</view>
+<!--已接手fixed按钮-->
+<view class="diBu" wx:if="{{order.status == '配送员已接手'}}">
+  <view class='flexr-center item-center font-30-black2 bg-white click top-line' style='width:50%;' bindtap="exceed">超时反馈</view>
+  <view class='flexr-center item-center font-30-white bg-lv click' style='width:50%' bindtap="runLocation">骑手位置</view>
+</view>

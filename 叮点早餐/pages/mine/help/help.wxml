@@ -1,0 +1,19 @@
+<!--常见问题-->
+<view class='flexc-start padding-sanshi'>
+  <view class='font-32-lan'>Q：首页中间图标消失了？</view>
+  <view class='font-26-black2 margin-top-ershi line-sishi space-san'>很简单的哟，先删除该小程序。然后再次通过任何方式进入就会显示啦</view>
+  <view class='font-32-lan margin-top-sanshi'>Q：订单的相关退款</view>
+  <view class='font-26-black2 margin-top-ershi line-sishi space-san'>当订单未被商家接手时，可自行取消订单退款全额（需下单时间超过5钟）。当订单被商家接手后，您可通过订单详情联系对应商家或者配送员沟通协商退款</view>
+  <view class='font-32-lan margin-top-sanshi'>Q：关于配送员自主提现</view>
+  <view class='font-26-black2 margin-top-ershi line-sishi space-san'>配送员的提现日为每月14，15，16，25，26，27号，本月不提自动累计于下月</view>
+  <view class='font-32-lan margin-top-sanshi'>Q：寻求商务合作</view>
+  <view class='font-26-black2 margin-top-ershi line-sishi space-san'>请联系我们商务合作的客服QQ：3451352595</view>
+  <view class='font-32-lan margin-top-sanshi'>Q：寻求客服小姐姐帮助</view>
+  <view class='font-26-black2 margin-top-ershi line-sishi space-san'>点击右下角联系客服按钮，可与小姐姐互撩哟</view>
+</view>
+
+<!--客服按钮-->
+<button class="kf_button" open-type="contact" session-from="weapp">
+  <image style='height:80rpx;width:80rpx' src="/images/help.png"></image>
+</button>
+<view class="font-24-lan" style='bottom: 5%;right: 4.5%;position: fixed;'>联系客服</view>

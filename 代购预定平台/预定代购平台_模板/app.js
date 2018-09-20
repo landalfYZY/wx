@@ -1,14 +1,8 @@
-//app.js
+var util = require('./utils/util.js')
 App({
   onLaunch: function () {
-    this.login(function (res) {
-      if (res.code) {
-        wx.setStorageSync('user', res.result);
-      } else {
-        wx.showToast({
-          title: res.msg,
-        })
-      }
+    util.login(function (res) {
+      console.log(res)
     })
   },
 

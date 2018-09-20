@@ -1,0 +1,19 @@
+.nrxbtn{
+  background-color: #3399FF;
+  color: #ffffff;
+  padding: 0 30rpx;
+  line-height: 70rpx;
+  border-radius: 40rpx
+}
+.bot{
+  background-color: #f3f3f3;
+  padding: 30rpx;
+  color: #888888;
+  margin-top: 30rpx
+}
+.cri{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 60rpx;
+  border: 1px solid #aaaaaa
+}

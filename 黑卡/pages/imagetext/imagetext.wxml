@@ -1,7 +1,0 @@
-<!--pages/imagetext/imagetext.wxml-->
-<import src="../../utils/wxParse/wxParse.wxml"/>
-<view class='panel'>
-<view class='font-60'>{{imagetext.title}}</view>
-<view class='time'>{{imagetext.createTime}}<text class="inzhuji">在诸暨</text></view>
-  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
-</view>

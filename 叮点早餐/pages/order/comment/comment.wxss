@@ -1,0 +1,23 @@
+page {
+  background-color: #fff;
+}
+
+.avatar {
+  width: 95rpx;
+  height: 95rpx;
+  border-radius: 95rpx;
+}
+
+.address {
+  width: 95%;
+  margin-top: 20rpx;
+  padding: 15rpx;
+  height: 150rpx;
+  font-size: 26rpx;
+  color: #666;
+  border: 1px solid #ebebeb;
+}
+
+.paybtn {
+  line-height: 85rpx;
+}

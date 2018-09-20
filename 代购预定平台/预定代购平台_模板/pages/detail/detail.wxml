@@ -9,12 +9,12 @@
   </swiper>
 </view>
 <view class='panel' style='padding:20rpx 30rpx'>
-  <view class=' bold font-34'>sdafv发士大夫撒地方撒地方</view>
-  <view class='font-26 color-gray' style='margin-top:10rpx'>法大师傅是否 撒地方撒旦撒旦</view>
+  <view class=' bold font-34'>{{msg.title}}</view>
+  <view class='font-26 color-gray' style='margin-top:10rpx'>{{msg.des}}</view>
   <view class='panel-between item-end' style='margin-top:10rpx'>
     <view class='panel-start item-end'>
-      <view class='color-price bold' style='font-size:40rpx'>￥125</view>
-      <view class='color-gray font-26 throuth-line'>￥155</view>
+      <view class='color-price bold' style='font-size:40rpx'>￥{{msg.isdiscount == 1 ? msg.discount*msg.price :msg.price}}</view>
+      <view class='color-gray font-26 throuth-line' wx:if="{{item.isdiscount == 1}}">￥{{item.price }}</view>
     </view>
     <view><image src='/img/hg.png' style='width:50rpx;height:30rpx'></image></view>
   </view>

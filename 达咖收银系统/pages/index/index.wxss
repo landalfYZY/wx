@@ -1,0 +1,32 @@
+page{
+  background-color: #f3f3f3
+}
+.fixtop{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: #fff
+}
+.fixitem{
+  width: 25%;
+  text-align: center;
+  height: 100rpx;
+  display: inline-block;
+}
+.fixitem .ftextdef{
+  line-height: 100rpx;
+}
+.fixitem .ftextact{
+  line-height: 100rpx;
+  color: #43a3f7
+}
+
+.fixitem .flineact{
+  width: 70%;
+  border-bottom: 2px solid #43a3f7;
+  margin: auto
+}
+.orderitem{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #e1e1e1
+}

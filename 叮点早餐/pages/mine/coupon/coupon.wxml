@@ -1,0 +1,21 @@
+<view class='radius-10 margin-sanshi shadow top-line2 pst' wx:for="{{coupon}}" wx:if="{{coupon.length != 0}}">
+  <view class='flexr-between item-center padding-sanshi'>
+    <view class='flexc-start' style='width:25%'>
+      <wxc-price class="price-demo" icon="sup">{{item.price}}</wxc-price>
+      <view class='font-23-zhonhui'>{{item.cut}}</view>
+    </view>
+    <view class='flexc-start' style='width:50%'>
+      <view class='font-30-black2 bold'>{{item.title}}</view>
+      <view class='font-20-zhonhui margin-top-shi'>{{item.time}}到期</view>
+    </view>
+    <view class='flexr-center item-center paybtn bg-hong margin-top-sishi click'>去使用</view>
+  </view>
+  <view class='font-20-zhonhui' style='padding: 20rpx;background:#fafafa'>限品类：{{item.limit}}</view>
+  <view class='qiu'></view>
+  <view class='qiu2'></view>
+</view>
+
+<!--暂时没有优惠券-->
+<view style='margin-top:300rpx' wx:if="{{coupon.length == 0}}">
+  <wxc-abnor type="COUPON" title=" " tip="优惠券列表空空如也"></wxc-abnor>
+</view>

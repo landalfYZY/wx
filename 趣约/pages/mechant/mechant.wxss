@@ -1,0 +1,21 @@
+.mcitem{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #e1e1e1
+}
+.mclogo{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 60rpx
+}
+.mcimage{
+  background: #f3f3f3
+}
+.djkl{
+  margin-top: 20rpx;
+  margin-right:15rpx;
+  padding:0 30rpx;
+  line-height: 50rpx;
+  border-radius: 60rpx;
+  background: #f3f3f3;
+  font-size: 24rpx
+}

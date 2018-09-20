@@ -1,0 +1,7 @@
+page {
+  background: #fff;
+}
+
+.paybtn {
+  line-height: 85rpx;
+}

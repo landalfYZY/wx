@@ -1,0 +1,39 @@
+page {
+  background: #fff;
+}
+
+.headPic {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  top: 28%;
+  left: 42%;
+}
+
+.list-item {
+  background: #fff;
+  margin-bottom: 30rpx;
+}
+
+.list-item:last-child {
+  margin: 0;
+}
+
+.desc-highlight {
+  font-size: 24rpx;
+  height: 38rpx;
+  padding: 0 22rpx;
+  border: 1px solid #f5342f;
+  border-radius: 20rpx;
+  color: #f5342f;
+  line-height: 38rpx;
+}
+
+.payBtn {
+  width: 350rpx;
+  height: 75rpx;
+  box-shadow: 0 10rpx 10rpx #e1e1e1;
+  border-radius: 10rpx;
+  top: 37rpx;
+  margin: auto
+}

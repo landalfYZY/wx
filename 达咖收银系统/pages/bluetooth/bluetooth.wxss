@@ -1,0 +1,4 @@
+/* pages/bluetooth/bluetooth.wxss */
+page{
+  background-color: #f3f3f3
+}

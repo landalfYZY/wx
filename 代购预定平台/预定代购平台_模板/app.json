@@ -6,12 +6,13 @@
     "pages/mine/mine",
     "pages/detail/detail",
     "pages/purchase/purchase",
-    "pages/payment/payment"
+    "pages/payment/payment",
+    "pages/text/text"
   ],
   "window":{
     "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "卡尔斯钢琴",
+    "navigationBarTitleText": "叮叮代购",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {

@@ -1,0 +1,29 @@
+<view style="padding:0 15px">
+  <view class='search flexr-center item-center'>
+    <image src='/img/search.png' style='width:30rpx;height:30rpx'></image>
+    <view class='sear-text'>搜索 活动 企业 商铺</view>
+  </view>
+
+  <view class='mcitem' wx:for="{{list}}" wx:for-item="item1">
+    <view class='flexr-between item-center'>
+      <view class='flexr-start item-center'>
+        <image class='mclogo' src='{{item1.logo}}' mode='aspectFill'></image>
+        <view style='margin-left:30rpx'>{{item1.title}}</view>
+      </view>
+      <view style='color:#8a8a8a;font-size:26rpx'>{{item1.distence}}km</view>
+    </view>
+    <view class='flexr-between' style='margin-top:20rpx'>
+      <image wx:for="{{item1.images}}" wx:for-item="item2" class='mcimage' style='height:{{(width-50)/3}}px;width:{{(width-50)/3}}px' src='{{item2}}' mode='aspectFill'></image>
+    </view>
+    <view class='flexr-start flex-flow'>
+      <view class='djkl'  wx:for="{{item1.labels}}" wx:for-item="item2">{{item2}}</view>
+    </view>
+    <view style='margin-top:20rpx;' class='flexr-start item-center'>
+      <image src='/img/location.png' style='width:30rpx;height:30rpx'></image>
+      <view style='font-size:26rpx;color:#8a8a8a;margin-left:5rpx'>
+        {{item1.address}}
+      </view>
+    </view>
+    
+  </view>
+</view>

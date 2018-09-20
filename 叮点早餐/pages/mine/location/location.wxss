@@ -1,0 +1,27 @@
+page {
+  background: #fff;
+}
+
+.btn {
+  width: 100%;
+  height: 90rpx;
+  margin-top: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 20rpx 20rpx;
+}
+
+.btn-ori {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 110rpx;
+  line-height: 95rpx;
+  text-align: center;
+  font-size: 90rpx;
+  color: #fff;
+  position: fixed;
+  right: 35rpx;
+  bottom: 65rpx;
+  opacity: 0.9;
+}

@@ -1,0 +1,19 @@
+<view class="panel flexr-between item-center">
+  <view>开启蓝牙</view>
+  <view>
+    <switch color="#0099ff" checked="{{switchValue}}" bindchange='bluetoothSwitchChange'></switch>
+  </view>
+</view>
+<view style='padding:20rpx'>
+  <view class="flexr-center item-center" wx:if="{{loading}}">
+    <view class="three-quarters-loader">Loading</view>
+    <view class="loading-txt">搜索设备中...</view>
+  </view>
+</view>
+<view style='padding:20rpx'>已搜索到的设备</view>
+<view wx:for="{{list}}" data-index='{{index}}' bindtap='connectedIt' class='panel bottom-line'>
+  <view class='flexr-between'>
+    <view>{{item.deviceId}}</view>
+    <view>{{item.name ? item.name:item.localName}}</view>
+  </view>
+</view>

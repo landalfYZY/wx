@@ -1,0 +1,101 @@
+<!--头部切换-->
+<view class="flexr-between bg-white pst3 shadow z-index-10" style="width:100%;top:0;">
+  <view class="text-center" style='width:25%;' wx:for="{{tabs}}" data-index="{{index}}" bindtap="onClick">
+    <view class="label {{item.active ? 'bar-active':'bar-default'}}">{{item.title}}</view>
+  </view>
+</view>
+<view style='height:100rpx'></view>
+
+<!-- 我的积分和兑换规则 -->
+<view class="font-30-zhonhui margin-sanshi" wx:if="{{tab == 0}}">我的积分：
+  <text class='font-30-zhonhui'>520</text>
+  <text class='font-24-lan margin-left-shi' bindtap="integralIule">（积分获取规则）</text>
+</view>
+
+<!--弹窗显示的积分规则-->
+<view class="pst3 flexr-center item-center" style="width:100%;height:100%;background:rgba(0, 0, 0, 0.3);top:0" wx:if="{{showdetail}}">
+  <view class="bg-white radius-20 flexc-start pst" style='width:550rpx'>
+    <view class='pst2 text-right font-40-black2' style='width:100rpx;height:70rpx;right:30rpx;top:0' bindtap="close"> x</view>
+    <view class="font-32-black2 text-center margin-top-liushi bold">积分获取规则</view>
+    <view class="font-28-black2" style='margin:30rpx 30rpx 20rpx 30rpx'>-- 消费 --</view>
+    <view class="font-23-zhonhui margin-left-sanshi">* 每笔订单可获得相应支付金额的积分</view>
+    <view class="font-23-zhonhui margin-top-shi margin-left-sanshi">* 订单评论后额外增加2积分</view>
+    <view class="font-28-black2" style='margin:30rpx 30rpx 20rpx 30rpx'>-- 分享 --</view>
+    <view class="font-23-zhonhui margin-left-sanshi">* 转发好友进入小程序送18积分每人</view>
+    <view class="font-23-zhonhui margin-top-shi margin-left-sanshi">* 被邀请进入的好友每次下单即送3积分</view>
+    <view class="font-28-black2" style='margin:30rpx 30rpx 20rpx 30rpx'>-- 签到 --</view>
+    <view class="font-23-zhonhui margin-left-sanshi" style='margin-bottom:70rpx'>* 每日签到依据签到面板对应积分获取</view>
+  </view>
+</view>
+
+<!-- 循环出来的兑换商品 -->
+<view class='padding-sanshi flexr-between item-center margin-sanshi radius-10 shadow top-line2' wx:for="{{exchangeGoods}}" wx:key="exchangeGoods" wx:if="{{tab == 0 && exchangeGoods.length != 0}}">
+  <image class='radius-10' style='width:25%;height:140rpx;border: 0.5rpx solid gainsboro' src='{{item.pic}}' mode='aspectFill'></image>
+  <view class='flexc-between' style='width:70%;height:150rpx;'>
+    <wxc-elip line="2" class='font-30-black2 space-san line-sishi'>{{item.title}}</wxc-elip>
+    <view class='font-22-qianhui margin-left-shi'>已兑换
+      <text>{{item.num}}</text> 件</view>
+    <view class='flexr-between item-end'>
+      <view class='font-24-black2'>需要积分
+        <text style='color:#ee5353'>{{item.integral}}</text>
+      </view>
+      <view class='flexr-center item-center paybtn bg-lan click' data-index='{{index}}' bindtap='exchange'>立即兑换</view>
+    </view>
+  </view>
+</view>
+
+<!--暂时没有积分商城的商品-->
+<view style='margin-top:250rpx' wx:if="{{tab == 0 && exchangeGoods.length == 0}}">
+  <wxc-abnor type="CART" title=" " tip="兑换商品列表空空如也"></wxc-abnor>
+</view>
+
+<!--弹窗填写收获地址 -->
+<view class="pst3 flexr-center item-center" style="width:100%;height:100%;background:rgba(0, 0, 0, 0.3);top:0" wx:if="{{showdetail2}}">
+  <view class="bg-white radius-20 flexc-start item-end" style='width:550rpx;'>
+    <view class='text-right font-40-black2 padding-right-sanshi' style='width:100rpx;height:70rpx;' bindtap="close"> x</view>
+    <view class='font-32-black2 text-center bold' style='width:100%'>填写收货信息</view>
+    <view class="margin-top-wushi padding-bottom-ershi flexr-between item-center bottom-line2" style='width:100%'>
+      <view class='flexc-start margin-left-sanshi'>
+        <view class="font-30-black2">陈顺波 18857818257</view>
+        <view class="font-28-zhonhui margin-top-shi">湖北经济学院竹苑一201</view>
+      </view>
+      <image class='icon-sanshi margin-right-sanshi' src="/images/jianTou.png" mode="aspectFit"></image>
+    </view>
+    <view class='bottom-line2 margin-top-sanshi padding-bottom-ershi' style='width:100%;margin-bottom:150rpx'>
+      <input class='font-28-black3 margin-left-sanshi' placeholder="留下您的备注信息" placeholder-style="color:#b1b1b1" />
+    </view>
+    <view class='font-32-white bg-lan btn click' bindgetuserinfo="saveNewAdres">确认兑换</view>
+  </view>
+</view>
+
+<!--兑换记录查询-->
+<view class='flexc-between margin-sanshi radius-10 shadow pst' style='height:200rpx;' wx:for="{{exchangeRecords}}" wx:key="exchangeRecords" wx:if="{{tab == 1 && exchangeRecords.length != 0}}">
+  <image class='pst2' style='width:100%;height:200rpx;opacity:0.2' src='{{item.pic}}' mode='aspectFill'></image>
+  <view class="flexr-between" style='margin:30rpx 30rpx 0 30rpx'>
+    <wxc-elip line="2" class='font-30-black2 space-san line-sishi' style="width:78%">{{item.title}}</wxc-elip>
+    <view class="font-27-zhonhong">-{{item.integral}} 积分</view>
+  </view>
+  <view class="flexr-between" style='margin:0 30rpx 30rpx 30rpx'>
+    <view class='font-27-zhonhui'>{{item.time}}</view>
+    <view class='font-27-black2'>{{item.state}}</view>
+  </view>
+</view>
+
+<!--暂时没有兑换记录-->
+<view style='margin-top:250rpx' wx:if="{{tab == 1 && exchangeRecords.length == 0}}">
+  <wxc-abnor type="ORDER" title=" " tip="暂时没有兑换记录啦"></wxc-abnor>
+</view>
+
+<!--积分获取记录-->
+<view class='flexc-between margin-sanshi bottom-line padding-bottom-sanshi' wx:for="{{getIntegral}}" wx:key="getIntegral" wx:if="{{tab == 2 && getIntegral.length != 0}}">
+  <view class="flexr-between">
+    <view class='font-30-black2' style="width:78%">{{item.title}}</view>
+    <view class="font-27-lv">+{{item.integral}} 积分</view>
+  </view>
+  <view class="font-27-qianhui margin-top-ershi">{{item.time}}</view>
+</view>
+
+<!--暂时没有获取记录-->
+<view style='margin-top:250rpx' wx:if="{{tab == 2 && getIntegral.length == 0}}">
+  <wxc-abnor type="ORDER" title=" " tip="暂时没有获取记录啦"></wxc-abnor>
+</view>

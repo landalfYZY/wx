@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/location/location",
+    "pages/mechant/mechant",
+    "pages/company/company",
+    "pages/mine/mine",
+    "pages/manager/merchant/merchant",
+    "pages/manager/register/register",
+    "pages/manager/company/company",
+    "pages/publish/publish",
+    "pages/login/login",
+    "pages/mineac/mineac",
+    "pages/activity/activity"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "趣玩吧",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "selectedColor": "#ff6633",
+    "color": "#8a8a8a",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "活动",
+      "iconPath": "img/t1.png",
+      "selectedIconPath": "img/t2.png"
+    },
+    {
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "img/t7.png",
+      "selectedIconPath": "img/t8.png"
+    }]
+  }
+}

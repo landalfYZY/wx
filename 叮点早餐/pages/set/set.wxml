@@ -1,0 +1,27 @@
+<view style='padding:0 30rpx'>
+<view class='flexr-between item-center'>
+  <view>上班时间</view>
+  <view>{{hol[holFlag].label}},{{times[timeFlag].value}}</view>
+  <view class='nrxbtn' bindtap='save'>确认保存</view>
+</view>
+</view>
+
+<view class='bot'>提示：早餐会提前5分钟给您送达。</view>
+
+<view style='padding:30rpx;'>
+  选择您的上班时间
+  <view class='bottom-line flexr-between item-center' style='padding:30rpx 0' wx:for="{{times}}" bindtap='changeTime' data-index='{{index}}'>
+    <view>{{item.time}}</view>
+    <view class='cri' wx:if="{{timeFlag != index}}"></view>
+    <icon size="23" type="success" wx:if="{{timeFlag == index}}" color='#3399ff'></icon>
+  </view>
+</view>
+
+<view style='padding:30rpx;'>
+  选择休假规则
+  <view class='bottom-line flexr-between item-center' style='padding:30rpx 0' wx:for="{{hol}}" bindtap='changeHol' data-index='{{index}}'>
+    <view>{{item.label}}</view>
+    <view class='cri' wx:if="{{holFlag != index}}"></view>
+    <icon size="23" type="success" wx:if="{{holFlag == index}}" color='#3399ff'></icon>
+  </view>
+</view>

@@ -1,0 +1,68 @@
+<view class='fixtop'>
+  <view style='padding:0rpx 60rpx;'>
+    <view class='search flexr-center item-center'>
+      <image src='/img/search.png' style='width:30rpx;height:30rpx'></image>
+      <view class='sear-text'>搜索 活动 企业 商铺</view>
+    </view>
+    <view>
+      <!-- <scroll-view scroll-x="true" class='svsss'>
+        <view class='lsitem ' wx:for="{{filter}}" wx:for-index="fi">
+          <picker data-index='{{fi}}' bindchange='pickerChange' range='{{item.data}}' value="{{item.flag}}">
+            <view class='flexr-center item-center'>
+              <view class='flttit'>{{item.data[item.flag] == '全部' ? item.initLabel:item.data[item.flag] }}</view>
+              <image src='/img/bot.png' style='width:15rpx;height:15rpx'></image>
+            </view>
+          </picker>
+        </view>
+
+      </scroll-view> -->
+    </view>
+  </view>
+</view>
+<view style='height:120rpx'></view>
+
+
+
+<view style="padding:30rpx 60rpx">
+
+  <view class='activityItem' wx:for="{{list}}" data-id='{{item.sunwouId}}' bindtap='navToD'>
+    <view class='flexr-between item-center'>
+      <view class='flexr-start item-center'>
+        <view class='cri bg-warning'></view>
+        <view class='status'>发布于{{item.createTime}}</view>
+      </view>
+      <view class='time'></view>
+    </view>
+    <view class='label'>
+      <image src='/img/s1.png'></image>
+      <view>报名中</view>
+    </view>
+    <view class='abox'>
+      <image class='cover' src='{{item.image}}' mode='aspectFill'></image>
+      <view style='height:10px'>
+        <view class='pan flexr-between item-center'>
+          <view class='title elip'>{{item.title}}</view>
+          <view class='num'>{{item.nowPeopleNumber ? item.nowPeopleNumber+'人':'' }}</view>
+        </view>
+      </view>
+      <view style='padding-left:20rpx' class='flexr-start'>
+        <view class='laItem'>{{item.publicType}}活动</view>
+        <view class='laItem'>需要{{item.needPeopleNumber}}人</view>
+        
+        <view class='laItem'>{{item.payEveryOne == 0 || item.payEveryOne == '' ? '免费':item.payEveryOne+'元/人'}}</view>
+        <view class='laItem'>{{item.day}}天</view>
+      </view>
+      <view style='padding:0 20rpx;' class='flexr-between'>
+        <view style='font-size:24rpx'>{{item.address}}</view>
+        <view style='font-size:24rpx;color:#888'>截止{{item.stopTime}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='publish' bindtap='navToDetail'>+</view>
+
+<view class="flexr-center item-center" wx:if="{{load}}" style='margin-top:20rpx'>
+  <view class="three-quarters-loader">Loading</view>
+  <view class="loading-txt">加载中...</view>
+</view>
